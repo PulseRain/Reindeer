@@ -162,6 +162,7 @@ module RV2T_controller (
             reg                                             interrupt_active;
             
             reg                                             decode_ctl_WFI_d1;
+            reg                                             ecall_active;
             
         //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         // data path
@@ -202,6 +203,7 @@ module RV2T_controller (
                         
                         decode_ctl_WFI_d1 <= 0;
                         is_interrupt <= 0;
+                        ecall_active <= 0;
                         
                     end else begin
                         
@@ -297,6 +299,11 @@ module RV2T_controller (
                             store_active_reg <= 1'b1;
                         end
                         
+                        if (exception_ecall) begin
+                            ecall_active <= 1'b1;
+                        end else if (mret_active) begin
+                            ecall_active <= 1'b0;
+                        end
                         
                         if (ctl_set_interrupt_active_reg) begin
                             exception_code <= `INTERRUPT_MACHINE_TIMER;
@@ -485,7 +492,7 @@ module RV2T_controller (
                         ctl_fetch_init_jalr = jalr_active & (~(jalr_addr[1]));
                         ctl_fetch_init_mret_active = mret_active;
                         
-                        if (timer_triggered & (~interrupt_active)) begin
+                        if (timer_triggered & (~interrupt_active) & (~ecall_active)) begin
                             ctl_set_interrupt_active = 1'b1;
                             next_state [S_EXCEPTION] = 1'b1;
                         end else if ((jal_active & jal_addr[1]) | (jalr_active & jalr_addr[1]) | (branch_active & branch_addr[1])) begin
