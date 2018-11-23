@@ -39,7 +39,8 @@ KEY Vendor "Actel"
 KEY ActiveRoot "creative::work"
 LIST REVISIONS
 VALUE="Impl1",NUM=1
-CURREV=1
+VALUE="Impl2",NUM=2
+CURREV=2
 ENDLIST
 LIST FileManager
 VALUE "<project>\component\Actel\SgCore\FCCC\2.0.201\FCCC.cxf,actgen_cxf"
@@ -73,36 +74,6 @@ SIZE="1785"
 PARENT="<project>\component\work\creative\FCCC_0\creative_FCCC_0_FCCC.cxf"
 IS_READONLY="TRUE"
 ENDFILE
-VALUE "<project>\synthesis\creative.edn,syn_edn"
-STATE="utd"
-TIME="1542964186"
-SIZE="7301224"
-ENDFILE
-VALUE "<project>\synthesis\creative.so,so"
-STATE="utd"
-TIME="1542964186"
-SIZE="237"
-ENDFILE
-VALUE "<project>\synthesis\creative_sdc.sdc,syn_sdc"
-STATE="utd"
-TIME="1542964186"
-SIZE="1044"
-ENDFILE
-VALUE "<project>\synthesis\creative_syn.prj,prj"
-STATE="utd"
-TIME="1542986461"
-SIZE="2199"
-ENDFILE
-VALUE "<project>\synthesis\Reindeer.so,so"
-STATE="utd"
-TIME="1542460259"
-SIZE="232"
-ENDFILE
-VALUE "<project>\synthesis\Reindeer_syn.prj,prj"
-STATE="utd"
-TIME="1542986461"
-SIZE="0"
-ENDFILE
 VALUE "C:\GitHub\Reindeer\build\par\constraints\Microsemi\creative\Reindeer.pdc,io_pdc"
 STATE="utd"
 TIME="1542453978"
@@ -132,19 +103,6 @@ VALUE "C:\GitHub\Reindeer\build\par\constraints\Microsemi\creative\Reindeer.sdc,
 ENDLIST
 LIST TimingConstraints
 VALUE "C:\GitHub\Reindeer\build\par\constraints\Microsemi\creative\Reindeer.sdc,sdc"
-ENDLIST
-LIST ProjectState5.1
-LIST Impl1
-LiberoState=Post_Synthesis
-ideSYNTHESIS(<project>\synthesis\creative.edn,syn_edn)=StateSuccess
-LIST FlowOptions
-UsePhySynth=FALSE
-UseSynth=TRUE
-UseFhbAutoInst=FALSE
-ENDLIST
-Used_File_List
-ENDUsed_File_List
-ENDLIST
 ENDLIST
 ENDLIST
 LIST "Reindeer::work"
@@ -227,8 +185,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\bin\synplify_pro.exe"
-PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
-BATCH=1
+PARAM=""
+BATCH=0
 LICENSE=""
 IS32BIT="1"
 EndProfile
@@ -261,19 +219,6 @@ IS32BIT="1"
 EndProfile
 ENDLIST
 LIST ProjectState5.1
-LIST "creative::work"
-LIST Impl1
-LiberoState=Post_Synthesis
-ideSYNTHESIS(<project>\synthesis\creative.edn,syn_edn)=StateSuccess
-LIST FlowOptions
-UsePhySynth=FALSE
-UseSynth=TRUE
-UseFhbAutoInst=FALSE
-ENDLIST
-Used_File_List
-ENDUsed_File_List
-ENDLIST
-ENDLIST
 ENDLIST
 LIST ExcludePackageForSimulation
 ENDLIST
@@ -287,16 +232,13 @@ LIST UserCustomizedFileList
 ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
-Reports;Reports;0
-ReportsCurrentItem;Place and Route:creative_layout_log.log
 StartPage;StartPage;0
-Constraint Manager;Constraint Manager;0
-ACTIVEVIEW;Reports
+ACTIVEVIEW;StartPage
 ENDLIST
 LIST ModuleSubBlockList
 LIST "creative::work","component\work\creative\creative.v","TRUE","FALSE"
-SUBBLOCK "creative_FCCC_0_FCCC::work","component\work\creative\FCCC_0\creative_FCCC_0_FCCC.v","FALSE","FALSE"
 SUBBLOCK "Reindeer::work","C:\GitHub\Reindeer\build\synth\Microsemi\SmartFusion2\Reindeer.vm","FALSE","FALSE"
+SUBBLOCK "creative_FCCC_0_FCCC::work","component\work\creative\FCCC_0\creative_FCCC_0_FCCC.v","FALSE","FALSE"
 ENDLIST
 LIST "creative_FCCC_0_FCCC::work","component\work\creative\FCCC_0\creative_FCCC_0_FCCC.v","FALSE","FALSE"
 ENDLIST
