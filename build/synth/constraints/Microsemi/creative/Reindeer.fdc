@@ -1,0 +1,23 @@
+###==== BEGIN Header
+
+# Synopsys, Inc. constraint file
+# C:/PulseRain/Reindeer/PulseRain_MCU/synth/constraints/creative.fdc
+# Written on Sat Nov 17 01:02:44 2018
+# by Synplify Pro, L-2016.09M-SP1-5 FDC Constraint Editor
+
+# Custom constraint commands may be added outside of the SCOPE tab sections bounded with BEGIN/END.
+# These sections are generated from SCOPE spreadsheet tabs.
+
+###==== END Header
+
+
+
+###==== BEGIN Clocks - (Populated from tab in SCOPE, do not edit)
+
+###==== END Clocks
+
+
+###==== BEGIN Attributes - (Populated from tab in SCOPE, do not edit)
+define_global_attribute  {syn_netlist_hierarchy} {0}
+###==== END Attributes
+

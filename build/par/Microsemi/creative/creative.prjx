@@ -1,0 +1,319 @@
+KEY LIBERO "11.9"
+KEY CAPTURE "11.9.1.0"
+KEY DEFAULT_IMPORT_LOC "E:\Hotline_Cases\IP_cases\2012\493642-863181735\Mir_429\component\Actel\DirectCore\CORE429\3.1.103\rtl\vhdl\core"
+KEY DEFAULT_OPEN_LOC ""
+KEY ProjectID "0"
+KEY HDLTechnology "VERILOG"
+KEY VERILOGMODE "VERILOG2001"
+KEY VHDLMODE "VHDL2008"
+KEY UseConstraintFlowTechnology "TRUE"
+KEY VendorTechnology_Family "SmartFusion2"
+KEY VendorTechnology_Die "PA4M2500_N"
+KEY VendorTechnology_Package "vf256"
+KEY VendorTechnology_Speed "-1"
+KEY VendorTechnology_DieVoltage "1.2"
+KEY VendorTechnology_PART_RANGE "COM"
+KEY VendorTechnology_DSW_VCCA_VOLTAGE_RAMP_RATE "100_MS"
+KEY VendorTechnology_IO_DEFT_STD "LVCMOS33"
+KEY VendorTechnology_OPCONR ""
+KEY VendorTechnology_PLL_SUPPLY "PLL_SUPPLY_33"
+KEY VendorTechnology_RAD_EXPOSURE ""
+KEY VendorTechnology_RESERVEMIGRATIONPINS "1"
+KEY VendorTechnology_RESTRICTPROBEPINS "1"
+KEY VendorTechnology_RESTRICTSPIPINS "0"
+KEY VendorTechnology_SYSTEM_CONTROLLER_SUSPEND_MODE "0"
+KEY VendorTechnology_TARGETDEVICESFORMIGRATION "PA4M2500_N"
+KEY VendorTechnology_TEMPR "COM"
+KEY VendorTechnology_UNUSED_MSS_IO_RESISTOR_PULL "None"
+KEY VendorTechnology_VCCI_1.2_VOLTR "COM"
+KEY VendorTechnology_VCCI_1.5_VOLTR "COM"
+KEY VendorTechnology_VCCI_1.8_VOLTR "COM"
+KEY VendorTechnology_VCCI_2.5_VOLTR "COM"
+KEY VendorTechnology_VCCI_3.3_VOLTR "COM"
+KEY VendorTechnology_VOLTR "COM"
+KEY ProjectLocation "C:\PulseRain\iReindeer\build\par\Microsemi\creative"
+KEY ProjectDescription "Future Electronics SmartFusion2 Creative Board"
+KEY Pa4PeripheralNewSeq "GOOD"
+KEY SimulationType "VERILOG"
+KEY Vendor "Actel"
+KEY ActiveRoot "creative::work"
+LIST REVISIONS
+VALUE="Impl1",NUM=1
+CURREV=1
+ENDLIST
+LIST FileManager
+VALUE "<project>\component\Actel\SgCore\FCCC\2.0.201\FCCC.cxf,actgen_cxf"
+STATE="utd"
+TIME="1542963351"
+SIZE="241"
+PARENT="<project>\component\work\creative\creative.cxf"
+ENDFILE
+VALUE "<project>\component\work\creative\creative.cxf,actgen_cxf"
+STATE="utd"
+TIME="1542963351"
+SIZE="2685"
+ENDFILE
+VALUE "<project>\component\work\creative\creative.v,hdl"
+STATE="utd"
+TIME="1542963351"
+SIZE="2857"
+PARENT="<project>\component\work\creative\creative.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\creative\FCCC_0\creative_FCCC_0_FCCC.cxf,actgen_cxf"
+STATE="utd"
+TIME="1542963350"
+SIZE="697"
+PARENT="<project>\component\work\creative\creative.cxf"
+ENDFILE
+VALUE "<project>\component\work\creative\FCCC_0\creative_FCCC_0_FCCC.v,hdl"
+STATE="utd"
+TIME="1542963350"
+SIZE="1785"
+PARENT="<project>\component\work\creative\FCCC_0\creative_FCCC_0_FCCC.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\synthesis\creative.edn,syn_edn"
+STATE="utd"
+TIME="1542537288"
+SIZE="6496763"
+ENDFILE
+VALUE "<project>\synthesis\creative.so,so"
+STATE="utd"
+TIME="1542537289"
+SIZE="232"
+ENDFILE
+VALUE "<project>\synthesis\creative_sdc.sdc,syn_sdc"
+STATE="utd"
+TIME="1542537288"
+SIZE="937"
+ENDFILE
+VALUE "<project>\synthesis\creative_syn.prj,prj"
+STATE="utd"
+TIME="1542962588"
+SIZE="2208"
+ENDFILE
+VALUE "<project>\synthesis\Reindeer.so,so"
+STATE="utd"
+TIME="1542460259"
+SIZE="232"
+ENDFILE
+VALUE "<project>\synthesis\Reindeer_syn.prj,prj"
+STATE="utd"
+TIME="1542962588"
+SIZE="0"
+ENDFILE
+VALUE "C:\PulseRain\iReindeer\build\par\constraints\Microsemi\creative\Reindeer.pdc,io_pdc"
+STATE="utd"
+TIME="1542453978"
+SIZE="1606"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "C:\PulseRain\iReindeer\build\par\constraints\Microsemi\creative\Reindeer.sdc,sdc"
+STATE="utd"
+TIME="1542458632"
+SIZE="233"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "C:\PulseRain\iReindeer\build\synth\Microsemi\SmartFusion2\Reindeer.vm,hdl"
+STATE="utd"
+TIME="1542963783"
+SIZE="3390767"
+IS_READONLY="TRUE"
+ENDFILE
+ENDLIST
+LIST UsedFile
+ENDLIST
+LIST NewModulesInfo
+LIST "creative::work"
+FILE "<project>\component\work\creative\creative.v,hdl"
+LIST SynthesisConstraints
+VALUE "C:\PulseRain\iReindeer\build\par\constraints\Microsemi\creative\Reindeer.sdc,sdc"
+ENDLIST
+LIST TimingConstraints
+VALUE "C:\PulseRain\iReindeer\build\par\constraints\Microsemi\creative\Reindeer.sdc,sdc"
+ENDLIST
+LIST ProjectState5.1
+LIST Impl1
+LiberoState=Post_Synthesis
+ideSYNTHESIS(<project>\synthesis\creative.edn,syn_edn)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST "Reindeer::work"
+FILE "C:\PulseRain\iReindeer\build\synth\Microsemi\SmartFusion2\Reindeer.vm,hdl"
+LIST SynthesisConstraints
+VALUE "C:\PulseRain\iReindeer\build\par\constraints\Microsemi\creative\Reindeer.sdc,sdc"
+ENDLIST
+LIST TimingConstraints
+VALUE "C:\PulseRain\iReindeer\build\par\constraints\Microsemi\creative\Reindeer.sdc,sdc"
+ENDLIST
+ENDLIST
+ENDLIST
+LIST AssociatedStimulus
+ENDLIST
+LIST Other_Association
+ENDLIST
+LIST SimulationOptions
+UseAutomaticDoFile=true
+IncludeWaveDo=false
+Type=max
+RunTime=1000ns
+Resolution=1fs
+VsimOpt=
+EntityName=testbench
+TopInstanceName=<top>_0
+DoFileName=
+DoFileName2=wave.do
+DoFileParams=
+DisplayDUTWave=false
+LogAllSignals=false
+DisablePulseFiltering=false
+DumpVCD=false
+VCDFileName=power.vcd
+VHDL2008=false
+Verilog2001=false
+SystemVerilog=false
+TimeUnit=1
+TimeUnitBase=ns
+Precision=100
+PrecisionBase=ps
+ENDLIST
+LIST ModelSimLibPath
+UseCustomPath=FALSE
+LibraryPath=
+ENDLIST
+LIST GlobalFlowOptions
+GenerateHDLAfterSynthesis=FALSE
+GenerateHDLAfterPhySynthesis=FALSE
+RunDRCAfterSynthesis=FALSE
+AutoCheckConstraints=TRUE
+UpdateModelSimIni=TRUE
+NoIOMode=FALSE
+PeriInitStandalone=FALSE
+EnableViewDraw=FALSE
+UpdateViewDrawIni=TRUE
+GenerateHDLFromSchematic=TRUE
+VmNetlistFlowOn=FALSE
+EnableDesignSeparationOn=FALSE
+EnableSETMitigationOn=FALSE
+DisplayFanoutLimit=10
+AbortFlowOnPDCErrorsOn=TRUE
+AbortFlowOnSDCErrorsOn=TRUE
+InstantiateInSmartDesign=TRUE
+FlashProInputFile=pdb
+SmartGenCompileReport=T
+ENDLIST
+LIST PhySynthesisOptions
+ENDLIST
+LIST Profiles
+NAME="SoftConsole"
+FUNCTION="SoftwareIDE"
+TOOL="SoftConsole"
+LOCATION="eclipse.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="Synplify Pro ME"
+FUNCTION="Synthesis"
+TOOL="Synplify Pro ME"
+LOCATION="C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\bin\synplify_pro.exe"
+PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
+BATCH=1
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="ModelSim ME"
+FUNCTION="Simulation"
+TOOL="ModelSim"
+LOCATION="C:\Microsemi\Libero_SoC_v11.9\Modelsim\win32acoem\modelsim.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="FPExpress"
+FUNCTION="Program"
+TOOL="FlashPro"
+LOCATION="C:\Microsemi\Libero_SoC_v11.9\Designer\bin\FPExpress.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+NAME="Identify Debugger"
+FUNCTION="IdentifyDebugger"
+TOOL="Identify Debugger"
+LOCATION="C:\Microsemi\Libero_SoC_v11.9\Identify\bin\identify_debugger.exe"
+PARAM=""
+BATCH=0
+LICENSE=""
+IS32BIT="1"
+EndProfile
+ENDLIST
+LIST ProjectState5.1
+LIST "creative::work"
+LIST Impl1
+LiberoState=Post_Synthesis
+ideSYNTHESIS(<project>\synthesis\creative.edn,syn_edn)=StateSuccess
+LIST FlowOptions
+UsePhySynth=FALSE
+UseSynth=TRUE
+UseFhbAutoInst=FALSE
+ENDLIST
+Used_File_List
+ENDUsed_File_List
+ENDLIST
+ENDLIST
+ENDLIST
+LIST ExcludePackageForSimulation
+ENDLIST
+LIST ExcludePackageForSynthesis
+ENDLIST
+LIST IncludeModuleForSimulation
+ENDLIST
+LIST CDBOrder
+ENDLIST
+LIST UserCustomizedFileList
+ENDLIST
+LIST OpenedFileList
+ORIENTATION;HORIZONTAL
+Reports;Reports;0
+ReportsCurrentItem;Run PROGRAM Action:creative_PROGRAM.log
+StartPage;StartPage;0
+HDL;C:\PulseRain\iReindeer\build\par\constraints\Microsemi\creative\Reindeer.sdc;0
+HDL;C:\PulseRain\iReindeer\build\par\constraints\Microsemi\creative\Reindeer.pdc;0
+Constraint Manager;Constraint Manager;0
+ACTIVEVIEW;Reports
+ENDLIST
+LIST ModuleSubBlockList
+LIST "creative::work","component\work\creative\creative.v","TRUE","FALSE"
+SUBBLOCK "creative_FCCC_0_FCCC::work","component\work\creative\FCCC_0\creative_FCCC_0_FCCC.v","FALSE","FALSE"
+SUBBLOCK "Reindeer::work","C:\PulseRain\iReindeer\build\synth\Microsemi\SmartFusion2\Reindeer.vm","FALSE","FALSE"
+ENDLIST
+LIST "creative_FCCC_0_FCCC::work","component\work\creative\FCCC_0\creative_FCCC_0_FCCC.v","FALSE","FALSE"
+ENDLIST
+LIST "Reindeer::work","C:\PulseRain\iReindeer\build\synth\Microsemi\SmartFusion2\Reindeer.vm","FALSE","FALSE"
+ENDLIST
+ENDLIST
+LIST ActiveTestBenchList
+ENDLIST
+LIST IOTabList
+VALUE "C:\PulseRain\iReindeer\build\par\constraints\Microsemi\creative\Reindeer.pdc"
+ENDLIST
+LIST FPTabList
+ENDLIST
+LIST TimingTabList
+VALUE "C:\PulseRain\iReindeer\build\par\constraints\Microsemi\creative\Reindeer.sdc"
+ENDLIST
+LIST FDCTabList
+ENDLIST

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RadiantProject version="4.0" title="UPDuinoV2" device="iCE40UP5K-SG48I" performance_grade="High-Performance_1.2V" default_implementation="Reindeer">
+    <Options/>
+    <Implementation title="Reindeer" dir="Reindeer" description="Reindeer" synthesis="lse" default_strategy="Strategy1">
+        <Options def_top="Reindeer">
+            <Option name="include path" value="../../../../submodules/OCD/source;../../../../submodules/PulseRain_MCU/common;../../../../submodules/PulseRain_MCU/common/Lattice/UP5K"/>
+            <Option name="top" value="Reindeer"/>
+        </Options>
+        <Source name="../../../../source/Lattice/UPDuinoV2/Reindeer.v" type="Verilog" type_short="Verilog">
+            <Options top_module="Reindeer"/>
+        </Source>
+        <Source name="../../../../submodules/OCD/source/CRC16_CCITT.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/OCD/source/debug_coprocessor.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/OCD/source/debug_coprocessor_wrapper.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/OCD/source/debug_reply.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/OCD/source/debug_UART.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/OCD/source/Serial_RS232.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/PulseRain_MCU/memory/lattice/dual_port_ram.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/PulseRain_MCU/memory/lattice/dual_port_ram_lattice.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/PulseRain_MCU/memory/lattice/single_port_ram.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/PulseRain_MCU/memory/lattice/single_port_ram_lattice.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/PulseRain_MCU/memory/lattice/single_port_ram_lattice_16Kx16.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/PulseRain_MCU/peripherals/UART/UART_TX.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/PulseRain_RV2T_core.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/RV2T_controller.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/RV2T_CSR.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/RV2T_data_access.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/RV2T_execution_unit.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/RV2T_fetch_instruction.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/RV2T_instruction_decode.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/RV2T_machine_timer.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/RV2T_memory.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/RV2T_mm_reg.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/RV2T_reg_file.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/mul_div/absolute_value.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/mul_div/long_slow_div_denom_reg.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/mul_div/mul_div_32.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../../submodules/PulseRain_MCU/source/PulseRain_RV2T_MCU.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../constraints/Lattice/UPDuinoV2/Reindeer.ldc" type="LSE Design Constraints File" type_short="LDC">
+            <Options/>
+        </Source>
+        <Source name="source/Reindeer.xcf" type="Programming Project File" type_short="Programming">
+            <Options/>
+        </Source>
+    </Implementation>
+    <Strategy name="Strategy1" file="UPDuinoV21.sty"/>
+</RadiantProject>

@@ -1,0 +1,108 @@
+#--  Synopsys, Inc.
+#--  Version L-2016.09M-SP1-5
+#--  Project file C:\PulseRain\iReindeer\build\synth\Microsemi\Reindeer.prj
+#--  Written on Fri Nov 23 01:03:10 2018
+
+
+#project files
+add_file -fpga_constraint "../constraints/Microsemi/creative/Reindeer.fdc"
+add_file -verilog "../../../submodules/OCD/source/CRC16_CCITT.v"
+add_file -verilog "../../../submodules/OCD/source/debug_coprocessor.v"
+add_file -verilog "../../../submodules/OCD/source/debug_coprocessor.vh"
+add_file -verilog "../../../submodules/OCD/source/debug_coprocessor_wrapper.v"
+add_file -verilog "../../../submodules/OCD/source/debug_reply.v"
+add_file -verilog "../../../submodules/OCD/source/debug_UART.v"
+add_file -verilog "../../../submodules/OCD/source/Serial_RS232.v"
+add_file -verilog "../../../submodules/PulseRain_MCU/memory/microsemi/dual_port_ram.v"
+add_file -verilog "../../../submodules/PulseRain_MCU/memory/microsemi/single_port_ram.v"
+add_file -verilog "../../../submodules/PulseRain_MCU/memory/microsemi/single_port_ram_8bit.v"
+add_file -verilog "../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/PulseRain_RV2T_core.v"
+add_file -verilog "../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/RV2T_controller.v"
+add_file -verilog "../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/RV2T_CSR.v"
+add_file -verilog "../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/RV2T_data_access.v"
+add_file -verilog "../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/RV2T_execution_unit.v"
+add_file -verilog "../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/RV2T_fetch_instruction.v"
+add_file -verilog "../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/RV2T_instruction_decode.v"
+add_file -verilog "../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/RV2T_machine_timer.v"
+add_file -verilog "../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/RV2T_memory.v"
+add_file -verilog "../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/RV2T_mm_reg.v"
+add_file -verilog "../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/RV2T_reg_file.v"
+add_file -verilog "../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/mul_div/absolute_value.v"
+add_file -verilog "../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/mul_div/long_slow_div_denom_reg.v"
+add_file -verilog "../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/mul_div/mul_div_32.v"
+add_file -verilog "../../../submodules/PulseRain_MCU/peripherals/UART/UART_TX.v"
+add_file -verilog "../../../submodules/PulseRain_MCU/source/PulseRain_RV2T_MCU.v"
+add_file -verilog "../../../source/Microsemi/Reindeer.v"
+
+
+
+#implementation: "SmartFusion2"
+impl -add SmartFusion2 -type fpga
+
+#
+#implementation attributes
+
+set_option -vlog_std v2001
+set_option -project_relative_includes 1
+set_option -include_path {C:/PulseRain/iReindeer/submodules/OCD/source/;C:/PulseRain/iReindeer/submodules/PulseRain_MCU/common/;C:/PulseRain/iReindeer/submodules/PulseRain_MCU/common/Microsemi/SmartFusion2/}
+
+#device options
+set_option -technology SMARTFUSION2
+set_option -part M2S025
+set_option -package VF256
+set_option -speed_grade STD
+set_option -part_companion ""
+
+#compilation/mapping options
+set_option -use_fsm_explorer 1
+set_option -top_module "Reindeer"
+
+# hdl_compiler_options
+set_option -distributed_compile 0
+
+# mapper_without_write_options
+set_option -frequency 160
+set_option -srs_instrumentation 1
+
+# mapper_options
+set_option -write_verilog 1
+set_option -write_vhdl 0
+
+# actel_options
+set_option -rw_check_on_ram 0
+
+# Microsemi G4
+set_option -run_prop_extract 1
+set_option -maxfan 10000
+set_option -clock_globalthreshold 2
+set_option -async_globalthreshold 12
+set_option -globalthreshold 5000
+set_option -low_power_ram_decomp 0
+set_option -seqshift_to_uram 0
+set_option -disable_io_insertion 1
+set_option -opcond COMTC
+set_option -retiming 1
+set_option -report_path 4000
+set_option -update_models_cp 0
+set_option -preserve_registers 0
+
+# NFilter
+set_option -no_sequential_opt 0
+
+# sequential_optimization_options
+set_option -symbolic_fsm_compiler 1
+
+# Compiler Options
+set_option -compiler_compatible 0
+set_option -resource_sharing 0
+set_option -multi_file_compilation_unit 1
+
+# Compiler Options
+set_option -auto_infer_blackbox 0
+
+#automatic place and route (vendor) options
+set_option -write_apr_constraint 1
+
+#set result format/file last
+project -result_file "SmartFusion2/Reindeer.vm"
+impl -active "SmartFusion2"
