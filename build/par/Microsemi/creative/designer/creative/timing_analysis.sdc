@@ -1,7 +1,7 @@
 # Microsemi Corp.
-# Date: 2018-Nov-23 23:33:22
+# Date: 2018-Nov-24 01:47:01
 # This file was generated based on the following SDC source files:
-#   C:/PulseRain/Reindeer/synth/constraints/Microsemi/Creative/Reindeer.sdc
+#   C:/GitHub/Reindeer/build/par/Microsemi/creative/constraint/Reindeer.sdc
 #
 
 create_clock -name {osc_in} -period 20 [ get_ports { osc_in } ]

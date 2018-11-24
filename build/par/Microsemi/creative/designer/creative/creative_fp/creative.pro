@@ -1,6 +1,6 @@
 <project name="creative" version="1.1">
     <ProjectDirectory>
-        C:\PulseRain\Reindeer\synth\Microsemi\creative\designer\creative\creative_fp
+        C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creative_fp
     </ProjectDirectory>
     <View>
         ChainView
@@ -9,12 +9,12 @@
         M2S025
     </LiberoTargetDevice>
     <LogFile>
-        C:\PulseRain\Reindeer\synth\Microsemi\creative\designer\creative\creative_fp\creative.log
+        C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creative_fp\creative.log
     </LogFile>
     <SerializationOption>
         Skip
     </SerializationOption>
-    <programmer status="enable" type="FlashPro5" revision="UndefRev" connection="usb2.0">
+    <programmer status="enable" type="FlashPro5" revision="UndefRev" connection="UndefConn">
         <name>
             E200108CTE
         </name>

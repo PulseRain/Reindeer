@@ -2,7 +2,7 @@ Timing Report Max Delay Analysis
 
 SmartTime Version v11.9 SP1
 Microsemi Corporation - Microsemi Libero Software Release v11.9 SP1 (Version 11.9.1.0)
-Date: Fri Nov 23 23:11:49 2018
+Date: Fri Nov 23 01:23:39 2018
 
 
 Design: creative
@@ -23,12 +23,12 @@ Scenario for Timing Analysis: timing_analysis
 SUMMARY
 
 Clock Domain:               FCCC_0/GL0
-Period (ns):                9.789
-Frequency (MHz):            102.155
+Period (ns):                6.204
+Frequency (MHz):            161.186
 Required Period (ns):       6.250
 Required Frequency (MHz):   160.000
-External Setup (ns):        -0.303
-Max Clock-To-Out (ns):      10.027
+External Setup (ns):        -0.313
+Max Clock-To-Out (ns):      11.119
 
 Clock Domain:               osc_in
 Period (ns):                1.640
@@ -49,146 +49,122 @@ Clock Domain FCCC_0/GL0
 SET Register to Register
 
 Path 1
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_3:D
-  Delay (ns):            9.510                                                                           
-  Slack (ns):            -3.539                                                                          
-  Arrival (ns):          13.091                                                                          
-  Required (ns):         9.552                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.ram_high_i.gen_if_proc.gen_for_proc[0].ram_8bit_1st.mem_mem_0_1/INST_RAM1K18_IP:A_CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.IR_out_ret_4:D
+  Delay (ns):            5.819                                                                           
+  Slack (ns):            0.046                                                                           
+  Arrival (ns):          9.799                                                                           
+  Required (ns):         9.845                                                                           
   Setup (ns):            0.254                                                                           
-  Minimum Period (ns):   9.789                                                                           
+  Minimum Period (ns):   6.204                                                                           
 
 Path 2
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_0:D
-  Delay (ns):            9.403                                                                           
-  Slack (ns):            -3.440                                                                          
-  Arrival (ns):          12.984                                                                          
-  Required (ns):         9.544                                                                           
-  Setup (ns):            0.254                                                                           
-  Minimum Period (ns):   9.690                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_0_rep1:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[5]
+  Delay (ns):            6.046                                                                           
+  Slack (ns):            0.297                                                                           
+  Arrival (ns):          9.908                                                                           
+  Required (ns):         10.205                                                                          
+  Setup (ns):            0.023                                                                           
+  Minimum Period (ns):   5.953                                                                           
 
 Path 3
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_0:D
-  Delay (ns):            9.278                                                                           
-  Slack (ns):            -3.339                                                                          
-  Arrival (ns):          12.859                                                                          
-  Required (ns):         9.520                                                                           
-  Setup (ns):            0.254                                                                           
-  Minimum Period (ns):   9.589                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_LUI:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[6]
+  Delay (ns):            6.057                                                                           
+  Slack (ns):            0.306                                                                           
+  Arrival (ns):          9.895                                                                           
+  Required (ns):         10.201                                                                          
+  Setup (ns):            0.026                                                                           
+  Minimum Period (ns):   5.944                                                                           
 
 Path 4
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_22:D
-  Delay (ns):            9.210                                                                           
-  Slack (ns):            -3.263                                                                          
-  Arrival (ns):          12.791                                                                          
-  Required (ns):         9.528                                                                           
-  Setup (ns):            0.254                                                                           
-  Minimum Period (ns):   9.513                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_LUI:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[4]
+  Delay (ns):            6.053                                                                           
+  Slack (ns):            0.310                                                                           
+  Arrival (ns):          9.891                                                                           
+  Required (ns):         10.201                                                                          
+  Setup (ns):            0.027                                                                           
+  Minimum Period (ns):   5.940                                                                           
 
 Path 5
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_1:D
-  Delay (ns):            9.045                                                                           
-  Slack (ns):            -3.063                                                                          
-  Arrival (ns):          12.626                                                                          
-  Required (ns):         9.563                                                                           
-  Setup (ns):            0.254                                                                           
-  Minimum Period (ns):   9.313                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_AUIPC:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[6]
+  Delay (ns):            6.001                                                                           
+  Slack (ns):            0.349                                                                           
+  Arrival (ns):          9.852                                                                           
+  Required (ns):         10.201                                                                          
+  Setup (ns):            0.026                                                                           
+  Minimum Period (ns):   5.901                                                                           
 
 
 Expanded Path 1
-  From: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_3:D
-  data required time                             9.552     
-  data arrival time                          -   13.091    
-  slack                                          -3.539    
+  From: Reindeer_0/PulseRain_RV2T_MCU_i.ram_high_i.gen_if_proc.gen_for_proc[0].ram_8bit_1st.mem_mem_0_1/INST_RAM1K18_IP:A_CLK
+  To: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.IR_out_ret_4:D
+  data required time                             9.845     
+  data arrival time                          -   9.799     
+  slack                                          0.046     
   ________________________________________________________
   Data arrival time calculation
   0.000                        FCCC_0/GL0
                +     0.000          Clock source
   0.000                        FCCC_0/CCC_INST/INST_CCC_IP:GL0 (r)
-               +     1.960          Clock generation
-  1.960                        
-               +     0.249          net: FCCC_0/GL0_net
-  2.209                        FCCC_0/GL0_INST:An (r)
-               +     0.177          cell: ADLIB:GBM
-  2.386                        FCCC_0/GL0_INST:YWn (f)
-               +     0.375          net: FCCC_0/GL0_INST/U0_YWn
-  2.761                        FCCC_0/GL0_INST/U0_RGB1_RGB27:An (f)
-               +     0.316          cell: ADLIB:RGB
-  3.077                        FCCC_0/GL0_INST/U0_RGB1_RGB27:YR (r)
-               +     0.504          net: FCCC_0/GL0_INST/U0_RGB1_RGB27_rgbr_net_1
-  3.581                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK (r)
-               +     0.087          cell: ADLIB:SLE
-  3.668                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:Q (r)
-               +     1.939          net: LED_RED_c
-  5.607                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.reg_file_write_addr_0_o2[4]:A (r)
-               +     0.143          cell: ADLIB:CFG2
-  5.750                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.reg_file_write_addr_0_o2[4]:Y (f)
-               +     0.230          net: Reindeer_0/N_624_i
-  5.980                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.un1_read_rs1_data_out_i_2:C (f)
-               +     0.221          cell: ADLIB:CFG4
-  6.201                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.un1_read_rs1_data_out_i_2:Y (r)
-               +     0.678          net: Reindeer_0/N_23_i_1
-  6.879                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.un1_read_rs1_data_out_i_x2_RNI3LV51:B (r)
-               +     0.326          cell: ADLIB:CFG4
-  7.205                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.un1_read_rs1_data_out_i_x2_RNI3LV51:Y (f)
-               +     1.443          net: Reindeer_0/N_23_i
-  8.648                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.read_rs1_data_out[8]:B (f)
-               +     0.099          cell: ADLIB:CFG4
-  8.747                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.read_rs1_data_out[8]:Y (r)
-               +     1.588          net: Reindeer_0/reg_file_read_rs1_data_out[8]
-  10.335                       Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.un5_ALU_out_axb_8:A (r)
-               +     0.158          cell: ADLIB:CFG2
-  10.493                       Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.un5_ALU_out_axb_8:Y (r)
-               +     0.687          net: Reindeer_0/un5_ALU_out_axb_8_Z
-  11.180                       Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.un5_ALU_out_cry_8:C (r)
-               +     0.472          cell: ADLIB:ARI1_CC
-  11.652                       Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.un5_ALU_out_cry_8:UB (r)
-               +     0.000          net: NET_CC_CONFIG2070
-  11.652                       Reindeer_0/PulseRain_RV2T_MCU_i_PulseRain_RV2T_core_i_RV2T_execution_unit_i_un5_ALU_out_cry_0_CC_0:UB[8] (r)
-               +     0.386          cell: ADLIB:CC_CONFIG
-  12.038                       Reindeer_0/PulseRain_RV2T_MCU_i_PulseRain_RV2T_core_i_RV2T_execution_unit_i_un5_ALU_out_cry_0_CC_0:CO (f)
-               +     0.000          net: CI_TO_CO2043
-  12.038                       Reindeer_0/PulseRain_RV2T_MCU_i_PulseRain_RV2T_core_i_RV2T_execution_unit_i_un5_ALU_out_cry_0_CC_1:CI (f)
-               +     0.185          cell: ADLIB:CC_CONFIG
-  12.223                       Reindeer_0/PulseRain_RV2T_MCU_i_PulseRain_RV2T_core_i_RV2T_execution_unit_i_un5_ALU_out_cry_0_CC_1:CO (f)
-               +     0.000          net: CI_TO_CO2044
-  12.223                       Reindeer_0/PulseRain_RV2T_MCU_i_PulseRain_RV2T_core_i_RV2T_execution_unit_i_un5_ALU_out_cry_0_CC_2:CI (f)
-               +     0.294          cell: ADLIB:CC_CONFIG
-  12.517                       Reindeer_0/PulseRain_RV2T_MCU_i_PulseRain_RV2T_core_i_RV2T_execution_unit_i_un5_ALU_out_cry_0_CC_2:CC[5] (f)
-               +     0.000          net: NET_CC_CONFIG2134
-  12.517                       Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.un5_ALU_out_cry_29:CC (f)
-               +     0.056          cell: ADLIB:ARI1_CC
-  12.573                       Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.un5_ALU_out_cry_29:S (r)
-               +     0.518          net: Reindeer_0/un5_ALU_out_reti[29]
-  13.091                       Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_3:D (r)
+               +     2.223          Clock generation
+  2.223                        
+               +     0.259          net: FCCC_0/GL0_net
+  2.482                        FCCC_0/GL0_INST:An (r)
+               +     0.178          cell: ADLIB:GBM
+  2.660                        FCCC_0/GL0_INST:YEn (f)
+               +     0.393          net: FCCC_0/GL0_INST/U0_YWn_GEast
+  3.053                        FCCC_0/GL0_INST/U0_RGB1_RGB46:An (f)
+               +     0.317          cell: ADLIB:RGB
+  3.370                        FCCC_0/GL0_INST/U0_RGB1_RGB46:YL (r)
+               +     0.470          net: FCCC_0/GL0_INST/U0_RGB1_RGB46_rgbl_net_1
+  3.840                        Reindeer_0/PulseRain_RV2T_MCU_i.ram_high_i.gen_if_proc.gen_for_proc[0].ram_8bit_1st.mem_mem_0_1/FF_0:CLK (r)
+               +     0.059          cell: ADLIB:SLE_IP_CLK
+  3.899                        Reindeer_0/PulseRain_RV2T_MCU_i.ram_high_i.gen_if_proc.gen_for_proc[0].ram_8bit_1st.mem_mem_0_1/FF_0:IPCLKn (f)
+               +     0.081          net: Reindeer_0/PulseRain_RV2T_MCU_i_ram_high_i_gen_if_proc_gen_for_proc[0]_ram_8bit_1st_mem_mem_0_1/A_CLK_net
+  3.980                        Reindeer_0/PulseRain_RV2T_MCU_i.ram_high_i.gen_if_proc.gen_for_proc[0].ram_8bit_1st.mem_mem_0_1/INST_RAM1K18_IP:A_CLK (r)
+               +     1.453          cell: ADLIB:RAM1K18_IP
+  5.433                        Reindeer_0/PulseRain_RV2T_MCU_i.ram_high_i.gen_if_proc.gen_for_proc[0].ram_8bit_1st.mem_mem_0_1/INST_RAM1K18_IP:A_DOUT[1] (r)
+               +     1.736          net: Reindeer_0/mem_mem_0_1_A_DOUT_5[1]
+  7.169                        Reindeer_0/PulseRain_RV2T_MCU_i.ram_high_i.gen_if_proc.gen_for_proc[0].ram_8bit_2nd.mem_mem_0_0_RNIGPNS_0:C (r)
+               +     0.074          cell: ADLIB:CFG3
+  7.243                        Reindeer_0/PulseRain_RV2T_MCU_i.ram_high_i.gen_if_proc.gen_for_proc[0].ram_8bit_2nd.mem_mem_0_0_RNIGPNS_0:Y (r)
+               +     0.932          net: Reindeer_0/ocd_mem_word_out[19]
+  8.175                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_outen[19]:B (r)
+               +     0.074          cell: ADLIB:CFG3
+  8.249                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_outen[19]:Y (r)
+               +     1.318          net: Reindeer_0/ocd_mem_word_out_0[19]
+  9.567                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.un1_read_rs1_data_out_i_1_1:C (r)
+               +     0.158          cell: ADLIB:CFG4
+  9.725                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.un1_read_rs1_data_out_i_1_1:Y (r)
+               +     0.074          net: Reindeer_0/un1_read_rs1_data_out_i_1_1_reti
+  9.799                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.IR_out_ret_4:D (r)
                                     
-  13.091                       data arrival time
+  9.799                        data arrival time
   ________________________________________________________
   Data required time calculation
   6.250                        FCCC_0/GL0
                +     0.000          Clock source
   6.250                        FCCC_0/CCC_INST/INST_CCC_IP:GL0 (r)
-               +     1.960          Clock generation
-  8.210                        
-               +     0.249          net: FCCC_0/GL0_net
-  8.459                        FCCC_0/GL0_INST:An (r)
+               +     2.223          Clock generation
+  8.473                        
+               +     0.259          net: FCCC_0/GL0_net
+  8.732                        FCCC_0/GL0_INST:An (r)
                +     0.177          cell: ADLIB:GBM
-  8.636                        FCCC_0/GL0_INST:YWn (f)
-               +     0.361          net: FCCC_0/GL0_INST/U0_YWn
-  8.997                        FCCC_0/GL0_INST/U0_RGB1_RGB9:An (f)
+  8.909                        FCCC_0/GL0_INST:YWn (f)
+               +     0.374          net: FCCC_0/GL0_INST/U0_YWn
+  9.283                        FCCC_0/GL0_INST/U0_RGB1_RGB31:An (f)
                +     0.316          cell: ADLIB:RGB
-  9.313                        FCCC_0/GL0_INST/U0_RGB1_RGB9:YR (r)
-               +     0.493          net: FCCC_0/GL0_INST/U0_RGB1_RGB9_rgbr_net_1
-  9.806                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_3:CLK (r)
+  9.599                        FCCC_0/GL0_INST/U0_RGB1_RGB31:YR (r)
+               +     0.500          net: FCCC_0/GL0_INST/U0_RGB1_RGB31_rgbr_net_1
+  10.099                       Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.IR_out_ret_4:CLK (r)
                -     0.254          Library setup time: ADLIB:SLE
-  9.552                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_3:D
+  9.845                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.IR_out_ret_4:D
                                     
-  9.552                        data required time
+  9.845                        data required time
 
 
 END SET Register to Register
@@ -200,51 +176,51 @@ SET External Setup
 Path 1
   From:                  RXD
   To:                    Reindeer_0/ocd_i.debug_UART_i.UART_i.rxd_sr[0]:D
-  Delay (ns):            2.910                                                                           
+  Delay (ns):            3.167                                                                           
   Slack (ns):                                                                                            
-  Arrival (ns):          2.910                                                                           
+  Arrival (ns):          3.167                                                                           
   Required (ns):                                                                                         
   Setup (ns):            0.254                                                                           
-  External Setup (ns):   -0.303                                                                          
+  External Setup (ns):   -0.313                                                                          
 
 
 Expanded Path 1
   From: RXD
   To: Reindeer_0/ocd_i.debug_UART_i.UART_i.rxd_sr[0]:D
   data required time                             N/C       
-  data arrival time                          -   2.910     
+  data arrival time                          -   3.167     
   slack                                          N/C       
   ________________________________________________________
   Data arrival time calculation
   0.000                        RXD (r)
                +     0.000          net: RXD
   0.000                        RXD_ibuf/U0/U_IOPAD:PAD (r)
-               +     1.111          cell: ADLIB:IOPAD_IN
-  1.111                        RXD_ibuf/U0/U_IOPAD:Y (r)
-               +     0.058          net: RXD_ibuf/U0/YIN1
-  1.169                        RXD_ibuf/U0/U_IOINFF:A (r)
-               +     0.101          cell: ADLIB:IOINFF_BYPASS
-  1.270                        RXD_ibuf/U0/U_IOINFF:Y (r)
-               +     1.640          net: RXD_c
-  2.910                        Reindeer_0/ocd_i.debug_UART_i.UART_i.rxd_sr[0]:D (r)
+               +     1.108          cell: ADLIB:IOPAD_IN
+  1.108                        RXD_ibuf/U0/U_IOPAD:Y (r)
+               +    -0.014          net: RXD_ibuf/U0/YIN1
+  1.094                        RXD_ibuf/U0/U_IOINFF:A (r)
+               +     0.066          cell: ADLIB:IOINFF_BYPASS
+  1.160                        RXD_ibuf/U0/U_IOINFF:Y (r)
+               +     2.007          net: RXD_c
+  3.167                        Reindeer_0/ocd_i.debug_UART_i.UART_i.rxd_sr[0]:D (r)
                                     
-  2.910                        data arrival time
+  3.167                        data arrival time
   ________________________________________________________
   Data required time calculation
   N/C                          FCCC_0/GL0
                +     0.000          Clock source
   N/C                          FCCC_0/CCC_INST/INST_CCC_IP:GL0 (r)
-               +     1.901          Clock generation
+               +     2.157          Clock generation
   N/C                          
-               +     0.242          net: FCCC_0/GL0_net
+               +     0.251          net: FCCC_0/GL0_net
   N/C                          FCCC_0/GL0_INST:An (r)
-               +     0.172          cell: ADLIB:GBM
-  N/C                          FCCC_0/GL0_INST:YWn (f)
-               +     0.364          net: FCCC_0/GL0_INST/U0_YWn
-  N/C                          FCCC_0/GL0_INST/U0_RGB1_RGB29:An (f)
+               +     0.173          cell: ADLIB:GBM
+  N/C                          FCCC_0/GL0_INST:YEn (f)
+               +     0.369          net: FCCC_0/GL0_INST/U0_YWn_GEast
+  N/C                          FCCC_0/GL0_INST/U0_RGB1_RGB28:An (f)
                +     0.307          cell: ADLIB:RGB
-  N/C                          FCCC_0/GL0_INST/U0_RGB1_RGB29:YR (r)
-               +     0.481          net: FCCC_0/GL0_INST/U0_RGB1_RGB29_rgbr_net_1
+  N/C                          FCCC_0/GL0_INST/U0_RGB1_RGB28:YL (r)
+               +     0.477          net: FCCC_0/GL0_INST/U0_RGB1_RGB28_rgbl_net_1
   N/C                          Reindeer_0/ocd_i.debug_UART_i.UART_i.rxd_sr[0]:CLK (r)
                -     0.254          Library setup time: ADLIB:SLE
   N/C                          Reindeer_0/ocd_i.debug_UART_i.UART_i.rxd_sr[0]:D
@@ -258,78 +234,82 @@ SET Clock to Output
 
 Path 1
   From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    LED_RED
-  Delay (ns):            6.446                                                                           
+  To:                    LED_GREEN
+  Delay (ns):            7.294                                                                           
   Slack (ns):                                                                                            
-  Arrival (ns):          10.027                                                                          
+  Arrival (ns):          11.119                                                                          
   Required (ns):                                                                                         
-  Clock to Out (ns):     10.027                                                                          
+  Clock to Out (ns):     11.119                                                                          
 
 Path 2
   From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    LED_GREEN
-  Delay (ns):            6.411                                                                           
+  To:                    LED_RED
+  Delay (ns):            6.406                                                                           
   Slack (ns):                                                                                            
-  Arrival (ns):          9.992                                                                           
+  Arrival (ns):          10.231                                                                          
   Required (ns):                                                                                         
-  Clock to Out (ns):     9.992                                                                           
+  Clock to Out (ns):     10.231                                                                          
 
 Path 3
   From:                  Reindeer_0/TXD_Z:CLK
   To:                    TXD
-  Delay (ns):            4.344                                                                           
+  Delay (ns):            5.170                                                                           
   Slack (ns):                                                                                            
-  Arrival (ns):          7.924                                                                           
+  Arrival (ns):          9.017                                                                           
   Required (ns):                                                                                         
-  Clock to Out (ns):     7.924                                                                           
+  Clock to Out (ns):     9.017                                                                           
 
 
 Expanded Path 1
   From: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To: LED_RED
+  To: LED_GREEN
   data required time                             N/C       
-  data arrival time                          -   10.027    
+  data arrival time                          -   11.119    
   slack                                          N/C       
   ________________________________________________________
   Data arrival time calculation
   0.000                        FCCC_0/GL0
                +     0.000          Clock source
   0.000                        FCCC_0/CCC_INST/INST_CCC_IP:GL0 (r)
-               +     1.960          Clock generation
-  1.960                        
-               +     0.249          net: FCCC_0/GL0_net
-  2.209                        FCCC_0/GL0_INST:An (r)
+               +     2.223          Clock generation
+  2.223                        
+               +     0.259          net: FCCC_0/GL0_net
+  2.482                        FCCC_0/GL0_INST:An (r)
                +     0.177          cell: ADLIB:GBM
-  2.386                        FCCC_0/GL0_INST:YWn (f)
-               +     0.375          net: FCCC_0/GL0_INST/U0_YWn
-  2.761                        FCCC_0/GL0_INST/U0_RGB1_RGB27:An (f)
+  2.659                        FCCC_0/GL0_INST:YWn (f)
+               +     0.374          net: FCCC_0/GL0_INST/U0_YWn
+  3.033                        FCCC_0/GL0_INST/U0_RGB1_RGB31:An (f)
                +     0.316          cell: ADLIB:RGB
-  3.077                        FCCC_0/GL0_INST/U0_RGB1_RGB27:YR (r)
-               +     0.504          net: FCCC_0/GL0_INST/U0_RGB1_RGB27_rgbr_net_1
-  3.581                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK (r)
-               +     0.108          cell: ADLIB:SLE
-  3.689                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:Q (f)
-               +     3.540          net: LED_RED_c
-  7.229                        LED_RED_obuf/U0/U_IOOUTFF:A (f)
+  3.349                        FCCC_0/GL0_INST/U0_RGB1_RGB31:YR (r)
+               +     0.476          net: FCCC_0/GL0_INST/U0_RGB1_RGB31_rgbr_net_1
+  3.825                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK (r)
+               +     0.087          cell: ADLIB:SLE
+  3.912                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:Q (r)
+               +     3.021          net: LED_RED_c
+  6.933                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state_RNIBCFF[1]:A (r)
+               +     0.234          cell: ADLIB:CFG1
+  7.167                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state_RNIBCFF[1]:Y (f)
+               +     0.906          net: LED_GREEN_c
+  8.073                        LED_GREEN_obuf/U0/U_IOOUTFF:A (f)
                +     0.330          cell: ADLIB:IOOUTFF_BYPASS
-  7.559                        LED_RED_obuf/U0/U_IOOUTFF:Y (f)
-               +     0.064          net: LED_RED_obuf/U0/DOUT
-  7.623                        LED_RED_obuf/U0/U_IOPAD:D (f)
+  8.403                        LED_GREEN_obuf/U0/U_IOOUTFF:Y (f)
+               +     0.312          net: LED_GREEN_obuf/U0/DOUT
+  8.715                        LED_GREEN_obuf/U0/U_IOPAD:D (f)
                +     2.404          cell: ADLIB:IOPAD_TRI
-  10.027                       LED_RED_obuf/U0/U_IOPAD:PAD (f)
-               +     0.000          net: LED_RED
-  10.027                       LED_RED (f)
+  11.119                       LED_GREEN_obuf/U0/U_IOPAD:PAD (f)
+               +     0.000          net: LED_GREEN
+  11.119                       LED_GREEN (f)
                                     
-  10.027                       data arrival time
+  11.119                       data arrival time
   ________________________________________________________
   Data required time calculation
   N/C                          FCCC_0/GL0
                +     0.000          Clock source
   N/C                          FCCC_0/CCC_INST/INST_CCC_IP:GL0 (r)
-               +     1.960          Clock generation
+               +     2.223          Clock generation
   N/C                          
                                     
-  N/C                          LED_RED (f)
+  N/C                          LED_GREEN (f)
 
 
 END SET Clock to Output
@@ -340,122 +320,122 @@ SET Register to Asynchronous
 
 Path 1
   From:                  Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_CSR_i.read_data_out_i[31]:ALn
-  Delay (ns):            3.770                                                                           
-  Slack (ns):            2.123                                                                           
-  Arrival (ns):          7.345                                                                           
-  Required (ns):         9.468                                                                           
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_data_access_i.load_masked_data[14]:ALn
+  Delay (ns):            3.279                                                                           
+  Slack (ns):            2.611                                                                           
+  Arrival (ns):          7.129                                                                           
+  Required (ns):         9.740                                                                           
   Recovery (ns):         0.353                                                                           
-  Minimum Period (ns):   4.127                                                                           
-  Skew (ns):             0.004                                                                           
+  Minimum Period (ns):   3.639                                                                           
+  Skew (ns):             0.007                                                                           
 
 Path 2
   From:                  Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_CSR_i.mtvec[28]:ALn
-  Delay (ns):            3.770                                                                           
-  Slack (ns):            2.123                                                                           
-  Arrival (ns):          7.345                                                                           
-  Required (ns):         9.468                                                                           
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_data_access_i.load_masked_data[5]:ALn
+  Delay (ns):            3.279                                                                           
+  Slack (ns):            2.611                                                                           
+  Arrival (ns):          7.129                                                                           
+  Required (ns):         9.740                                                                           
   Recovery (ns):         0.353                                                                           
-  Minimum Period (ns):   4.127                                                                           
-  Skew (ns):             0.004                                                                           
+  Minimum Period (ns):   3.639                                                                           
+  Skew (ns):             0.007                                                                           
 
 Path 3
   From:                  Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_CSR_i.mtvec[29]:ALn
-  Delay (ns):            3.770                                                                           
-  Slack (ns):            2.123                                                                           
-  Arrival (ns):          7.345                                                                           
-  Required (ns):         9.468                                                                           
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_data_access_i.load_masked_data[18]:ALn
+  Delay (ns):            3.279                                                                           
+  Slack (ns):            2.611                                                                           
+  Arrival (ns):          7.129                                                                           
+  Required (ns):         9.740                                                                           
   Recovery (ns):         0.353                                                                           
-  Minimum Period (ns):   4.127                                                                           
-  Skew (ns):             0.004                                                                           
+  Minimum Period (ns):   3.639                                                                           
+  Skew (ns):             0.007                                                                           
 
 Path 4
   From:                  Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_CSR_i.read_data_out_i[28]:ALn
-  Delay (ns):            3.770                                                                           
-  Slack (ns):            2.123                                                                           
-  Arrival (ns):          7.345                                                                           
-  Required (ns):         9.468                                                                           
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.PC_out[29]:ALn
+  Delay (ns):            3.279                                                                           
+  Slack (ns):            2.611                                                                           
+  Arrival (ns):          7.129                                                                           
+  Required (ns):         9.740                                                                           
   Recovery (ns):         0.353                                                                           
-  Minimum Period (ns):   4.127                                                                           
-  Skew (ns):             0.004                                                                           
+  Minimum Period (ns):   3.639                                                                           
+  Skew (ns):             0.007                                                                           
 
 Path 5
   From:                  Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_CSR_i.mstatus[29]:ALn
-  Delay (ns):            3.770                                                                           
-  Slack (ns):            2.123                                                                           
-  Arrival (ns):          7.345                                                                           
-  Required (ns):         9.468                                                                           
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.PC_out[7]:ALn
+  Delay (ns):            3.279                                                                           
+  Slack (ns):            2.611                                                                           
+  Arrival (ns):          7.129                                                                           
+  Required (ns):         9.740                                                                           
   Recovery (ns):         0.353                                                                           
-  Minimum Period (ns):   4.127                                                                           
-  Skew (ns):             0.004                                                                           
+  Minimum Period (ns):   3.639                                                                           
+  Skew (ns):             0.007                                                                           
 
 
 Expanded Path 1
   From: Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:CLK
-  To: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_CSR_i.read_data_out_i[31]:ALn
-  data required time                             9.468     
-  data arrival time                          -   7.345     
-  slack                                          2.123     
+  To: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_data_access_i.load_masked_data[14]:ALn
+  data required time                             9.740     
+  data arrival time                          -   7.129     
+  slack                                          2.611     
   ________________________________________________________
   Data arrival time calculation
   0.000                        FCCC_0/GL0
                +     0.000          Clock source
   0.000                        FCCC_0/CCC_INST/INST_CCC_IP:GL0 (r)
-               +     1.960          Clock generation
-  1.960                        
-               +     0.249          net: FCCC_0/GL0_net
-  2.209                        FCCC_0/GL0_INST:An (r)
-               +     0.177          cell: ADLIB:GBM
-  2.386                        FCCC_0/GL0_INST:YWn (f)
-               +     0.375          net: FCCC_0/GL0_INST/U0_YWn
-  2.761                        FCCC_0/GL0_INST/U0_RGB1_RGB23:An (f)
-               +     0.316          cell: ADLIB:RGB
-  3.077                        FCCC_0/GL0_INST/U0_RGB1_RGB23:YR (r)
-               +     0.498          net: FCCC_0/GL0_INST/U0_RGB1_RGB23_rgbr_net_1
-  3.575                        Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:CLK (r)
-               +     0.108          cell: ADLIB:SLE
-  3.683                        Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:Q (f)
-               +     0.443          net: Reindeer_0/cpu_reset
-  4.126                        Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_RNIKJKK:A (f)
-               +     0.147          cell: ADLIB:CFG2
-  4.273                        Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_RNIKJKK:Y (r)
-               +     1.470          net: Reindeer_0/N_15962
-  5.743                        Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_RNIKJKK_0:An (f)
-               +     0.374          cell: ADLIB:GBM
-  6.117                        Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_RNIKJKK_0:YEn (f)
-               +     0.369          net: Reindeer_0/ocd_i_debug_coprocessor_i_cpu_reset_RNIKJKK_0/U0_YWn_GEast
-  6.486                        Reindeer_0/ocd_i_debug_coprocessor_i_cpu_reset_RNIKJKK_0/U0_RGB1_RGB20:An (f)
+               +     2.223          Clock generation
+  2.223                        
+               +     0.259          net: FCCC_0/GL0_net
+  2.482                        FCCC_0/GL0_INST:An (r)
+               +     0.178          cell: ADLIB:GBM
+  2.660                        FCCC_0/GL0_INST:YEn (f)
+               +     0.380          net: FCCC_0/GL0_INST/U0_YWn_GEast
+  3.040                        FCCC_0/GL0_INST/U0_RGB1_RGB24:An (f)
                +     0.317          cell: ADLIB:RGB
-  6.803                        Reindeer_0/ocd_i_debug_coprocessor_i_cpu_reset_RNIKJKK_0/U0_RGB1_RGB20:YL (r)
-               +     0.542          net: Reindeer_0/ocd_i_debug_coprocessor_i_cpu_reset_RNIKJKK_0/U0_RGB1_RGB20_rgbl_net_1
-  7.345                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_CSR_i.read_data_out_i[31]:ALn (r)
+  3.357                        FCCC_0/GL0_INST/U0_RGB1_RGB24:YL (r)
+               +     0.493          net: FCCC_0/GL0_INST/U0_RGB1_RGB24_rgbl_net_1
+  3.850                        Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:CLK (r)
+               +     0.108          cell: ADLIB:SLE
+  3.958                        Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:Q (f)
+               +     0.320          net: Reindeer_0/cpu_reset
+  4.278                        Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_RNIKJKK:A (f)
+               +     0.221          cell: ADLIB:CFG2
+  4.499                        Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_RNIKJKK:Y (r)
+               +     1.023          net: Reindeer_0/N_25755
+  5.522                        Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_RNIKJKK_0:An (f)
+               +     0.374          cell: ADLIB:GBM
+  5.896                        Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_RNIKJKK_0:YWn (f)
+               +     0.371          net: Reindeer_0/ocd_i_debug_coprocessor_i_cpu_reset_RNIKJKK_0/U0_YWn
+  6.267                        Reindeer_0/ocd_i_debug_coprocessor_i_cpu_reset_RNIKJKK_0/U0_RGB1_RGB18:An (f)
+               +     0.316          cell: ADLIB:RGB
+  6.583                        Reindeer_0/ocd_i_debug_coprocessor_i_cpu_reset_RNIKJKK_0/U0_RGB1_RGB18:YR (r)
+               +     0.546          net: Reindeer_0/ocd_i_debug_coprocessor_i_cpu_reset_RNIKJKK_0/U0_RGB1_RGB18_rgbr_net_1
+  7.129                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_data_access_i.load_masked_data[14]:ALn (r)
                                     
-  7.345                        data arrival time
+  7.129                        data arrival time
   ________________________________________________________
   Data required time calculation
   6.250                        FCCC_0/GL0
                +     0.000          Clock source
   6.250                        FCCC_0/CCC_INST/INST_CCC_IP:GL0 (r)
-               +     1.960          Clock generation
-  8.210                        
-               +     0.249          net: FCCC_0/GL0_net
-  8.459                        FCCC_0/GL0_INST:An (r)
-               +     0.178          cell: ADLIB:GBM
-  8.637                        FCCC_0/GL0_INST:YEn (f)
-               +     0.374          net: FCCC_0/GL0_INST/U0_YWn_GEast
-  9.011                        FCCC_0/GL0_INST/U0_RGB1_RGB22:An (f)
-               +     0.317          cell: ADLIB:RGB
-  9.328                        FCCC_0/GL0_INST/U0_RGB1_RGB22:YL (r)
-               +     0.493          net: FCCC_0/GL0_INST/U0_RGB1_RGB22_rgbl_net_1
-  9.821                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_CSR_i.read_data_out_i[31]:CLK (r)
+               +     2.223          Clock generation
+  8.473                        
+               +     0.259          net: FCCC_0/GL0_net
+  8.732                        FCCC_0/GL0_INST:An (r)
+               +     0.177          cell: ADLIB:GBM
+  8.909                        FCCC_0/GL0_INST:YWn (f)
+               +     0.374          net: FCCC_0/GL0_INST/U0_YWn
+  9.283                        FCCC_0/GL0_INST/U0_RGB1_RGB23:An (f)
+               +     0.316          cell: ADLIB:RGB
+  9.599                        FCCC_0/GL0_INST/U0_RGB1_RGB23:YR (r)
+               +     0.494          net: FCCC_0/GL0_INST/U0_RGB1_RGB23_rgbr_net_1
+  10.093                       Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_data_access_i.load_masked_data[14]:CLK (r)
                -     0.353          Library recovery time: ADLIB:SLE
-  9.468                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_CSR_i.read_data_out_i[31]:ALn
+  9.740                        Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_data_access_i.load_masked_data[14]:ALn
                                     
-  9.468                        data required time
+  9.740                        data required time
 
 
 END SET Register to Asynchronous

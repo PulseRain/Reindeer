@@ -1,138 +1,62 @@
-Info: No timing constraint has been associated to the 'Place and Route' tool. 'Place and Route' will be run in non Timing Driven mode.
+INFO: Reading User SDC file C:\GitHub\Reindeer\build\par\Microsemi\creative\constraint\Reindeer.sdc.
+
 ***** Place and Route Configurations *****
-Timing-driven            : OFF
+Timing-driven            : ON
 Power-driven             : OFF
-High-effort              : OFF
+High-effort              : ON
 Repair min-delay         : ON
 Incremental              : OFF
+Inter-clock optimization : ON
+TDPR scenario            : place_and_route
 
-INFO: No User PDC file(s) was specified.
+INFO: Reading User PDC file C:\GitHub\Reindeer\build\par\Microsemi\creative\constraint\io\Reindeer.pdc. 0 error(s) and 0 warning(s)
 
 Running the I/O Bank and Globals Assigner.
-Info:  I/O Bank and Globals Assigner identified 0 fixed I/O macros, 5 unfixed I/O macros
+Info:  I/O Bank and Globals Assigner identified 5 fixed I/O macros, 0 unfixed I/O macros
 
 I/O Bank and Globals Assigner completed successfully.
 Total time spent in I/O Bank and Globals Assigner: 1 seconds
 
 Placer V4.0 - 11.9.1 
-Design: creative                        Started: Fri Nov 23 22:17:59 2018
+Design: creative                        Started: Sat Nov 24 01:09:23 2018
 
-Initializing Standard Placement ...
+Initializing High-Effort Timing-Driven Placement ...
 Placing design...
 End of placement.
-Pre-Placement Runtime        : 26 seconds
-Placement Runtime            : 58 seconds
+Pre-Placement Runtime        : 33 seconds
+Placement Runtime            : 394 seconds
 
 Placer completed successfully.
 
 Design: creative                        
-Finished: Fri Nov 23 22:19:48 2018
-Total CPU Time:     00:01:45            Total Elapsed Time: 00:01:49
-Total Memory Usage: 229.2 Mbytes
+Finished: Sat Nov 24 01:18:04 2018
+Total CPU Time:     00:08:34            Total Elapsed Time: 00:08:41
+Total Memory Usage: 430.1 Mbytes
                         o - o - o - o - o - o
 
 
-Router 
-Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creativeStarted: Fri Nov 23 22:20:12 2018
+Timing-driven Router 
+Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creativeStarted: Sat Nov 24 01:18:35 2018
 
 
-Router completed successfully.
+Timing-driven Router completed successfully.
 
 Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creative
-Finished: Fri Nov 23 22:21:21 2018
-Total CPU Time:     00:01:06            Total Elapsed Time: 00:01:09
-Total Memory Usage: 953.4 Mbytes
+Finished: Sat Nov 24 01:21:53 2018
+Total CPU Time:     00:03:13            Total Elapsed Time: 00:03:18
+Total Memory Usage: 1218.1 Mbytes
                         o - o - o - o - o - o
 
-
-Router 
-Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creativeStarted: Fri Nov 23 22:21:35 2018
-
-
-Router completed successfully.
-
-Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creative
-Finished: Fri Nov 23 22:22:44 2018
-Total CPU Time:     00:01:07            Total Elapsed Time: 00:01:09
-Total Memory Usage: 953.1 Mbytes
-                        o - o - o - o - o - o
-
+Info: Iteration 1:
+  Total violating paths eligible for improvement: 0
+  Worst minimum delay slack: 
 Resource Usage
 +---------------+------+-------+------------+
 | Type          | Used | Total | Percentage |
 +---------------+------+-------+------------+
-| 4LUT          | 4434 | 27696 | 16.01      |
-| DFF           | 3073 | 27696 | 11.10      |
+| 4LUT          | 4669 | 27696 | 16.86      |
+| DFF           | 3346 | 27696 | 12.08      |
 | I/O Register  | 0    | 408   | 0.00       |
-| Logic Element | 4684 | 27696 | 16.91      |
-+---------------+------+-------+------------+
-
-Info: No timing constraint has been associated to the 'Place and Route' tool. 'Place and Route' will be run in non Timing Driven mode.
-***** Place and Route Configurations *****
-Timing-driven            : OFF
-Power-driven             : OFF
-High-effort              : OFF
-Repair min-delay         : ON
-Incremental              : OFF
-
-INFO: No User PDC file(s) was specified.
-
-Running the I/O Bank and Globals Assigner.
-Info:  I/O Bank and Globals Assigner identified 0 fixed I/O macros, 5 unfixed I/O macros
-
-I/O Bank and Globals Assigner completed successfully.
-Total time spent in I/O Bank and Globals Assigner: 0 seconds
-
-Placer V4.0 - 11.9.1 
-Design: creative                        Started: Fri Nov 23 22:56:48 2018
-
-Initializing Standard Placement ...
-Placing design...
-End of placement.
-Pre-Placement Runtime        : 26 seconds
-Placement Runtime            : 62 seconds
-
-Placer completed successfully.
-
-Design: creative                        
-Finished: Fri Nov 23 22:58:41 2018
-Total CPU Time:     00:01:50            Total Elapsed Time: 00:01:53
-Total Memory Usage: 229.6 Mbytes
-                        o - o - o - o - o - o
-
-
-Router 
-Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creativeStarted: Fri Nov 23 22:59:05 2018
-
-
-Router completed successfully.
-
-Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creative
-Finished: Fri Nov 23 23:00:13 2018
-Total CPU Time:     00:01:06            Total Elapsed Time: 00:01:08
-Total Memory Usage: 953.5 Mbytes
-                        o - o - o - o - o - o
-
-
-Router 
-Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creativeStarted: Fri Nov 23 23:00:27 2018
-
-
-Router completed successfully.
-
-Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creative
-Finished: Fri Nov 23 23:01:35 2018
-Total CPU Time:     00:01:06            Total Elapsed Time: 00:01:08
-Total Memory Usage: 953.2 Mbytes
-                        o - o - o - o - o - o
-
-Resource Usage
-+---------------+------+-------+------------+
-| Type          | Used | Total | Percentage |
-+---------------+------+-------+------------+
-| 4LUT          | 4434 | 27696 | 16.01      |
-| DFF           | 3073 | 27696 | 11.10      |
-| I/O Register  | 0    | 408   | 0.00       |
-| Logic Element | 4685 | 27696 | 16.92      |
+| Logic Element | 4956 | 27696 | 17.89      |
 +---------------+------+-------+------------+
 

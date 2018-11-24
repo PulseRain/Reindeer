@@ -1,0 +1,11 @@
+
+#1001 : create_clock -name osc_in -period 20 [get_ports { osc_in }]
+# line 7 in c:/github/reindeer/build/par/microsemi/creative/designer/creative/synthesis.fdc
+
+create_clock -name {osc_in} -period {20.000} [get_ports {osc_in}]
+
+#1002 : create_generated_clock -name FCCC_0/GL0 -multiply_by 16 -divide_by 5 -source [get_pins { FCCC_0.CCC_INST.CLK0_PAD }] [get_pins { FCCC_0.CCC_INST.GL0 }]
+# line 8 in c:/github/reindeer/build/par/microsemi/creative/designer/creative/synthesis.fdc
+
+create_generated_clock -name {FCCC_0/GL0} -multiply_by {16} -divide_by {5} -source [get_pins {FCCC_0.CCC_INST.CLK0_PAD}] [get_pins {FCCC_0.CCC_INST.GL0}]
+define_attribute {i:FCCC_0.CLK0_PAD_INST} {syn_noprune} 1

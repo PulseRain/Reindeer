@@ -1,0 +1,30 @@
+# Synopsys Constraint Checker(syntax only), version mapact, Build 2172R, built Oct 30 2017
+# Copyright (C) 1994-2017 Synopsys, Inc. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+
+# Written on Sat Nov 24 01:07:20 2018
+
+
+##### DESIGN INFO #######################################################
+
+Top View:                "creative"
+Constraint File(s):      "C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\synthesis.fdc"
+
+#Run constraint checker to find more issues with constraints.
+#########################################################################
+
+
+
+No issues found in constraint syntax.
+
+
+
+Clock Summary
+*************
+
+Start          Requested     Requested     Clock                       Clock                Clock
+Clock          Frequency     Period        Type                        Group                Load 
+-------------------------------------------------------------------------------------------------
+FCCC_0/GL0     160.0 MHz     6.250         generated (from osc_in)     default_clkgroup     2440 
+System         100.0 MHz     10.000        system                      system_clkgroup      0    
+osc_in         50.0 MHz      20.000        declared                    default_clkgroup     0    
+=================================================================================================

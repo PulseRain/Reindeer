@@ -1,6 +1,6 @@
 Resource Report
 Microsemi Corporation - Microsemi Libero Software Release v11.9 SP1 (Version 11.9.1.0)
-Date: Fri Nov 23 22:17:31 2018
+Date: Sat Nov 24 01:08:14 2018
 
 Device Selection
 +--------------------------------+----------------+
@@ -37,8 +37,8 @@ Resource Usage
 +---------------------------+------+-------+------------+
 | Type                      | Used | Total | Percentage |
 +---------------------------+------+-------+------------+
-| 4LUT                      | 4434 | 27696 | 16.01      |
-| DFF                       | 3073 | 27696 | 11.10      |
+| 4LUT                      | 4669 | 27696 | 16.86      |
+| DFF                       | 3346 | 27696 | 12.08      |
 | I/O Register              | 0    | 414   | 0.00       |
 | User I/O                  | 5    | 138   | 3.62       |
 | -- Single-ended I/O       | 5    | 138   | 3.62       |
@@ -58,17 +58,17 @@ Detailed Logic Resource Usage
 +--------------------------+------+------+
 | Type                     | 4LUT | DFF  |
 +--------------------------+------+------+
-| Fabric Logic             | 3498 | 2137 |
+| Fabric Logic             | 3733 | 2410 |
 | RAM64x18 Interface Logic | 72   | 72   |
 | RAM1K18 Interface Logic  | 864  | 864  |
 | MACC Interface Logic     | 0    | 0    |
-| Total Used               | 4434 | 3073 |
+| Total Used               | 4669 | 3346 |
 +--------------------------+------+------+
 
 Detailed Carry Chains Resource Usage
 +--------+------+
 | Length | Used |
-| 2      | 67   |
+| 2      | 75   |
 | 8      | 2    |
 | 9      | 1    |
 | 11     | 2    |
@@ -80,8 +80,9 @@ Detailed Carry Chains Resource Usage
 | 31     | 3    |
 | 32     | 4    |
 | 33     | 2    |
-| 64     | 2    |
-| Total  | 90   |
+| 64     | 3    |
+| 65     | 1    |
+| Total  | 100  |
 +--------+------+
 
 I/O Function
@@ -115,13 +116,13 @@ Nets assigned to chip global resources
 +--------+---------+--------------------------------------------------------------------------+
 | Fanout | Type    | Name                                                                     |
 +--------+---------+--------------------------------------------------------------------------+
-| 2167   | INT_NET | Net   : FCCC_0_GL0                                                       |
+| 2440   | INT_NET | Net   : FCCC_0_GL0                                                       |
 |        |         | Driver: FCCC_0/GL0_INST/U0_RGB1                                          |
 |        |         | Source: NETLIST                                                          |
-| 1656   | INT_NET | Net   : Reindeer_0/cpu_reset_RNIKJKK_0                                   |
+| 1902   | INT_NET | Net   : Reindeer_0/cpu_reset_RNIKJKK_0                                   |
 |        |         | Driver: Reindeer_0/ocd_i_debug_coprocessor_i_cpu_reset_RNIKJKK_0/U0_RGB1 |
 |        |         | Source: NETLIST                                                          |
-| 480    | INT_NET | Net   : Reindeer_0/NN_2                                                  |
+| 507    | INT_NET | Net   : Reindeer_0/NN_2                                                  |
 |        |         | Driver: Reindeer_0/reset_n_RNIGUS4/U0_RGB1                               |
 |        |         | Source: NETLIST                                                          |
 +--------+---------+--------------------------------------------------------------------------+
@@ -136,51 +137,51 @@ High fanout nets
 +--------+---------+---------------------------------------------------------------------------------------------------------------------+
 | Fanout | Type    | Name                                                                                                                |
 +--------+---------+---------------------------------------------------------------------------------------------------------------------+
-| 222    | INT_NET | Net   : Reindeer_0/exe_enable                                                                                       |
+| 216    | INT_NET | Net   : Reindeer_0/exe_enable                                                                                       |
 |        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[6]                    |
-| 145    | INT_NET | Net   : Reindeer_0/activate_exception                                                                               |
+| 151    | INT_NET | Net   : Reindeer_0/rs2[1]                                                                                           |
+|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_out[21]                   |
+| 143    | INT_NET | Net   : Reindeer_0/activate_exception                                                                               |
 |        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[12]                   |
 | 132    | INT_NET | Net   : Reindeer_0/reply_enable                                                                                     |
 |        |         | Driver: Reindeer_0/ocd_i.debug_coprocessor_i.reply_enable_out                                                       |
-| 128    | INT_NET | Net   : Reindeer_0/decode_ctl_load_Y_from_imm_12                                                                    |
-|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.ctl_load_Y_from_imm_12_0_a3 |
-| 128    | INT_NET | Net   : Reindeer_0/N_644_i                                                                                          |
-|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.N_644_i                               |
-| 119    | INT_NET | Net   : Reindeer_0/decode_IR_out[31]                                                                                |
-|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.IR_out[31]                  |
-| 109    | INT_NET | Net   : Reindeer_0/rs2[1]                                                                                           |
-|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_out[21]                   |
-| 104    | INT_NET | Net   : LED_RED_c                                                                                                   |
-|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]                    |
 | 102    | INT_NET | Net   : Reindeer_0/fetch_init_2_Z                                                                                   |
 |        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.fetch_proc.fetch_init_2             |
-| 97     | INT_NET | Net   : Reindeer_0/rs2[0]                                                                                           |
-|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_out[20]                   |
+| 99     | INT_NET | Net   : Reindeer_0/decode_IR_out[31]                                                                                |
+|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.IR_out[31]                  |
+| 97     | INT_NET | Net   : Reindeer_0/decode_ctl_load_Y_from_imm_12                                                                    |
+|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.ctl_load_Y_from_imm_12_0_a4 |
+| 97     | INT_NET | Net   : Reindeer_0/N_610_i                                                                                          |
+|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.N_610_i                               |
+| 92     | INT_NET | Net   : LED_RED_c                                                                                                   |
+|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]                    |
+| 86     | INT_NET | Net   : Reindeer_0/exe_data_to_storeoi[0]                                                                           |
+|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_2[0]                          |
 +--------+---------+---------------------------------------------------------------------------------------------------------------------+
 
 High fanout nets (through buffer trees)
 +--------+---------+---------------------------------------------------------------------------------------------------------------------+
 | Fanout | Type    | Name                                                                                                                |
 +--------+---------+---------------------------------------------------------------------------------------------------------------------+
-| 222    | INT_NET | Net   : Reindeer_0/exe_enable                                                                                       |
+| 216    | INT_NET | Net   : Reindeer_0/exe_enable                                                                                       |
 |        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[6]                    |
-| 145    | INT_NET | Net   : Reindeer_0/activate_exception                                                                               |
+| 151    | INT_NET | Net   : Reindeer_0/rs2[1]                                                                                           |
+|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_out[21]                   |
+| 143    | INT_NET | Net   : Reindeer_0/activate_exception                                                                               |
 |        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[12]                   |
 | 132    | INT_NET | Net   : Reindeer_0/reply_enable                                                                                     |
 |        |         | Driver: Reindeer_0/ocd_i.debug_coprocessor_i.reply_enable_out                                                       |
-| 128    | INT_NET | Net   : Reindeer_0/decode_ctl_load_Y_from_imm_12                                                                    |
-|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.ctl_load_Y_from_imm_12_0_a3 |
-| 128    | INT_NET | Net   : Reindeer_0/N_644_i                                                                                          |
-|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.N_644_i                               |
-| 119    | INT_NET | Net   : Reindeer_0/decode_IR_out[31]                                                                                |
-|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.IR_out[31]                  |
-| 109    | INT_NET | Net   : Reindeer_0/rs2[1]                                                                                           |
-|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_out[21]                   |
-| 104    | INT_NET | Net   : LED_RED_c                                                                                                   |
-|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]                    |
 | 102    | INT_NET | Net   : Reindeer_0/fetch_init_2_Z                                                                                   |
 |        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.fetch_proc.fetch_init_2             |
-| 97     | INT_NET | Net   : Reindeer_0/rs2[0]                                                                                           |
-|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_out[20]                   |
+| 99     | INT_NET | Net   : Reindeer_0/decode_IR_out[31]                                                                                |
+|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.IR_out[31]                  |
+| 97     | INT_NET | Net   : Reindeer_0/decode_ctl_load_Y_from_imm_12                                                                    |
+|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.ctl_load_Y_from_imm_12_0_a4 |
+| 97     | INT_NET | Net   : Reindeer_0/N_610_i                                                                                          |
+|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.N_610_i                               |
+| 92     | INT_NET | Net   : LED_RED_c                                                                                                   |
+|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]                    |
+| 86     | INT_NET | Net   : Reindeer_0/exe_data_to_storeoi[0]                                                                           |
+|        |         | Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_2[0]                          |
 +--------+---------+---------------------------------------------------------------------------------------------------------------------+
 

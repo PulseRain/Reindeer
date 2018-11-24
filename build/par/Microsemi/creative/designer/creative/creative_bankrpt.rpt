@@ -1,5 +1,5 @@
 ********************************************************************
-I/O Bank Report - Date: Fri Nov 23 23:01:52 2018
+I/O Bank Report - Date: Sat Nov 24 01:23:17 2018
 Product: Designer
 Release: v11.9 SP1
 Version: 11.9.1.0
@@ -36,12 +36,12 @@ I/O Bank Resource Usage:
     ------|-------|-------|------|-------|-------|--------|------|-------|----------|---------
     Bank0 | N/A   | N/A   | 0    | 64    | 0     | 32     | N/A  | N/A   | N/A      | DDRIO   
     Bank1 | N/A   | N/A   | 0    | 4     | 0     | 0      | N/A  | N/A   | N/A      | MSIO    
-    Bank2 | N/A   | N/A   | 0    | 24    | 0     | 12     | N/A  | N/A   | N/A      | MSIO    
+    Bank2 | 3.30v | N/A   | 3    | 24    | 0     | 12     | N/A  | N/A   | N/A      | MSIO    
     Bank3 | N/A   | N/A   | 0    | 0     | 0     | 0      | N/A  | N/A   | N/A      | JTAG    
-    Bank4 | 3.30v | N/A   | 2    | 28    | 0     | 14     | N/A  | N/A   | N/A      | MSIO    
+    Bank4 | N/A   | N/A   | 0    | 28    | 0     | 14     | N/A  | N/A   | N/A      | MSIO    
     Bank5 | N/A   | N/A   | 0    | 4     | 0     | 2      | N/A  | N/A   | N/A      | MSIOD   
     Bank6 | N/A   | N/A   | 0    | 4     | 0     | 0      | N/A  | N/A   | N/A      | MSIOD   
-    Bank7 | 3.30v | N/A   | 3    | 10    | 0     | 5      | N/A  | N/A   | N/A      | MSIO    
+    Bank7 | 3.30v | N/A   | 2    | 10    | 0     | 5      | N/A  | N/A   | N/A      | MSIO    
 
 I/O Voltage Usage:
 
@@ -49,5 +49,5 @@ I/O Voltage Usage:
     -------|-------|------|-------
      Vddi  | Vref  | Used | Total 
     -------|-------|------|-------
-     3.30v | N/A   | 5    | 38    
+     3.30v | N/A   | 5    | 34    
 

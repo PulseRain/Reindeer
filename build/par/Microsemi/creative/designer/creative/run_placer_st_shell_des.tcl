@@ -15,6 +15,6 @@ set_def {RTG4_MITIGATION_ON} {0}
 set_def USE_CONSTRAINTS_FLOW 1
 set_def NETLIST_TYPE EDIF
 set_name creative
-set_workdir {C:\PulseRain\Reindeer\synth\Microsemi\creative\designer\creative}
-set_log     {C:\PulseRain\Reindeer\synth\Microsemi\creative\designer\creative\creative_sdc.log}
+set_workdir {C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative}
+set_log     {C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creative_sdc.log}
 set_design_state pre_layout

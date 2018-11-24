@@ -1,5 +1,5 @@
 probe \
-    -desdir {C:\PulseRain\Reindeer\synth\Microsemi\creative\designer\creative} \
+    -desdir {C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative} \
     -design creative \
     -fam SmartFusion2 \
     -die PA4M2500_N \

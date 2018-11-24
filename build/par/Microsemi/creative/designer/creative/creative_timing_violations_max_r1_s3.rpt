@@ -2,7 +2,7 @@ Timing Violation Report Max Delay Analysis
 
 SmartTime Version v11.9 SP1
 Microsemi Corporation - Microsemi Libero Software Release v11.9 SP1 (Version 11.9.1.0)
-Date: Fri Nov 23 23:11:53 2018
+Date: Fri Nov 23 01:23:41 2018
 
 
 Design: creative
@@ -20,802 +20,802 @@ Scenario for Timing Analysis: timing_analysis
 
 
 Path 1
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_3:D
-  Delay (ns):            9.510                                                                           
-  Slack (ns):            -3.539                                                                          
-  Arrival (ns):          13.091                                                                          
-  Required (ns):         9.552                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.ram_high_i.gen_if_proc.gen_for_proc[0].ram_8bit_1st.mem_mem_0_1/INST_RAM1K18_IP:A_CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.IR_out_ret_4:D
+  Delay (ns):            5.819                                                                           
+  Slack (ns):            0.046                                                                           
+  Arrival (ns):          9.799                                                                           
+  Required (ns):         9.845                                                                           
 
 Path 2
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_0:D
-  Delay (ns):            9.403                                                                           
-  Slack (ns):            -3.440                                                                          
-  Arrival (ns):          12.984                                                                          
-  Required (ns):         9.544                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_0_rep1:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[5]
+  Delay (ns):            6.046                                                                           
+  Slack (ns):            0.297                                                                           
+  Arrival (ns):          9.908                                                                           
+  Required (ns):         10.205                                                                          
 
 Path 3
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_0:D
-  Delay (ns):            9.278                                                                           
-  Slack (ns):            -3.339                                                                          
-  Arrival (ns):          12.859                                                                          
-  Required (ns):         9.520                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_LUI:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[6]
+  Delay (ns):            6.057                                                                           
+  Slack (ns):            0.306                                                                           
+  Arrival (ns):          9.895                                                                           
+  Required (ns):         10.201                                                                          
 
 Path 4
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_22:D
-  Delay (ns):            9.210                                                                           
-  Slack (ns):            -3.263                                                                          
-  Arrival (ns):          12.791                                                                          
-  Required (ns):         9.528                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_LUI:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[4]
+  Delay (ns):            6.053                                                                           
+  Slack (ns):            0.310                                                                           
+  Arrival (ns):          9.891                                                                           
+  Required (ns):         10.201                                                                          
 
 Path 5
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_1:D
-  Delay (ns):            9.045                                                                           
-  Slack (ns):            -3.063                                                                          
-  Arrival (ns):          12.626                                                                          
-  Required (ns):         9.563                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_AUIPC:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[6]
+  Delay (ns):            6.001                                                                           
+  Slack (ns):            0.349                                                                           
+  Arrival (ns):          9.852                                                                           
+  Required (ns):         10.201                                                                          
 
 Path 6
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_6:D
-  Delay (ns):            9.027                                                                           
-  Slack (ns):            -3.056                                                                          
-  Arrival (ns):          12.608                                                                          
-  Required (ns):         9.552                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_AUIPC:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[4]
+  Delay (ns):            5.997                                                                           
+  Slack (ns):            0.353                                                                           
+  Arrival (ns):          9.848                                                                           
+  Required (ns):         10.201                                                                          
 
 Path 7
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_4:D
-  Delay (ns):            9.010                                                                           
-  Slack (ns):            -3.039                                                                          
-  Arrival (ns):          12.591                                                                          
-  Required (ns):         9.552                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.jalr_active:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[6]
+  Delay (ns):            5.992                                                                           
+  Slack (ns):            0.367                                                                           
+  Arrival (ns):          9.834                                                                           
+  Required (ns):         10.201                                                                          
 
 Path 8
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_7:D
-  Delay (ns):            8.966                                                                           
-  Slack (ns):            -2.984                                                                          
-  Arrival (ns):          12.547                                                                          
-  Required (ns):         9.563                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.jalr_active:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[4]
+  Delay (ns):            5.988                                                                           
+  Slack (ns):            0.371                                                                           
+  Arrival (ns):          9.830                                                                           
+  Required (ns):         10.201                                                                          
 
 Path 9
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_2:D
-  Delay (ns):            8.957                                                                           
-  Slack (ns):            -2.984                                                                          
-  Arrival (ns):          12.538                                                                          
-  Required (ns):         9.554                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_fast[0]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[10]
+  Delay (ns):            5.865                                                                           
+  Slack (ns):            0.427                                                                           
+  Arrival (ns):          9.731                                                                           
+  Required (ns):         10.158                                                                          
 
 Path 10
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_9:D
-  Delay (ns):            8.963                                                                           
-  Slack (ns):            -2.981                                                                          
-  Arrival (ns):          12.544                                                                          
-  Required (ns):         9.563                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_120:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.write_data_in_d1[11]:D
+  Delay (ns):            5.525                                                                           
+  Slack (ns):            0.430                                                                           
+  Arrival (ns):          9.389                                                                           
+  Required (ns):         9.819                                                                           
 
 Path 11
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_2:D
-  Delay (ns):            8.941                                                                           
-  Slack (ns):            -2.970                                                                          
-  Arrival (ns):          12.522                                                                          
-  Required (ns):         9.552                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.IR_out[24]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[6]
+  Delay (ns):            5.885                                                                           
+  Slack (ns):            0.470                                                                           
+  Arrival (ns):          9.732                                                                           
+  Required (ns):         10.202                                                                          
 
 Path 12
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_5:D
-  Delay (ns):            8.917                                                                           
-  Slack (ns):            -2.954                                                                          
-  Arrival (ns):          12.498                                                                          
-  Required (ns):         9.544                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_71:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[12]
+  Delay (ns):            5.829                                                                           
+  Slack (ns):            0.476                                                                           
+  Arrival (ns):          9.694                                                                           
+  Required (ns):         10.170                                                                          
 
 Path 13
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_5:D
-  Delay (ns):            8.935                                                                           
-  Slack (ns):            -2.953                                                                          
-  Arrival (ns):          12.516                                                                          
-  Required (ns):         9.563                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_fast[0]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[4]
+  Delay (ns):            5.818                                                                           
+  Slack (ns):            0.516                                                                           
+  Arrival (ns):          9.684                                                                           
+  Required (ns):         10.200                                                                          
 
 Path 14
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_10:D
-  Delay (ns):            8.917                                                                           
-  Slack (ns):            -2.947                                                                          
-  Arrival (ns):          12.498                                                                          
-  Required (ns):         9.551                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_0_rep1:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[6]
+  Delay (ns):            5.824                                                                           
+  Slack (ns):            0.516                                                                           
+  Arrival (ns):          9.686                                                                           
+  Required (ns):         10.202                                                                          
 
 Path 15
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_12:D
-  Delay (ns):            8.908                                                                           
-  Slack (ns):            -2.938                                                                          
-  Arrival (ns):          12.489                                                                          
-  Required (ns):         9.551                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.IR_out_0[0]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[6]
+  Delay (ns):            5.827                                                                           
+  Slack (ns):            0.527                                                                           
+  Arrival (ns):          9.675                                                                           
+  Required (ns):         10.202                                                                          
 
 Path 16
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_3:D
-  Delay (ns):            8.900                                                                           
-  Slack (ns):            -2.937                                                                          
-  Arrival (ns):          12.481                                                                          
-  Required (ns):         9.544                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.jal_active:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[6]
+  Delay (ns):            5.825                                                                           
+  Slack (ns):            0.534                                                                           
+  Arrival (ns):          9.667                                                                           
+  Required (ns):         10.201                                                                          
 
 Path 17
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_8:D
-  Delay (ns):            8.892                                                                           
-  Slack (ns):            -2.921                                                                          
-  Arrival (ns):          12.473                                                                          
-  Required (ns):         9.552                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X[7]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[10]
+  Delay (ns):            5.770                                                                           
+  Slack (ns):            0.534                                                                           
+  Arrival (ns):          9.624                                                                           
+  Required (ns):         10.158                                                                          
 
 Path 18
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_15:D
-  Delay (ns):            8.882                                                                           
-  Slack (ns):            -2.900                                                                          
-  Arrival (ns):          12.463                                                                          
-  Required (ns):         9.563                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.jal_active:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[4]
+  Delay (ns):            5.821                                                                           
+  Slack (ns):            0.538                                                                           
+  Arrival (ns):          9.663                                                                           
+  Required (ns):         10.201                                                                          
 
 Path 19
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_8:D
-  Delay (ns):            8.883                                                                           
-  Slack (ns):            -2.900                                                                          
-  Arrival (ns):          12.464                                                                          
-  Required (ns):         9.564                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X[4]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[10]
+  Delay (ns):            5.742                                                                           
+  Slack (ns):            0.550                                                                           
+  Arrival (ns):          9.608                                                                           
+  Required (ns):         10.158                                                                          
 
 Path 20
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_6:D
-  Delay (ns):            8.856                                                                           
-  Slack (ns):            -2.884                                                                          
-  Arrival (ns):          12.437                                                                          
-  Required (ns):         9.553                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_LUI:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[1]
+  Delay (ns):            5.720                                                                           
+  Slack (ns):            0.569                                                                           
+  Arrival (ns):          9.558                                                                           
+  Required (ns):         10.127                                                                          
 
 Path 21
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_13:D
-  Delay (ns):            8.860                                                                           
-  Slack (ns):            -2.878                                                                          
-  Arrival (ns):          12.441                                                                          
-  Required (ns):         9.563                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.rd_addr_out[0]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_72:D
+  Delay (ns):            5.403                                                                           
+  Slack (ns):            0.577                                                                           
+  Arrival (ns):          9.255                                                                           
+  Required (ns):         9.832                                                                           
 
 Path 22
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_1:D
-  Delay (ns):            8.840                                                                           
-  Slack (ns):            -2.877                                                                          
-  Arrival (ns):          12.421                                                                          
-  Required (ns):         9.544                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X[3]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[10]
+  Delay (ns):            5.755                                                                           
+  Slack (ns):            0.579                                                                           
+  Arrival (ns):          9.579                                                                           
+  Required (ns):         10.158                                                                          
 
 Path 23
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_18:D
-  Delay (ns):            8.842                                                                           
-  Slack (ns):            -2.872                                                                          
-  Arrival (ns):          12.423                                                                          
-  Required (ns):         9.551                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_fast[0]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[4]
+  Delay (ns):            5.755                                                                           
+  Slack (ns):            0.580                                                                           
+  Arrival (ns):          9.621                                                                           
+  Required (ns):         10.201                                                                          
 
 Path 24
   From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_11:D
-  Delay (ns):            8.837                                                                           
-  Slack (ns):            -2.866                                                                          
-  Arrival (ns):          12.418                                                                          
-  Required (ns):         9.552                                                                           
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_72:D
+  Delay (ns):            5.418                                                                           
+  Slack (ns):            0.589                                                                           
+  Arrival (ns):          9.243                                                                           
+  Required (ns):         9.832                                                                           
 
 Path 25
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_16:D
-  Delay (ns):            8.825                                                                           
-  Slack (ns):            -2.855                                                                          
-  Arrival (ns):          12.406                                                                          
-  Required (ns):         9.551                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X[21]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[6]
+  Delay (ns):            5.748                                                                           
+  Slack (ns):            0.592                                                                           
+  Arrival (ns):          9.610                                                                           
+  Required (ns):         10.202                                                                          
 
 Path 26
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_21:D
-  Delay (ns):            8.837                                                                           
-  Slack (ns):            -2.855                                                                          
-  Arrival (ns):          12.418                                                                          
-  Required (ns):         9.563                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.IR_out_ret_7:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_72:D
+  Delay (ns):            5.370                                                                           
+  Slack (ns):            0.598                                                                           
+  Arrival (ns):          9.234                                                                           
+  Required (ns):         9.832                                                                           
 
 Path 27
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_11:D
-  Delay (ns):            8.835                                                                           
-  Slack (ns):            -2.854                                                                          
-  Arrival (ns):          12.416                                                                          
-  Required (ns):         9.562                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X[11]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.write_data_in_d1[11]:D
+  Delay (ns):            5.358                                                                           
+  Slack (ns):            0.599                                                                           
+  Arrival (ns):          9.220                                                                           
+  Required (ns):         9.819                                                                           
 
 Path 28
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_9:D
-  Delay (ns):            8.824                                                                           
-  Slack (ns):            -2.853                                                                          
-  Arrival (ns):          12.405                                                                          
-  Required (ns):         9.552                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X[8]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[10]
+  Delay (ns):            5.686                                                                           
+  Slack (ns):            0.606                                                                           
+  Arrival (ns):          9.552                                                                           
+  Required (ns):         10.158                                                                          
 
 Path 29
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_4:D
-  Delay (ns):            8.825                                                                           
-  Slack (ns):            -2.853                                                                          
-  Arrival (ns):          12.406                                                                          
-  Required (ns):         9.553                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_120:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[15]
+  Delay (ns):            5.641                                                                           
+  Slack (ns):            0.607                                                                           
+  Arrival (ns):          9.505                                                                           
+  Required (ns):         10.112                                                                          
 
 Path 30
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_22:D
-  Delay (ns):            8.791                                                                           
-  Slack (ns):            -2.821                                                                          
-  Arrival (ns):          12.372                                                                          
-  Required (ns):         9.551                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_AUIPC:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[1]
+  Delay (ns):            5.664                                                                           
+  Slack (ns):            0.612                                                                           
+  Arrival (ns):          9.515                                                                           
+  Required (ns):         10.127                                                                          
 
 Path 31
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_7:D
-  Delay (ns):            8.782                                                                           
-  Slack (ns):            -2.819                                                                          
-  Arrival (ns):          12.363                                                                          
-  Required (ns):         9.544                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.ram_high_i.gen_if_proc.gen_for_proc[0].ram_8bit_2nd.mem_mem_0_0/INST_RAM1K18_IP:A_CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.IR_out_ret_4:D
+  Delay (ns):            5.249                                                                           
+  Slack (ns):            0.621                                                                           
+  Arrival (ns):          9.224                                                                           
+  Required (ns):         9.845                                                                           
 
 Path 32
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_19:D
-  Delay (ns):            8.781                                                                           
-  Slack (ns):            -2.799                                                                          
-  Arrival (ns):          12.362                                                                          
-  Required (ns):         9.563                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_LUI:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[6]
+  Delay (ns):            5.735                                                                           
+  Slack (ns):            0.629                                                                           
+  Arrival (ns):          9.573                                                                           
+  Required (ns):         10.202                                                                          
 
 Path 33
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_12:D
-  Delay (ns):            8.774                                                                           
-  Slack (ns):            -2.792                                                                          
-  Arrival (ns):          12.355                                                                          
-  Required (ns):         9.563                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.jalr_active:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[1]
+  Delay (ns):            5.655                                                                           
+  Slack (ns):            0.630                                                                           
+  Arrival (ns):          9.497                                                                           
+  Required (ns):         10.127                                                                          
 
 Path 34
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_14:D
-  Delay (ns):            8.772                                                                           
-  Slack (ns):            -2.790                                                                          
-  Arrival (ns):          12.353                                                                          
-  Required (ns):         9.563                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.IR_out_ret_4:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_72:D
+  Delay (ns):            5.335                                                                           
+  Slack (ns):            0.633                                                                           
+  Arrival (ns):          9.199                                                                           
+  Required (ns):         9.832                                                                           
 
 Path 35
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_14:D
-  Delay (ns):            8.756                                                                           
-  Slack (ns):            -2.786                                                                          
-  Arrival (ns):          12.337                                                                          
-  Required (ns):         9.551                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_3_rep2:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[10]
+  Delay (ns):            5.658                                                                           
+  Slack (ns):            0.635                                                                           
+  Arrival (ns):          9.523                                                                           
+  Required (ns):         10.158                                                                          
 
 Path 36
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret:D
-  Delay (ns):            8.703                                                                           
-  Slack (ns):            -2.772                                                                          
-  Arrival (ns):          12.284                                                                          
-  Required (ns):         9.512                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_LUI:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[5]
+  Delay (ns):            5.729                                                                           
+  Slack (ns):            0.638                                                                           
+  Arrival (ns):          9.567                                                                           
+  Required (ns):         10.205                                                                          
 
 Path 37
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_17:D
-  Delay (ns):            8.750                                                                           
-  Slack (ns):            -2.768                                                                          
-  Arrival (ns):          12.331                                                                          
-  Required (ns):         9.563                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_fast[31]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[8]
+  Delay (ns):            5.739                                                                           
+  Slack (ns):            0.641                                                                           
+  Arrival (ns):          9.570                                                                           
+  Required (ns):         10.211                                                                          
 
 Path 38
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_17:D
-  Delay (ns):            8.732                                                                           
-  Slack (ns):            -2.761                                                                          
-  Arrival (ns):          12.313                                                                          
-  Required (ns):         9.552                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_1_rep1:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[10]
+  Delay (ns):            5.669                                                                           
+  Slack (ns):            0.649                                                                           
+  Arrival (ns):          9.509                                                                           
+  Required (ns):         10.158                                                                          
 
 Path 39
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_10:D
-  Delay (ns):            8.737                                                                           
-  Slack (ns):            -2.755                                                                          
-  Arrival (ns):          12.318                                                                          
-  Required (ns):         9.563                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_LUI:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[14]
+  Delay (ns):            5.627                                                                           
+  Slack (ns):            0.654                                                                           
+  Arrival (ns):          9.465                                                                           
+  Required (ns):         10.119                                                                          
 
 Path 40
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_15:D
-  Delay (ns):            8.715                                                                           
-  Slack (ns):            -2.744                                                                          
-  Arrival (ns):          12.296                                                                          
-  Required (ns):         9.552                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_fast[0]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[8]
+  Delay (ns):            5.690                                                                           
+  Slack (ns):            0.655                                                                           
+  Arrival (ns):          9.556                                                                           
+  Required (ns):         10.211                                                                          
 
 Path 41
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_20:D
-  Delay (ns):            8.707                                                                           
-  Slack (ns):            -2.736                                                                          
-  Arrival (ns):          12.288                                                                          
-  Required (ns):         9.552                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:A_ADDR_CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_0:D
+  Delay (ns):            5.172                                                                           
+  Slack (ns):            0.664                                                                           
+  Arrival (ns):          9.149                                                                           
+  Required (ns):         9.813                                                                           
 
 Path 42
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_66:D
-  Delay (ns):            8.694                                                                           
-  Slack (ns):            -2.728                                                                          
-  Arrival (ns):          12.275                                                                          
-  Required (ns):         9.547                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.rd_addr_out[3]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_72:D
+  Delay (ns):            5.311                                                                           
+  Slack (ns):            0.670                                                                           
+  Arrival (ns):          9.162                                                                           
+  Required (ns):         9.832                                                                           
 
 Path 43
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_23:D
-  Delay (ns):            8.706                                                                           
-  Slack (ns):            -2.725                                                                          
-  Arrival (ns):          12.287                                                                          
-  Required (ns):         9.562                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_120:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[3]
+  Delay (ns):            5.620                                                                           
+  Slack (ns):            0.671                                                                           
+  Arrival (ns):          9.484                                                                           
+  Required (ns):         10.155                                                                          
 
 Path 44
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_20:D
-  Delay (ns):            8.697                                                                           
-  Slack (ns):            -2.715                                                                          
-  Arrival (ns):          12.278                                                                          
-  Required (ns):         9.563                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_AUIPC:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[6]
+  Delay (ns):            5.679                                                                           
+  Slack (ns):            0.672                                                                           
+  Arrival (ns):          9.530                                                                           
+  Required (ns):         10.202                                                                          
 
 Path 45
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_18:D
-  Delay (ns):            8.671                                                                           
-  Slack (ns):            -2.689                                                                          
-  Arrival (ns):          12.252                                                                          
-  Required (ns):         9.563                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_AUIPC:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[5]
+  Delay (ns):            5.673                                                                           
+  Slack (ns):            0.681                                                                           
+  Arrival (ns):          9.524                                                                           
+  Required (ns):         10.205                                                                          
 
 Path 46
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_13:D
-  Delay (ns):            8.654                                                                           
-  Slack (ns):            -2.683                                                                          
-  Arrival (ns):          12.235                                                                          
-  Required (ns):         9.552                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_LUI:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[2]
+  Delay (ns):            5.624                                                                           
+  Slack (ns):            0.685                                                                           
+  Arrival (ns):          9.462                                                                           
+  Required (ns):         10.147                                                                          
 
 Path 47
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_23:D
-  Delay (ns):            8.651                                                                           
-  Slack (ns):            -2.680                                                                          
-  Arrival (ns):          12.232                                                                          
-  Required (ns):         9.552                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_LUI:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[8]
+  Delay (ns):            5.683                                                                           
+  Slack (ns):            0.690                                                                           
+  Arrival (ns):          9.521                                                                           
+  Required (ns):         10.211                                                                          
 
 Path 48
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_67:D
-  Delay (ns):            8.652                                                                           
-  Slack (ns):            -2.676                                                                          
-  Arrival (ns):          12.233                                                                          
-  Required (ns):         9.557                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.jalr_active:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[6]
+  Delay (ns):            5.670                                                                           
+  Slack (ns):            0.690                                                                           
+  Arrival (ns):          9.512                                                                           
+  Required (ns):         10.202                                                                          
 
 Path 49
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_21:D
-  Delay (ns):            8.638                                                                           
-  Slack (ns):            -2.667                                                                          
-  Arrival (ns):          12.219                                                                          
-  Required (ns):         9.552                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_AUIPC:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[14]
+  Delay (ns):            5.571                                                                           
+  Slack (ns):            0.697                                                                           
+  Arrival (ns):          9.422                                                                           
+  Required (ns):         10.119                                                                          
 
 Path 50
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_16:D
-  Delay (ns):            8.640                                                                           
-  Slack (ns):            -2.658                                                                          
-  Arrival (ns):          12.221                                                                          
-  Required (ns):         9.563                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.jalr_active:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[5]
+  Delay (ns):            5.664                                                                           
+  Slack (ns):            0.699                                                                           
+  Arrival (ns):          9.506                                                                           
+  Required (ns):         10.205                                                                          
 
 Path 51
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_19:D
-  Delay (ns):            8.597                                                                           
-  Slack (ns):            -2.626                                                                          
-  Arrival (ns):          12.178                                                                          
-  Required (ns):         9.552                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_fast[1]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[9]
+  Delay (ns):            5.584                                                                           
+  Slack (ns):            0.708                                                                           
+  Arrival (ns):          9.431                                                                           
+  Required (ns):         10.139                                                                          
 
 Path 52
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_24:D
-  Delay (ns):            8.588                                                                           
-  Slack (ns):            -2.606                                                                          
-  Arrival (ns):          12.169                                                                          
-  Required (ns):         9.563                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_fast[1]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[10]
+  Delay (ns):            5.603                                                                           
+  Slack (ns):            0.708                                                                           
+  Arrival (ns):          9.450                                                                           
+  Required (ns):         10.158                                                                          
 
 Path 53
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.write_enable_d1:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_0:D
-  Delay (ns):            8.369                                                                           
-  Slack (ns):            -2.415                                                                          
-  Arrival (ns):          11.935                                                                          
-  Required (ns):         9.520                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.jalr_active:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[14]
+  Delay (ns):            5.562                                                                           
+  Slack (ns):            0.715                                                                           
+  Arrival (ns):          9.404                                                                           
+  Required (ns):         10.119                                                                          
 
 Path 54
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_127:D
-  Delay (ns):            8.349                                                                           
-  Slack (ns):            -2.383                                                                          
-  Arrival (ns):          11.930                                                                          
-  Required (ns):         9.547                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_LUI:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.write_data_in_d1[2]:D
+  Delay (ns):            5.263                                                                           
+  Slack (ns):            0.727                                                                           
+  Arrival (ns):          9.101                                                                           
+  Required (ns):         9.828                                                                           
 
 Path 55
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_88:D
-  Delay (ns):            8.349                                                                           
-  Slack (ns):            -2.383                                                                          
-  Arrival (ns):          11.930                                                                          
-  Required (ns):         9.547                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_fast[31]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[4]
+  Delay (ns):            5.643                                                                           
+  Slack (ns):            0.727                                                                           
+  Arrival (ns):          9.474                                                                           
+  Required (ns):         10.201                                                                          
 
 Path 56
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_26:D
-  Delay (ns):            8.356                                                                           
-  Slack (ns):            -2.374                                                                          
-  Arrival (ns):          11.937                                                                          
-  Required (ns):         9.563                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_AUIPC:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[2]
+  Delay (ns):            5.568                                                                           
+  Slack (ns):            0.728                                                                           
+  Arrival (ns):          9.419                                                                           
+  Required (ns):         10.147                                                                          
 
 Path 57
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_27:D
-  Delay (ns):            8.299                                                                           
-  Slack (ns):            -2.328                                                                          
-  Arrival (ns):          11.880                                                                          
-  Required (ns):         9.552                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_0_rep1:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[15]
+  Delay (ns):            5.520                                                                           
+  Slack (ns):            0.731                                                                           
+  Arrival (ns):          9.382                                                                           
+  Required (ns):         10.113                                                                          
 
 Path 58
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.read_mem_addr_ret_0[2]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.ram_low_i.gen_if_proc.gen_for_proc[1].ram_8bit_1st.mem_mem_0_3/INST_RAM1K18_IP:A_ADDR[12]
-  Delay (ns):            8.505                                                                           
-  Slack (ns):            -2.278                                                                          
-  Arrival (ns):          12.102                                                                          
-  Required (ns):         9.824                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_AUIPC:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[8]
+  Delay (ns):            5.627                                                                           
+  Slack (ns):            0.733                                                                           
+  Arrival (ns):          9.478                                                                           
+  Required (ns):         10.211                                                                          
 
 Path 59
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.read_mem_addr_ret_0[2]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.ram_low_i.gen_if_proc.gen_for_proc[1].ram_8bit_1st.mem_mem_0_3/INST_RAM1K18_IP:A_WEN[0]
-  Delay (ns):            8.157                                                                           
-  Slack (ns):            -2.252                                                                          
-  Arrival (ns):          11.754                                                                          
-  Required (ns):         9.502                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X[10]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[10]
+  Delay (ns):            5.570                                                                           
+  Slack (ns):            0.738                                                                           
+  Arrival (ns):          9.420                                                                           
+  Required (ns):         10.158                                                                          
 
 Path 60
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_28:D
-  Delay (ns):            8.225                                                                           
-  Slack (ns):            -2.243                                                                          
-  Arrival (ns):          11.806                                                                          
-  Required (ns):         9.563                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.IR_out[6]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_0:D
+  Delay (ns):            5.211                                                                           
+  Slack (ns):            0.742                                                                           
+  Arrival (ns):          9.071                                                                           
+  Required (ns):         9.813                                                                           
 
 Path 61
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_25:D
-  Delay (ns):            8.207                                                                           
-  Slack (ns):            -2.236                                                                          
-  Arrival (ns):          11.788                                                                          
-  Required (ns):         9.552                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:A_ADDR_CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret:D
+  Delay (ns):            5.084                                                                           
+  Slack (ns):            0.744                                                                           
+  Arrival (ns):          9.063                                                                           
+  Required (ns):         9.807                                                                           
 
 Path 62
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_128:D
-  Delay (ns):            8.166                                                                           
-  Slack (ns):            -2.190                                                                          
-  Arrival (ns):          11.747                                                                          
-  Required (ns):         9.557                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_fast[0]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[12]
+  Delay (ns):            5.559                                                                           
+  Slack (ns):            0.745                                                                           
+  Arrival (ns):          9.425                                                                           
+  Required (ns):         10.170                                                                          
 
 Path 63
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_24:D
-  Delay (ns):            8.156                                                                           
-  Slack (ns):            -2.186                                                                          
-  Arrival (ns):          11.737                                                                          
-  Required (ns):         9.551                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.jalr_active:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[2]
+  Delay (ns):            5.559                                                                           
+  Slack (ns):            0.746                                                                           
+  Arrival (ns):          9.401                                                                           
+  Required (ns):         10.147                                                                          
 
 Path 64
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.write_enable_d1:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_0:D
-  Delay (ns):            8.164                                                                           
-  Slack (ns):            -2.186                                                                          
-  Arrival (ns):          11.730                                                                          
-  Required (ns):         9.544                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X[25]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[4]
+  Delay (ns):            5.602                                                                           
+  Slack (ns):            0.747                                                                           
+  Arrival (ns):          9.453                                                                           
+  Required (ns):         10.200                                                                          
 
 Path 65
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_83:D
-  Delay (ns):            8.151                                                                           
-  Slack (ns):            -2.164                                                                          
-  Arrival (ns):          11.732                                                                          
-  Required (ns):         9.568                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.jalr_active:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[8]
+  Delay (ns):            5.618                                                                           
+  Slack (ns):            0.751                                                                           
+  Arrival (ns):          9.460                                                                           
+  Required (ns):         10.211                                                                          
 
 Path 66
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_84:D
-  Delay (ns):            8.111                                                                           
-  Slack (ns):            -2.148                                                                          
-  Arrival (ns):          11.692                                                                          
-  Required (ns):         9.544                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_LUI:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[9]
+  Delay (ns):            5.549                                                                           
+  Slack (ns):            0.752                                                                           
+  Arrival (ns):          9.387                                                                           
+  Required (ns):         10.139                                                                          
 
 Path 67
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.read_mem_addr_ret_0[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.ram_low_i.gen_if_proc.gen_for_proc[1].ram_8bit_1st.mem_mem_0_3/INST_RAM1K18_IP:A_ADDR[12]
-  Delay (ns):            8.375                                                                           
-  Slack (ns):            -2.135                                                                          
-  Arrival (ns):          11.959                                                                          
-  Required (ns):         9.824                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_out[17]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_72:D
+  Delay (ns):            5.213                                                                           
+  Slack (ns):            0.756                                                                           
+  Arrival (ns):          9.076                                                                           
+  Required (ns):         9.832                                                                           
 
 Path 68
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_75:D
-  Delay (ns):            8.055                                                                           
-  Slack (ns):            -2.103                                                                          
-  Arrival (ns):          11.636                                                                          
-  Required (ns):         9.533                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_LUI:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[12]
+  Delay (ns):            5.573                                                                           
+  Slack (ns):            0.759                                                                           
+  Arrival (ns):          9.411                                                                           
+  Required (ns):         10.170                                                                          
 
 Path 69
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.read_mem_addr_ret_0[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.ram_low_i.gen_if_proc.gen_for_proc[1].ram_8bit_1st.mem_mem_0_3/INST_RAM1K18_IP:A_WEN[0]
-  Delay (ns):            8.017                                                                           
-  Slack (ns):            -2.099                                                                          
-  Arrival (ns):          11.601                                                                          
-  Required (ns):         9.502                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.IR_out[4]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_0:D
+  Delay (ns):            5.194                                                                           
+  Slack (ns):            0.760                                                                           
+  Arrival (ns):          9.053                                                                           
+  Required (ns):         9.813                                                                           
 
 Path 70
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.IR_out[8]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.write_data_in_d1[23]:D
-  Delay (ns):            8.055                                                                           
-  Slack (ns):            -2.084                                                                          
-  Arrival (ns):          11.647                                                                          
-  Required (ns):         9.563                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_120:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[11]
+  Delay (ns):            5.527                                                                           
+  Slack (ns):            0.765                                                                           
+  Arrival (ns):          9.391                                                                           
+  Required (ns):         10.156                                                                          
 
 Path 71
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_124:D
-  Delay (ns):            8.039                                                                           
-  Slack (ns):            -2.083                                                                          
-  Arrival (ns):          11.620                                                                          
-  Required (ns):         9.537                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_AUIPC:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.write_data_in_d1[2]:D
+  Delay (ns):            5.207                                                                           
+  Slack (ns):            0.770                                                                           
+  Arrival (ns):          9.058                                                                           
+  Required (ns):         9.828                                                                           
 
 Path 72
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_118:D
-  Delay (ns):            8.058                                                                           
-  Slack (ns):            -2.081                                                                          
-  Arrival (ns):          11.639                                                                          
-  Required (ns):         9.558                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X[20]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[8]
+  Delay (ns):            5.599                                                                           
+  Slack (ns):            0.773                                                                           
+  Arrival (ns):          9.438                                                                           
+  Required (ns):         10.211                                                                          
 
 Path 73
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.read_mem_addr_ret_0[2]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.ram_low_i.gen_if_proc.gen_for_proc[1].ram_8bit_1st.mem_mem_0_1/INST_RAM1K18_IP:A_ADDR[12]
-  Delay (ns):            8.299                                                                           
-  Slack (ns):            -2.072                                                                          
-  Arrival (ns):          11.896                                                                          
-  Required (ns):         9.824                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_LUI:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.write_data_in_d1[11]:D
+  Delay (ns):            5.205                                                                           
+  Slack (ns):            0.776                                                                           
+  Arrival (ns):          9.043                                                                           
+  Required (ns):         9.819                                                                           
 
 Path 74
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_29:D
-  Delay (ns):            8.038                                                                           
-  Slack (ns):            -2.067                                                                          
-  Arrival (ns):          11.619                                                                          
-  Required (ns):         9.552                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.rd_addr_out[1]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_72:D
+  Delay (ns):            5.205                                                                           
+  Slack (ns):            0.776                                                                           
+  Arrival (ns):          9.056                                                                           
+  Required (ns):         9.832                                                                           
 
 Path 75
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.read_mem_addr_ret_0[2]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.ram_low_i.gen_if_proc.gen_for_proc[1].ram_8bit_1st.mem_mem_0_2/INST_RAM1K18_IP:A_WEN[0]
-  Delay (ns):            7.966                                                                           
-  Slack (ns):            -2.062                                                                          
-  Arrival (ns):          11.563                                                                          
-  Required (ns):         9.501                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X[24]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[4]
+  Delay (ns):            5.569                                                                           
+  Slack (ns):            0.780                                                                           
+  Arrival (ns):          9.420                                                                           
+  Required (ns):         10.200                                                                          
 
 Path 76
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:B_ADDR_CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_0:D
-  Delay (ns):            7.915                                                                           
-  Slack (ns):            -2.053                                                                          
-  Arrival (ns):          11.597                                                                          
-  Required (ns):         9.544                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.jalr_active:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.write_data_in_d1[2]:D
+  Delay (ns):            5.198                                                                           
+  Slack (ns):            0.788                                                                           
+  Arrival (ns):          9.040                                                                           
+  Required (ns):         9.828                                                                           
 
 Path 77
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.IR_out[8]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[7]
-  Delay (ns):            8.359                                                                           
-  Slack (ns):            -2.041                                                                          
-  Arrival (ns):          11.951                                                                          
-  Required (ns):         9.910                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_53:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[13]
+  Delay (ns):            5.459                                                                           
+  Slack (ns):            0.790                                                                           
+  Arrival (ns):          9.338                                                                           
+  Required (ns):         10.128                                                                          
 
 Path 78
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.read_mem_addr_ret_0[2]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.ram_low_i.gen_if_proc.gen_for_proc[1].ram_8bit_1st.mem_mem_0_2/INST_RAM1K18_IP:A_ADDR[12]
-  Delay (ns):            8.244                                                                           
-  Slack (ns):            -2.018                                                                          
-  Arrival (ns):          11.841                                                                          
-  Required (ns):         9.823                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_AUIPC:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[9]
+  Delay (ns):            5.493                                                                           
+  Slack (ns):            0.795                                                                           
+  Arrival (ns):          9.344                                                                           
+  Required (ns):         10.139                                                                          
 
 Path 79
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.write_enable_d1:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_22:D
-  Delay (ns):            7.957                                                                           
-  Slack (ns):            -1.995                                                                          
-  Arrival (ns):          11.523                                                                          
-  Required (ns):         9.528                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.jal_active:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[1]
+  Delay (ns):            5.488                                                                           
+  Slack (ns):            0.797                                                                           
+  Arrival (ns):          9.330                                                                           
+  Required (ns):         10.127                                                                          
 
 Path 80
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_57:D
-  Delay (ns):            7.956                                                                           
-  Slack (ns):            -1.979                                                                          
-  Arrival (ns):          11.537                                                                          
-  Required (ns):         9.558                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_LUI:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[13]
+  Delay (ns):            5.493                                                                           
+  Slack (ns):            0.797                                                                           
+  Arrival (ns):          9.331                                                                           
+  Required (ns):         10.128                                                                          
 
 Path 81
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.rd_addr_out[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_3:D
-  Delay (ns):            7.959                                                                           
-  Slack (ns):            -1.973                                                                          
-  Arrival (ns):          11.525                                                                          
-  Required (ns):         9.552                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X[5]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[10]
+  Delay (ns):            5.502                                                                           
+  Slack (ns):            0.802                                                                           
+  Arrival (ns):          9.356                                                                           
+  Required (ns):         10.158                                                                          
 
 Path 82
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.read_mem_addr_ret_0[2]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.ram_high_i.gen_if_proc.gen_for_proc[0].ram_8bit_1st.mem_mem_0_1/INST_RAM1K18_IP:A_WEN[0]
-  Delay (ns):            7.880                                                                           
-  Slack (ns):            -1.963                                                                          
-  Arrival (ns):          11.477                                                                          
-  Required (ns):         9.514                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_AUIPC:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[12]
+  Delay (ns):            5.517                                                                           
+  Slack (ns):            0.802                                                                           
+  Arrival (ns):          9.368                                                                           
+  Required (ns):         10.170                                                                          
 
 Path 83
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_59:D
-  Delay (ns):            7.940                                                                           
-  Slack (ns):            -1.953                                                                          
-  Arrival (ns):          11.521                                                                          
-  Required (ns):         9.568                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_fast[31]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[4]
+  Delay (ns):            5.566                                                                           
+  Slack (ns):            0.803                                                                           
+  Arrival (ns):          9.397                                                                           
+  Required (ns):         10.200                                                                          
 
 Path 84
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.read_mem_addr_ret_0[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.ram_low_i.gen_if_proc.gen_for_proc[1].ram_8bit_1st.mem_mem_0_1/INST_RAM1K18_IP:A_ADDR[12]
-  Delay (ns):            8.169                                                                           
-  Slack (ns):            -1.929                                                                          
-  Arrival (ns):          11.753                                                                          
-  Required (ns):         9.824                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:A_ADDR_CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret:D
+  Delay (ns):            5.105                                                                           
+  Slack (ns):            0.805                                                                           
+  Arrival (ns):          9.082                                                                           
+  Required (ns):         9.887                                                                           
 
 Path 85
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.read_mem_addr_ret_0[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.ram_low_i.gen_if_proc.gen_for_proc[1].ram_8bit_1st.mem_mem_0_2/INST_RAM1K18_IP:A_WEN[0]
-  Delay (ns):            7.826                                                                           
-  Slack (ns):            -1.909                                                                          
-  Arrival (ns):          11.410                                                                          
-  Required (ns):         9.501                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.IR_out[5]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_0:D
+  Delay (ns):            5.157                                                                           
+  Slack (ns):            0.809                                                                           
+  Arrival (ns):          9.004                                                                           
+  Required (ns):         9.813                                                                           
 
 Path 86
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_76:D
-  Delay (ns):            7.868                                                                           
-  Slack (ns):            -1.905                                                                          
-  Arrival (ns):          11.449                                                                          
-  Required (ns):         9.544                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.IR_out[3]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_0:D
+  Delay (ns):            5.143                                                                           
+  Slack (ns):            0.810                                                                           
+  Arrival (ns):          9.003                                                                           
+  Required (ns):         9.813                                                                           
 
 Path 87
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X[2]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.write_data_in_d1[30]:D
-  Delay (ns):            7.840                                                                           
-  Slack (ns):            -1.895                                                                          
-  Arrival (ns):          11.407                                                                          
-  Required (ns):         9.512                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X[25]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[4]
+  Delay (ns):            5.539                                                                           
+  Slack (ns):            0.811                                                                           
+  Arrival (ns):          9.390                                                                           
+  Required (ns):         10.201                                                                          
 
 Path 88
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_33:D
-  Delay (ns):            7.830                                                                           
-  Slack (ns):            -1.892                                                                          
-  Arrival (ns):          11.411                                                                          
-  Required (ns):         9.519                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.jalr_active:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[9]
+  Delay (ns):            5.484                                                                           
+  Slack (ns):            0.813                                                                           
+  Arrival (ns):          9.326                                                                           
+  Required (ns):         10.139                                                                          
 
 Path 89
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_61:D
-  Delay (ns):            7.840                                                                           
-  Slack (ns):            -1.884                                                                          
-  Arrival (ns):          11.421                                                                          
-  Required (ns):         9.537                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.IR_out[6]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret:D
+  Delay (ns):            5.134                                                                           
+  Slack (ns):            0.813                                                                           
+  Arrival (ns):          8.994                                                                           
+  Required (ns):         9.807                                                                           
 
 Path 90
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_71:D
-  Delay (ns):            7.834                                                                           
-  Slack (ns):            -1.878                                                                          
-  Arrival (ns):          11.415                                                                          
-  Required (ns):         9.537                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.IR_out[24]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[14]
+  Delay (ns):            5.457                                                                           
+  Slack (ns):            0.814                                                                           
+  Arrival (ns):          9.304                                                                           
+  Required (ns):         10.118                                                                          
 
 Path 91
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:B_ADDR_CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_22:D
-  Delay (ns):            7.722                                                                           
-  Slack (ns):            -1.876                                                                          
-  Arrival (ns):          11.404                                                                          
-  Required (ns):         9.528                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_fast[0]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.write_data_in_d1[4]:D
+  Delay (ns):            5.148                                                                           
+  Slack (ns):            0.814                                                                           
+  Arrival (ns):          9.014                                                                           
+  Required (ns):         9.828                                                                           
 
 Path 92
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.read_mem_addr_ret_0[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.ram_low_i.gen_if_proc.gen_for_proc[1].ram_8bit_1st.mem_mem_0_2/INST_RAM1K18_IP:A_ADDR[12]
-  Delay (ns):            8.114                                                                           
-  Slack (ns):            -1.875                                                                          
-  Arrival (ns):          11.698                                                                          
-  Required (ns):         9.823                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_LUI:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[10]
+  Delay (ns):            5.502                                                                           
+  Slack (ns):            0.817                                                                           
+  Arrival (ns):          9.340                                                                           
+  Required (ns):         10.157                                                                          
 
 Path 93
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.rd_addr_out[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_0:D
-  Delay (ns):            7.852                                                                           
-  Slack (ns):            -1.874                                                                          
-  Arrival (ns):          11.418                                                                          
-  Required (ns):         9.544                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_AUIPC:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.write_data_in_d1[11]:D
+  Delay (ns):            5.149                                                                           
+  Slack (ns):            0.819                                                                           
+  Arrival (ns):          9.000                                                                           
+  Required (ns):         9.819                                                                           
 
 Path 94
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_50:D
-  Delay (ns):            7.829                                                                           
-  Slack (ns):            -1.873                                                                          
-  Arrival (ns):          11.410                                                                          
-  Required (ns):         9.537                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.jalr_active:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[12]
+  Delay (ns):            5.508                                                                           
+  Slack (ns):            0.820                                                                           
+  Arrival (ns):          9.350                                                                           
+  Required (ns):         10.170                                                                          
 
 Path 95
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.rd_addr_out[4]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_3:D
-  Delay (ns):            7.856                                                                           
-  Slack (ns):            -1.869                                                                          
-  Arrival (ns):          11.421                                                                          
-  Required (ns):         9.552                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X[0]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[10]
+  Delay (ns):            5.492                                                                           
+  Slack (ns):            0.827                                                                           
+  Arrival (ns):          9.331                                                                           
+  Required (ns):         10.158                                                                          
 
 Path 96
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_27:D
-  Delay (ns):            7.847                                                                           
-  Slack (ns):            -1.865                                                                          
-  Arrival (ns):          11.428                                                                          
-  Required (ns):         9.563                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.IR_out[4]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret:D
+  Delay (ns):            5.117                                                                           
+  Slack (ns):            0.831                                                                           
+  Arrival (ns):          8.976                                                                           
+  Required (ns):         9.807                                                                           
 
 Path 97
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.IR_out[8]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.write_data_in_d1[25]:D
-  Delay (ns):            7.787                                                                           
-  Slack (ns):            -1.855                                                                          
-  Arrival (ns):          11.379                                                                          
-  Required (ns):         9.524                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:B_ADDR_CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_112:D
+  Delay (ns):            5.013                                                                           
+  Slack (ns):            0.833                                                                           
+  Arrival (ns):          8.995                                                                           
+  Required (ns):         9.828                                                                           
 
 Path 98
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.write_enable_d1:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret:D
-  Delay (ns):            7.793                                                                           
-  Slack (ns):            -1.847                                                                          
-  Arrival (ns):          11.359                                                                          
-  Required (ns):         9.512                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_fast[1]:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.write_data_in_d1[11]:D
+  Delay (ns):            5.139                                                                           
+  Slack (ns):            0.833                                                                           
+  Arrival (ns):          8.986                                                                           
+  Required (ns):         9.819                                                                           
 
 Path 99
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_AUIPC:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.write_data_in_d1[23]:D
-  Delay (ns):            7.843                                                                           
-  Slack (ns):            -1.840                                                                          
-  Arrival (ns):          11.403                                                                          
-  Required (ns):         9.563                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.jalr_active:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.write_data_in_d1[11]:D
+  Delay (ns):            5.140                                                                           
+  Slack (ns):            0.837                                                                           
+  Arrival (ns):          8.982                                                                           
+  Required (ns):         9.819                                                                           
 
 Path 100
-  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK
-  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_25:D
-  Delay (ns):            7.813                                                                           
-  Slack (ns):            -1.832                                                                          
-  Arrival (ns):          11.394                                                                          
-  Required (ns):         9.562                                                                           
+  From:                  Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.reg_ctl_AUIPC:CLK
+  To:                    Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_1/INST_RAM64x18_IP:C_DIN[13]
+  Delay (ns):            5.437                                                                           
+  Slack (ns):            0.840                                                                           
+  Arrival (ns):          9.288                                                                           
+  Required (ns):         10.128                                                                          
 
