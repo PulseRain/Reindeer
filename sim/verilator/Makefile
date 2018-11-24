@@ -26,7 +26,7 @@ ref_folder = ../compliance/references
 #== Put all the source files here
 ###############################################################################
 
-src_base = ../../PulseRain_MCU/source
+src_base = ../../submodules/PulseRain_MCU/source
 src_sub = \
 ../PulseRain_processor_core/source/mul_div/absolute_value \
 ../PulseRain_processor_core/source/mul_div/long_slow_div_denom_reg \
@@ -58,13 +58,6 @@ target = ./obj_dir/VPulseRain_RV2T_MCU
 # All test cases
 ###############################################################################
 all_test_cases =  \
-DIV \
-DIVU \
-MUL \
-MULH \
-MULHSU \
-REM \
-REMU \
 I-ADD-01 \
 I-ADDI-01 \
 I-AND-01 \
@@ -162,10 +155,10 @@ run : build
 $(target) : $(src_sub_v) $(src_base)/$(src_top_v) $(testbench_cpp)
 	@echo "====> Building $(target)"
 	for s in $(src_sub_v) ; do \
-		verilator -I../../PulseRain_MCU/memory/microsemi -I../../PulseRain_MCU/common -I../../PulseRain_MCU/common/Microsemi/SmartFusion2 -I../../PulseRain_MCU/PulseRain_processor_core/source  -I../../PulseRain_MCU/PulseRain_processor_core/source/mul_div --cc $$s ; \
+		verilator -I../../submodules/PulseRain_MCU/memory/microsemi -I../../submodules/PulseRain_MCU/common -I../../submodules/PulseRain_MCU/common/Microsemi/SmartFusion2 -I../../submodules/PulseRain_MCU/PulseRain_processor_core/source  -I../../submodules/PulseRain_MCU/PulseRain_processor_core/source/mul_div --cc $$s ; \
 	done
 
-	verilator -I../../PulseRain_MCU/peripherals/UART -I../../PulseRain_MCU/memory/microsemi -I../../PulseRain_MCU/common -I../../PulseRain_MCU/common/Microsemi/SmartFusion2 -I../../PulseRain_MCU/PulseRain_processor_core/source  -I../../PulseRain_MCU/PulseRain_processor_core/source/mul_div --cc $(src_base)/$(src_top_v) --exe $(testbench_cpp)
+	verilator -I../../submodules/PulseRain_MCU/peripherals/UART -I../../submodules/PulseRain_MCU/memory/microsemi -I../../submodules/PulseRain_MCU/common -I../../submodules/PulseRain_MCU/common/Microsemi/SmartFusion2 -I../../submodules/PulseRain_MCU/PulseRain_processor_core/source  -I../../submodules/PulseRain_MCU/PulseRain_processor_core/source/mul_div --cc $(src_base)/$(src_top_v) --exe $(testbench_cpp)
 	
 	make -j -C ./obj_dir -f V$(src_top).mk V$(src_top)
 

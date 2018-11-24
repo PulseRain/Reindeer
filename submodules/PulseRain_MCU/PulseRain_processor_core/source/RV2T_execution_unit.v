@@ -61,7 +61,6 @@ module RV2T_execution_unit (
         input wire                                              ctl_CSR_write,
         input wire                                              ctl_MISC_MEM,
         input wire                                              ctl_MRET,
-        input wire                                              ctl_WFI,
         
         input wire                                              ctl_MUL_DIV_FUNCT3,
         
