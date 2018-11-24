@@ -58,13 +58,6 @@ target = ./obj_dir/VPulseRain_RV2T_MCU
 # All test cases
 ###############################################################################
 all_test_cases =  \
-DIV \
-DIVU \
-MUL \
-MULH \
-MULHSU \
-REM \
-REMU \
 I-ADD-01 \
 I-ADDI-01 \
 I-AND-01 \
