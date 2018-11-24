@@ -156,6 +156,8 @@ module RV2T_CSR (
                 
                 if ((~timer_triggered_d1) & timer_triggered) begin
                     mtip <= 1'b1;
+                end else if (!timer_triggered) begin
+                    mtip <= 0;
                 end
                 
                 if (activate_exception) begin
