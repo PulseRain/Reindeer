@@ -38,3 +38,15 @@
           10  17538078    N/A                       -0.210  creative_timing_violations_max_r4_s10.rpt      creative_r4_s10
   The best result creative_r4_s8 has been saved into the project.
 
+#------------------------------------------------------------------------------------------------------------------------------------------
+# RUN NUMBER: 5   DATE: 03:27:32 24-Nov-2018
+# INVOKED AS: C:/Microsemi/Libero_SoC_v11.9/Designer/bin/libero.exe extended_run_lib.tcl -skip_open_project -root {C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative} -n 3 -starting_seed_index 1 -compare_criteria violations -analysis max -slack_criteria worst
+#------------------------------------------------------------------------------------------------------------------------------------------
+# Seed Index  Seed      Maximum Delay        Worst Slack  Report Analyzed                                Saved Design
+# ==========  ========  ===============  ===============  =============================================  ===================================
+         N/A  51370950    N/A                       -0.390  creative_timing_violations_max_r5_initial.rpt  creative_r5_initial
+           1         0    N/A                        0.325  creative_timing_violations_max_r5_s1.rpt       creative_r5_s1
+           2  86662958    N/A                        0.351  creative_timing_violations_max_r5_s2.rpt       creative_r5_s2
+           3   8988747    N/A                        0.363  creative_timing_violations_max_r5_s3.rpt       creative_r5_s3
+  The best result creative_r5_s3 has been saved into the project.
+
