@@ -44,50 +44,49 @@ ENDLIST
 LIST FileManager
 VALUE "<project>\component\Actel\SgCore\FCCC\2.0.201\FCCC.cxf,actgen_cxf"
 STATE="utd"
-TIME="1543056454"
+TIME="1543063695"
 SIZE="241"
-PARENT="<project>\component\work\creative\creative.cxf"
 ENDFILE
 VALUE "<project>\constraint\io\Reindeer.pdc,io_pdc"
 STATE="utd"
-TIME="1543056454"
+TIME="1543063695"
 SIZE="1606"
 IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\constraint\Reindeer.sdc,sdc"
 STATE="utd"
-TIME="1543056454"
+TIME="1543063695"
 SIZE="233"
 IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\synthesis\creative.edn,syn_edn"
 STATE="utd"
-TIME="1543056455"
+TIME="1543063695"
 SIZE="7214166"
 ENDFILE
 VALUE "<project>\synthesis\creative.so,so"
 STATE="utd"
-TIME="1543056455"
+TIME="1543063695"
 SIZE="233"
 ENDFILE
 VALUE "<project>\synthesis\creative_sdc.sdc,syn_sdc"
 STATE="utd"
-TIME="1543056455"
+TIME="1543063695"
 SIZE="1044"
 ENDFILE
 VALUE "<project>\synthesis\creative_syn.prj,prj"
 STATE="utd"
-TIME="1543056455"
+TIME="1543063695"
 SIZE="2227"
 ENDFILE
 VALUE "<project>\synthesis\Reindeer.so,so"
 STATE="utd"
-TIME="1543056455"
+TIME="1543063695"
 SIZE="232"
 ENDFILE
 VALUE "<project>\synthesis\Reindeer_syn.prj,prj"
 STATE="utd"
-TIME="1543056455"
+TIME="1543063695"
 SIZE="0"
 ENDFILE
 ENDLIST
@@ -251,7 +250,7 @@ Reports;Reports;0
 ReportsCurrentItem;Verify Timing:creative_max_timing_slow_1.14V_85C.xml
 StartPage;StartPage;0
 Constraint Manager;Constraint Manager;0
-ACTIVEVIEW;Reports
+ACTIVEVIEW;Constraint Manager
 ENDLIST
 LIST ModuleSubBlockList
 LIST "creative::work","synthesis\creative.edn","FALSE","FALSE"
