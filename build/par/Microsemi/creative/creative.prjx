@@ -39,83 +39,102 @@ KEY Vendor "Actel"
 KEY ActiveRoot "creative::work"
 LIST REVISIONS
 VALUE="Impl1",NUM=1
-VALUE="Impl2",NUM=2
-CURREV=2
+CURREV=1
 ENDLIST
 LIST FileManager
 VALUE "<project>\component\Actel\SgCore\FCCC\2.0.201\FCCC.cxf,actgen_cxf"
 STATE="utd"
-TIME="1542963351"
+TIME="1542460536"
 SIZE="241"
 PARENT="<project>\component\work\creative\creative.cxf"
 ENDFILE
 VALUE "<project>\component\work\creative\creative.cxf,actgen_cxf"
 STATE="utd"
-TIME="1542963351"
+TIME="1542460538"
 SIZE="2685"
 ENDFILE
 VALUE "<project>\component\work\creative\creative.v,hdl"
 STATE="utd"
-TIME="1542963351"
+TIME="1542460536"
 SIZE="2857"
 PARENT="<project>\component\work\creative\creative.cxf"
 IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\component\work\creative\FCCC_0\creative_FCCC_0_FCCC.cxf,actgen_cxf"
 STATE="utd"
-TIME="1542963350"
+TIME="1542460536"
 SIZE="697"
 PARENT="<project>\component\work\creative\creative.cxf"
 ENDFILE
 VALUE "<project>\component\work\creative\FCCC_0\creative_FCCC_0_FCCC.v,hdl"
 STATE="utd"
-TIME="1542963350"
+TIME="1542460536"
 SIZE="1785"
 PARENT="<project>\component\work\creative\FCCC_0\creative_FCCC_0_FCCC.cxf"
 IS_READONLY="TRUE"
 ENDFILE
-VALUE "<project>\constraint\io\Reindeer.pdc,io_pdc"
+VALUE "<project>\designer\impl1\Reindeer.ide_des,ide_des"
 STATE="utd"
-TIME="1542998723"
-SIZE="1606"
-IS_READONLY="TRUE"
-ENDFILE
-VALUE "<project>\constraint\Reindeer.sdc,sdc"
-STATE="utd"
-TIME="1542998718"
-SIZE="233"
-IS_READONLY="TRUE"
-ENDFILE
-VALUE "<project>\designer\impl2\creative.ide_des,ide_des"
-STATE="utd"
-TIME="1542988319"
-SIZE="207"
-ENDFILE
-VALUE "<project>\hdl\Reindeer.vm,hdl"
-STATE="utd"
-TIME="1542998714"
-SIZE="3378196"
-IS_READONLY="TRUE"
+TIME="1542460364"
+SIZE="467"
 ENDFILE
 VALUE "<project>\synthesis\creative.edn,syn_edn"
 STATE="utd"
-TIME="1542988423"
-SIZE="7222291"
+TIME="1543040227"
+SIZE="6496763"
 ENDFILE
 VALUE "<project>\synthesis\creative.so,so"
 STATE="utd"
-TIME="1542988423"
+TIME="1543040229"
 SIZE="233"
 ENDFILE
 VALUE "<project>\synthesis\creative_sdc.sdc,syn_sdc"
 STATE="utd"
-TIME="1542988423"
+TIME="1543040227"
 SIZE="1044"
 ENDFILE
 VALUE "<project>\synthesis\creative_syn.prj,prj"
 STATE="utd"
-TIME="1542988323"
-SIZE="1142"
+TIME="1543040230"
+SIZE="2192"
+ENDFILE
+VALUE "<project>\synthesis\Reindeer.edn,syn_edn"
+STATE="ood"
+TIME="1542460258"
+SIZE="7004894"
+ENDFILE
+VALUE "<project>\synthesis\Reindeer.so,so"
+STATE="utd"
+TIME="1542460258"
+SIZE="232"
+ENDFILE
+VALUE "<project>\synthesis\Reindeer_sdc.sdc,syn_sdc"
+STATE="ood"
+TIME="1542460258"
+SIZE="891"
+ENDFILE
+VALUE "<project>\synthesis\Reindeer_syn.prj,prj"
+STATE="utd"
+TIME="1543040149"
+SIZE="0"
+ENDFILE
+VALUE "C:\PulseRain\Reindeer\synth\constraints\Microsemi\Creative\Reindeer.pdc,io_pdc"
+STATE="utd"
+TIME="1542453978"
+SIZE="1606"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "C:\PulseRain\Reindeer\synth\constraints\Microsemi\Creative\Reindeer.sdc,sdc"
+STATE="utd"
+TIME="1542458632"
+SIZE="233"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "C:\PulseRain\Reindeer\synth\Microsemi\SmartFusion2\Reindeer.vm,hdl"
+STATE="utd"
+TIME="1542537202"
+SIZE="3100982"
+IS_READONLY="TRUE"
 ENDFILE
 ENDLIST
 LIST UsedFile
@@ -124,10 +143,10 @@ LIST NewModulesInfo
 LIST "creative::work"
 FILE "<project>\component\work\creative\creative.v,hdl"
 LIST SynthesisConstraints
-VALUE "<project>\constraint\Reindeer.sdc,sdc"
+VALUE "C:\PulseRain\Reindeer\synth\constraints\Microsemi\Creative\Reindeer.sdc,sdc"
 ENDLIST
 LIST TimingConstraints
-VALUE "<project>\constraint\Reindeer.sdc,sdc"
+VALUE "C:\PulseRain\Reindeer\synth\constraints\Microsemi\Creative\Reindeer.sdc,sdc"
 ENDLIST
 LIST ProjectState5.1
 LIST Impl1
@@ -141,26 +160,15 @@ ENDLIST
 Used_File_List
 ENDUsed_File_List
 ENDLIST
-LIST Impl2
-LiberoState=Post_Synthesis
-ideSYNTHESIS(<project>\synthesis\creative.edn,syn_edn)=StateSuccess
-LIST FlowOptions
-UsePhySynth=FALSE
-UseSynth=TRUE
-UseFhbAutoInst=FALSE
-ENDLIST
-Used_File_List
-ENDUsed_File_List
-ENDLIST
 ENDLIST
 ENDLIST
 LIST "Reindeer::work"
-FILE "<project>\hdl\Reindeer.vm,hdl"
+FILE "C:\PulseRain\Reindeer\synth\Microsemi\SmartFusion2\Reindeer.vm,hdl"
 LIST SynthesisConstraints
-VALUE "<project>\constraint\Reindeer.sdc,sdc"
+VALUE "C:\PulseRain\Reindeer\synth\constraints\Microsemi\Creative\Reindeer.sdc,sdc"
 ENDLIST
 LIST TimingConstraints
-VALUE "<project>\constraint\Reindeer.sdc,sdc"
+VALUE "C:\PulseRain\Reindeer\synth\constraints\Microsemi\Creative\Reindeer.sdc,sdc"
 ENDLIST
 ENDLIST
 ENDLIST
@@ -234,8 +242,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\bin\synplify_pro.exe"
-PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
-BATCH=1
+PARAM=""
+BATCH=0
 LICENSE=""
 IS32BIT="1"
 EndProfile
@@ -280,17 +288,6 @@ ENDLIST
 Used_File_List
 ENDUsed_File_List
 ENDLIST
-LIST Impl2
-LiberoState=Post_Synthesis
-ideSYNTHESIS(<project>\synthesis\creative.edn,syn_edn)=StateSuccess
-LIST FlowOptions
-UsePhySynth=FALSE
-UseSynth=TRUE
-UseFhbAutoInst=FALSE
-ENDLIST
-Used_File_List
-ENDUsed_File_List
-ENDLIST
 ENDLIST
 ENDLIST
 LIST ExcludePackageForSimulation
@@ -306,32 +303,31 @@ ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
 Reports;Reports;0
-ReportsCurrentItem;Synthesize:synplify.log
+ReportsCurrentItem;Verify Timing:creative_max_timing_slow_1.14V_85C.xml
 StartPage;StartPage;0
 Constraint Manager;Constraint Manager;0
-ACTIVEVIEW;Reports
+SmartDesign;creative;0
+ACTIVEVIEW;Constraint Manager
 ENDLIST
 LIST ModuleSubBlockList
 LIST "creative::work","component\work\creative\creative.v","TRUE","FALSE"
+SUBBLOCK "Reindeer::work","C:\PulseRain\Reindeer\synth\Microsemi\SmartFusion2\Reindeer.vm","FALSE","FALSE"
 SUBBLOCK "creative_FCCC_0_FCCC::work","component\work\creative\FCCC_0\creative_FCCC_0_FCCC.v","FALSE","FALSE"
-SUBBLOCK "Reindeer::work","hdl\Reindeer.vm","FALSE","FALSE"
 ENDLIST
 LIST "creative_FCCC_0_FCCC::work","component\work\creative\FCCC_0\creative_FCCC_0_FCCC.v","FALSE","FALSE"
 ENDLIST
-LIST "Reindeer::work","hdl\Reindeer.vm","FALSE","FALSE"
+LIST "Reindeer::work","C:\PulseRain\Reindeer\synth\Microsemi\SmartFusion2\Reindeer.vm","FALSE","FALSE"
 ENDLIST
 ENDLIST
 LIST ActiveTestBenchList
 ENDLIST
 LIST IOTabList
-VALUE "C:\PulseRain\iReindeer\build\par\constraints\Microsemi\creative\Reindeer.pdc"
-VALUE "constraint\io\Reindeer.pdc"
+VALUE "C:\PulseRain\Reindeer\synth\constraints\Microsemi\Creative\Reindeer.pdc"
 ENDLIST
 LIST FPTabList
 ENDLIST
 LIST TimingTabList
-VALUE "C:\PulseRain\iReindeer\build\par\constraints\Microsemi\creative\Reindeer.sdc"
-VALUE "constraint\Reindeer.sdc"
+VALUE "C:\PulseRain\Reindeer\synth\constraints\Microsemi\Creative\Reindeer.sdc"
 ENDLIST
 LIST FDCTabList
 ENDLIST

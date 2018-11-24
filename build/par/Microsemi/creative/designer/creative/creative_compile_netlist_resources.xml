@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml-stylesheet href="rptstyle.xsl" type="text/xsl" ?>
+<doc>
+<title>Resource Report</title>
+<text>Microsemi Corporation - Microsemi Libero Software Release v11.9 SP1 (Version 11.9.1.0)</text>
+<text>Date: Fri Nov 23 22:17:31 2018
+</text>
+<section><name>Device Selection</name></section>
+<table>
+<header>
+</header>
+<row>
+ <cell>Family</cell>
+ <cell>SmartFusion2</cell>
+</row>
+<row>
+ <cell>Device</cell>
+ <cell>M2S025</cell>
+</row>
+<row>
+ <cell>Package</cell>
+ <cell>256 VF</cell>
+</row>
+<row>
+ <cell>Speed Grade</cell>
+ <cell>-1</cell>
+</row>
+<row>
+ <cell>Temp</cell>
+ <cell>0:25:85</cell>
+</row>
+<row>
+ <cell>Voltage</cell>
+ <cell>1.26:1.20:1.14</cell>
+</row>
+<row>
+ <cell>Core Voltage</cell>
+ <cell>1.2V</cell>
+</row>
+<row>
+ <cell>Ramp Rate</cell>
+ <cell>100ms Minimum</cell>
+</row>
+<row>
+ <cell>System Controller Suspend Mode</cell>
+ <cell>No</cell>
+</row>
+<row>
+ <cell>PLL Supply Voltage</cell>
+ <cell>3.3V</cell>
+</row>
+<row>
+ <cell>Default I/O technology</cell>
+ <cell>LVCMOS 3.3V</cell>
+</row>
+<row>
+ <cell>Restrict Probe Pins</cell>
+ <cell>Yes</cell>
+</row>
+<row>
+ <cell>Restrict SPI Pins</cell>
+ <cell>No</cell>
+</row>
+</table>
+<section><name>Source Files</name></section>
+<table>
+<header>
+</header>
+<row>
+ <cell>Topcell</cell>
+ <cell>creative</cell>
+</row>
+<row>
+ <cell>Format</cell>
+ <cell>EDIF</cell>
+</row>
+<row>
+ <cell>Source</cell>
+ <cell>C:\GitHub\Reindeer\build\par\Microsemi\creative\synthesis\creative.edn</cell>
+</row>
+</table>
+<section><name>Options</name></section>
+<table>
+<header>
+</header>
+<row>
+ <cell>Enable Single Event Transient mitigation</cell>
+ <cell>false</cell>
+</row>
+<row>
+ <cell>Enable Design Separation Methodology</cell>
+ <cell>false</cell>
+</row>
+<row>
+ <cell>Limit the number of high fanout nets to display to</cell>
+ <cell>10</cell>
+</row>
+</table>
+<section><name>Resource Usage</name></section>
+<table>
+<header>
+ <cell>Type</cell>
+ <cell>Used</cell>
+ <cell>Total</cell>
+ <cell>Percentage</cell>
+</header>
+<row>
+ <cell>4LUT</cell>
+ <cell>4434</cell>
+ <cell>27696</cell>
+ <cell>16.01</cell>
+</row>
+<row>
+ <cell>DFF</cell>
+ <cell>3073</cell>
+ <cell>27696</cell>
+ <cell>11.10</cell>
+</row>
+<row>
+ <cell>I/O Register</cell>
+ <cell>0</cell>
+ <cell>414</cell>
+ <cell>0.00</cell>
+</row>
+<row>
+ <cell>User I/O</cell>
+ <cell>5</cell>
+ <cell>138</cell>
+ <cell>3.62</cell>
+</row>
+<row>
+ <cell>-- Single-ended I/O</cell>
+ <cell>5</cell>
+ <cell>138</cell>
+ <cell>3.62</cell>
+</row>
+<row>
+ <cell>-- Differential I/O Pairs</cell>
+ <cell>0</cell>
+ <cell>65</cell>
+ <cell>0.00</cell>
+</row>
+<row>
+ <cell>RAM64x18</cell>
+ <cell>2</cell>
+ <cell>34</cell>
+ <cell>5.88</cell>
+</row>
+<row>
+ <cell>RAM1K18</cell>
+ <cell>24</cell>
+ <cell>31</cell>
+ <cell>77.42</cell>
+</row>
+<row>
+ <cell>MACC</cell>
+ <cell>0</cell>
+ <cell>34</cell>
+ <cell>0.00</cell>
+</row>
+<row>
+ <cell>Chip Globals</cell>
+ <cell>3</cell>
+ <cell>16</cell>
+ <cell>18.75</cell>
+</row>
+<row>
+ <cell>CCC</cell>
+ <cell>1</cell>
+ <cell>6</cell>
+ <cell>16.67</cell>
+</row>
+<row>
+ <cell>RCOSC_25_50MHZ</cell>
+ <cell>0</cell>
+ <cell>1</cell>
+ <cell>0.00</cell>
+</row>
+<row>
+ <cell>RCOSC_1MHZ</cell>
+ <cell>0</cell>
+ <cell>1</cell>
+ <cell>0.00</cell>
+</row>
+<row>
+ <cell>XTLOSC</cell>
+ <cell>0</cell>
+ <cell>1</cell>
+ <cell>0.00</cell>
+</row>
+<row>
+ <cell>MSS</cell>
+ <cell>0</cell>
+ <cell>1</cell>
+ <cell>0.00</cell>
+</row>
+</table>
+<section><name>Detailed Logic Resource Usage</name></section>
+<table>
+<header>
+ <cell>Type</cell>
+ <cell>4LUT</cell>
+ <cell>DFF</cell>
+</header>
+<row>
+ <cell>Fabric Logic</cell>
+ <cell>3498</cell>
+ <cell>2137</cell>
+</row>
+<row>
+ <cell>RAM64x18 Interface Logic</cell>
+ <cell>72</cell>
+ <cell>72</cell>
+</row>
+<row>
+ <cell>RAM1K18 Interface Logic</cell>
+ <cell>864</cell>
+ <cell>864</cell>
+</row>
+<row>
+ <cell>MACC Interface Logic</cell>
+ <cell>0</cell>
+ <cell>0</cell>
+</row>
+<row>
+ <cell>Total Used</cell>
+ <cell>4434</cell>
+ <cell>3073</cell>
+</row>
+</table>
+<section><name>Detailed Carry Chains Resource Usage</name></section>
+<table>
+<header>
+</header>
+<row>
+ <cell>Length</cell>
+ <cell>Used</cell>
+</row>
+<row>
+ <cell>2</cell>
+ <cell>67</cell>
+</row>
+<row>
+ <cell>8</cell>
+ <cell>2</cell>
+</row>
+<row>
+ <cell>9</cell>
+ <cell>1</cell>
+</row>
+<row>
+ <cell>11</cell>
+ <cell>2</cell>
+</row>
+<row>
+ <cell>14</cell>
+ <cell>2</cell>
+</row>
+<row>
+ <cell>15</cell>
+ <cell>1</cell>
+</row>
+<row>
+ <cell>17</cell>
+ <cell>1</cell>
+</row>
+<row>
+ <cell>20</cell>
+ <cell>1</cell>
+</row>
+<row>
+ <cell>30</cell>
+ <cell>2</cell>
+</row>
+<row>
+ <cell>31</cell>
+ <cell>3</cell>
+</row>
+<row>
+ <cell>32</cell>
+ <cell>4</cell>
+</row>
+<row>
+ <cell>33</cell>
+ <cell>2</cell>
+</row>
+<row>
+ <cell>64</cell>
+ <cell>2</cell>
+</row>
+<row>
+ <cell>Total</cell>
+ <cell>90</cell>
+</row>
+</table>
+<section><name>I/O Function</name></section>
+<table>
+<header>
+ <cell>Type</cell>
+ <cell>w/o register</cell>
+ <cell>w/ register</cell>
+ <cell>w/ DDR register</cell>
+</header>
+<row>
+ <cell>Input I/O</cell>
+ <cell>2</cell>
+ <cell>0</cell>
+ <cell>0</cell>
+</row>
+<row>
+ <cell>Output I/O</cell>
+ <cell>3</cell>
+ <cell>0</cell>
+ <cell>0</cell>
+</row>
+<row>
+ <cell>Bidirectional I/O</cell>
+ <cell>0</cell>
+ <cell>0</cell>
+ <cell>0</cell>
+</row>
+<row>
+ <cell>Differential Input I/O Pairs</cell>
+ <cell>0</cell>
+ <cell>0</cell>
+ <cell>0</cell>
+</row>
+<row>
+ <cell>Differential Output I/O Pairs</cell>
+ <cell>0</cell>
+ <cell>0</cell>
+ <cell>0</cell>
+</row>
+</table>
+<section><name>I/O Technology</name></section>
+<table>
+<header>
+ <cell>I/O Standard</cell>
+ <cell>Vddi</cell>
+ <cell>Vref</cell>
+ <cell>Input</cell>
+ <cell>Output</cell>
+ <cell>Bidirectional</cell>
+</header>
+<row>
+ <cell>LVCMOS33</cell>
+ <cell> 3.30v</cell>
+ <cell> N/A</cell>
+ <cell> 2</cell>
+ <cell> 3</cell>
+ <cell> 0</cell>
+</row>
+</table>
+<section><name>I/O Placement</name></section>
+<table>
+<header>
+ <cell>Type</cell>
+ <cell>Count</cell>
+ <cell>Percentage</cell>
+</header>
+<row>
+ <cell>Locked</cell>
+ <cell> 0</cell>
+ <cell>0.00%</cell>
+</row>
+<row>
+ <cell>Placed</cell>
+ <cell> 0</cell>
+ <cell>0.00%</cell>
+</row>
+<row>
+ <cell>UnPlaced</cell>
+ <cell> 5</cell>
+ <cell>100.00%</cell>
+</row>
+</table>
+<section><name>Nets assigned to chip global resources</name></section>
+<table>
+<header>
+ <cell>Fanout</cell>
+ <cell>Type</cell>
+ <cell>Name</cell>
+</header>
+<row>
+ <cell>2167</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : FCCC_0_GL0</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: FCCC_0/GL0_INST/U0_RGB1</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Source: NETLIST</cell>
+</row>
+<row>
+ <cell>1656</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/cpu_reset_RNIKJKK_0</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/ocd_i_debug_coprocessor_i_cpu_reset_RNIKJKK_0/U0_RGB1</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Source: NETLIST</cell>
+</row>
+<row>
+ <cell>480</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/NN_2</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/reset_n_RNIGUS4/U0_RGB1</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Source: NETLIST</cell>
+</row>
+</table>
+<section><name>Nets assigned to row global resources</name></section>
+<table>
+<header>
+ <cell>Fanout</cell>
+ <cell>Type</cell>
+ <cell>Name</cell>
+</header>
+</table>
+<section><name>High fanout nets</name></section>
+<table>
+<header>
+ <cell>Fanout</cell>
+ <cell>Type</cell>
+ <cell>Name</cell>
+</header>
+<row>
+ <cell>222</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/exe_enable</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[6]</cell>
+</row>
+<row>
+ <cell>145</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/activate_exception</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[12]</cell>
+</row>
+<row>
+ <cell>132</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/reply_enable</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/ocd_i.debug_coprocessor_i.reply_enable_out</cell>
+</row>
+<row>
+ <cell>128</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/decode_ctl_load_Y_from_imm_12</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.ctl_load_Y_from_imm_12_0_a3</cell>
+</row>
+<row>
+ <cell>128</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/N_644_i</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.N_644_i</cell>
+</row>
+<row>
+ <cell>119</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/decode_IR_out[31]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.IR_out[31]</cell>
+</row>
+<row>
+ <cell>109</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/rs2[1]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_out[21]</cell>
+</row>
+<row>
+ <cell>104</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : LED_RED_c</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]</cell>
+</row>
+<row>
+ <cell>102</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/fetch_init_2_Z</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.fetch_proc.fetch_init_2</cell>
+</row>
+<row>
+ <cell>97</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/rs2[0]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_out[20]</cell>
+</row>
+</table>
+<section><name>High fanout nets (through buffer trees)</name></section>
+<table>
+<header>
+ <cell>Fanout</cell>
+ <cell>Type</cell>
+ <cell>Name</cell>
+</header>
+<row>
+ <cell>222</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/exe_enable</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[6]</cell>
+</row>
+<row>
+ <cell>145</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/activate_exception</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[12]</cell>
+</row>
+<row>
+ <cell>132</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/reply_enable</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/ocd_i.debug_coprocessor_i.reply_enable_out</cell>
+</row>
+<row>
+ <cell>128</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/decode_ctl_load_Y_from_imm_12</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.ctl_load_Y_from_imm_12_0_a3</cell>
+</row>
+<row>
+ <cell>128</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/N_644_i</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.N_644_i</cell>
+</row>
+<row>
+ <cell>119</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/decode_IR_out[31]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.IR_out[31]</cell>
+</row>
+<row>
+ <cell>109</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/rs2[1]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_out[21]</cell>
+</row>
+<row>
+ <cell>104</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : LED_RED_c</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]</cell>
+</row>
+<row>
+ <cell>102</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/fetch_init_2_Z</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.fetch_proc.fetch_init_2</cell>
+</row>
+<row>
+ <cell>97</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/rs2[0]</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_out[20]</cell>
+</row>
+</table>
+</doc>

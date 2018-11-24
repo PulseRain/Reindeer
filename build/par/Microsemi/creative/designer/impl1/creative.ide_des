@@ -1,0 +1,11 @@
+KEY IDE_DES_TOOL "Ide"
+KEY IDE_DES_ADB_PATH "C:\PulseRain\Reindeer\synth\Microsemi\creative\designer\impl1\creative.adb"
+LIST SOURCE_FILES
+VALUE "C:\PulseRain\Reindeer\synth\constraints\Microsemi\Creative\Reindeer.pdc;pdc"
+VALUE "C:\PulseRain\Reindeer\synth\constraints\Microsemi\Creative\Reindeer.sdc;sdc"
+ENDLIST
+LIST OPTIONAL_FILES
+VALUE "C:\PulseRain\Reindeer\synth\Microsemi\creative\synthesis\creative_sdc.sdc;Skipped"
+ENDLIST
+LIST VCD_FILES
+ENDLIST

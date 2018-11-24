@@ -1,0 +1,5 @@
+Detailed Resource Usage
+Module Name,Fabric 4LUT,Fabric DFF,Interface 4LUT,Interface DFF,Single-Ended I/O,uSRAM 1K,LSRAM 18K,PLLs and CCCs,Chip Globals
+FCCC_0/Primitives,0,0,0,0,1,0,0,1,1
+Primitives/Primitives,1,0,0,0,4,0,0,0,0
+Reindeer_0/Primitives,3497,2137,936,936,0,2,24,0,2
