@@ -1,0 +1,18 @@
+*****************************************************************
+Pin Report - Date: Fri Nov 23 23:01:52 2018 Pinchecksum: NOT-AVAILABLE
+Product: Designer
+Release: v11.9 SP1
+Version: 11.9.1.0
+Design Name: creative
+Family: SmartFusion2
+Die: M2S025
+Package: 256 VF
+*****************************************************************
+
+Port      |Pin |Fixed |Function                 |Bank     |I/O Std   |Direction                      |I/O state in Flash*Freeze mode |Resistor Pull                      |I/O available in Flash*Freeze mode |Schmitt Trigger |Odt_Static    |Odt Imp (Ohm)  |Low Power Exit |Input Delay |Slew         |Pre-Emphasis      |Output Drive (mA) |Output Load (pF) |
+----------|----|------|-------------------------|---------|----------|-------------------------------|-------------------------------|-----------------------------------|-----------------------------------|----------------|--------------|---------------|---------------|------------|-------------|------------------|------------------|-----------------|
+LED_GREEN  H4   No     MSIO99NB7                 Bank7     LVCMOS33   Output                          TRISTATE                        None                                No                                  ---              ---            ---             ---             ---          ---           ---                4                  5                 
+LED_RED    T8   No     MSIO122NB4                Bank4     LVCMOS33   Output                          TRISTATE                        None                                No                                  ---              ---            ---             ---             ---          ---           ---                4                  5                 
+osc_in     G3   No     MSIO98PB7/CCC_NW1_CLKI0   Bank7     LVCMOS33   Input                           TRISTATE                        None                                No                                  Off              ---            ---             Off             Off          ---           ---                ---                ---               
+RXD        H3   No     MSIO99PB7/CCC_NW0_CLKI0   Bank7     LVCMOS33   Input                           TRISTATE                        None                                No                                  Off              ---            ---             Off             Off          ---           ---                ---                ---               
+TXD        T6   No     MSIO120NB4/CCC_SW0_CLKI2  Bank4     LVCMOS33   Output                          TRISTATE                        None                                No                                  ---              ---            ---             ---             ---          ---           ---                4                  5                 

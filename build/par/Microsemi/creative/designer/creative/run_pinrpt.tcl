@@ -1,0 +1,10 @@
+DESIGN=creative
+DESDIR=C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative
+TARGET_DIR=C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative
+FAM=SmartFusion2
+DIE=PA4M2500_N
+PACKAGE=vf256
+PINRPT_BY_NAME=1
+PINRPT_BY_NUMBER=1
+BANK_REPORT=1
+IOREG_REPORT=1

@@ -1,0 +1,186 @@
+Resource Report
+Microsemi Corporation - Microsemi Libero Software Release v11.9 SP1 (Version 11.9.1.0)
+Date: Sat Nov 17 05:11:10 2018
+
+Device Selection
++--------------------------------+----------------+
+| Family                         | SmartFusion2   |
+| Device                         | M2S025         |
+| Package                        | 256 VF         |
+| Speed Grade                    | -1             |
+| Temp                           | 0:25:85        |
+| Voltage                        | 1.26:1.20:1.14 |
+| Core Voltage                   | 1.2V           |
+| Ramp Rate                      | 100ms Minimum  |
+| System Controller Suspend Mode | No             |
+| PLL Supply Voltage             | 3.3V           |
+| Default I/O technology         | LVCMOS 3.3V    |
+| Restrict Probe Pins            | Yes            |
+| Restrict SPI Pins              | No             |
++--------------------------------+----------------+
+
+Source Files
++---------+-----------------------------------------------------------------------+
+| Topcell | Reindeer                                                              |
+| Format  | EDIF                                                                  |
+| Source  | C:\PulseRain\Reindeer\synth\Microsemi\creative\synthesis\Reindeer.edn |
++---------+-----------------------------------------------------------------------+
+
+Options
++----------------------------------------------------+-------+
+| Enable Single Event Transient mitigation           | false |
+| Enable Design Separation Methodology               | false |
+| Limit the number of high fanout nets to display to | 10    |
++----------------------------------------------------+-------+
+
+Resource Usage
++---------------------------+------+-------+------------+
+| Type                      | Used | Total | Percentage |
++---------------------------+------+-------+------------+
+| 4LUT                      | 3945 | 27696 | 14.24      |
+| DFF                       | 2955 | 27696 | 10.67      |
+| I/O Register              | 0    | 414   | 0.00       |
+| User I/O                  | 6    | 138   | 4.35       |
+| -- Single-ended I/O       | 6    | 138   | 4.35       |
+| -- Differential I/O Pairs | 0    | 65    | 0.00       |
+| RAM64x18                  | 2    | 34    | 5.88       |
+| RAM1K18                   | 16   | 31    | 51.61      |
+| MACC                      | 0    | 34    | 0.00       |
+| Chip Globals              | 3    | 16    | 18.75      |
+| CCC                       | 0    | 6     | 0.00       |
+| RCOSC_25_50MHZ            | 0    | 1     | 0.00       |
+| RCOSC_1MHZ                | 0    | 1     | 0.00       |
+| XTLOSC                    | 0    | 1     | 0.00       |
+| MSS                       | 0    | 1     | 0.00       |
++---------------------------+------+-------+------------+
+
+Detailed Logic Resource Usage
++--------------------------+------+------+
+| Type                     | 4LUT | DFF  |
++--------------------------+------+------+
+| Fabric Logic             | 3297 | 2307 |
+| RAM64x18 Interface Logic | 72   | 72   |
+| RAM1K18 Interface Logic  | 576  | 576  |
+| MACC Interface Logic     | 0    | 0    |
+| Total Used               | 3945 | 2955 |
++--------------------------+------+------+
+
+Detailed Carry Chains Resource Usage
++--------+------+
+| Length | Used |
+| 2      | 73   |
+| 8      | 2    |
+| 9      | 1    |
+| 11     | 2    |
+| 13     | 1    |
+| 14     | 2    |
+| 17     | 1    |
+| 20     | 1    |
+| 30     | 2    |
+| 31     | 3    |
+| 32     | 4    |
+| 33     | 2    |
+| 64     | 2    |
+| Total  | 96   |
++--------+------+
+
+I/O Function
++-------------------------------+--------------+-------------+-----------------+
+| Type                          | w/o register | w/ register | w/ DDR register |
++-------------------------------+--------------+-------------+-----------------+
+| Input I/O                     | 3            | 0           | 0               |
+| Output I/O                    | 3            | 0           | 0               |
+| Bidirectional I/O             | 0            | 0           | 0               |
+| Differential Input I/O Pairs  | 0            | 0           | 0               |
+| Differential Output I/O Pairs | 0            | 0           | 0               |
++-------------------------------+--------------+-------------+-----------------+
+
+I/O Technology
++--------------+--------+------+-------+--------+---------------+
+| I/O Standard | Vddi   | Vref | Input | Output | Bidirectional |
++--------------+--------+------+-------+--------+---------------+
+| LVCMOS33     |  3.30v |  N/A |  3    |  3     |  0            |
++--------------+--------+------+-------+--------+---------------+
+
+I/O Placement
++----------+-------+------------+
+| Type     | Count | Percentage |
++----------+-------+------------+
+| Locked   |  0    | 0.00%      |
+| Placed   |  0    | 0.00%      |
+| UnPlaced |  6    | 100.00%    |
++----------+-------+------------+
+
+Nets assigned to chip global resources
++--------+---------+---------------------------------------------------------------+
+| Fanout | Type    | Name                                                          |
++--------+---------+---------------------------------------------------------------+
+| 2329   | INT_NET | Net   : NN_1                                                  |
+|        |         | Driver: clk_RNIQRC3/U0_RGB1                                   |
+|        |         | Source: NETLIST                                               |
+| 1779   | INT_NET | Net   : ocd_i.debug_coprocessor_i.cpu_reset_RNIKJKK_0         |
+|        |         | Driver: ocd_i_debug_coprocessor_i_cpu_reset_RNIKJKK_0/U0_RGB1 |
+|        |         | Source: NETLIST                                               |
+| 528    | INT_NET | Net   : NN_2                                                  |
+|        |         | Driver: reset_n_RNIGUS4/U0_RGB1                               |
+|        |         | Source: NETLIST                                               |
++--------+---------+---------------------------------------------------------------+
+
+Nets assigned to row global resources
++--------+------+------+
+| Fanout | Type | Name |
++--------+------+------+
++--------+------+------+
+
+High fanout nets
++--------+---------+----------------------------------------------------------------------------------------------------------------+
+| Fanout | Type    | Name                                                                                                           |
++--------+---------+----------------------------------------------------------------------------------------------------------------+
+| 144    | INT_NET | Net   : PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.activate_exception                                          |
+|        |         | Driver: PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[12]                         |
+| 133    | INT_NET | Net   : ocd_i.reply_enable                                                                                     |
+|        |         | Driver: ocd_i.debug_coprocessor_i.reply_enable_out                                                             |
+| 133    | INT_NET | Net   : PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.fetch_proc.un1_ctl_data_access_enable_1_Z |
+|        |         | Driver: PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.fetch_proc.un1_ctl_data_access_enable_1   |
+| 112    | INT_NET | Net   : PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.rs2[1]                                                      |
+|        |         | Driver: PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_out[21]                         |
+| 102    | INT_NET | Net   : PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.fetch_proc.fetch_init_2_Z                 |
+|        |         | Driver: PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.fetch_proc.fetch_init_2                   |
+| 99     | INT_NET | Net   : PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.decode_IR_out[31]                                           |
+|        |         | Driver: PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.IR_out[31]                        |
+| 97     | INT_NET | Net   : PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.decode_ctl_load_Y_from_imm_12                               |
+|        |         | Driver: PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.ctl_load_Y_from_imm_12_0_a3       |
+| 97     | INT_NET | Net   : N_64_i                                                                                                 |
+|        |         | Driver: PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.N_64_i                                      |
+| 96     | INT_NET | Net   : processor_paused_c                                                                                     |
+|        |         | Driver: PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]                          |
+| 95     | INT_NET | Net   : PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.exe_width_load_store[1]                                     |
+|        |         | Driver: PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.IR_out[7]                             |
++--------+---------+----------------------------------------------------------------------------------------------------------------+
+
+High fanout nets (through buffer trees)
++--------+---------+----------------------------------------------------------------------------------------------------------------+
+| Fanout | Type    | Name                                                                                                           |
++--------+---------+----------------------------------------------------------------------------------------------------------------+
+| 144    | INT_NET | Net   : PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.activate_exception                                          |
+|        |         | Driver: PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[12]                         |
+| 133    | INT_NET | Net   : ocd_i.reply_enable                                                                                     |
+|        |         | Driver: ocd_i.debug_coprocessor_i.reply_enable_out                                                             |
+| 133    | INT_NET | Net   : PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.fetch_proc.un1_ctl_data_access_enable_1_Z |
+|        |         | Driver: PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.fetch_proc.un1_ctl_data_access_enable_1   |
+| 112    | INT_NET | Net   : PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.rs2[1]                                                      |
+|        |         | Driver: PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_out[21]                         |
+| 102    | INT_NET | Net   : PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.fetch_proc.fetch_init_2_Z                 |
+|        |         | Driver: PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.fetch_proc.fetch_init_2                   |
+| 99     | INT_NET | Net   : PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.decode_IR_out[31]                                           |
+|        |         | Driver: PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.IR_out[31]                        |
+| 97     | INT_NET | Net   : PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.decode_ctl_load_Y_from_imm_12                               |
+|        |         | Driver: PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.ctl_load_Y_from_imm_12_0_a3       |
+| 97     | INT_NET | Net   : N_64_i                                                                                                 |
+|        |         | Driver: PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.N_64_i                                      |
+| 96     | INT_NET | Net   : processor_paused_c                                                                                     |
+|        |         | Driver: PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]                          |
+| 95     | INT_NET | Net   : PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.exe_width_load_store[1]                                     |
+|        |         | Driver: PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.IR_out[7]                             |
++--------+---------+----------------------------------------------------------------------------------------------------------------+
+

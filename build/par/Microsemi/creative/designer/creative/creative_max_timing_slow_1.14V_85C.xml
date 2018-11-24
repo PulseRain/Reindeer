@@ -1,0 +1,1929 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml-stylesheet href="rptstyle.xsl" type="text/xsl" ?>
+<doc>
+<title>Timing Report Max Delay Analysis
+</title>
+<text>SmartTime Version 11.9.1.0</text>
+<text>Microsemi Corporation - Microsemi Libero Software Release v11.9 SP1 (Version 11.9.1.0)</text>
+<text>Date: Fri Nov 23 23:33:39 2018
+</text>
+<table>
+<header>
+</header>
+<row>
+ <cell>Design</cell>
+ <cell>creative</cell>
+</row>
+<row>
+ <cell>Family</cell>
+ <cell>SmartFusion2</cell>
+</row>
+<row>
+ <cell>Die</cell>
+ <cell>M2S025</cell>
+</row>
+<row>
+ <cell>Package</cell>
+ <cell>256 VF</cell>
+</row>
+<row>
+ <cell>Temperature Range</cell>
+ <cell>0 - 85 C</cell>
+</row>
+<row>
+ <cell>Voltage Range</cell>
+ <cell>1.14 - 1.26 V</cell>
+</row>
+<row>
+ <cell>Speed Grade</cell>
+ <cell>-1</cell>
+</row>
+<row>
+ <cell>Design State</cell>
+ <cell>Post-Layout</cell>
+</row>
+<row>
+ <cell>Data source</cell>
+ <cell>Production</cell>
+</row>
+<row>
+ <cell>Min Operating Conditions</cell>
+ <cell>BEST - 1.26 V - 0 C</cell>
+</row>
+<row>
+ <cell>Max Operating Conditions</cell>
+ <cell>WORST - 1.14 V - 85 C</cell>
+</row>
+<row>
+ <cell>Operating Conditions</cell>
+ <cell>WORST - 1.14 V - 85 C</cell>
+</row>
+<row>
+ <cell>Scenario for Timing Analysis</cell>
+ <cell>timing_analysis</cell>
+</row>
+</table>
+<text></text>
+<section>
+<name>Summary</name>
+<table>
+<header>
+ <cell>Clock Domain</cell>
+ <cell>Period (ns)</cell>
+ <cell>Frequency (MHz)</cell>
+ <cell>Required Period (ns)</cell>
+ <cell>Required Frequency (MHz)</cell>
+ <cell>External Setup (ns)</cell>
+ <cell>Max Clock-To-Out (ns)</cell>
+</header>
+<row>
+ <cell>FCCC_0/GL0</cell>
+ <cell>9.088</cell>
+ <cell>110.035</cell>
+ <cell>6.250</cell>
+ <cell>160.000</cell>
+ <cell>-0.542</cell>
+ <cell>9.192</cell>
+</row>
+<row>
+ <cell>osc_in</cell>
+ <cell>1.640</cell>
+ <cell>609.756</cell>
+ <cell>20.000</cell>
+ <cell>50.000</cell>
+ <cell>N/A</cell>
+ <cell>N/A</cell>
+</row>
+</table>
+<text></text>
+<table>
+<header>
+ <cell></cell>
+ <cell>Min Delay (ns)</cell>
+ <cell>Max Delay (ns)</cell>
+</header>
+<row>
+ <cell>Input to Output</cell>
+ <cell>N/A</cell>
+</row>
+</table>
+</section>
+<section>
+<name>Clock Domain FCCC_0/GL0</name>
+<text></text>
+<section>
+<name>SET Register to Register</name>
+<table>
+<header>
+ <cell/>
+ <cell>From</cell>
+ <cell>To</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Slack (ns)</cell>
+ <cell>Arrival (ns)</cell>
+ <cell>Required (ns)</cell>
+ <cell>Setup (ns)</cell>
+ <cell>Minimum Period (ns)</cell>
+</header>
+<row>
+ <cell>Path 1</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_0:D</cell>
+ <cell>8.813</cell>
+ <cell>-2.838</cell>
+ <cell>12.376</cell>
+ <cell>9.538</cell>
+ <cell>0.254</cell>
+ <cell>9.088</cell>
+</row>
+<row>
+ <cell>Path 2</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret:D</cell>
+ <cell>8.797</cell>
+ <cell>-2.811</cell>
+ <cell>12.360</cell>
+ <cell>9.549</cell>
+ <cell>0.254</cell>
+ <cell>9.061</cell>
+</row>
+<row>
+ <cell>Path 3</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_0:D</cell>
+ <cell>8.526</cell>
+ <cell>-2.544</cell>
+ <cell>12.089</cell>
+ <cell>9.545</cell>
+ <cell>0.254</cell>
+ <cell>8.794</cell>
+</row>
+<row>
+ <cell>Path 4</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_ret_4:D</cell>
+ <cell>8.437</cell>
+ <cell>-2.470</cell>
+ <cell>12.000</cell>
+ <cell>9.530</cell>
+ <cell>0.254</cell>
+ <cell>8.720</cell>
+</row>
+<row>
+ <cell>Path 5</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.jal_active:CLK</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.single_clk_ram_rs2.mem_mem_0_0/INST_RAM64x18_IP:C_DIN[14]</cell>
+ <cell>8.471</cell>
+ <cell>-2.216</cell>
+ <cell>12.036</cell>
+ <cell>9.820</cell>
+ <cell>0.109</cell>
+ <cell>8.466</cell>
+</row>
+</table>
+<text></text>
+<section><name>Expanded Path 1</name></section>
+<table>
+<header>
+ <cell>Pin Name</cell>
+ <cell>Type</cell>
+ <cell>Net Name</cell>
+ <cell>Cell Name</cell>
+ <cell>Op</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Total (ns)</cell>
+ <cell>Fanout</cell>
+ <cell>Edge</cell>
+</header>
+<row>
+ <cell>From: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>To: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_0:D</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data required time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>9.538</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>-</cell>
+ <cell></cell>
+ <cell>12.376</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>slack</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>-2.838</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data arrival time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>FCCC_0/CCC_INST/INST_CCC_IP:GL0</cell>
+ <cell>Clock source</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell>Clock generation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.960</cell>
+ <cell>1.960</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST:An</cell>
+ <cell>net</cell>
+ <cell>FCCC_0/GL0_net</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.249</cell>
+ <cell>2.209</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST:YWn</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:GBM</cell>
+ <cell>+</cell>
+ <cell>0.177</cell>
+ <cell>2.386</cell>
+ <cell>29</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB48:An</cell>
+ <cell>net</cell>
+ <cell>FCCC_0/GL0_INST/U0_YWn</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.383</cell>
+ <cell>2.769</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB48:YR</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:RGB</cell>
+ <cell>+</cell>
+ <cell>0.316</cell>
+ <cell>3.085</cell>
+ <cell>10</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK</cell>
+ <cell>net</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB48_rgbr_net_1</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.478</cell>
+ <cell>3.563</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:Q</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:SLE</cell>
+ <cell>+</cell>
+ <cell>0.087</cell>
+ <cell>3.650</cell>
+ <cell>104</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.reg_file_write_addr_0_o2[4]:A</cell>
+ <cell>net</cell>
+ <cell>LED_RED_c</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.462</cell>
+ <cell>5.112</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.reg_file_write_addr_0_o2[4]:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:CFG2</cell>
+ <cell>+</cell>
+ <cell>0.143</cell>
+ <cell>5.255</cell>
+ <cell>3</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.un1_read_rs1_data_out_i_2:C</cell>
+ <cell>net</cell>
+ <cell>Reindeer_0/N_624_i</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.227</cell>
+ <cell>5.482</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.un1_read_rs1_data_out_i_2:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:CFG4</cell>
+ <cell>+</cell>
+ <cell>0.164</cell>
+ <cell>5.646</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.un1_read_rs1_data_out_i_x2_RNI3LV51:B</cell>
+ <cell>net</cell>
+ <cell>Reindeer_0/N_23_i_1</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.614</cell>
+ <cell>6.260</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.un1_read_rs1_data_out_i_x2_RNI3LV51:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:CFG4</cell>
+ <cell>+</cell>
+ <cell>0.099</cell>
+ <cell>6.359</cell>
+ <cell>63</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.read_rs1_data_out[0]:B</cell>
+ <cell>net</cell>
+ <cell>Reindeer_0/N_23_i</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.578</cell>
+ <cell>7.937</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.read_rs1_data_out[0]:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:CFG4</cell>
+ <cell>+</cell>
+ <cell>0.326</cell>
+ <cell>8.263</cell>
+ <cell>9</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.alu_proc.un19_ALU_out_axb_0_i:A</cell>
+ <cell>net</cell>
+ <cell>Reindeer_0/reg_file_read_rs1_data_out[0]</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.042</cell>
+ <cell>9.305</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.alu_proc.un19_ALU_out_axb_0_i:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:CFG2</cell>
+ <cell>+</cell>
+ <cell>0.164</cell>
+ <cell>9.469</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.alu_proc.un19_ALU_out_cry_0:C</cell>
+ <cell>net</cell>
+ <cell>Reindeer_0/un19_ALU_out_axb_0_i_Z</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.585</cell>
+ <cell>10.054</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.alu_proc.un19_ALU_out_cry_0:P</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:ARI1_CC</cell>
+ <cell>+</cell>
+ <cell>0.200</cell>
+ <cell>10.254</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i_PulseRain_RV2T_core_i_RV2T_execution_unit_i_alu_proc_un19_ALU_out_cry_0_CC_0:P[0]</cell>
+ <cell>net</cell>
+ <cell>NET_CC_CONFIG1841</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>10.254</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i_PulseRain_RV2T_core_i_RV2T_execution_unit_i_alu_proc_un19_ALU_out_cry_0_CC_0:CO</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:CC_CONFIG</cell>
+ <cell>+</cell>
+ <cell>0.573</cell>
+ <cell>10.827</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i_PulseRain_RV2T_core_i_RV2T_execution_unit_i_alu_proc_un19_ALU_out_cry_0_CC_1:CI</cell>
+ <cell>net</cell>
+ <cell>CI_TO_CO1839</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>10.827</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i_PulseRain_RV2T_core_i_RV2T_execution_unit_i_alu_proc_un19_ALU_out_cry_0_CC_1:CO</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:CC_CONFIG</cell>
+ <cell>+</cell>
+ <cell>0.186</cell>
+ <cell>11.013</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i_PulseRain_RV2T_core_i_RV2T_execution_unit_i_alu_proc_un19_ALU_out_cry_0_CC_2:CI</cell>
+ <cell>net</cell>
+ <cell>CI_TO_CO1840</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>11.013</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i_PulseRain_RV2T_core_i_RV2T_execution_unit_i_alu_proc_un19_ALU_out_cry_0_CC_2:CC[8]</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:CC_CONFIG</cell>
+ <cell>+</cell>
+ <cell>0.353</cell>
+ <cell>11.366</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i_PulseRain_RV2T_core_i_RV2T_execution_unit_i_alu_proc_un19_ALU_out_cry_31_FCINST1:CC</cell>
+ <cell>net</cell>
+ <cell>NET_CC_CONFIG1939</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>11.366</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i_PulseRain_RV2T_core_i_RV2T_execution_unit_i_alu_proc_un19_ALU_out_cry_31_FCINST1:CO</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:FCEND_BUFF_CC</cell>
+ <cell>+</cell>
+ <cell>0.066</cell>
+ <cell>11.432</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_0:D</cell>
+ <cell>net</cell>
+ <cell>Reindeer_0/un19_ALU_out_i</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.944</cell>
+ <cell>12.376</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>12.376</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data required time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0</cell>
+ <cell>Clock Constraint</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>6.250</cell>
+ <cell>6.250</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>FCCC_0/CCC_INST/INST_CCC_IP:GL0</cell>
+ <cell>Clock source</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>6.250</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell>Clock generation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.960</cell>
+ <cell>8.210</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST:An</cell>
+ <cell>net</cell>
+ <cell>FCCC_0/GL0_net</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.249</cell>
+ <cell>8.459</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST:YWn</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:GBM</cell>
+ <cell>+</cell>
+ <cell>0.177</cell>
+ <cell>8.636</cell>
+ <cell>29</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB14:An</cell>
+ <cell>net</cell>
+ <cell>FCCC_0/GL0_INST/U0_YWn</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.361</cell>
+ <cell>8.997</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB14:YR</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:RGB</cell>
+ <cell>+</cell>
+ <cell>0.316</cell>
+ <cell>9.313</cell>
+ <cell>26</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_0:CLK</cell>
+ <cell>net</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB14_rgbr_net_1</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.479</cell>
+ <cell>9.792</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.X_ret_0:D</cell>
+ <cell>Library setup time</cell>
+ <cell></cell>
+ <cell>ADLIB:SLE</cell>
+ <cell>-</cell>
+ <cell>0.254</cell>
+ <cell>9.538</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data required time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>9.538</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+</table>
+</section>
+<section>
+<name>SET External Setup</name>
+<table>
+<header>
+ <cell/>
+ <cell>From</cell>
+ <cell>To</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Slack (ns)</cell>
+ <cell>Arrival (ns)</cell>
+ <cell>Required (ns)</cell>
+ <cell>Setup (ns)</cell>
+ <cell>External Setup (ns)</cell>
+</header>
+<row>
+ <cell>Path 1</cell>
+ <cell>RXD</cell>
+ <cell>Reindeer_0/ocd_i.debug_UART_i.UART_i.rxd_sr[0]:D</cell>
+ <cell>2.671</cell>
+ <cell></cell>
+ <cell>2.671</cell>
+ <cell></cell>
+ <cell>0.254</cell>
+ <cell>-0.542</cell>
+</row>
+</table>
+<text></text>
+<section><name>Expanded Path 1</name></section>
+<table>
+<header>
+ <cell>Pin Name</cell>
+ <cell>Type</cell>
+ <cell>Net Name</cell>
+ <cell>Cell Name</cell>
+ <cell>Op</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Total (ns)</cell>
+ <cell>Fanout</cell>
+ <cell>Edge</cell>
+</header>
+<row>
+ <cell>From: RXD</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>To: Reindeer_0/ocd_i.debug_UART_i.UART_i.rxd_sr[0]:D</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data required time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>-</cell>
+ <cell></cell>
+ <cell>2.671</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>slack</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data arrival time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>RXD</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>RXD_ibuf/U0/U_IOPAD:PAD</cell>
+ <cell>net</cell>
+ <cell>RXD</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>RXD_ibuf/U0/U_IOPAD:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOPAD_IN</cell>
+ <cell>+</cell>
+ <cell>1.108</cell>
+ <cell>1.108</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>RXD_ibuf/U0/U_IOINFF:A</cell>
+ <cell>net</cell>
+ <cell>RXD_ibuf/U0/YIN1</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>-0.014</cell>
+ <cell>1.094</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>RXD_ibuf/U0/U_IOINFF:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOINFF_BYPASS</cell>
+ <cell>+</cell>
+ <cell>0.066</cell>
+ <cell>1.160</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/ocd_i.debug_UART_i.UART_i.rxd_sr[0]:D</cell>
+ <cell>net</cell>
+ <cell>RXD_c</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.511</cell>
+ <cell>2.671</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>2.671</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data required time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>FCCC_0/CCC_INST/INST_CCC_IP:GL0</cell>
+ <cell>Clock source</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell>Clock generation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.901</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST:An</cell>
+ <cell>net</cell>
+ <cell>FCCC_0/GL0_net</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.242</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST:YWn</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:GBM</cell>
+ <cell>+</cell>
+ <cell>0.172</cell>
+ <cell>N/C</cell>
+ <cell>29</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB36:An</cell>
+ <cell>net</cell>
+ <cell>FCCC_0/GL0_INST/U0_YWn</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.364</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB36:YR</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:RGB</cell>
+ <cell>+</cell>
+ <cell>0.307</cell>
+ <cell>N/C</cell>
+ <cell>81</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/ocd_i.debug_UART_i.UART_i.rxd_sr[0]:CLK</cell>
+ <cell>net</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB36_rgbr_net_1</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.481</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/ocd_i.debug_UART_i.UART_i.rxd_sr[0]:D</cell>
+ <cell>Library setup time</cell>
+ <cell></cell>
+ <cell>ADLIB:SLE</cell>
+ <cell>-</cell>
+ <cell>0.254</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+</table>
+</section>
+<section>
+<name>SET Clock to Output</name>
+<table>
+<header>
+ <cell/>
+ <cell>From</cell>
+ <cell>To</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Slack (ns)</cell>
+ <cell>Arrival (ns)</cell>
+ <cell>Required (ns)</cell>
+ <cell>Clock to Out (ns)</cell>
+</header>
+<row>
+ <cell>Path 1</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK</cell>
+ <cell>LED_GREEN</cell>
+ <cell>5.629</cell>
+ <cell></cell>
+ <cell>9.192</cell>
+ <cell></cell>
+ <cell>9.192</cell>
+</row>
+<row>
+ <cell>Path 2</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK</cell>
+ <cell>LED_RED</cell>
+ <cell>5.570</cell>
+ <cell></cell>
+ <cell>9.133</cell>
+ <cell></cell>
+ <cell>9.133</cell>
+</row>
+<row>
+ <cell>Path 3</cell>
+ <cell>Reindeer_0/TXD_Z:CLK</cell>
+ <cell>TXD</cell>
+ <cell>4.566</cell>
+ <cell></cell>
+ <cell>8.154</cell>
+ <cell></cell>
+ <cell>8.154</cell>
+</row>
+</table>
+<text></text>
+<section><name>Expanded Path 1</name></section>
+<table>
+<header>
+ <cell>Pin Name</cell>
+ <cell>Type</cell>
+ <cell>Net Name</cell>
+ <cell>Cell Name</cell>
+ <cell>Op</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Total (ns)</cell>
+ <cell>Fanout</cell>
+ <cell>Edge</cell>
+</header>
+<row>
+ <cell>From: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>To: LED_GREEN</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data required time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>-</cell>
+ <cell></cell>
+ <cell>9.192</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>slack</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data arrival time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>FCCC_0/CCC_INST/INST_CCC_IP:GL0</cell>
+ <cell>Clock source</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell>Clock generation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.960</cell>
+ <cell>1.960</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST:An</cell>
+ <cell>net</cell>
+ <cell>FCCC_0/GL0_net</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.249</cell>
+ <cell>2.209</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST:YWn</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:GBM</cell>
+ <cell>+</cell>
+ <cell>0.177</cell>
+ <cell>2.386</cell>
+ <cell>29</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB48:An</cell>
+ <cell>net</cell>
+ <cell>FCCC_0/GL0_INST/U0_YWn</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.383</cell>
+ <cell>2.769</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB48:YR</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:RGB</cell>
+ <cell>+</cell>
+ <cell>0.316</cell>
+ <cell>3.085</cell>
+ <cell>10</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK</cell>
+ <cell>net</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB48_rgbr_net_1</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.478</cell>
+ <cell>3.563</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:Q</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:SLE</cell>
+ <cell>+</cell>
+ <cell>0.087</cell>
+ <cell>3.650</cell>
+ <cell>104</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state_RNIBCFF[1]:A</cell>
+ <cell>net</cell>
+ <cell>LED_RED_c</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.032</cell>
+ <cell>4.682</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state_RNIBCFF[1]:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:CFG1</cell>
+ <cell>+</cell>
+ <cell>0.100</cell>
+ <cell>4.782</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>LED_GREEN_obuf/U0/U_IOOUTFF:A</cell>
+ <cell>net</cell>
+ <cell>LED_GREEN_c</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.644</cell>
+ <cell>6.426</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>LED_GREEN_obuf/U0/U_IOOUTFF:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOOUTFF_BYPASS</cell>
+ <cell>+</cell>
+ <cell>0.330</cell>
+ <cell>6.756</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>LED_GREEN_obuf/U0/U_IOPAD:D</cell>
+ <cell>net</cell>
+ <cell>LED_GREEN_obuf/U0/DOUT</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.066</cell>
+ <cell>6.822</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>LED_GREEN_obuf/U0/U_IOPAD:PAD</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:IOPAD_TRI</cell>
+ <cell>+</cell>
+ <cell>2.370</cell>
+ <cell>9.192</cell>
+ <cell>0</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>LED_GREEN</cell>
+ <cell>net</cell>
+ <cell>LED_GREEN</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>9.192</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>9.192</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data required time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>FCCC_0/CCC_INST/INST_CCC_IP:GL0</cell>
+ <cell>Clock source</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell>Clock generation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.960</cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>LED_GREEN</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>N/C</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+</row>
+</table>
+</section>
+<section>
+<name>SET Register to Asynchronous</name>
+<table>
+<header>
+ <cell/>
+ <cell>From</cell>
+ <cell>To</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Slack (ns)</cell>
+ <cell>Arrival (ns)</cell>
+ <cell>Required (ns)</cell>
+ <cell>Recovery (ns)</cell>
+ <cell>Minimum Period (ns)</cell>
+ <cell>Skew (ns)</cell>
+</header>
+<row>
+ <cell>Path 1</cell>
+ <cell>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:CLK</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.mem_write_addr_d1[28]:ALn</cell>
+ <cell>3.148</cell>
+ <cell>2.749</cell>
+ <cell>6.715</cell>
+ <cell>9.464</cell>
+ <cell>0.353</cell>
+ <cell>3.501</cell>
+ <cell>0.000</cell>
+</row>
+<row>
+ <cell>Path 2</cell>
+ <cell>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:CLK</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.mem_write_addr_d1[30]:ALn</cell>
+ <cell>3.148</cell>
+ <cell>2.749</cell>
+ <cell>6.715</cell>
+ <cell>9.464</cell>
+ <cell>0.353</cell>
+ <cell>3.501</cell>
+ <cell>0.000</cell>
+</row>
+<row>
+ <cell>Path 3</cell>
+ <cell>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:CLK</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.exception_addr_ret_21:ALn</cell>
+ <cell>3.148</cell>
+ <cell>2.749</cell>
+ <cell>6.715</cell>
+ <cell>9.464</cell>
+ <cell>0.353</cell>
+ <cell>3.501</cell>
+ <cell>0.000</cell>
+</row>
+<row>
+ <cell>Path 4</cell>
+ <cell>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:CLK</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.mem_write_addr_d1[24]:ALn</cell>
+ <cell>3.148</cell>
+ <cell>2.749</cell>
+ <cell>6.715</cell>
+ <cell>9.464</cell>
+ <cell>0.353</cell>
+ <cell>3.501</cell>
+ <cell>0.000</cell>
+</row>
+<row>
+ <cell>Path 5</cell>
+ <cell>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:CLK</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.exception_addr_ret_3:ALn</cell>
+ <cell>3.148</cell>
+ <cell>2.749</cell>
+ <cell>6.715</cell>
+ <cell>9.464</cell>
+ <cell>0.353</cell>
+ <cell>3.501</cell>
+ <cell>0.000</cell>
+</row>
+</table>
+<text></text>
+<section><name>Expanded Path 1</name></section>
+<table>
+<header>
+ <cell>Pin Name</cell>
+ <cell>Type</cell>
+ <cell>Net Name</cell>
+ <cell>Cell Name</cell>
+ <cell>Op</cell>
+ <cell>Delay (ns)</cell>
+ <cell>Total (ns)</cell>
+ <cell>Fanout</cell>
+ <cell>Edge</cell>
+</header>
+<row>
+ <cell>From: Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:CLK</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>To: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.mem_write_addr_d1[28]:ALn</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data required time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>9.464</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>-</cell>
+ <cell></cell>
+ <cell>6.715</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>slack</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>2.749</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data arrival time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>FCCC_0/CCC_INST/INST_CCC_IP:GL0</cell>
+ <cell>Clock source</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>0.000</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell>Clock generation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.960</cell>
+ <cell>1.960</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST:An</cell>
+ <cell>net</cell>
+ <cell>FCCC_0/GL0_net</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.249</cell>
+ <cell>2.209</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST:YWn</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:GBM</cell>
+ <cell>+</cell>
+ <cell>0.177</cell>
+ <cell>2.386</cell>
+ <cell>29</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB40:An</cell>
+ <cell>net</cell>
+ <cell>FCCC_0/GL0_INST/U0_YWn</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.374</cell>
+ <cell>2.760</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB40:YR</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:RGB</cell>
+ <cell>+</cell>
+ <cell>0.316</cell>
+ <cell>3.076</cell>
+ <cell>84</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:CLK</cell>
+ <cell>net</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB40_rgbr_net_1</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.491</cell>
+ <cell>3.567</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:Q</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:SLE</cell>
+ <cell>+</cell>
+ <cell>0.108</cell>
+ <cell>3.675</cell>
+ <cell>1</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_RNIKJKK:A</cell>
+ <cell>net</cell>
+ <cell>Reindeer_0/cpu_reset</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.320</cell>
+ <cell>3.995</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_RNIKJKK:Y</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:CFG2</cell>
+ <cell>+</cell>
+ <cell>0.147</cell>
+ <cell>4.142</cell>
+ <cell>1</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_RNIKJKK_0:An</cell>
+ <cell>net</cell>
+ <cell>Reindeer_0/N_15962</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.968</cell>
+ <cell>5.110</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_RNIKJKK_0:YEn</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:GBM</cell>
+ <cell>+</cell>
+ <cell>0.374</cell>
+ <cell>5.484</cell>
+ <cell>21</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>Reindeer_0/ocd_i_debug_coprocessor_i_cpu_reset_RNIKJKK_0/U0_RGB1_RGB23:An</cell>
+ <cell>net</cell>
+ <cell>Reindeer_0/ocd_i_debug_coprocessor_i_cpu_reset_RNIKJKK_0/U0_YWn_GEast</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.377</cell>
+ <cell>5.861</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>Reindeer_0/ocd_i_debug_coprocessor_i_cpu_reset_RNIKJKK_0/U0_RGB1_RGB23:YL</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:RGB</cell>
+ <cell>+</cell>
+ <cell>0.317</cell>
+ <cell>6.178</cell>
+ <cell>73</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.mem_write_addr_d1[28]:ALn</cell>
+ <cell>net</cell>
+ <cell>Reindeer_0/ocd_i_debug_coprocessor_i_cpu_reset_RNIKJKK_0/U0_RGB1_RGB23_rgbl_net_1</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.537</cell>
+ <cell>6.715</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>data arrival time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>6.715</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+<row>
+ <cell>Data required time calculation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0</cell>
+ <cell>Clock Constraint</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>6.250</cell>
+ <cell>6.250</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>FCCC_0/CCC_INST/INST_CCC_IP:GL0</cell>
+ <cell>Clock source</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.000</cell>
+ <cell>6.250</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell>Clock generation</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>1.960</cell>
+ <cell>8.210</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST:An</cell>
+ <cell>net</cell>
+ <cell>FCCC_0/GL0_net</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.249</cell>
+ <cell>8.459</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST:YEn</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:GBM</cell>
+ <cell>+</cell>
+ <cell>0.178</cell>
+ <cell>8.637</cell>
+ <cell>23</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB29:An</cell>
+ <cell>net</cell>
+ <cell>FCCC_0/GL0_INST/U0_YWn_GEast</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.374</cell>
+ <cell>9.011</cell>
+ <cell></cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB29:YL</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:RGB</cell>
+ <cell>+</cell>
+ <cell>0.317</cell>
+ <cell>9.328</cell>
+ <cell>73</cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.mem_write_addr_d1[28]:CLK</cell>
+ <cell>net</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB29_rgbl_net_1</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.489</cell>
+ <cell>9.817</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.mem_write_addr_d1[28]:ALn</cell>
+ <cell>Library recovery time</cell>
+ <cell></cell>
+ <cell>ADLIB:SLE</cell>
+ <cell>-</cell>
+ <cell>0.353</cell>
+ <cell>9.464</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+ <cell>data required time</cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>9.464</cell>
+ <cell></cell>
+ <cell></cell>
+</row>
+<row>
+</row>
+</table>
+</section>
+<section>
+<name>SET External Recovery</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Asynchronous to Register</name>
+<text>No Path</text>
+</section>
+</section>
+<section>
+<name>Clock Domain osc_in</name>
+<text>Info: The maximum frequency of this clock domain is limited by the minimum pulse widths of pin FCCC_0/CLK0_PAD_INST/U_IOPAD:PAD</text>
+<text></text>
+<section>
+<name>SET Register to Register</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET External Setup</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Clock to Output</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Register to Asynchronous</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET External Recovery</name>
+<text>No Path</text>
+</section>
+<section>
+<name>SET Asynchronous to Register</name>
+<text>No Path</text>
+</section>
+</section>
+<section>
+<name>Path Set Pin to Pin</name>
+<section>
+<name>SET Input to Output</name>
+<text>No Path</text>
+</section>
+</section>
+<section>
+<name>Path Set User Sets</name>
+</section>
+</doc>
