@@ -1,0 +1,12 @@
+#ldc_set_location -site {35} [get_ports osc_in]
+#ldc_set_location -site {43} [get_ports reset_button]
+ldc_set_location -site {41} [get_ports REDn]
+ldc_set_location -site {40} [get_ports BLUn]
+ldc_set_location -site {39} [get_ports GRNn]
+ldc_set_location -site {14} [get_ports TXD]
+ldc_set_location -site {15} [get_ports RXD]
+ldc_set_location -site {16} [get_ports spi_ss]
+
+
+
+create_clock -name {osc_i/CLKHF} -period 41.6667 [get_pins {osc_i/CLKHF }]  
