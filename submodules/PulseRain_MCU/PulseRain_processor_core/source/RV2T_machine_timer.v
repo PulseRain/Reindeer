@@ -60,12 +60,13 @@ module RV2T_machine_timer (
    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
    // mtime_cycle_counter
    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        /* verilator lint_off WIDTH */
         always @(posedge clk, negedge reset_n) begin
             if (!reset_n) begin
                 mtime_cycle_counter <= 0;
                 mtime_cycle_pulse <= 0;
    
-            end else if (mtime_cycle_counter != ((`MTIME_CYCLE_PERIOD_BITS)'(`MTIME_CYCLE_PERIOD - 1))) begin
+            end else if (mtime_cycle_counter != (`MTIME_CYCLE_PERIOD - 1)) begin 
                 mtime_cycle_counter <= mtime_cycle_counter + 1;
                 mtime_cycle_pulse <= 0;
             end else begin

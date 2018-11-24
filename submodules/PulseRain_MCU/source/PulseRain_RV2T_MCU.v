@@ -180,13 +180,15 @@ module PulseRain_RV2T_MCU (
     // peripherals 
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         
+        /* verilator lint_off WIDTH */
+        
         UART_TX #(.STABLE_TIME(`UART_STABLE_COUNT), .BAUD_PERIOD_BITS(`UART_TX_BAUD_PERIOD_BITS)) UART_TX_i (
             .clk (clk),
             .reset_n (reset_n),
             .sync_reset (sync_reset),
             
             .start_TX (start_TX),
-            .baud_rate_period_m1 ((`UART_TX_BAUD_PERIOD_BITS)'(`UART_TX_BAUD_PERIOD - 1)),
+            .baud_rate_period_m1 (`UART_TX_BAUD_PERIOD - 1),
             //.baud_rate_period_m1 ((`UART_TX_BAUD_PERIOD - 1)),
             .SBUF_in (tx_data),
             .tx_active (tx_active),
