@@ -48,11 +48,11 @@ As the hold-and-load gets software images from an external host, it does not nee
 ![Folder Structure](https://github.com/PulseRain/Reindeer/raw/master/docs/folder_structure.png "Folder Structure")
   
 **And here is a brief index of the key items in the repository:**
-  * The soft CPU's HDL code
+  * **The soft CPU's HDL code**
   
     The platform dependent top level verilog code can be found in https://github.com/PulseRain/Reindeer/tree/master/source. And the platform independent verilog code can be found in https://github.com/PulseRain/Reindeer/tree/master/submodules/PulseRain_MCU
   
-  * Constraint and other FPGA-related files necessary to produce a binary bitstream for the respective hardware
+  * **Constraint and other FPGA-related files necessary to produce a binary bitstream for the respective hardware**
   
     Synthesis related constraint files can be found in https://github.com/PulseRain/Reindeer/tree/master/build/synth/constraints, and PAR related constraint files can be found in https://github.com/PulseRain/Reindeer/tree/master/build/par/constraints.
   
@@ -64,7 +64,7 @@ As the hold-and-load gets software images from an external host, it does not nee
 
     2. Close synplify_pro and use Libero SOC V11.9 to open https://github.com/PulseRain/Reindeer/blob/master/build/par/Microsemi/creative/creative.prjx, import the Reindeer.vm produced in the previous step, and start the build process to generate bitstream. (In the repository, the Reindeer.vm has already been imported and put in https://github.com/PulseRain/Reindeer/tree/master/build/par/Microsemi/creative/hdl.)
   
-  * Binary version of the bitstream: 
+  * **Binary version of the bitstream** 
   
     *) The Lattice FPGA bitstream for [**Gnarly Grey UPDuinoV2 board**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard) can be found in https://github.com/PulseRain/Reindeer/raw/master/bitstream_and_binary/Lattice/UPDuinoV2/UPDuinoV2_Reindeer.bin
 
