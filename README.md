@@ -85,7 +85,7 @@ The PulseRain Reindeer can be simulated with [Verialtor](https://www.veripool.or
          
          export PATH="/opt/zephyr-sdk/sysroots/x86_64-pokysdk-linux/usr/bin/riscv32-zephyr-elf":$PATH
          
-  3. **git https://github.com/PulseRain/Reindeer.git**
+  3. **git clone https://github.com/PulseRain/Reindeer.git**
   
   4. **cd Reindeer/sim/verilator**
   
@@ -108,12 +108,11 @@ And the diagram below also illustrates the same idea:
   
 ![Verilator Simulation](https://github.com/PulseRain/Reindeer/raw/master/docs/sim_verilator.png "Verilator Simulation")
   
-  
-  
-BTW, the Makefile has the following targets:
-make build    # default target to build the test bench
-make test_all  # run compliance test for all 55 cases
-make test compliance_case_name  # for example: make test I-ADD-01
-              make run elf_file # run sim on an elf file, for example:    make run ~/zephyr/samples/hello_world/build/zephyr/zephyr.elf
+And for the sake of completeness, the [Makefile for Verilator](https://github.com/PulseRain/Reindeer/blob/master/sim/verilator/Makefile) supports the following targets:
+  * **make build** : the default target to build the verilog uut and C++ testbench for Verilator
+  * **make test_all** : run compliance test for all 55 cases
+  * **make test compliance_case_name** : run compliance test for individual case. For example: make test I-ADD-01
+  * **make run elf_file** : run sim on an .elf file for 2000 cycles. For example: make run ../../bitstream_and_binary/zephyr/hello_world.elf
+
 
 
