@@ -93,7 +93,7 @@ The PulseRain Reindeer can be simulated with [Verialtor](https://www.veripool.or
   
   6. Run the simulation for compliance test: **make test_all**
 
-As mentioned early, the Reindeer soft CPU uses an OCD to load code/data. And for the [verilator]( https://www.veripool.org/wiki/verilator) simulation, a C++ testbench will replace the OCD. And the testbench will invoke the toolchain (riscv32-zephyr-elf-) to extract code/data from sections of .elf file. The testbench will mimic the OCD bus to load the code/data into CPU's memory.  Afterwards, the start-address of the .elf file (_start symbol) will be passed onto the CPU, and turn the CPU into active state.
+As mentioned early, the Reindeer soft CPU uses an OCD to load code/data. And for the [verilator]( https://www.veripool.org/wiki/verilator) simulation, a C++ testbench will replace the OCD. And the testbench will invoke the toolchain (riscv32-zephyr-elf-) to extract code/data from sections of .elf file. The testbench will mimic the OCD bus to load the code/data into CPU's memory.  Afterwards, the start-address of the .elf file ("_start" or "__start" symbol) will be passed onto the CPU, and turn the CPU into active state.
 
 To form a foundation for verification, it is mandatory to pass [55 test cases]( https://github.com/riscv/riscv-compliance/tree/master/riscv-test-suite/rv32i) for RV32I instruction set. For compliance test, the test bench will automatically extract the address for begin_signature and end_signature symbol.
 The compliance test will utilize the hold-and-load feature of the PulseRain Reindeer soft CPU, and do the following:
