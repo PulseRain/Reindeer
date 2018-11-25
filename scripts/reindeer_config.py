@@ -518,34 +518,34 @@ if __name__ == "__main__":
     #=========================================================================
     
     try:
-          opts, args = getopt.getopt(sys.argv[1:],"t:a:RrhP:b:e:d:l:c",["ELF="])
+          opts, args = getopt.getopt(sys.argv[1:],"t:a:RrhP:b:e:d:l:c",["run", "reset", "toolchain=", "port=", "start_addr=", "baud=", "elf=", "dump_addr=", "dump_length=", "console_enable"])
     except (getopt.GetoptError, err):
           print (str(err))
           sys.exit(1)
     
     for opt, args in opts:
-        if opt in ('-b'): 
+        if opt in ('-b', '--baud'): 
             baud_rate = int (args)
-        elif opt in ('-a'): 
+        elif opt in ('-a', "--start_addr"): 
             if (args.startswith("0x")):
                 start_addr = int (args, 16)
             else:
                 start_addr = int (args)
             use_default_start_addr = 0
-        elif opt in ('-R'): 
+        elif opt in ('-R', '--run'): 
             run = 1
-        elif opt in ('-P'):
+        elif opt in ('-P', '--port'):
             com_port = args
-        elif opt in ('-t'):
+        elif opt in ('-t', '--toolchain'):
             toolchain = args
             objdump = toolchain + 'objdump'
             objcopy = toolchain + 'objcopy'
             readelf = toolchain + 'readelf'
-        elif opt in ('-e'):
+        elif opt in ('-e', '--elf'):
             image_file = args
-        elif opt in ('-r'):
+        elif opt in ('-r', '--reset'):
             cpu_reset = 1
-        elif opt in ('-d'):
+        elif opt in ('-d', '--dump_addr'):
             dump_mem = 1
             
             if (args.startswith("0x")):
@@ -553,19 +553,27 @@ if __name__ == "__main__":
             else:
                 dump_addr = int (args)
                 
-        elif opt in ('-l'):
+        elif opt in ('-l', '--dump_length'):
             if (args.startswith("0x")):
                 dump_length = int (args, 16)
             else:
                 dump_length = int (args)
-        elif opt in ('-c'):
+        elif opt in ('-c', '--console_enable'):
             console_enable = 1
         else:
             print ("Usage:\n  ")
-            print ("  Options: \n    -U: replace default nios image with a new one\n    -b: baud rate in bps \n    -h print usage")
-            print ("\n    --CFM=image file for CFM \n    --UFM=image_file for UFM")
-            print ("\n  Example: using com port 7, baud rate 921600, default FP51-1T image")
-            print ("           py M10_high_speed_config.py -P COM7 -b 921600")
+            print ("  Options: \n")
+            print ("    -r, --reset          : reset the CPU")
+            print ("    -P, --port=          : the name of the COM port, such as COM7")
+            print ("    -t, --toolchain=     : setup the toolchain. By default, ", toolchain, " is used")
+            print ("    -e, --elf=           : path and name to the elf image file")
+            print ("    -d, --dump_addr      : start address for memory dumping")
+            print ("    -l, --dump_length    : length of the memory dump")
+            print ("    -c, --console_enable : switch to observe the CPU UART after image is loaded.")
+            print (" ")
+            print ("    Example: To run the zephyr hello_world application")
+            print ("     python reindeer_config.py --port=COM9 --reset --elf=C:\GitHub\Reindeer\bitstream_and_binary\zephyr\hello_world.elf --console_enable --run")
+            
             sys.exit(1)
             
     print ("===============================================================================")
@@ -583,7 +591,10 @@ if __name__ == "__main__":
         ocd.readelf = readelf
         
     except:
-        print ("Failed to open COM port")
+        print ("Failed to open COM port.")
+        print ("Please check the COM port connection is ok.")
+        print ("And please make sure pyserial package is installed.")
+        print ("To install pySerial package, use the command: pip3 install pyserial");
         sys.exit(1)
     
     if (cpu_reset):
