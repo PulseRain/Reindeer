@@ -11,4 +11,5 @@ Reindeer's pipeline is composed of 4 stages:
   + Register Write Back and Memory Access (MEM)
 
 However, unlike traditional pipelines, Reindeer's pipeline stages are mapped to a 2 x 2 layout, as illustrated below:
+![2 x 2 pipeline](https://github.com/PulseRain/Reindeer/raw/master/docs/pipeline_2x2.png "2 x 2 Pipeline")
 
