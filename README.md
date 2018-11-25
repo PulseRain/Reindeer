@@ -33,4 +33,10 @@ To break the status quo, the PulseRain Reindeer takes a different approach calle
 
 ![Hold and Load](https://github.com/PulseRain/Reindeer/raw/master/docs/hold_and_load.png "Hold and Load")
 
+The soft CPU and the OCD can share the same UART port, as illustrated above. The RX signal goes to both the soft CPU and OCD, while the TX signal has to go through a mux. And that mux is controlled by the OCD. 
 
+After reset, the soft CPU will be put into a hold state, and it will have the UART TX by default. But a valid debug frame sending from the host PC can let OCD to reconfigure the mux and switch the UART TX to OCD side, for which the memory can be accessed, and the control frames can be exchanged. A new software image can be loaded into the memory during the CPU hold state, which gives rise to the name "hold-and-load". 
+
+After the memory is loaded with the new image, the OCD can setup the start-address of the soft CPU, and give it a start pulse to make the soft CPU active, and the OCD can switch the UART TX back to the CPU side for its output.
+ 
+As the hold-and-load gets software images from an external host, it does not need any ROM to begin with. This makes it more portable across all FPGA platforms. If Flash is used to store the software image, the OCD can be modified a little bit to read from the flash instead of the external host.
