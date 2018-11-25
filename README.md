@@ -18,3 +18,14 @@ In the 2 x 2 layout, each stage is active every other clock cycle. For the even 
 
 Thanks to using single port memory to store both code and data, the Reindeer soft CPU is quite portable and flexible across all FPGA platforms. Some FPGA platforms, like the Lattice iCE40 UltraPlus family, carry a large amount of SPRAM with very little EBR RAM. And those platforms will find themselves a good match with the PulseRain Reindeer when it comes to soft CPU.
 
+## Highlights - Hold and Load
+
+Bootstrapping a soft CPU tends to be a headache. The traditional approach is more or less like the following:
+  1. Making a boot loader in software
+  2. Store the boot loader in a ROM
+  3. After power on reset, the boot loader is supposed to be executed first, for which it will move the rest of the code/data into RAM. And the PC will be set to the _start address of the new image afterwards.
+
+The drawbacks of the above approach are:
+  1. The bootloader will be more or less intrusive, as it takes memory spaces.
+  2. The implementation of ROM is not consistent across all FPGA platforms. For some FPGAs, like Intel Cyclone or Xilinx Artix, the memory initial data can be stored in FPGA bitstream, but other platforms might choose to use external flash for the ROM data. The boot loader itself could be executed in place, or loaded with a small preloader implemented in FPGA fabric. And when it comes to SoC + FPGA, like the Microsemi Smartfusion2, a hardcore processor could also be involved in the boot-loading. In other words, the soft CPU might have to improvise a little bit to work on various platforms.
+
