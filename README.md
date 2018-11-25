@@ -72,24 +72,26 @@ As the hold-and-load gets software images from an external host, it does not nee
   
   * # Simulation with [Verilator](https://www.veripool.org/wiki/verilator)
 
-The PulseRain Reindeer can be simulated with [Verialtor](https://www.veripool.org/wiki/verilator). To prepare the simulation, the following steps (tested on n Ubuntu and Debian hosts) can be followed: 
+The PulseRain Reindeer can be simulated with [Verialtor](https://www.veripool.org/wiki/verilator). To prepare the simulation, the following steps (tested on Ubuntu and Debian hosts) can be followed: 
   1. Install zephyr-SDK, (details can be found in https://docs.zephyrproject.org/latest/getting_started/installation_linux.html)
      
-  2. Make sure riscv32-zephyr-elf-  tool chain is in $PATH and is accessible everywhere
-     If default installation path is used, the following can be appended to the .profile or .bash_profile
+  2. Make sure **riscv32-zephyr-elf-**  tool chain is in $PATH and is accessible everywhere
+    
+     If default installation path is used for Zephyr SDK, the following can be appended to the .profile or .bash_profile
+     
          export ZEPHYR_TOOLCHAIN_VARIANT=zephyr
          
          export ZEPHYR_SDK_INSTALL_DIR=/opt/zephyr-sdk
          
          export PATH="/opt/zephyr-sdk/sysroots/x86_64-pokysdk-linux/usr/bin/riscv32-zephyr-elf":$PATH
          
-  3. git https://github.com/PulseRain/Reindeer.git
+  3. **git https://github.com/PulseRain/Reindeer.git**
   
-  4. cd Reindeer/sim/verilator
+  4. **cd Reindeer/sim/verilator**
   
-  5. Build the verilog code and C++ test bench: make
+  5. Build the verilog code and C++ test bench: **make**
   
-  6. Run the simulation for compliance test: make test_all
+  6. Run the simulation for compliance test: **make test_all**
 
 BTW, the Makefile has the following targets:
 make build    # default target to build the test bench
