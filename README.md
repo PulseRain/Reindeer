@@ -115,4 +115,7 @@ And for the sake of completeness, the [Makefile for Verilator](https://github.co
   * **make run elf_file** : run sim on an .elf file for 2000 cycles. For example: make run ../../bitstream_and_binary/zephyr/hello_world.elf
 
 
+  * # Running Software on the soft CPU
+  
+A python script called [reindeer_config.py] (https://github.com/PulseRain/Reindeer/blob/master/scripts/reindeer_config.py) is provided to load software (.elf file) into the soft CPU and execute. Currently, this script is only tested on Windows platform. Before using this script, the following should be done to setup the environment on Windows:
 
