@@ -159,8 +159,15 @@ class testbench
 std::string exec(const char* cmd) {
     std::array<char, 1024> buffer;
     std::string result;
-    std::shared_ptr<FILE> pipe(popen(cmd, "r"), pclose);
-    if (!pipe) throw std::runtime_error("popen() failed!");
+    
+    std::string new_cmd {cmd};
+    new_cmd += " 2>&1";
+
+    std::shared_ptr<FILE> pipe(popen(new_cmd.c_str(), "r"), pclose);
+    if (!pipe) {
+      throw std::runtime_error("popen() failed!");
+    }
+
     while (!feof(pipe.get())) {
         if (fgets(buffer.data(), 1024, pipe.get()) != nullptr)
             result += buffer.data();
@@ -440,6 +447,7 @@ void elf_label_process(std::string elf_file)
     std::string cmd_output {exec (cmd.c_str())};
     
     if (cmd_output.find ("not found") != std::string::npos) {
+        std::cout << cmd_output << "\n"; 
         exit(-1);
     }
     //std::cout << "output is ============> \n" << cmd_output << "\n";
