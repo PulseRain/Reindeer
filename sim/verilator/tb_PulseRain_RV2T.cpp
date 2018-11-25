@@ -439,6 +439,9 @@ void elf_label_process(std::string elf_file)
     
     std::string cmd_output {exec (cmd.c_str())};
     
+    if (cmd_output.find ("not found") != std::string::npos) {
+        exit(-1);
+    }
     //std::cout << "output is ============> \n" << cmd_output << "\n";
    
    
