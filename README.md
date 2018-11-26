@@ -443,11 +443,11 @@ The score on [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**](http://www.lattice
   * # Miscellaneous 
 ## UART Configuration
 
-Both [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard) and [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560) have FTDI chip that will convert between UART and USB. And such UART can be shared by the programmer and the FPGA. So there is no need for extra wire to make additional serial port. If terminal emulator software is used, the UART should be configured as **115200 baud rate, 8 bit data, none parity, 1 stop bit and no flow control** 
+Both [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard) and [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560) have FTDI chip that can convert between UART and USB. And the UART can be shared by the programmer and the FPGA. So there is no need for extra wire to make additional serial port. If terminal emulator software is used, the UART should be configured as **115200 baud rate, 8 bit data, none parity, 1 stop bit and no flow control** 
 
 ## LED
 
-The status of the soft CPU is indicated by different clock of LEDs on both Both [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard) and [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560). After power on reset, the LED turns red, which indicates the hold/paused state. When the soft CPU becomes active, the LED will turn into green.
+The status of the soft CPU is indicated by different color of LEDs on both [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard) and [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560). After power on reset, the LED will turn red, which indicates the hold/paused state. When the soft CPU becomes active, the LED will turn into green.
 
 ## Configuration of the soft CPU
 
@@ -455,7 +455,7 @@ For Lattice UP5K FPGA, the configuration of soft CPU is determined by https://gi
 
 For Microsemi SmartFusion2 FPGA, the configuration of soft CPU is determined by https://github.com/PulseRain/Reindeer/raw/master/submodules/PulseRain_MCU/common/Microsemi/SmartFusion2/config.vh
 
-By default, the Reindeer soft CPU only supports RV32I. To make it support hardware mul/div (RV32IM), please turn define ENABLE_HW_MUL_DIV to 1, and rebuild to generate a new bitstream.
+By default, the Reindeer soft CPU only supports RV32I. To make it support hardware mul/div (RV32IM), please turn "`define ENABLE_HW_MUL_DIV" to 1 in config.h, and rebuild to generate a new bitstream.
 
 
   
