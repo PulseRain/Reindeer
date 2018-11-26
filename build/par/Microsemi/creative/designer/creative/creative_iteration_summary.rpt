@@ -50,3 +50,25 @@
            3   8988747    N/A                        0.363  creative_timing_violations_max_r5_s3.rpt       creative_r5_s3
   The best result creative_r5_s3 has been saved into the project.
 
+#------------------------------------------------------------------------------------------------------------------------------------------
+# RUN NUMBER: 6   DATE: 22:28:57 25-Nov-2018
+# INVOKED AS: C:/Microsemi/Libero_SoC_v11.9/Designer/bin/libero.exe extended_run_lib.tcl -skip_open_project -root {C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative} -n 3 -starting_seed_index 1 -compare_criteria violations -analysis max -slack_criteria worst
+#------------------------------------------------------------------------------------------------------------------------------------------
+# Seed Index  Seed      Maximum Delay        Worst Slack  Report Analyzed                                Saved Design
+# ==========  ========  ===============  ===============  =============================================  ===================================
+           1         0    N/A                        0.035  creative_timing_violations_max_r6_s1.rpt       creative_r6_s1
+           2  86662958    N/A                       -0.220  creative_timing_violations_max_r6_s2.rpt       creative_r6_s2
+           3   8988747    N/A                        0.120  creative_timing_violations_max_r6_s3.rpt       creative_r6_s3
+  The best result creative_r6_s3 has been saved into the project.
+
+#------------------------------------------------------------------------------------------------------------------------------------------
+# RUN NUMBER: 7   DATE: 23:15:17 25-Nov-2018
+# INVOKED AS: C:/Microsemi/Libero_SoC_v11.9/Designer/bin/libero.exe extended_run_lib.tcl -skip_open_project -root {C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative} -n 3 -starting_seed_index 4 -compare_criteria violations -analysis max -slack_criteria worst
+#------------------------------------------------------------------------------------------------------------------------------------------
+# Seed Index  Seed      Maximum Delay        Worst Slack  Report Analyzed                                Saved Design
+# ==========  ========  ===============  ===============  =============================================  ===================================
+           4  51071856    N/A                        0.098  creative_timing_violations_max_r7_s4.rpt       creative_r7_s4
+           5  78381505    N/A                        0.222  creative_timing_violations_max_r7_s5.rpt       creative_r7_s5
+           6  82287664    N/A                        0.157  creative_timing_violations_max_r7_s6.rpt       creative_r7_s6
+  The best result creative_r7_s5 has been saved into the project.
+

@@ -18,33 +18,33 @@ I/O Bank and Globals Assigner completed successfully.
 Total time spent in I/O Bank and Globals Assigner: 1 seconds
 
 Placer V4.0 - 11.9.1 
-Design: creative                        Started: Sat Nov 24 01:09:23 2018
+Design: creative                        Started: Sun Nov 25 23:15:32 2018
 
 Initializing High-Effort Timing-Driven Placement ...
 Placing design...
 End of placement.
-Pre-Placement Runtime        : 33 seconds
-Placement Runtime            : 394 seconds
+Pre-Placement Runtime        : 8 seconds
+Placement Runtime            : 103 seconds
 
 Placer completed successfully.
 
 Design: creative                        
-Finished: Sat Nov 24 01:18:04 2018
-Total CPU Time:     00:08:34            Total Elapsed Time: 00:08:41
-Total Memory Usage: 430.1 Mbytes
+Finished: Sun Nov 25 23:17:44 2018
+Total CPU Time:     00:02:09            Total Elapsed Time: 00:02:12
+Total Memory Usage: 430.4 Mbytes
                         o - o - o - o - o - o
 
 
 Timing-driven Router 
-Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creativeStarted: Sat Nov 24 01:18:35 2018
+Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creativeStarted: Sun Nov 25 23:17:50 2018
 
 
 Timing-driven Router completed successfully.
 
 Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creative
-Finished: Sat Nov 24 01:21:53 2018
-Total CPU Time:     00:03:13            Total Elapsed Time: 00:03:18
-Total Memory Usage: 1218.1 Mbytes
+Finished: Sun Nov 25 23:18:42 2018
+Total CPU Time:     00:00:50            Total Elapsed Time: 00:00:52
+Total Memory Usage: 1218.7 Mbytes
                         o - o - o - o - o - o
 
 Info: Iteration 1:
@@ -57,69 +57,7 @@ Resource Usage
 | 4LUT          | 4669 | 27696 | 16.86      |
 | DFF           | 3346 | 27696 | 12.08      |
 | I/O Register  | 0    | 408   | 0.00       |
-| Logic Element | 4956 | 27696 | 17.89      |
-+---------------+------+-------+------------+
-
-INFO: Reading User SDC file C:\GitHub\Reindeer\build\par\Microsemi\creative\constraint\Reindeer.sdc.
-
-***** Place and Route Configurations *****
-Timing-driven            : ON
-Power-driven             : OFF
-High-effort              : OFF
-Repair min-delay         : ON
-Incremental              : OFF
-Inter-clock optimization : ON
-TDPR scenario            : place_and_route
-
-INFO: Reading User PDC file C:\GitHub\Reindeer\build\par\Microsemi\creative\constraint\io\Reindeer.pdc. 0 error(s) and 0 warning(s)
-
-Running the I/O Bank and Globals Assigner.
-Info:  I/O Bank and Globals Assigner identified 5 fixed I/O macros, 0 unfixed I/O macros
-
-I/O Bank and Globals Assigner completed successfully.
-Total time spent in I/O Bank and Globals Assigner: 1 seconds
-
-Placer V4.0 - 11.9.1 
-Design: creative                        Started: Sat Nov 24 02:50:02 2018
-
-Initializing Timing-Driven Placement ...
-Placing design...
-End of placement.
-Pre-Placement Runtime        : 34 seconds
-Placement Runtime            : 164 seconds
-
-Placer completed successfully.
-
-Design: creative                        
-Finished: Sat Nov 24 02:54:45 2018
-Total CPU Time:     00:04:36            Total Elapsed Time: 00:04:43
-Total Memory Usage: 430.4 Mbytes
-                        o - o - o - o - o - o
-
-
-Router 
-Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creativeStarted: Sat Nov 24 02:54:52 2018
-
-
-Router completed successfully.
-
-Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creative
-Finished: Sat Nov 24 02:55:18 2018
-Total CPU Time:     00:00:26            Total Elapsed Time: 00:00:26
-Total Memory Usage: 997.2 Mbytes
-                        o - o - o - o - o - o
-
-Info: Iteration 1:
-  Total violating paths eligible for improvement: 0
-  Worst minimum delay slack: 
-Resource Usage
-+---------------+------+-------+------------+
-| Type          | Used | Total | Percentage |
-+---------------+------+-------+------------+
-| 4LUT          | 4669 | 27696 | 16.86      |
-| DFF           | 3346 | 27696 | 12.08      |
-| I/O Register  | 0    | 408   | 0.00       |
-| Logic Element | 4930 | 27696 | 17.80      |
+| Logic Element | 4934 | 27696 | 17.81      |
 +---------------+------+-------+------------+
 
 INFO: Reading User SDC file C:\GitHub\Reindeer\build\par\Microsemi\creative\constraint\Reindeer.sdc.
@@ -142,95 +80,33 @@ I/O Bank and Globals Assigner completed successfully.
 Total time spent in I/O Bank and Globals Assigner: 0 seconds
 
 Placer V4.0 - 11.9.1 
-Design: creative                        Started: Sat Nov 24 03:28:19 2018
+Design: creative                        Started: Sun Nov 25 23:20:05 2018
 
 Initializing High-Effort Timing-Driven Placement ...
 Placing design...
 End of placement.
-Pre-Placement Runtime        : 8 seconds
-Placement Runtime            : 107 seconds
-
-Placer completed successfully.
-
-Design: creative                        
-Finished: Sat Nov 24 03:30:34 2018
-Total CPU Time:     00:02:14            Total Elapsed Time: 00:02:15
-Total Memory Usage: 430.0 Mbytes
-                        o - o - o - o - o - o
-
-
-Timing-driven Router 
-Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creativeStarted: Sat Nov 24 03:30:40 2018
-
-
-Timing-driven Router completed successfully.
-
-Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creative
-Finished: Sat Nov 24 03:31:25 2018
-Total CPU Time:     00:00:42            Total Elapsed Time: 00:00:45
-Total Memory Usage: 1219.4 Mbytes
-                        o - o - o - o - o - o
-
-Info: Iteration 1:
-  Total violating paths eligible for improvement: 0
-  Worst minimum delay slack: 
-Resource Usage
-+---------------+------+-------+------------+
-| Type          | Used | Total | Percentage |
-+---------------+------+-------+------------+
-| 4LUT          | 4669 | 27696 | 16.86      |
-| DFF           | 3346 | 27696 | 12.08      |
-| I/O Register  | 0    | 408   | 0.00       |
-| Logic Element | 4919 | 27696 | 17.76      |
-+---------------+------+-------+------------+
-
-INFO: Reading User SDC file C:\GitHub\Reindeer\build\par\Microsemi\creative\constraint\Reindeer.sdc.
-
-***** Place and Route Configurations *****
-Timing-driven            : ON
-Power-driven             : OFF
-High-effort              : ON
-Repair min-delay         : ON
-Incremental              : OFF
-Inter-clock optimization : ON
-TDPR scenario            : place_and_route
-
-INFO: Reading User PDC file C:\GitHub\Reindeer\build\par\Microsemi\creative\constraint\io\Reindeer.pdc. 0 error(s) and 0 warning(s)
-
-Running the I/O Bank and Globals Assigner.
-Info:  I/O Bank and Globals Assigner identified 5 fixed I/O macros, 0 unfixed I/O macros
-
-I/O Bank and Globals Assigner completed successfully.
-Total time spent in I/O Bank and Globals Assigner: 1 seconds
-
-Placer V4.0 - 11.9.1 
-Design: creative                        Started: Sat Nov 24 03:32:43 2018
-
-Initializing High-Effort Timing-Driven Placement ...
-Placing design...
-End of placement.
-Pre-Placement Runtime        : 8 seconds
+Pre-Placement Runtime        : 7 seconds
 Placement Runtime            : 121 seconds
 
 Placer completed successfully.
 
 Design: creative                        
-Finished: Sat Nov 24 03:35:13 2018
-Total CPU Time:     00:02:27            Total Elapsed Time: 00:02:30
-Total Memory Usage: 430.2 Mbytes
+Finished: Sun Nov 25 23:22:34 2018
+Total CPU Time:     00:02:26            Total Elapsed Time: 00:02:29
+Total Memory Usage: 430.6 Mbytes
                         o - o - o - o - o - o
 
 
 Timing-driven Router 
-Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creativeStarted: Sat Nov 24 03:35:19 2018
+Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creativeStarted: Sun Nov 25 23:22:40 2018
 
 
 Timing-driven Router completed successfully.
 
 Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creative
-Finished: Sat Nov 24 03:36:08 2018
-Total CPU Time:     00:00:48            Total Elapsed Time: 00:00:49
-Total Memory Usage: 1219.9 Mbytes
+Finished: Sun Nov 25 23:23:33 2018
+Total CPU Time:     00:00:52            Total Elapsed Time: 00:00:53
+Total Memory Usage: 1217.9 Mbytes
                         o - o - o - o - o - o
 
 Info: Iteration 1:
@@ -243,68 +119,6 @@ Resource Usage
 | 4LUT          | 4669 | 27696 | 16.86      |
 | DFF           | 3346 | 27696 | 12.08      |
 | I/O Register  | 0    | 408   | 0.00       |
-| Logic Element | 4939 | 27696 | 17.83      |
-+---------------+------+-------+------------+
-
-INFO: Reading User SDC file C:\GitHub\Reindeer\build\par\Microsemi\creative\constraint\Reindeer.sdc.
-
-***** Place and Route Configurations *****
-Timing-driven            : ON
-Power-driven             : OFF
-High-effort              : ON
-Repair min-delay         : ON
-Incremental              : OFF
-Inter-clock optimization : ON
-TDPR scenario            : place_and_route
-
-INFO: Reading User PDC file C:\GitHub\Reindeer\build\par\Microsemi\creative\constraint\io\Reindeer.pdc. 0 error(s) and 0 warning(s)
-
-Running the I/O Bank and Globals Assigner.
-Info:  I/O Bank and Globals Assigner identified 5 fixed I/O macros, 0 unfixed I/O macros
-
-I/O Bank and Globals Assigner completed successfully.
-Total time spent in I/O Bank and Globals Assigner: 0 seconds
-
-Placer V4.0 - 11.9.1 
-Design: creative                        Started: Sat Nov 24 03:37:28 2018
-
-Initializing High-Effort Timing-Driven Placement ...
-Placing design...
-End of placement.
-Pre-Placement Runtime        : 8 seconds
-Placement Runtime            : 128 seconds
-
-Placer completed successfully.
-
-Design: creative                        
-Finished: Sat Nov 24 03:40:05 2018
-Total CPU Time:     00:02:36            Total Elapsed Time: 00:02:37
-Total Memory Usage: 430.0 Mbytes
-                        o - o - o - o - o - o
-
-
-Timing-driven Router 
-Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creativeStarted: Sat Nov 24 03:40:12 2018
-
-
-Timing-driven Router completed successfully.
-
-Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creative
-Finished: Sat Nov 24 03:41:03 2018
-Total CPU Time:     00:00:49            Total Elapsed Time: 00:00:51
-Total Memory Usage: 1219.2 Mbytes
-                        o - o - o - o - o - o
-
-Info: Iteration 1:
-  Total violating paths eligible for improvement: 0
-  Worst minimum delay slack: 
-Resource Usage
-+---------------+------+-------+------------+
-| Type          | Used | Total | Percentage |
-+---------------+------+-------+------------+
-| 4LUT          | 4669 | 27696 | 16.86      |
-| DFF           | 3346 | 27696 | 12.08      |
-| I/O Register  | 0    | 408   | 0.00       |
-| Logic Element | 4943 | 27696 | 17.85      |
+| Logic Element | 4937 | 27696 | 17.83      |
 +---------------+------+-------+------------+
 

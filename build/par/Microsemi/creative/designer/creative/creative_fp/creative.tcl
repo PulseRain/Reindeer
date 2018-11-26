@@ -11,11 +11,7 @@ close_project
 exit }
 export_single_stapl \
     -name {M2S025} \
-    -file {C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\export\creative.stp} \
-    -secured
-export_single_dat \
-    -name {M2S025} \
-    -file {C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\export\creative.dat} \
+    -file {C:\temp\yyy\creative.stp} \
     -secured
 set_programming_file -name {M2S025} -no_file
 save_project

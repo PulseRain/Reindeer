@@ -1,6 +1,6 @@
 Resource Report
 Microsemi Corporation - Microsemi Libero Software Release v11.9 SP1 (Version 11.9.1.0)
-Date: Sat Nov 24 02:48:55 2018
+Date: Sun Nov 25 23:15:15 2018
 
 Device Selection
 +--------------------------------+----------------+
@@ -39,10 +39,10 @@ Resource Usage
 +---------------------------+------+-------+------------+
 | 4LUT                      | 4669 | 27696 | 16.86      |
 | DFF                       | 3346 | 27696 | 12.08      |
-| I/O Register              | 0    | 408   | 0.00       |
-| User I/O                  | 5    | 136   | 3.68       |
-| -- Single-ended I/O       | 5    | 136   | 3.68       |
-| -- Differential I/O Pairs | 0    | 64    | 0.00       |
+| I/O Register              | 0    | 414   | 0.00       |
+| User I/O                  | 5    | 138   | 3.62       |
+| -- Single-ended I/O       | 5    | 138   | 3.62       |
+| -- Differential I/O Pairs | 0    | 65    | 0.00       |
 | RAM64x18                  | 2    | 34    | 5.88       |
 | RAM1K18                   | 24   | 31    | 77.42      |
 | MACC                      | 0    | 34    | 0.00       |

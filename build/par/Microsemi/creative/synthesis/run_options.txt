@@ -1,12 +1,12 @@
 #--  Synopsys, Inc.
 #--  Version L-2016.09M-SP1-5
 #--  Project file C:\GitHub\Reindeer\build\par\Microsemi\creative\synthesis\run_options.txt
-#--  Written on Sat Nov 24 01:07:07 2018
+#--  Written on Sun Nov 25 23:14:58 2018
 
 
 #project files
-add_file -verilog "C:/GitHub/Reindeer/build/par/Microsemi/creative/../../../synth/Microsemi/SmartFusion2/Reindeer.vm"
 add_file -verilog "C:/GitHub/Reindeer/build/par/Microsemi/creative/component/work/creative/FCCC_0/creative_FCCC_0_FCCC.v"
+add_file -verilog "C:/GitHub/Reindeer/build/par/Microsemi/creative/hdl/Reindeer.vm"
 add_file -verilog "C:/GitHub/Reindeer/build/par/Microsemi/creative/component/work/creative/creative.v"
 add_file -fpga_constraint "C:/GitHub/Reindeer/build/par/Microsemi/creative/designer/creative/synthesis.fdc"
 

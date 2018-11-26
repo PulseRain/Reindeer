@@ -9,14 +9,15 @@ set_defvar -name {PA4_GB_MIN_GB_FANOUT_TO_USE_RCLKINT} -value {300}
 set_defvar -name {PA4_GB_MAX_FANOUT_DATA_MOVE} -value {5000}
 set_defvar -name {PA4_GB_HIGH_FANOUT_THRESHOLD} -value {5000}
 set_defvar -name {PA4_GB_COUNT} -value {16}
-set_defvar -name {RESTRICTPROBEPINS} -value {1}
+set_defvar -name {RESTRICTPROBEPINS} -value {0}
 set_defvar -name {RESTRICTSPIPINS} -value {0}
 set_defvar -name {PDC_IMPORT_HARDERROR} -value {1}
 set_defvar -name {PA4_IDDQ_FF_FIX} -value {1}
 set_defvar -name {BLOCK_PLACEMENT_CONFLICTS} -value {ERROR}
 set_defvar -name {BLOCK_ROUTING_CONFLICTS} -value {LOCK}
 set_defvar -name {RTG4_MITIGATION_ON} -value {0}
-set_defvar -name {USE_CONSTRAINT_FLOW} -value {True}
+set_defvar -name {USE_CONSTRAINT_FLOW} -value True
+set_defvar -name {FHB_AUTO_INSTANTIATION} -value {0}
 
 set_compile_info \
     -category {"Device Selection"} \

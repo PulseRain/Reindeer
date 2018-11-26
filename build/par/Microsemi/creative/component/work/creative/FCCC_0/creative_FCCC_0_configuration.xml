@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml-stylesheet href="rptstyle.xsl" type="text/xsl" ?>
+<doc>
+<title>Configuration report for creative_FCCC_0_</title>
+<separator/>
+<table>
+<header>
+</header>
+<row>
+ <cell>Date:</cell>
+ <cell>Sun Nov 25 22:27:59 2018</cell>
+</row>
+<separator/>
+<row>
+ <cell>Design:</cell>
+ <cell>creative</cell>
+</row>
+<row>
+ <cell>Instance:</cell>
+ <cell>FCCC_0</cell>
+</row>
+<row>
+ <cell>Family:</cell>
+ <cell>SmartFusion2</cell>
+</row>
+<row>
+ <cell>Die:</cell>
+ <cell>M2S025</cell>
+</row>
+<row>
+ <cell>Package:</cell>
+ <cell>256 VF</cell>
+</row>
+</table>
+<text></text>
+<section>
+<name>Outputs Configuration Summary</name>
+<table>
+<header>
+ <cell>Name</cell>
+ <cell>Type</cell>
+ <cell>Source</cell>
+ <cell>Source Frequency</cell>
+ <cell>Required Output Frequency</cell>
+ <cell>Actual Output Frequency</cell>
+ <cell>Divider</cell>
+</header>
+<row>
+ <cell>GL0</cell>
+ <cell>primary clock</cell>
+ <cell>PLL (0)</cell>
+ <cell>160 MHz</cell>
+ <cell>160 MHz</cell>
+ <cell>160 MHz</cell>
+ <cell>--</cell>
+</row>
+<separator/>
+</table>
+</section>
+<section>
+<name>PLL Configuration Summary</name>
+<table>
+<header>
+</header>
+<row>
+ <cell>Reference clock frequency</cell>
+ <cell>50 MHz</cell>
+</row>
+<row>
+ <cell>Reference clock source</cell>
+ <cell>Dedicated Input Pad 0</cell>
+</row>
+<row>
+ <cell>Output frequency</cell>
+ <cell>160 MHz</cell>
+</row>
+<row>
+ <cell>VCO frequency</cell>
+ <cell>640 MHz</cell>
+</row>
+<separator/>
+<row>
+ <cell>PLL reference clock divider</cell>
+ <cell>1</cell>
+</row>
+<row>
+ <cell>CCC reference clock divider</cell>
+ <cell>5</cell>
+</row>
+<separator/>
+<row>
+ <cell>Feedback source</cell>
+ <cell>CCC Internal</cell>
+</row>
+<row>
+ <cell>PLL feedback divider</cell>
+ <cell>1</cell>
+</row>
+<row>
+ <cell>CCC feedback divider</cell>
+ <cell>16</cell>
+</row>
+<row>
+ <cell>External feedback divider</cell>
+ <cell>--</cell>
+</row>
+<separator/>
+<row>
+ <cell>PLL VCO divider</cell>
+ <cell>4</cell>
+</row>
+<separator/>
+<row>
+ <cell>Lock counter</cell>
+ <cell>1024 cycles</cell>
+</row>
+<row>
+ <cell>Lock window</cell>
+ <cell>32000 ppm</cell>
+</row>
+<separator/>
+<row>
+ <cell>Spread Spectrum Modulation</cell>
+ <cell>Disable</cell>
+</row>
+<row>
+ <cell>Required Spread Spectrum Modulation Frequency</cell>
+ <cell>--</cell>
+</row>
+<row>
+ <cell>Actual Spread Spectrum Modulation Frequency</cell>
+ <cell>--</cell>
+</row>
+<row>
+ <cell>Spread Spectrum Modulation Depth</cell>
+ <cell>--</cell>
+</row>
+</table>
+</section>
+<section>
+<name>CCC Registers Configured Value</name>
+<table>
+<header>
+ <cell>Register Name</cell>
+ <cell>Address</cell>
+ <cell>Value</cell>
+ <cell>Description</cell>
+</header>
+<row>
+ <cell>Reserved</cell>
+ <cell>0x00</cell>
+ <cell>0x00</cell>
+ <cell>Reserved</cell>
+</row>
+<row>
+ <cell>FCCC_RFMUX_CR</cell>
+ <cell>0x01</cell>
+ <cell>0x00</cell>
+ <cell>RFMUX configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_RFDIV_CR</cell>
+ <cell>0x02</cell>
+ <cell>0x04</cell>
+ <cell>RFDIV configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_FBMUX_CR</cell>
+ <cell>0x03</cell>
+ <cell>0x07</cell>
+ <cell>FBMUX configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_FBDIV_CR0</cell>
+ <cell>0x04</cell>
+ <cell>0x0f</cell>
+ <cell>FBDIV configuration register 0</cell>
+</row>
+<row>
+ <cell>FCCC_FBDIV_CR1</cell>
+ <cell>0x05</cell>
+ <cell>0x00</cell>
+ <cell>FBDIV configuration register 1</cell>
+</row>
+<row>
+ <cell>FCCC_NGMUX0_CR0</cell>
+ <cell>0x06</cell>
+ <cell>0x07</cell>
+ <cell>NGMUX0 configuration register 0</cell>
+</row>
+<row>
+ <cell>FCCC_NGMUX0_CR1</cell>
+ <cell>0x07</cell>
+ <cell>0x18</cell>
+ <cell>NGMUX0 configuration register 1</cell>
+</row>
+<row>
+ <cell>FCCC_NGMUX1_CR0</cell>
+ <cell>0x08</cell>
+ <cell>0x18</cell>
+ <cell>NGMUX1 configuration register 0</cell>
+</row>
+<row>
+ <cell>FCCC_NGMUX1_CR1</cell>
+ <cell>0x09</cell>
+ <cell>0x18</cell>
+ <cell>NGMUX1 configuration register 1</cell>
+</row>
+<row>
+ <cell>FCCC_NGMUX2_CR0</cell>
+ <cell>0x0a</cell>
+ <cell>0x18</cell>
+ <cell>NGMUX2 configuration register 0</cell>
+</row>
+<row>
+ <cell>FCCC_NGMUX2_CR1</cell>
+ <cell>0x0b</cell>
+ <cell>0x18</cell>
+ <cell>NGMUX2 configuration register 1</cell>
+</row>
+<row>
+ <cell>FCCC_NGMUX3_CR0</cell>
+ <cell>0x0c</cell>
+ <cell>0x18</cell>
+ <cell>NGMUX3 configuration register 0</cell>
+</row>
+<row>
+ <cell>FCCC_NGMUX3_CR1</cell>
+ <cell>0x0d</cell>
+ <cell>0x18</cell>
+ <cell>NGMUX3 configuration register 1</cell>
+</row>
+<row>
+ <cell>FCCC_GPMUX0_CR</cell>
+ <cell>0x0e</cell>
+ <cell>0x58</cell>
+ <cell>GPMUX0 configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_GPMUX1_CR</cell>
+ <cell>0x0f</cell>
+ <cell>0x58</cell>
+ <cell>GPMUX1 configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_GPMUX2_CR</cell>
+ <cell>0x10</cell>
+ <cell>0x58</cell>
+ <cell>GPMUX2 configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_GPMUX3_CR</cell>
+ <cell>0x11</cell>
+ <cell>0x58</cell>
+ <cell>GPMUX3 configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_GPD0_CR</cell>
+ <cell>0x12</cell>
+ <cell>0x01</cell>
+ <cell>GPD0 configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_GPD1_CR</cell>
+ <cell>0x13</cell>
+ <cell>0x01</cell>
+ <cell>GPD1 configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_GPD2_CR</cell>
+ <cell>0x14</cell>
+ <cell>0x01</cell>
+ <cell>GPD2 configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_GPD3_CR</cell>
+ <cell>0x15</cell>
+ <cell>0x01</cell>
+ <cell>GPD3 configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_PLL_CR0</cell>
+ <cell>0x16</cell>
+ <cell>0x06</cell>
+ <cell>PLL lock window configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_PLL_CR1</cell>
+ <cell>0x17</cell>
+ <cell>0x05</cell>
+ <cell>PLL lock counter configuration and lock status register</cell>
+</row>
+<row>
+ <cell>FCCC_PLL_CR2</cell>
+ <cell>0x18</cell>
+ <cell>0x00</cell>
+ <cell>PLL SSCG modulation frequency configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_PLL_CR3</cell>
+ <cell>0x19</cell>
+ <cell>0x01</cell>
+ <cell>PLL SSCG modulation depth configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_PLL_CR4</cell>
+ <cell>0x1a</cell>
+ <cell>0x00</cell>
+ <cell>PLL SSCG functionality enable register</cell>
+</row>
+<row>
+ <cell>FCCC_PLL_CR5</cell>
+ <cell>0x1b</cell>
+ <cell>0x02</cell>
+ <cell>PLL operation mode and supply voltages configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_PLL_CR6</cell>
+ <cell>0x1c</cell>
+ <cell>0x00</cell>
+ <cell>PLL internal or external feedback path selection register</cell>
+</row>
+<row>
+ <cell>FCCC_GPDS_SYNC_CR</cell>
+ <cell>0x1d</cell>
+ <cell>0x00</cell>
+ <cell>GPDs&apos; outputs realignment request configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_PLL_CR7</cell>
+ <cell>0x1e</cell>
+ <cell>0x02</cell>
+ <cell>PLL&apos;s internal output divider configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_PLL_CR8</cell>
+ <cell>0x1f</cell>
+ <cell>0x00</cell>
+ <cell>PLL&apos;s internal reference clock divider configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_PLL_CR9</cell>
+ <cell>0x20</cell>
+ <cell>0x00</cell>
+ <cell>PLL&apos;s internal feedback clock divider configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_PLL_CR10</cell>
+ <cell>0x21</cell>
+ <cell>0x05</cell>
+ <cell>PLL loop filter range configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_GPD0_SYNC_CR</cell>
+ <cell>0x22</cell>
+ <cell>0x02</cell>
+ <cell>GPD0 operating mode configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_GPD1_SYNC_CR</cell>
+ <cell>0x23</cell>
+ <cell>0x02</cell>
+ <cell>GPD1 operating mode configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_GPD2_SYNC_CR</cell>
+ <cell>0x24</cell>
+ <cell>0x02</cell>
+ <cell>GPD2 operating mode configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_GPD3_SYNC_CR</cell>
+ <cell>0x25</cell>
+ <cell>0x02</cell>
+ <cell>GPD3 operating mode configuration register</cell>
+</row>
+<row>
+ <cell>FCCC_PDLY_CR</cell>
+ <cell>0x26</cell>
+ <cell>0x40</cell>
+ <cell>Programmable delay elements configuration register</cell>
+</row>
+</table>
+</section>
+<text></text>
+</doc>

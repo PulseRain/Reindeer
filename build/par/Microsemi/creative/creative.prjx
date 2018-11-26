@@ -44,49 +44,80 @@ ENDLIST
 LIST FileManager
 VALUE "<project>\component\Actel\SgCore\FCCC\2.0.201\FCCC.cxf,actgen_cxf"
 STATE="utd"
-TIME="1543063695"
+TIME="1543213680"
 SIZE="241"
+PARENT="<project>\component\work\creative\creative.cxf"
+ENDFILE
+VALUE "<project>\component\work\creative\creative.cxf,actgen_cxf"
+STATE="utd"
+TIME="1543213681"
+SIZE="2638"
+ENDFILE
+VALUE "<project>\component\work\creative\creative.v,hdl"
+STATE="utd"
+TIME="1543213681"
+SIZE="2857"
+PARENT="<project>\component\work\creative\creative.cxf"
+IS_READONLY="TRUE"
+ENDFILE
+VALUE "<project>\component\work\creative\FCCC_0\creative_FCCC_0_FCCC.cxf,actgen_cxf"
+STATE="utd"
+TIME="1543213680"
+SIZE="697"
+PARENT="<project>\component\work\creative\creative.cxf"
+ENDFILE
+VALUE "<project>\component\work\creative\FCCC_0\creative_FCCC_0_FCCC.v,hdl"
+STATE="utd"
+TIME="1543213680"
+SIZE="1785"
+PARENT="<project>\component\work\creative\FCCC_0\creative_FCCC_0_FCCC.cxf"
+IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\constraint\io\Reindeer.pdc,io_pdc"
 STATE="utd"
-TIME="1543063695"
+TIME="1543212088"
 SIZE="1606"
 IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\constraint\Reindeer.sdc,sdc"
 STATE="utd"
-TIME="1543063695"
+TIME="1543212088"
 SIZE="233"
 IS_READONLY="TRUE"
 ENDFILE
+VALUE "<project>\hdl\Reindeer.vm,hdl"
+STATE="utd"
+TIME="1543216484"
+SIZE="3390437"
+ENDFILE
 VALUE "<project>\synthesis\creative.edn,syn_edn"
 STATE="utd"
-TIME="1543063695"
-SIZE="7214166"
+TIME="1543213725"
+SIZE="8647309"
 ENDFILE
 VALUE "<project>\synthesis\creative.so,so"
 STATE="utd"
-TIME="1543063695"
+TIME="1543213728"
 SIZE="233"
 ENDFILE
 VALUE "<project>\synthesis\creative_sdc.sdc,syn_sdc"
 STATE="utd"
-TIME="1543063695"
+TIME="1543213725"
 SIZE="1044"
 ENDFILE
 VALUE "<project>\synthesis\creative_syn.prj,prj"
 STATE="utd"
-TIME="1543063695"
-SIZE="2227"
+TIME="1543213729"
+SIZE="2193"
 ENDFILE
 VALUE "<project>\synthesis\Reindeer.so,so"
 STATE="utd"
-TIME="1543063695"
+TIME="1543212088"
 SIZE="232"
 ENDFILE
 VALUE "<project>\synthesis\Reindeer_syn.prj,prj"
 STATE="utd"
-TIME="1543063695"
+TIME="1543212088"
 SIZE="0"
 ENDFILE
 ENDLIST
@@ -94,7 +125,7 @@ LIST UsedFile
 ENDLIST
 LIST NewModulesInfo
 LIST "creative::work"
-FILE "<project>\synthesis\creative.edn,syn_edn"
+FILE "<project>\component\work\creative\creative.v,hdl"
 LIST SynthesisConstraints
 VALUE "<project>\constraint\Reindeer.sdc,sdc"
 ENDLIST
@@ -186,8 +217,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="C:\Microsemi\Libero_SoC_v11.9\SynplifyPro\bin\synplify_pro.exe"
-PARAM=""
-BATCH=0
+PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
+BATCH=1
 LICENSE=""
 IS32BIT="1"
 EndProfile
@@ -250,10 +281,17 @@ Reports;Reports;0
 ReportsCurrentItem;Verify Timing:creative_max_timing_slow_1.14V_85C.xml
 StartPage;StartPage;0
 Constraint Manager;Constraint Manager;0
-ACTIVEVIEW;Constraint Manager
+SmartDesign;creative;0
+ACTIVEVIEW;Reports
 ENDLIST
 LIST ModuleSubBlockList
-LIST "creative::work","synthesis\creative.edn","FALSE","FALSE"
+LIST "creative::work","component\work\creative\creative.v","TRUE","FALSE"
+SUBBLOCK "creative_FCCC_0_FCCC::work","component\work\creative\FCCC_0\creative_FCCC_0_FCCC.v","FALSE","FALSE"
+SUBBLOCK "Reindeer::work","hdl\Reindeer.vm","FALSE","FALSE"
+ENDLIST
+LIST "creative_FCCC_0_FCCC::work","component\work\creative\FCCC_0\creative_FCCC_0_FCCC.v","FALSE","FALSE"
+ENDLIST
+LIST "Reindeer::work","hdl\Reindeer.vm","FALSE","FALSE"
 ENDLIST
 ENDLIST
 LIST ActiveTestBenchList
