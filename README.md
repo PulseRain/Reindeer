@@ -144,11 +144,11 @@ A python script called [**reindeer_config.py**](https://github.com/PulseRain/Rei
 
   5. open a command prompt, and install the pyserial package for python:
   
-    ** pip3 install pyserial **
+     **pip3 install pyserial**
 
   6. clone the GitHub repository for Reindeer soft CPU
      
-    ** git clone https://github.com/PulseRain/Reindeer.git**
+    **git clone https://github.com/PulseRain/Reindeer.git**
 
   7. cd Reindeer/scripts , and type in "python reindeer_config.py -h" for help
 
@@ -178,8 +178,8 @@ A python script called [**reindeer_config.py**](https://github.com/PulseRain/Rei
 If everything is correct, the screen output should be like the following:
 
 *===============================================================================*
-* \#  Copyright (c) 2018, PulseRain Technology LLC*
-* \# Reindeer Configuration Utility, Version 1.0*
+*\#   Copyright (c) 2018, PulseRain Technology LLC*
+*\#   Reindeer Configuration Utility, Version 1.0*
 ===============================================================================
 baud_rate  =  115200
 com_port   =  COM9
