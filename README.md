@@ -93,7 +93,7 @@ The PulseRain Reindeer can be simulated with [Verialtor](https://www.veripool.or
   
   6. Run the simulation for compliance test: **make test_all**
   
-<a href="https://youtu.be/bs-CplrT9Mo" target="_blank"><img src="https://github.com/PulseRain/Reindeer/raw/master/docs/verilator.GIF" alt="Verilator" width="240" height="180" border="10" /></a>
+<a href="https://youtu.be/bs-CplrT9Mo" target="_blank"><img src="https://github.com/PulseRain/Reindeer/raw/master/docs/verilator.GIF" alt="Verilator" width="1008" height="756" border="10" /></a>
 
 As mentioned early, the Reindeer soft CPU uses an OCD to load code/data. And for the [verilator]( https://www.veripool.org/wiki/verilator) simulation, a C++ testbench will replace the OCD. The testbench will invoke the toolchain (riscv32-zephyr-elf-) to extract code/data from sections of the .elf file. The testbench will mimic the OCD bus to load the code/data into CPU's memory.  Afterwards, the start-address of the .elf file ("_start" or "__start" symbol) will be passed onto the CPU, and turn the CPU into active state.
 
