@@ -421,7 +421,7 @@ One thing special about philosophers application is that its output is targeting
 
 ![zephyr philosophers](https://github.com/PulseRain/Reindeer/raw/master/docs/philosophers.GIF "zephyr philosophers")
 
-## Running the Compliance Test on Hardware
+## Running the Benchmark
 
 Thanks to its 2 x 2 pipeline layout, the PulseRain Reindeer can close at very high clock rate.
  
@@ -430,3 +430,13 @@ At this point, the bitstream for [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**
 
 *Please note that there is no crystal oscillator on the UPDuinoV2 board. The FPGA on that board runs off an on-chip RC oscillator (HSOSC primitive). And the HSOSC only supports 12MHz, 24MHz or 48MHz option. There is no middle ground between those frequencies. That's why 24MHz is chosen for the UPDuinoV2.*
 
+[Dhrystone](https://github.com/PulseRain/riscv-tests/tree/master/benchmarks/dhrystone) has been ported to the Reindeer soft CPU for RV32I instruction set. Its .elf image file (160MHz) is at [**here**](https://github.com/PulseRain/Reindeer/raw/master/bitstream_and_binary/Dhrystone/dhrystone_RV32I.riscv).
+
+To run the Dhrystone, please do the followiing:
+**python reindeer_config.py --port=COM9 --reset --elf=C:\GitHub\Reindeer\bitstream_and_binary\Dhrystone\dhrystone_RV32I.riscv --console_enable --run**
+
+For RV32I, Reindeer soft CPU can score 71364 on [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560)
+The score on [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard) is simply scaled by a factor of 24/160.
+
+
+ 
