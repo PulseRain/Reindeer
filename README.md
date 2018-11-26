@@ -321,7 +321,7 @@ To run the compliance test and capture the signature output, please do the follo
 
 3. Now reset the hardware to put the soft CPU into hold again. And dump the signature region for the 2nd time
 
-  **python reindeer_config.py --port=COM9 --reset --dump_addr=0x80002030 --dump_length=176 --run**
+  **python reindeer_config.py --port=COM9 --reset --dump_addr=0x80002030 --dump_length=176**
 
 And if it goes smooth, the output should be like the following:
 
