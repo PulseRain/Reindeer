@@ -152,14 +152,14 @@ A python script called [**reindeer_config.py**](https://github.com/PulseRain/Rei
 
   7. cd Reindeer/scripts , and type in "python reindeer_config.py -h" for help. The valid command line options are
   
-        -r, --reset          : reset the CPU
-        -P, --port=          : the name of the COM port, such as COM7
-        -d, --baud=          : the baud rate, default to be 115200
-        -t, --toolchain=     : setup the toolchain. By default,  riscv-none-embed-  is used
-        -e, --elf=           : path and name to the elf image file
-        -d, --dump_addr      : start address for memory dumping
-        -l, --dump_length    : length of the memory dump
-        -c, --console_enable : switch to observe the CPU UART after image is loaded.
+    -r, --reset          : reset the CPU
+    -P, --port=          : the name of the COM port, such as COM7
+    -d, --baud=          : the baud rate, default to be 115200
+    -t, --toolchain=     : setup the toolchain. By default,  riscv-none-embed-  is used
+    -e, --elf=           : path and name to the elf image file
+    -d, --dump_addr      : start address for memory dumping
+    -l, --dump_length    : length of the memory dump
+    -c, --console_enable : switch to observe the CPU UART after image is loaded.
 
   8. Connect the hardware board to the host PC. 
 
