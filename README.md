@@ -137,35 +137,36 @@ A python script called [**reindeer_config.py**](https://github.com/PulseRain/Rei
   
      For example, if python 3.7.1 is installed by user XYZ on Windows 10 in the default path, the following two folders might be added to $PATH:
 
-        C:\Users\XYZ\AppData\Local\Programs\Python\Python37
+         C:\Users\XYZ\AppData\Local\Programs\Python\Python37
         
-        C:\Users\XYZ\AppData\Local\Programs\Python\Python37\Scripts
+         C:\Users\XYZ\AppData\Local\Programs\Python\Python37\Scripts
 
 
   5. open a command prompt, and install the pyserial package for python:
-     pip3 install pyserial
+  
+    ** pip3 install pyserial **
 
   6. clone the GitHub repository for Reindeer soft CPU
      
-     git clone https://github.com/PulseRain/Reindeer.git
+    ** git clone https://github.com/PulseRain/Reindeer.git**
 
   7. cd Reindeer/scripts , and type in "python reindeer_config.py -h" for help
 
   8. Connect the hardware board to the host PC. 
-  
-    Currently only two boards are officially supported:
 
-        1 [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard)
+    At this point only two boards are officially supported:
+
+    1 [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard)
         
-        2 [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560)
+    2 [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560)
 
     The FPGA bitstreams for the above boards can be found in https://github.com/PulseRain/Reindeer/blob/master/bitstream_and_binary/Lattice/UPDuinoV2/UPDuinoV2_Reindeer.bin and https://github.com/PulseRain/Reindeer/blob/master/bitstream_and_binary/Microsemi/creative/creative.stp respectively.
     
     And the programmer setting for [UPDuinoV2 board](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard) can be found in https://github.com/PulseRain/Reindeer/blob/master/build/par/Lattice/UPDuinoV2/source/Reindeer.xcf
 
   9. Before using the python script, please make sure the boards are programmed with the correct bitstream. 
-  
-     If the board is programmed with the bitstream for the first time, unplug and plug the USB cable to make sure the board is properly re-initialized.
+
+    If the board is programmed with the bitstream for the first time, unplug and plug the USB cable to make sure the board is properly re-initialized.
      
   10. After the hardware is properly connected to the host PC, open the device manager to figure out which COM port is used by the hardware.
   
@@ -176,9 +177,9 @@ A python script called [**reindeer_config.py**](https://github.com/PulseRain/Rei
 
 If everything is correct, the screen output should be like the following:
 
-> ===============================================================================
-> # Copyright (c) 2018, PulseRain Technology LLC
-> # Reindeer Configuration Utility, Version 1.0
+*===============================================================================*
+* \#  Copyright (c) 2018, PulseRain Technology LLC*
+* \# Reindeer Configuration Utility, Version 1.0*
 ===============================================================================
 baud_rate  =  115200
 com_port   =  COM9
