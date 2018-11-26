@@ -92,6 +92,8 @@ The PulseRain Reindeer can be simulated with [Verialtor](https://www.veripool.or
   5. Build the verilog code and C++ test bench: **make**
   
   6. Run the simulation for compliance test: **make test_all**
+
+If everything goes smooth, the output may look like the following:
   
 <a href="https://youtu.be/bs-CplrT9Mo" target="_blank"><img src="https://github.com/PulseRain/Reindeer/raw/master/docs/verilator.GIF" alt="Verilator" width="1008" height="756" border="10" /></a>
 
