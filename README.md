@@ -162,7 +162,7 @@ A python script called [**reindeer_config.py**](https://github.com/PulseRain/Rei
 
      The FPGA bitstreams for the above boards can be found in [**here**](https://github.com/PulseRain/Reindeer/raw/master/bitstream_and_binary/Lattice/UPDuinoV2/UPDuinoV2_Reindeer.bin) and [**here**](https://github.com/PulseRain/Reindeer/raw/master/bitstream_and_binary/Microsemi/creative/creative.stp) respectively.
     
-     And the programmer setting for [UPDuinoV2 board](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard) can be found in https://github.com/PulseRain/Reindeer/blob/master/build/par/Lattice/UPDuinoV2/source/Reindeer.xcf
+     And the programmer setting for [UPDuinoV2 board](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard) can be found in [**here**](https://github.com/PulseRain/Reindeer/raw/master/build/par/Lattice/UPDuinoV2/source/Reindeer.xcf)
 
   9. Before using the python script, please make sure the boards are programmed with the correct bitstream. 
 
@@ -178,8 +178,8 @@ A python script called [**reindeer_config.py**](https://github.com/PulseRain/Rei
 If everything is correct, the screen output should be like the following:
 
 > ==============================================================================
-> &#35 Copyright (c) 2018, PulseRain Technology LLC
-> &#35 Reindeer Configuration Utility, Version 1.0
+> Copyright (c) 2018, PulseRain Technology LLC
+> Reindeer Configuration Utility, Version 1.0
 > ==============================================================================
 > baud_rate  =  115200
 > com_port   =  COM9
@@ -191,47 +191,47 @@ If everything is correct, the screen output should be like the following:
 
 > //================================================================
 > //== Section  vector
-//================================================================
-        addr = 0x80000000, length = 1044 (0x414)
+> //================================================================
+>         addr = 0x80000000, length = 1044 (0x414)
 
-//================================================================
-//== Section  reset
-//================================================================
+> //================================================================
+> //== Section  reset
+> //================================================================
         addr = 0x80004000, length = 4 (0x4)
 
-//================================================================
-//== Section  exceptions
-//================================================================
-        addr = 0x80004004, length = 620 (0x26c)
+> //================================================================
+> //== Section  exceptions
+> //================================================================
+>         addr = 0x80004004, length = 620 (0x26c)
 
-//================================================================
-//== Section  text
-//================================================================
-        addr = 0x80004270, length = 7172 (0x1c04)
+> //================================================================
+> //== Section  text
+> //================================================================
+>         addr = 0x80004270, length = 7172 (0x1c04)
 
-//================================================================
-//== Section  devconfig
-//================================================================
-        addr = 0x80005e74, length = 36 (0x24)
+> //================================================================
+> //== Section  devconfig
+> //================================================================
+>         addr = 0x80005e74, length = 36 (0x24)
 
-//================================================================
-//== Section  rodata
-//================================================================
-        addr = 0x80005e98, length = 1216 (0x4c0)
+> //================================================================
+> //== Section  rodata
+> //================================================================
+>         addr = 0x80005e98, length = 1216 (0x4c0)
 
-//================================================================
-//== Section  datas
-//================================================================
-        addr = 0x80006358, length = 28 (0x1c)
+> //================================================================
+> //== Section  datas
+> //================================================================
+>         addr = 0x80006358, length = 28 (0x1c)
 
-//================================================================
-//== Section  initlevel
-//================================================================
-        addr = 0x80006374, length = 36 (0x24)
+> //================================================================
+> //== Section  initlevel
+> //================================================================
+>         addr = 0x80006374, length = 36 (0x24)
 
-===================> start the CPU, entry point = 0x80000000
-***** Booting Zephyr OS zephyr-v1.13.0-2-gefde7b1e4a *****
-Hello World! riscv32
+> ===================> start the CPU, entry point = 0x80000000
+> ***** Booting Zephyr OS zephyr-v1.13.0-2-gefde7b1e4a *****
+> Hello World! riscv32
 
 
 
