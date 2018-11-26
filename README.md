@@ -56,7 +56,7 @@ As the hold-and-load gets software images from an external host, it does not nee
   
     Synthesis related constraint files can be found in https://github.com/PulseRain/Reindeer/tree/master/build/synth/constraints, and PAR related constraint files can be found in https://github.com/PulseRain/Reindeer/tree/master/build/par/constraints.
   
-    To build bitstream for [**Gnarly Grey UPDuinoV2 board**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard), use Lattice Radiant software to open https://github.com/PulseRain/Reindeer/blob/master/build/par/Lattice/UPDuinoV2/UPDuinoV2.rdf
+    To build bitstream for [**Gnarly Grey UPDuinoV2 board**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard), use Lattice Radiant 1.0.1 software to open https://github.com/PulseRain/Reindeer/blob/master/build/par/Lattice/UPDuinoV2/UPDuinoV2.rdf
   
     To build bistream for [**Future Electronics Creative board (SmartFusion2)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560), do the following:
   
@@ -446,7 +446,7 @@ For RV32IM, Reindeer soft CPU can score 81967 on [**Future Electronics Creative 
   
 ## [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard)
 
-Use Lattice Radiant software to open https://github.com/PulseRain/Reindeer/blob/master/build/par/Lattice/UPDuinoV2/UPDuinoV2.rdf and build
+Use Lattice Radiant software 1.0.1 to open https://github.com/PulseRain/Reindeer/blob/master/build/par/Lattice/UPDuinoV2/UPDuinoV2.rdf and build
 
 ## [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560)
 
