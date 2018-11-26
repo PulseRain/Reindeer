@@ -120,7 +120,9 @@ And for the sake of completeness, the [Makefile for Verilator](https://github.co
   * # Running Software on the soft CPU
 ## Environment Setup for Windows
 
-A python script called [**reindeer_config.py**](https://github.com/PulseRain/Reindeer/blob/master/scripts/reindeer_config.py) is provided to load software (.elf file) into the soft CPU and execute. At this point, this script is only tested on Windows platform. Before using this script, the following should be done to setup the environment on Windows:
+![Load with Python Script](https://github.com/PulseRain/Reindeer/raw/master/docs/python_load.png "Load with Python Script")
+  
+As illustrated above, a python script called [**reindeer_config.py**](https://github.com/PulseRain/Reindeer/blob/master/scripts/reindeer_config.py) is provided to load software (.elf file) into the soft CPU and execute. At this point, this script is only tested on Windows platform. Before using this script, the following should be done to setup the environment on Windows:
 
   1. Install a RISC-V tool chain on Windows
   
