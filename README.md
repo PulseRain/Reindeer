@@ -119,3 +119,120 @@ And for the sake of completeness, the [Makefile for Verilator](https://github.co
   
 A python script called [**reindeer_config.py**](https://github.com/PulseRain/Reindeer/blob/master/scripts/reindeer_config.py) is provided to load software (.elf file) into the soft CPU and execute. Currently, this script is only tested on Windows platform. Before using this script, the following should be done to setup the environment on Windows:
 
+  1. Install a RISC-V tool chain on Windows
+  
+     It is recommended to use [the RISC-V Embedded gcc](https://gnu-mcu-eclipse.github.io/toolchain/riscv/). And its [v7.2.0-1-20171109 release](https://github.com/gnu-mcu-eclipse/riscv-none-gcc/releases/download/v7.2.0-1-20171109/gnu-mcu-eclipse-riscv-none-gcc-7.2.0-1-20171109-1926-win64-setup.exe) can be downloaded from [here](https://github.com/gnu-mcu-eclipse/riscv-none-gcc/releases/download/v7.2.0-1-20171109/gnu-mcu-eclipse-riscv-none-gcc-7.2.0-1-20171109-1926-win64-setup.exe)
+
+  2. After installation, add the RISC-V toolchain to system's $PATH
+     
+     If default installation path is used, most likely the following paths need to be added to system's $PATH:
+     
+     C:\Program Files\GNU MCU Eclipse\RISC-V Embedded GCC\7.2.0-1-20171109-1926\bin
+ 
+  3. Install python3 on Windows
+  
+     The latest python for Windows can be downloaded at https://www.python.org/downloads/windows/
+
+  4. After installation, add python binary and pip3 binary into system's $PATH
+
+     For example, if python 3.7.1 is installed by user XYZ on Windows 10 in the default path, the following two folders might be added to $PATH:
+
+      C:\Users\XYZ\AppData\Local\Programs\Python\Python37
+      
+      C:\Users\XYZ\AppData\Local\Programs\Python\Python37\Scripts
+
+
+  5. open a command prompt, and install the pyserial package for python:
+     pip3 install pyserial
+
+  6. clone the GitHub repository for Reindeer soft CPU
+     
+     git clone https://github.com/PulseRain/Reindeer.git
+
+  7. cd Reindeer/scripts , and type in "python reindeer_config.py -h" for help
+
+  8. Connect the hardware board to the host PC. 
+  
+    Currently only two boards are officially supported:
+
+        1 [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard)
+        
+        2 [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560)
+
+    The FPGA bitstreams for the above boards can be found in https://github.com/PulseRain/Reindeer/blob/master/bitstream_and_binary/Lattice/UPDuinoV2/UPDuinoV2_Reindeer.bin and https://github.com/PulseRain/Reindeer/blob/master/bitstream_and_binary/Microsemi/creative/creative.stp respectively.
+    
+    And the programmer setting for [UPDuinoV2 board](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard) can be found in https://github.com/PulseRain/Reindeer/blob/master/build/par/Lattice/UPDuinoV2/source/Reindeer.xcf
+
+  9. Before using the python script, please make sure the boards are programmed with the correct bitstream. 
+  
+     If the board is programmed with the bitstream for the first time, unplug and plug the USB cable to make sure the board is properly re-initialized.
+     
+  10. After the hardware is properly connected to the host PC, open the device manager to figure out which COM port is used by the hardware.
+  
+  11. Assume COM9 is used by the  hardware, and assume the user wants to run the zephyr hello_world, the follow command can be used:
+
+      **python reindeer_config.py --port=COM9 --reset --elf=C:\GitHub\Reindeer\bitstream_and_binary\zephyr\hello_world.elf --console_enable –run**
+
+
+If everything is correct, the screen output should be like the following:
+
+===============================================================================
+# Copyright (c) 2018, PulseRain Technology LLC
+# Reindeer Configuration Utility, Version 1.0
+===============================================================================
+baud_rate  =  115200
+com_port   =  COM9
+toolchain  =  riscv-none-embed-
+===============================================================================
+Reseting CPU ...
+Loading  C:\GitHub\Reindeer\bitstream_and_binary\zephyr\hello_world.elf
+__start 80000000
+
+//================================================================
+//== Section  vector
+//================================================================
+        addr = 0x80000000, length = 1044 (0x414)
+
+//================================================================
+//== Section  reset
+//================================================================
+        addr = 0x80004000, length = 4 (0x4)
+
+//================================================================
+//== Section  exceptions
+//================================================================
+        addr = 0x80004004, length = 620 (0x26c)
+
+//================================================================
+//== Section  text
+//================================================================
+        addr = 0x80004270, length = 7172 (0x1c04)
+
+//================================================================
+//== Section  devconfig
+//================================================================
+        addr = 0x80005e74, length = 36 (0x24)
+
+//================================================================
+//== Section  rodata
+//================================================================
+        addr = 0x80005e98, length = 1216 (0x4c0)
+
+//================================================================
+//== Section  datas
+//================================================================
+        addr = 0x80006358, length = 28 (0x1c)
+
+//================================================================
+//== Section  initlevel
+//================================================================
+        addr = 0x80006374, length = 36 (0x24)
+
+===================> start the CPU, entry point = 0x80000000
+***** Booting Zephyr OS zephyr-v1.13.0-2-gefde7b1e4a *****
+Hello World! riscv32
+
+
+
+
+
