@@ -421,3 +421,12 @@ One thing special about philosophers application is that its output is targeting
 
 ![zephyr philosophers](https://github.com/PulseRain/Reindeer/raw/master/docs/philosophers.GIF "zephyr philosophers")
 
+## Running the Compliance Test on Hardware
+
+Thanks to its 2 x 2 pipeline layout, the PulseRain Reindeer can close at very high clock rate.
+ 
+At this point, the bitstream for [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard) runs at **24MHz**, while the bitstream for 
+[**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560) runs at **160MHz**. 
+
+*Please note that there is no crystal oscillator on the UPDuinoV2 board. The FPGA on that board runs off an on-chip RC oscillator (HSOSC primitive). And the HSOSC only supports 12MHz, 24MHz or 48MHz option. There is no middle ground between those frequencies. That's why 24MHz is chosen for the UPDuinoV2.*
+
