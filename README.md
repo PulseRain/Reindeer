@@ -373,7 +373,7 @@ The PulseRain Reindeer soft CPU has been successfully verified with the followin
 * synchronization
 * philosophers
 
-And the .elf image of those applications can be found in Reindeer/bitstream_and_binary/zephyr/
+And the .elf image of those applications can be found in [**Reindeer/bitstream_and_binary/zephyr/**](https://github.com/PulseRain/Reindeer/tree/master/bitstream_and_binary/zephyr)
 
 To run the synchronization applications, please do the following:
  
@@ -388,4 +388,29 @@ And the output is like
         threadB: Hello World from riscv32!
         threadA: Hello World from riscv32!
         threadB: Hello World from riscv32!
+
+
+To run the philosophers application, please do the following:
+ 
+**python reindeer_config.py --port=COM9 --reset --elf=C:\GitHub\Reindeer\bitstream_and_binary\zephyr\philosophers.elf --console_enable --run**
+
+And the output is like
+
+        ***** Booting Zephyr OS zephyr-v1.13.0-2-gefde7b1e4a *****
+         [2J [15;1HDemo Description
+        ----------------
+        An implementation of a solution to the Dining Philosophers
+        problem (a classic multi-thread synchronization problem).
+        This particular implementation demonstrates the usage of multiple
+        preemptible and cooperative threads of differing priorities, as
+        well as dynamic mutexes and thread sleeping.
+         [5;1HPhilosopher 4 [C:-1]        STARVING
+         [5;1HPhilosopher 4 [C:-1]    HOLDING ONE FORK
+         [5;1HPhilosopher 4 [C:-1]   EATING  [  25 ms ]
+         [6;1HPhilosopher 5 [C:-2]        STARVING
+        ...
+
+One thing special about philosophers application is that its output is targeting a VT100 terminal instead of command line. To view its output better, it is recommended to press "ctrl-c" to quit the python script, and use a terminal emulator (such as Tera Term or Putty) to view it. The terminal emulator should be set as **115200 baud rate, 8 bit data, none parity, 1 stop bit and no flow control**. The following is the better view for the philosophers
+
+![zephyr philosophers](https://github.com/PulseRain/Reindeer/raw/master/docs/philosophers.GIF "zephyr philosophers")
 
