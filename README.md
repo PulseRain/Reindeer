@@ -187,7 +187,7 @@ As illustrated above, a python script called [**reindeer_config.py**](https://gi
 
   9. Before using the python script, please make sure the boards are programmed with the correct bitstream. 
 
-     If the board is programmed with the bitstream for the first time, unplug and plug the USB cable to make sure the board is properly re-initialized.
+     If the board is programmed with the bitstream for **the first time, unplug and re-plug the USB cable** to make sure the board is properly re-initialized.
      
   10. After the hardware is properly connected to the host PC, open the device manager to figure out which COM port is used by the hardware.
   
