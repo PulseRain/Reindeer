@@ -60,9 +60,9 @@ As the hold-and-load gets software images from an external host, it does not nee
   
     To build bistream for [**Future Electronics Creative board (SmartFusion2)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560), do the following:
   
-    1. Use synplify_pro (part of  Microsemi Libero SOC V11.9) to open https://github.com/PulseRain/Reindeer/blob/master/build/synth/Microsemi/Reindeer.prj, and generate Reindeer.vm
+    1. Use synplify_pro (part of  Microsemi Libero SoC V11.9) to open https://github.com/PulseRain/Reindeer/blob/master/build/synth/Microsemi/Reindeer.prj, and generate Reindeer.vm
 
-    2. Close synplify_pro and use Libero SOC V11.9 to open https://github.com/PulseRain/Reindeer/blob/master/build/par/Microsemi/creative/creative.prjx, import the Reindeer.vm produced in the previous step, and start the build process to generate bitstream. (In the repository, the Reindeer.vm has already been imported and put in https://github.com/PulseRain/Reindeer/tree/master/build/par/Microsemi/creative/hdl.)
+    2. Close synplify_pro and use Libero SoC V11.9 to open https://github.com/PulseRain/Reindeer/blob/master/build/par/Microsemi/creative/creative.prjx, import the Reindeer.vm produced in the previous step, and start the build process to generate bitstream. (In the repository, the Reindeer.vm has already been imported and put in https://github.com/PulseRain/Reindeer/tree/master/build/par/Microsemi/creative/hdl.)
   
   * **Binary version of the bitstream** 
   
@@ -450,9 +450,9 @@ Use Lattice Radiant software to open https://github.com/PulseRain/Reindeer/blob/
 
 ## [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560)
 
-1. Use synplify_pro (part of  Microsemi Libero SOC V11.9) to open https://github.com/PulseRain/Reindeer/blob/master/build/synth/Microsemi/Reindeer.prj, and generate Reindeer.vm
+1. Use synplify_pro (part of  Microsemi Libero SoC V11.9) to open https://github.com/PulseRain/Reindeer/blob/master/build/synth/Microsemi/Reindeer.prj, and generate Reindeer.vm
 
-2. Close synplify_pro and use Libero SOC V11.9 to open https://github.com/PulseRain/Reindeer/blob/master/build/par/Microsemi/creative/creative.prjx, import the Reindeer.vm produced in the previous step, and start the build process to generate bitstream. (In the repository, the Reindeer.vm has already been imported and put in https://github.com/PulseRain/Reindeer/tree/master/build/par/Microsemi/creative/hdl.)
+2. Close synplify_pro and use Libero SoC V11.9 to open https://github.com/PulseRain/Reindeer/blob/master/build/par/Microsemi/creative/creative.prjx, import the Reindeer.vm produced in the previous step, and start the build process to generate bitstream. (In the repository, the Reindeer.vm has already been imported and put in https://github.com/PulseRain/Reindeer/tree/master/build/par/Microsemi/creative/hdl.)
 
     
   * # Miscellaneous 
@@ -471,7 +471,3 @@ For Lattice UP5K FPGA, the configuration of soft CPU is determined by https://gi
 For Microsemi SmartFusion2 FPGA, the configuration of soft CPU is determined by https://github.com/PulseRain/Reindeer/raw/master/submodules/PulseRain_MCU/common/Microsemi/SmartFusion2/config.vh
 
 By default, the Reindeer soft CPU only supports RV32I. To make it support hardware mul/div (RV32IM), please turn "`define ENABLE_HW_MUL_DIV" to 1 in config.h, and rebuild to generate a new bitstream.
-
-
-  
- 
