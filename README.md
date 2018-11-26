@@ -150,15 +150,24 @@ A python script called [**reindeer_config.py**](https://github.com/PulseRain/Rei
      
      **git clone https://github.com/PulseRain/Reindeer.git**
 
-  7. cd Reindeer/scripts , and type in "python reindeer_config.py -h" for help
+  7. cd Reindeer/scripts , and type in "python reindeer_config.py -h" for help. The valid command line options are
+  
+        -r, --reset          : reset the CPU
+        -P, --port=          : the name of the COM port, such as COM7
+        -d, --baud=          : the baud rate, default to be 115200
+        -t, --toolchain=     : setup the toolchain. By default,  riscv-none-embed-  is used
+        -e, --elf=           : path and name to the elf image file
+        -d, --dump_addr      : start address for memory dumping
+        -l, --dump_length    : length of the memory dump
+        -c, --console_enable : switch to observe the CPU UART after image is loaded.
 
   8. Connect the hardware board to the host PC. 
 
      At this point only two boards are officially supported:
 
-     1 [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard)
+     i.  [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard)
         
-     2 [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560)
+     ii. [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560)
 
      The FPGA bitstreams for the above boards can be found in [**here**](https://github.com/PulseRain/Reindeer/raw/master/bitstream_and_binary/Lattice/UPDuinoV2/UPDuinoV2_Reindeer.bin) and [**here**](https://github.com/PulseRain/Reindeer/raw/master/bitstream_and_binary/Microsemi/creative/creative.stp) respectively.
     
