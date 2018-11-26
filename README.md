@@ -439,6 +439,7 @@ To run the Dhrystone, please do the followiing:
 For RV32I, Reindeer soft CPU can score 71364 on [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560)
 The score on [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard) is simply scaled by a factor of 24/160.
 
+For RV32IM, Reindeer soft CPU can score 81967 on [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560)
 
   * # Miscellaneous 
 ## UART Configuration
