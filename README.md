@@ -251,57 +251,63 @@ All the .elf files for compliance test can be found in https://github.com/PulseR
 
 To run the compliance test and capture the signature output, please do the following:
 
-1. Determine the case to run. For example, https://github.com/PulseRain/Reindeer/blob/master/sim/compliance/I-ADD-01.elf
-2. Determine the signature address. For example, in the case of I-ADD-01, open the file https://github.com/PulseRain/Reindeer/blob/master/sim/compliance/I-ADD-01.out32
-  The I-ADD-01.out32 shows the address of begin_signature and end_signature as 0x80002030 and 0x800020e0
-3. Use Python Script to load the .elf image of compliance test
-  **python reindeer_config.py --port=COM9 --reset --elf=C:\GitHub\Reindeer\bitstream_and_binary\zephyr\hello_world.elf --console_enable –run**
-This command will load the test case, and dump the signature data before the test case is executed.
+1. Determine the case to run. The following will use case [**I-ADD-01**](https://github.com/PulseRain/Reindeer/blob/master/sim/compliance/I-ADD-01.elf) as an example.
 
-    ====> 80002030 ffffffff
-    ====> 80002034 ffffffff
-    ====> 80002038 ffffffff
-    ====> 8000203c ffffffff
-    ====> 80002040 ffffffff
-    ====> 80002044 ffffffff
-    ====> 80002048 ffffffff
-    ====> 8000204c ffffffff
-    ====> 80002050 ffffffff
-    ====> 80002054 ffffffff
-    ====> 80002058 ffffffff
-    ====> 8000205c ffffffff
-    ====> 80002060 ffffffff
-    ====> 80002064 ffffffff
-    ====> 80002068 ffffffff
-    ====> 8000206c ffffffff
-    ====> 80002070 ffffffff
-    ====> 80002074 ffffffff
-    ====> 80002078 ffffffff
-    ====> 8000207c ffffffff
-    ====> 80002080 ffffffff
-    ====> 80002084 ffffffff
-    ====> 80002088 ffffffff
-    ====> 8000208c ffffffff
-    ====> 80002090 ffffffff
-    ====> 80002094 ffffffff
-    ====> 80002098 ffffffff
-    ====> 8000209c ffffffff
-    ====> 800020a0 ffffffff
-    ====> 800020a4 ffffffff
-    ====> 800020a8 ffffffff
-    ====> 800020ac ffffffff
-    ====> 800020b0 ffffffff
-    ====> 800020b4 ffffffff
-    ====> 800020b8 ffffffff
-    ====> 800020bc ffffffff
-    ====> 800020c0 ffffffff
-    ====> 800020c4 ffffffff
-    ====> 800020c8 ffffffff
-    ====> 800020cc ffffffff
-    ====> 800020d0 ffffffff
-    ====> 800020d4 ffffffff
-    ====> 800020d8 ffffffff
-    ====> 800020dc ffffffff
+2. Determine the signature address. 
+  In the case of I-ADD-01, open the file https://github.com/PulseRain/Reindeer/blob/master/sim/compliance/I-ADD-01.out32
+  
+  The I-ADD-01.out32 shows the address of **begin_signature** and **end_signature** as 0x80002030 and 0x800020e0
+
+3. Use Python Script to load the .elf image of compliance test
+
+  **python reindeer_config.py --port=COM9 --reset --elf=C:\GitHub\Reindeer\bitstream_and_binary\zephyr\hello_world.elf --console_enable –run**
+
+  This command will load the test case, and dump the signature data before the test case is executed.
+
+        ====> 80002030 ffffffff
+        ====> 80002034 ffffffff
+        ====> 80002038 ffffffff
+        ====> 8000203c ffffffff
+        ====> 80002040 ffffffff
+        ====> 80002044 ffffffff
+        ====> 80002048 ffffffff
+        ====> 8000204c ffffffff
+        ====> 80002050 ffffffff
+        ====> 80002054 ffffffff
+        ====> 80002058 ffffffff
+        ====> 8000205c ffffffff
+        ====> 80002060 ffffffff
+        ====> 80002064 ffffffff
+        ====> 80002068 ffffffff
+        ====> 8000206c ffffffff
+        ====> 80002070 ffffffff
+        ====> 80002074 ffffffff
+        ====> 80002078 ffffffff
+        ====> 8000207c ffffffff
+        ====> 80002080 ffffffff
+        ====> 80002084 ffffffff
+        ====> 80002088 ffffffff
+        ====> 8000208c ffffffff
+        ====> 80002090 ffffffff
+        ====> 80002094 ffffffff
+        ====> 80002098 ffffffff
+        ====> 8000209c ffffffff
+        ====> 800020a0 ffffffff
+        ====> 800020a4 ffffffff
+        ====> 800020a8 ffffffff
+        ====> 800020ac ffffffff
+        ====> 800020b0 ffffffff
+        ====> 800020b4 ffffffff
+        ====> 800020b8 ffffffff
+        ====> 800020bc ffffffff
+        ====> 800020c0 ffffffff
+        ====> 800020c4 ffffffff
+        ====> 800020c8 ffffffff
+        ====> 800020cc ffffffff
+        ====> 800020d0 ffffffff
+        ====> 800020d4 ffffffff
+        ====> 800020d8 ffffffff
+        ====> 800020dc ffffffff
 
 
 
