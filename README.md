@@ -177,14 +177,14 @@ A python script called [**reindeer_config.py**](https://github.com/PulseRain/Rei
 
 If everything is correct, the screen output should be like the following:
 
-    *==============================================================================*
-    \# Copyright (c) 2018, PulseRain Technology LLC
-    \# Reindeer Configuration Utility, Version 1.0
-    *==============================================================================*
+    ==============================================================================
+    # Copyright (c) 2018, PulseRain Technology LLC
+    # Reindeer Configuration Utility, Version 1.0
+    ==============================================================================
     baud_rate  =  115200
     com_port   =  COM9
     toolchain  =  riscv-none-embed-
-    *==============================================================================*
+    ==============================================================================
     Reseting CPU ...
     Loading  C:\GitHub\Reindeer\bitstream_and_binary\zephyr\hello_world.elf
     __start 80000000
