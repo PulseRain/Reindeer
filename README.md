@@ -147,7 +147,7 @@ As illustrated above, a python script called [**reindeer_config.py**](https://gi
          C:\Users\XYZ\AppData\Local\Programs\Python\Python37\Scripts
 
 
-  5. open a command prompt, and install the pyserial package for python:
+  5. open a command prompt (You might need to Run as Administrator), and install the pyserial package for python:
   
      **pip3 install pyserial**
 
@@ -365,4 +365,27 @@ And if it goes smooth, the output should be like the following:
 
 compare the above output against the signature in https://github.com/riscv/riscv-compliance/blob/master/riscv-test-suite/rv32i/references/I-ADD-01.reference_output
 
+
+## Running the Zephor Sample Application
+
+The PulseRain Reindeer soft CPU has been successfully verified with the following 3 Zephyr applications. 
+* hello_world
+* synchronization
+* philosophers
+
+And the .elf image of those applications can be found in Reindeer/bitstream_and_binary/zephyr/
+
+To run the synchronization applications, please do the following:
+ 
+**python reindeer_config.py --port=COM9 --reset --elf=C:\GitHub\Reindeer\bitstream_and_binary\zephyr\synchronization.elf --console_enable --run**
+
+And the output is like
+
+        ***** Booting Zephyr OS zephyr-v1.13.0-2-gefde7b1e4a *****
+        threadA: Hello World from riscv32!
+        threadB: Hello World from riscv32!
+        threadA: Hello World from riscv32!
+        threadB: Hello World from riscv32!
+        threadA: Hello World from riscv32!
+        threadB: Hello World from riscv32!
 
