@@ -1,7 +1,7 @@
 #--  Synopsys, Inc.
 #--  Version L-2016.09M-SP1-5
-#--  Project file C:\PulseRain\iReindeer\build\synth\Microsemi\Reindeer.prj
-#--  Written on Fri Nov 23 01:03:10 2018
+#--  Project file C:\GitHub\Reindeer\build\synth\Microsemi\Reindeer.prj
+#--  Written on Sun Nov 25 21:47:55 2018
 
 
 #project files
@@ -44,7 +44,7 @@ impl -add SmartFusion2 -type fpga
 
 set_option -vlog_std v2001
 set_option -project_relative_includes 1
-set_option -include_path {C:/PulseRain/iReindeer/submodules/OCD/source/;C:/PulseRain/iReindeer/submodules/PulseRain_MCU/common/;C:/PulseRain/iReindeer/submodules/PulseRain_MCU/common/Microsemi/SmartFusion2/}
+set_option -include_path {C:/GitHub/Reindeer/submodules/PulseRain_MCU/common/;C:/GitHub/Reindeer/submodules/PulseRain_MCU/common/Microsemi/SmartFusion2/;C:/GitHub/Reindeer/submodules/OCD/source/}
 
 #device options
 set_option -technology SMARTFUSION2
