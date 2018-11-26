@@ -160,7 +160,7 @@ A python script called [**reindeer_config.py**](https://github.com/PulseRain/Rei
         
      2 [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560)
 
-     The FPGA bitstreams for the above boards can be found in https://github.com/PulseRain/Reindeer/blob/master/bitstream_and_binary/Lattice/UPDuinoV2/UPDuinoV2_Reindeer.bin and https://github.com/PulseRain/Reindeer/blob/master/bitstream_and_binary/Microsemi/creative/creative.stp respectively.
+     The FPGA bitstreams for the above boards can be found in [**here**](https://github.com/PulseRain/Reindeer/blob/master/bitstream_and_binary/Lattice/UPDuinoV2/UPDuinoV2_Reindeer.bin) and [**here**](https://github.com/PulseRain/Reindeer/blob/master/bitstream_and_binary/Microsemi/creative/creative.stp) respectively.
     
      And the programmer setting for [UPDuinoV2 board](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard) can be found in https://github.com/PulseRain/Reindeer/blob/master/build/par/Lattice/UPDuinoV2/source/Reindeer.xcf
 
@@ -178,8 +178,8 @@ A python script called [**reindeer_config.py**](https://github.com/PulseRain/Rei
 If everything is correct, the screen output should be like the following:
 
 > ==============================================================================
-> \#   Copyright (c) 2018, PulseRain Technology LLC*
-> \#   Reindeer Configuration Utility, Version 1.0*
+> \# Copyright (c) 2018, PulseRain Technology LLC
+> \# Reindeer Configuration Utility, Version 1.0
 > ==============================================================================
 > baud_rate  =  115200
 > com_port   =  COM9
