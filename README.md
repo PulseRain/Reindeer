@@ -373,7 +373,7 @@ And if it goes smooth, the output should be like the following:
 compare the above output against the signature in https://github.com/riscv/riscv-compliance/blob/master/riscv-test-suite/rv32i/references/I-ADD-01.reference_output
 
 
-## Running the Zephor Sample Application
+## Running the Zephyr Sample Application
 
 The PulseRain Reindeer soft CPU has been successfully verified with the following 3 Zephyr applications. 
 * hello_world
