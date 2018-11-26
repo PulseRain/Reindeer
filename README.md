@@ -430,13 +430,48 @@ At this point, the bitstream for [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**
 
 *Please note that there is no crystal oscillator on the UPDuinoV2 board. The FPGA on that board runs off an on-chip RC oscillator (HSOSC primitive). And the HSOSC only supports 12MHz, 24MHz or 48MHz option. There is no middle ground between those frequencies. That's why 24MHz is chosen for the UPDuinoV2.*
 
-[Dhrystone](https://github.com/PulseRain/riscv-tests/tree/master/benchmarks/dhrystone) has been ported to the Reindeer soft CPU for RV32I instruction set. Its .elf image file (160MHz) is at [**here**](https://github.com/PulseRain/Reindeer/raw/master/bitstream_and_binary/Dhrystone/dhrystone_RV32I.riscv).
+[**Dhrystone**](https://github.com/PulseRain/riscv-tests/tree/master/benchmarks/dhrystone) has been ported to the Reindeer soft CPU for RV32I instruction set. Its .elf image file (160MHz) is at [**here**](https://github.com/PulseRain/Reindeer/raw/master/bitstream_and_binary/Dhrystone/dhrystone_RV32I.riscv).
 
 To run the Dhrystone, please do the followiing:
+
 **python reindeer_config.py --port=COM9 --reset --elf=C:\GitHub\Reindeer\bitstream_and_binary\Dhrystone\dhrystone_RV32I.riscv --console_enable --run**
 
 For RV32I, Reindeer soft CPU can score 71364 on [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560)
 The score on [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard) is simply scaled by a factor of 24/160.
 
+For RV32IM, Reindeer soft CPU can score 81967 on [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560)
 
+
+  * # Regenerate the Bitstream
+  
+## [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard)
+
+Use Lattice Radiant software to open https://github.com/PulseRain/Reindeer/blob/master/build/par/Lattice/UPDuinoV2/UPDuinoV2.rdf and build
+
+## [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560)
+
+1. Use synplify_pro (part of  Microsemi Libero SOC V11.9) to open https://github.com/PulseRain/Reindeer/blob/master/build/synth/Microsemi/Reindeer.prj, and generate Reindeer.vm
+
+2. Close synplify_pro and use Libero SOC V11.9 to open https://github.com/PulseRain/Reindeer/blob/master/build/par/Microsemi/creative/creative.prjx, import the Reindeer.vm produced in the previous step, and start the build process to generate bitstream. (In the repository, the Reindeer.vm has already been imported and put in https://github.com/PulseRain/Reindeer/tree/master/build/par/Microsemi/creative/hdl.)
+
+    
+  * # Miscellaneous 
+## UART Configuration
+
+Both [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard) and [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560) have FTDI chip that can convert between UART and USB. And the UART can be shared by the programmer and the FPGA. So there is no need for extra wire to make additional serial port. If terminal emulator software is used, the UART should be configured as **115200 baud rate, 8 bit data, none parity, 1 stop bit and no flow control** 
+
+## LED
+
+The status of the soft CPU is indicated by different color of LEDs on both [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard) and [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560). After power on reset, the LED will turn red, which indicates the hold/paused state. When the soft CPU becomes active, the LED will turn into green.
+
+## Configuration of the soft CPU
+
+For Lattice UP5K FPGA, the configuration of soft CPU is determined by https://github.com/PulseRain/Reindeer/raw/master/submodules/PulseRain_MCU/common/Lattice/UP5K/config.vh.
+
+For Microsemi SmartFusion2 FPGA, the configuration of soft CPU is determined by https://github.com/PulseRain/Reindeer/raw/master/submodules/PulseRain_MCU/common/Microsemi/SmartFusion2/config.vh
+
+By default, the Reindeer soft CPU only supports RV32I. To make it support hardware mul/div (RV32IM), please turn "`define ENABLE_HW_MUL_DIV" to 1 in config.h, and rebuild to generate a new bitstream.
+
+
+  
  
