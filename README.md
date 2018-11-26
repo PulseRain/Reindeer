@@ -120,20 +120,25 @@ And for the sake of completeness, the [Makefile for Verilator](https://github.co
 A python script called [**reindeer_config.py**](https://github.com/PulseRain/Reindeer/blob/master/scripts/reindeer_config.py) is provided to load software (.elf file) into the soft CPU and execute. At this point, this script is only tested on Windows platform. Before using this script, the following should be done to setup the environment on Windows:
 
   1. Install a RISC-V tool chain on Windows
+  
      It is recommended to use [**the RISC-V Embedded GCC**](https://gnu-mcu-eclipse.github.io/toolchain/riscv/). And its [**v7.2.0-1-20171109 release**](https://github.com/gnu-mcu-eclipse/riscv-none-gcc/releases/download/v7.2.0-1-20171109/gnu-mcu-eclipse-riscv-none-gcc-7.2.0-1-20171109-1926-win64-setup.exe) can be downloaded from [**here**](https://github.com/gnu-mcu-eclipse/riscv-none-gcc/releases/download/v7.2.0-1-20171109/gnu-mcu-eclipse-riscv-none-gcc-7.2.0-1-20171109-1926-win64-setup.exe)
 
   2. After installation, add the RISC-V toolchain to system's $PATH
+  
      If default installation path is used, most likely the following paths need to be added to system's $PATH:
      
      C:\Program Files\GNU MCU Eclipse\RISC-V Embedded GCC\7.2.0-1-20171109-1926\bin
  
   3. Install python3 on Windows
+  
      The latest python for Windows can be downloaded from https://www.python.org/downloads/windows/
 
   4. After installation, add python binary and pip3 binary into system's $PATH
+  
      For example, if python 3.7.1 is installed by user XYZ on Windows 10 in the default path, the following two folders might be added to $PATH:
 
         C:\Users\XYZ\AppData\Local\Programs\Python\Python37
+        
         C:\Users\XYZ\AppData\Local\Programs\Python\Python37\Scripts
 
 
