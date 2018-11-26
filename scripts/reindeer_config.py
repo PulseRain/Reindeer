@@ -565,6 +565,7 @@ if __name__ == "__main__":
             print ("  Options: \n")
             print ("    -r, --reset          : reset the CPU")
             print ("    -P, --port=          : the name of the COM port, such as COM7")
+            print ("    -d, --baud=          : the baud rate, default to be 115200")
             print ("    -t, --toolchain=     : setup the toolchain. By default, ", toolchain, " is used")
             print ("    -e, --elf=           : path and name to the elf image file")
             print ("    -d, --dump_addr      : start address for memory dumping")
