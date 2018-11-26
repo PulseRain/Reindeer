@@ -184,7 +184,7 @@ A python script called [**reindeer_config.py**](https://github.com/PulseRain/Rei
   
   11. Assume COM9 is used by the  hardware, and assume the user wants to run the zephyr hello_world, the follow command can be used:
 
-      **python reindeer_config.py --port=COM9 --reset --elf=C:\GitHub\Reindeer\bitstream_and_binary\zephyr\hello_world.elf --console_enable –run**
+      **python reindeer_config.py --port=COM9 --reset --elf=C:\GitHub\Reindeer\bitstream_and_binary\zephyr\hello_world.elf --console_enable --run**
 
 
 If everything is correct, the screen output should be like the following:
@@ -260,7 +260,7 @@ To run the compliance test and capture the signature output, please do the follo
 
 3. Use Python Script to load the .elf image of compliance test
 
-  **python reindeer_config.py --port=COM9 --reset --elf=C:\GitHub\Reindeer\bitstream_and_binary\zephyr\hello_world.elf --console_enable –run**
+  **python reindeer_config.py --port=COM9 --reset --elf=C:\GitHub\Reindeer\sim\compliance\I-ADD-01.elf --dump_addr=0x80002030 --dump_length=176 --run**
 
   This command will load the test case, and dump the signature data before the test case is executed.
 
@@ -309,5 +309,58 @@ To run the compliance test and capture the signature output, please do the follo
         ====> 800020d8 ffffffff
         ====> 800020dc ffffffff
 
+
+3. Now reset the hardware to put the soft CPU into hold again. And dump the signature region for the 2nd time
+
+  **python reindeer_config.py --port=COM9 --reset --dump_addr=0x80002030 --dump_length=176 --run**
+
+And if it goes smooth, the output should be like the following:
+
+        ====> 80002030 00000000
+        ====> 80002034 00000000
+        ====> 80002038 00000001
+        ====> 8000203c ffffffff
+        ====> 80002040 7fffffff
+        ====> 80002044 80000000
+        ====> 80002048 00000001
+        ====> 8000204c 00000001
+        ====> 80002050 00000002
+        ====> 80002054 00000000
+        ====> 80002058 80000000
+        ====> 8000205c 80000001
+        ====> 80002060 ffffffff
+        ====> 80002064 ffffffff
+        ====> 80002068 00000000
+        ====> 8000206c fffffffe
+        ====> 80002070 7ffffffe
+        ====> 80002074 7fffffff
+        ====> 80002078 7fffffff
+        ====> 8000207c 7fffffff
+        ====> 80002080 80000000
+        ====> 80002084 7ffffffe
+        ====> 80002088 fffffffe
+        ====> 8000208c ffffffff
+        ====> 80002090 80000000
+        ====> 80002094 80000000
+        ====> 80002098 80000001
+        ====> 8000209c 7fffffff
+        ====> 800020a0 ffffffff
+        ====> 800020a4 00000000
+        ====> 800020a8 00000001
+        ====> 800020ac 0000abcd
+        ====> 800020b0 0000abce
+        ====> 800020b4 0000abcf
+        ====> 800020b8 0000abd0
+        ====> 800020bc 0000abd1
+        ====> 800020c0 0000abd2
+        ====> 800020c4 0000abd3
+        ====> 800020c8 00000000
+        ====> 800020cc 00000000
+        ====> 800020d0 00000000
+        ====> 800020d4 36925814
+        ====> 800020d8 36925814
+        ====> 800020dc 36925814
+
+compare the above output against the signature in https://github.com/riscv/riscv-compliance/blob/master/riscv-test-suite/rv32i/references/I-ADD-01.reference_output
 
 
