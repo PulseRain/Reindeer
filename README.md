@@ -124,11 +124,13 @@ And for the sake of completeness, the [Makefile for Verilator](https://github.co
 
   * # Program the Hardware with Bitstream
 
-At this point, the PulseRain Reindeer soft CPU can function on two hardware boards: [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard) and [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560)
+At this point, the PulseRain Reindeer soft CPU can function on two hardware boards: 
+  1. [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard)
+  2. [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560)
 
   * To program the [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard), use the Radiant Programmer to load [**this bitstream**](https://github.com/PulseRain/Reindeer/raw/master/bitstream_and_binary/Lattice/UPDuinoV2/UPDuinoV2_Reindeer.bin)
 
-  * To program the [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560), use Flash Pro (from Microsemi Libero SoC V11.9) to load [** this bitstream**](https://github.com/PulseRain/Reindeer/raw/master/bitstream_and_binary/Microsemi/creative/creative.stp)
+  * To program the [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560), use Flash Pro (from Microsemi Libero SoC V11.9) to load [**this bitstream**](https://github.com/PulseRain/Reindeer/raw/master/bitstream_and_binary/Microsemi/creative/creative.stp)
 
 After bitstream is programmed, please **unplug and re-plug the USB cable** to make sure the board is properly re-initialized.
 
