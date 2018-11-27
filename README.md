@@ -121,8 +121,16 @@ And for the sake of completeness, the [Makefile for Verilator](https://github.co
   * **make test compliance_case_name** : run compliance test for individual case. For example: make test I-ADD-01
   * **make run elf_file** : run sim on an .elf file for 2000 cycles. For example: make run ../../bitstream_and_binary/zephyr/hello_world.elf
 
-  
-  
+
+  * # Program the Hardware with Bitstream
+
+At this point, the PulseRain Reindeer soft CPU can function on two hardware boards: [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard) and [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560)
+
+  * To program the [**Gnarly Grey UPDuinoV2 board (Lattice UP5K)**](http://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/GnarlyGreyUPDuinoBoard), use the Radiant Programmer to load [**this bitstream**](https://github.com/PulseRain/Reindeer/raw/master/bitstream_and_binary/Lattice/UPDuinoV2/UPDuinoV2_Reindeer.bin)
+
+  * To program the [**Future Electronics Creative board (Microsemi SmartFusion2 M2S025)**](https://www.futureelectronics.com/p/development-tools--development-tool-hardware/futurem2sf-evb-future-electronics-dev-tools-3091560), use Flash Pro (from Microsemi Libero SoC V11.9) to load [** this bitstream**](https://github.com/PulseRain/Reindeer/raw/master/bitstream_and_binary/Microsemi/creative/creative.stp)
+
+After bitstream is programmed, please **unplug and re-plug the USB cable** to make sure the board is properly re-initialized.
 
   * # Running Software on the soft CPU
 ## Environment Setup for Windows
