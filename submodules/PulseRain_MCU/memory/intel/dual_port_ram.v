@@ -25,24 +25,25 @@ module dual_port_ram #(parameter ADDR_WIDTH = 5, DATA_WIDTH = 32) (
           
           input wire [DATA_WIDTH - 1 : 0]       din,
           input wire                            write_en, 
-          input wire                            wclk, 
-          input wire                            rclk,
-          output wire [DATA_WIDTH - 1 : 0]      dout
+          input wire                            clk, 
+          output reg [DATA_WIDTH - 1 : 0]       dout
 );
 
-        reg [ADDR_WIDTH - 1 : 0] raddr_reg;
-        reg [DATA_WIDTH - 1 : 0] mem [0 : (2**ADDR_WIDTH) - 1] /* synthesis syn_ramstyle="uram" */;
+    //    reg [ADDR_WIDTH - 1 : 0] raddr_reg;
+        reg [DATA_WIDTH - 1 : 0] mem [(2**ADDR_WIDTH) - 1 : 0] /* synthesis syn_ramstyle="M9K" */;
 
-        assign dout = mem[raddr_reg] ;
+    //    assign dout = mem[raddr_reg] ;
         
-        always @(posedge rclk) begin
-            raddr_reg <= raddr;
-        end
+    //    always @(posedge rclk) begin
+    //        raddr_reg <= raddr;
+    //    end
         
-        always@ (posedge wclk) begin
+        always @(posedge clk) begin
             if (write_en) begin
                 mem[waddr] <= din;
             end
+            
+            dout <= mem[raddr] ;
         end
 
 endmodule

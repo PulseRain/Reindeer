@@ -25,8 +25,7 @@ module dual_port_ram #(parameter ADDR_WIDTH = 32, DATA_WIDTH = 32) (
           
           input wire [DATA_WIDTH - 1 : 0]       din,
           input wire                            write_en, 
-          input wire                            wclk, 
-          input wire                            rclk,
+          input wire                            clk, 
           output wire [DATA_WIDTH - 1 : 0]      dout
 );
 
@@ -38,8 +37,8 @@ module dual_port_ram #(parameter ADDR_WIDTH = 32, DATA_WIDTH = 32) (
             .din (din),
             .write_en (write_en),
             
-            .wclk (wclk),
-            .rclk (rclk),
+            .wclk (clk),
+            .rclk (clk),
             .dout (dout) );
             
 endmodule
