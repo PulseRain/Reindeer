@@ -58,7 +58,11 @@
 //  hardware mul/div
 //----------------------------------------------------------------------------
 
+`define DISABLE_OCD                         0
+
 `define ENABLE_HW_MUL_DIV                   0
 
+`define SMALL_MACHINE_TIMER                 0
+`define SMALL_CSR_SET                       0
 
 `endif
