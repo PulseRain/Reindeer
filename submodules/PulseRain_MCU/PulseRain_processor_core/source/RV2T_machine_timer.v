@@ -20,6 +20,7 @@
 
 
 `include "RV2T_common.vh"
+`include "config.vh"
 
 `default_nettype none
 
@@ -52,11 +53,12 @@ module RV2T_machine_timer (
         reg   [`MTIME_CYCLE_PERIOD_BITS - 1 : 0]                mtime_cycle_counter;
         reg                                                     mtime_cycle_pulse;
         
-        reg   [`XLEN * 2 - 1 : 0]                               mtime;
-        reg   [`XLEN * 2 - 1 : 0]                               mtimecmp;
+        reg   [`XLEN * (2 - `SMALL_MACHINE_TIMER) - 1 : 0]      mtime;
+        reg   [`XLEN * (2 - `SMALL_MACHINE_TIMER) - 1 : 0]      mtimecmp;
         
         reg   [`XLEN - 1 : 0]                                   mtime_high; 
         
+       
    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
    // mtime_cycle_counter
    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -79,29 +81,57 @@ module RV2T_machine_timer (
    // mtime
    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
        
-        always @(posedge clk, negedge reset_n) begin : mtime_proc
-            if (!reset_n) begin
-                mtime <= 0;
-            end else if (mtime_cycle_pulse) begin
-                mtime <= mtime + 1;
+        generate 
+            if (`SMALL_MACHINE_TIMER) begin
+                
+                always @(posedge clk, negedge reset_n) begin : mtime_proc
+                    if (!reset_n) begin
+                        mtime <= 0;
+                    end else begin
+                        mtime <= mtime + 1;
+                    end
+                end
+            
+            end else begin
+            
+                always @(posedge clk, negedge reset_n) begin : mtime_proc
+                    if (!reset_n) begin
+                        mtime <= 0;
+                    end else if (mtime_cycle_pulse) begin
+                        mtime <= mtime + 1;
+                    end
+                end
+                
             end
-        end
-        
+        endgenerate
         
    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
    // mtimecmp
    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-       
-        always @(posedge clk, negedge reset_n) begin : mtimecmp_proc
-            if (!reset_n) begin
-                mtimecmp <= 0;
-            end else if (load_mtimecmp_low) begin
-                mtimecmp [`XLEN - 1 : 0] <= mtimecmp_write_data;
-            end else if (load_mtimecmp_high) begin
-                mtimecmp [`XLEN * 2 - 1 : `XLEN] <= mtimecmp_write_data;
+        generate 
+            if (`SMALL_MACHINE_TIMER) begin
+                
+                always @(posedge clk, negedge reset_n) begin : mtimecmp_proc
+                    if (!reset_n) begin
+                        mtimecmp <= 0;
+                    end else if (load_mtimecmp_low) begin
+                        mtimecmp [`XLEN - 1 : 0] <= mtimecmp_write_data;
+                    end
+                end
+                
+            end else begin
+                    
+                always @(posedge clk, negedge reset_n) begin : mtimecmp_proc
+                    if (!reset_n) begin
+                        mtimecmp <= 0;
+                    end else if (load_mtimecmp_low) begin
+                        mtimecmp [`XLEN - 1 : 0] <= mtimecmp_write_data;
+                    end else if (load_mtimecmp_high) begin
+                        mtimecmp [`XLEN * 2 - 1 : `XLEN] <= mtimecmp_write_data;
+                    end
+                end 
             end
-        end 
-        
+        endgenerate
    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
    // timer trigger
    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -115,33 +145,62 @@ module RV2T_machine_timer (
             end
         end
         
-        always @(posedge clk, negedge reset_n) begin
-            if (!reset_n) begin
-                reg_read_data <= 0;
-                mtime_high <= 0;
+        generate 
+            if (`SMALL_MACHINE_TIMER) begin
+                always @(posedge clk, negedge reset_n) begin
+                    if (!reset_n) begin
+                        reg_read_data <= 0;
+                    end else begin
+                        
+                        case (reg_read_addr) 
+                            2'b01 : begin
+                                reg_read_data <= 0;
+                            end
+                            
+                            2'b10 : begin
+                                reg_read_data <= mtimecmp;
+                            end
+                        
+                            2'b11 : begin
+                                reg_read_data <= 0;
+                            end
+                            
+                            default : begin
+                                reg_read_data <= mtime;
+                            end
+                        endcase
+                    end
+                end
             end else begin
-                case (reg_read_addr) 
-                    2'b01 : begin
-                        reg_read_data <= mtime_high;
-                    end
-                    
-                    2'b10 : begin
-                        reg_read_data <= mtimecmp [`XLEN - 1 : 0];
-                    end
-                
-                    2'b11 : begin
-                        reg_read_data <= mtimecmp [`XLEN * 2 - 1 : `XLEN];
-                    end
-                    
-                    default : begin
-                        reg_read_data <= mtime [`XLEN - 1 : 0];
-                        mtime_high <= mtime [`XLEN * 2 - 1 : `XLEN];
-                    end
-                
-                endcase
+                always @(posedge clk, negedge reset_n) begin
+                    if (!reset_n) begin
+                        reg_read_data <= 0;
+                        mtime_high <= 0;
+                    end else begin
+                        case (reg_read_addr) 
+                            2'b01 : begin
+                                reg_read_data <= mtime_high;
+                            end
+                            
+                            2'b10 : begin
+                                reg_read_data <= mtimecmp [`XLEN - 1 : 0];
+                            end
+                        
+                            2'b11 : begin
+                                reg_read_data <= mtimecmp [`XLEN * 2 - 1 : `XLEN];
+                            end
+                            
+                            default : begin
+                                reg_read_data <= mtime [`XLEN - 1 : 0];
+                                mtime_high <= mtime [`XLEN * 2 - 1 : `XLEN];
+                            end
+                        
+                        endcase
 
+                    end
+                end
             end
-        end
+        endgenerate
 
 endmodule
 
