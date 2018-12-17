@@ -133,32 +133,38 @@ module Reindeer (
     // OCD
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         
-    
-        debug_coprocessor_wrapper #(.BAUD_PERIOD (`UART_TX_BAUD_PERIOD)) ocd_i (
-            .clk (clk),
-            .reset_n (pll_locked),
-            
-            .RXD (RXD),
-            .TXD (uart_tx_ocd),
-                
-            .pram_read_enable_in (ocd_mem_enable_out),
-            .pram_read_data_in (ocd_mem_word_out),
-            
-            .pram_read_enable_out (ocd_read_enable),
-            .pram_read_addr_out (pram_read_addr),
-            
-            .pram_write_enable_out (ocd_write_enable),
-            .pram_write_addr_out (pram_write_addr),
-            .pram_write_data_out (ocd_write_word),
-            
-            .cpu_reset (cpu_reset),
-            
-            .cpu_start (cpu_start),
-            .cpu_start_addr (cpu_start_addr),        
-            
-            .debug_uart_tx_sel_ocd1_cpu0 (debug_uart_tx_sel_ocd1_cpu0));
+        generate
         
-        assign ocd_rw_addr = ocd_read_enable ? pram_read_addr : pram_write_addr;
+            if (`DISABLE_OCD == 0) begin
+            
+                debug_coprocessor_wrapper #(.BAUD_PERIOD (`UART_TX_BAUD_PERIOD)) ocd_i (
+                    .clk (clk),
+                    .reset_n (pll_locked),
+                    
+                    .RXD (RXD),
+                    .TXD (uart_tx_ocd),
+                        
+                    .pram_read_enable_in (ocd_mem_enable_out),
+                    .pram_read_data_in (ocd_mem_word_out),
+                    
+                    .pram_read_enable_out (ocd_read_enable),
+                    .pram_read_addr_out (pram_read_addr),
+                    
+                    .pram_write_enable_out (ocd_write_enable),
+                    .pram_write_addr_out (pram_write_addr),
+                    .pram_write_data_out (ocd_write_word),
+                    
+                    .cpu_reset (cpu_reset),
+                    
+                    .cpu_start (cpu_start),
+                    .cpu_start_addr (cpu_start_addr),        
+                    
+                    .debug_uart_tx_sel_ocd1_cpu0 (debug_uart_tx_sel_ocd1_cpu0));
+                
+                assign ocd_rw_addr = ocd_read_enable ? pram_read_addr : pram_write_addr;
+            end
+            
+        endgenerate
         
         always @(posedge clk, negedge pll_locked) begin : uart_proc
             if (!pll_locked) begin
