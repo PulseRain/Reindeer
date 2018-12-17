@@ -568,8 +568,9 @@ module PulseRain_RV2T_core (
                 .mul_div_active    (mul_div_active),
                 .mul_div_done      (mul_div_done),
                 
-                .decode_ctl_LOAD  (decode_ctl_LOAD),
-                .decode_ctl_STORE (decode_ctl_STORE),
+                .decode_ctl_LOAD     (decode_ctl_LOAD),
+                .decode_ctl_STORE    (decode_ctl_STORE),
+                .decode_ctl_MISC_MEM (decode_ctl_MISC_MEM),
                 
                 .decode_ctl_MUL_DIV_FUNCT3 (decode_ctl_MUL_DIV_FUNCT3),
 

@@ -74,8 +74,7 @@ module RV2T_reg_file (
             .raddr (read_rs1_addr),
             .din (write_data_in),
             .write_en (write_enable),
-            .wclk (clk),
-            .rclk (clk),
+            .clk (clk),
             .dout (read_rs1_data_out_i) );
             
         dual_port_ram #(.ADDR_WIDTH (`REG_ADDR_BITS), .DATA_WIDTH (`XLEN)) single_clk_ram_rs2 (
@@ -83,8 +82,7 @@ module RV2T_reg_file (
             .raddr (read_rs2_addr),
             .din (write_data_in),
             .write_en (write_enable),
-            .wclk (clk),
-            .rclk (clk),
+            .clk (clk),
             .dout (read_rs2_data_out_i) );
            
         assign read_rs1_data_out = (|read_rs1_addr) ? (((write_enable_d1 == 1'b1) && (read_rs1_addr == write_addr)) ? write_data_in_d1 : read_rs1_data_out_i) : 0;

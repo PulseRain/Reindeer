@@ -251,13 +251,13 @@ module RV2T_execution_unit (
                     
                     exe_enable_d1 <= exe_enable;
                     
-                    mul_div_done <= mul_div_enable_out; 
+                    mul_div_done <= (`ENABLE_HW_MUL_DIV) ? mul_div_enable_out : 1'b0; 
                     
                     if (exe_enable) begin
                         
                         reg_ctl_LUI    <= ctl_LUI;
                         reg_ctl_AUIPC  <= ctl_AUIPC;
-                        reg_ctl_JAL    <= ctl_JAL;
+                        reg_ctl_JAL    <= ctl_JAL | ctl_MISC_MEM;
                         reg_ctl_JALR   <= ctl_JALR;
                         reg_ctl_BRANCH <= ctl_BRANCH;
                         reg_ctl_SYSTEM <= ctl_SYSTEM;
@@ -413,8 +413,12 @@ module RV2T_execution_unit (
                     jal_active <= 0;
                     jal_addr   <= 0;
                 end else if (exe_enable) begin
-                    jal_active <= ctl_JAL;
-                    jal_addr   <= PC_in + decode_offset;
+                    jal_active <= ctl_JAL | ctl_MISC_MEM;
+                    if (ctl_MISC_MEM) begin
+                        jal_addr   <= PC_in + 4;
+                    end else begin
+                        jal_addr   <= PC_in + decode_offset;
+                    end
                 end else begin
                     jal_active <= 0;
                 end
@@ -541,44 +545,63 @@ module RV2T_execution_unit (
                 always @(posedge clk) begin : mul_div_reg_proc
                     case (funct3_mul_div) // synopsys full_case parallel_case     
                         `RV32M_MUL : begin
-                            mul_div_out_reg <= mul_div_sign_reg ?  Z_neg [31 : 0]: Z [31 : 0];
+                            //mul_div_out_reg <=  ?  Z_neg [31 : 0]: Z [31 : 0];
+                            mul_div_out_reg <=  Z [31 : 0];
                         end
                         
-                        `RV32M_MULH : begin
-                            mul_div_out_reg <= mul_div_sign_reg ? Z_neg [63 : 32] : Z [63 : 32];                    
+                    /*    `RV32M_MULH : begin
+                            //mul_div_out_reg <= mul_div_sign_reg ? Z_neg [63 : 32] : Z [63 : 32];                    
+                            mul_div_out_reg <= Z [63 : 32];
                         end
                         
                         `RV32M_MULHSU : begin
-                            mul_div_out_reg <= x_sign_reg ? Z_neg [63 : 32] : Z [63 : 32];
+                            //mul_div_out_reg <= x_sign_reg ? Z_neg [63 : 32] : Z [63 : 32];
+                            mul_div_out_reg <= Z [63 : 32];
                         end
                         
                         `RV32M_MULHU : begin
                             mul_div_out_reg <= Z [63 : 32];
                         end
-                        
-                        `RV32M_DIV : begin
-                            if (overflow_flag) begin
-                                mul_div_out_reg <= 32'hFFFFFFFF;
-                            end else begin
-                                mul_div_out_reg <= mul_div_sign_reg ? Q_neg : Q;
-                            end
+                      */
+
+                        `RV32M_MULH, `RV32M_MULHSU, `RV32M_MULHU : begin
+                            mul_div_out_reg <= Z [63 : 32];
                         end
+                      
+                  //      `RV32M_DIV : begin
+                  //          if (overflow_flag) begin
+                  //              mul_div_out_reg <= 32'hFFFFFFFF;
+                  //          end else begin
+                  //              mul_div_out_reg <= mul_div_sign_reg ? Q_neg : Q;
+                  //          end
+                  //      end
                         
                         `RV32M_DIVU : begin
                             mul_div_out_reg <= Q;
                         end
                         
+                        /*
                         `RV32M_REM : begin
-                            mul_div_out_reg <= x_sign_reg ? R_neg : R;
+                           // mul_div_out_reg <= x_sign_reg ? R_neg : R;
+                           mul_div_out_reg <= R;
                         end
                         
                         `RV32M_REMU : begin
                             mul_div_out_reg <= R;
                         end
+                        */
                         
+                        `RV32M_REM, `RV32M_REMU : begin
+                            mul_div_out_reg <= R;
+                        end
                         
                         default : begin
-                            
+                            if (overflow_flag) begin
+                                mul_div_out_reg <= 32'hFFFFFFFF;
+                            end else begin
+                               // mul_div_out_reg <= mul_div_sign_reg ? Q_neg : Q;
+                                mul_div_out_reg <= Q;
+                            end
                         end
                     endcase
                 end

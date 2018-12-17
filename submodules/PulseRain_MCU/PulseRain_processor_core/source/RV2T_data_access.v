@@ -85,13 +85,13 @@ module RV2T_data_access (
         input  wire [`XLEN - 1 : 0]                             mm_reg_data_in,
         
         
-        output reg                                              mem_re,
+        output wire                                             mem_re,
         output reg [`XLEN_BYTES - 1 : 0]                        mem_we,
         output reg [`XLEN - 1 : 0]                              mem_data_to_write,
         output reg [`XLEN - 1 : 0]                              mem_addr_rw_out,
         output reg                                              store_done,
-        output reg                                              load_done,
-        output reg                                              exception_alignment,
+        output wire                                             load_done,
+        output wire                                             exception_alignment,
         
         output reg                                              mm_reg_re,
         output reg                                              mm_reg_we,
@@ -109,7 +109,10 @@ module RV2T_data_access (
         reg                                                     ctl_mem_re;
         reg                                                     ctl_mem_we_d1;
         
-        reg                                                     ctl_load_store_exception;
+        reg                                                     ctl_load_exception;
+        reg                                                     ctl_store_exception;
+        reg                                                     ctl_load_exception_d1;
+        
         reg                                                     ctl_store_done;
         reg                                                     ctl_load_done;
         reg                                                     ctl_load_shift;
@@ -122,7 +125,10 @@ module RV2T_data_access (
         reg [`XLEN - 1 : 0]                                     mem_data_in_reg;
         reg [`XLEN - 1 : 0]                                     load_masked_data;
         
+        reg [1 : 0]                                             mem_addr_rw_out_tail_reg;
         
+        wire [`XLEN - 1 : 0]                                    mem_data_in_mux;
+        reg [`XLEN - 1 : 0]                                     mem_write_addr_d1;
         
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // data path
@@ -144,31 +150,132 @@ module RV2T_data_access (
         //---------------------------------------------------------------------
         //  memory read / write
         //---------------------------------------------------------------------
+            
+   /*         always @(*) begin
+                case (mem_write_addr[1 : 0]) // synthesis parallel_case 
+                    2'b01 : begin
+                        mem_data_to_write = {data_to_store[23 : 0], 8'd0};
+                    end
+
+                    2'b10 : begin
+                        mem_data_to_write = {data_to_store[15 : 0], 16'd0};
+                    end
+                            
+                    2'b11 : begin
+                        mem_data_to_write = {data_to_store[7 : 0], 24'd0};
+                    end
+                            
+                    default : begin
+                        mem_data_to_write = data_to_store;
+                    end
+                endcase
+            end
+     */       
+            always @(*) begin
+                if (width_load_store [1 : 0] == 2'b00) begin
+                    width_mask = 4'b0001 << (mem_write_addr[1 : 0]);
+                end else if (width_load_store [1 : 0] == 2'b01) begin
+                    width_mask = 4'b0011 << (mem_write_addr[1 : 0]);
+                end else begin
+                    width_mask = 4'b1111;
+                end
+            end
+             
+           // assign mem_we ={ctl_mem_we, ctl_mem_we, ctl_mem_we, ctl_mem_we} & width_mask;
+            assign mem_re = ctl_mem_re & mem_read_addr [`MEM_SPACE_BIT];
+            
+            always @(*) begin
+                if (ctl_mem_we_d1) begin
+                    mem_addr_rw_out = mem_write_addr_d1;
+                end else begin
+                    mem_addr_rw_out = mem_read_addr;
+                end
+            end
+            
+            assign mem_data_in_mux = mem_enable_in ? mem_data_in : mm_reg_data_in;
+            
+            always @(*) begin
+                case (mem_addr_rw_out_tail_reg) // synthesis parallel_case 
+                    2'b01 : begin
+                        mem_data_in_reg = {8'd0, mem_data_in_mux[`XLEN - 1 : 8]};
+                    end
+                    
+                    2'b10 : begin
+                        mem_data_in_reg = {16'd0, mem_data_in_mux[`XLEN - 1 : 16]};
+                    end
+                    
+                    2'b11 : begin
+                        mem_data_in_reg = {24'd0, mem_data_in_mux[`XLEN - 1 : 24]};
+                    end
+                    
+                    default : begin
+                        mem_data_in_reg = mem_data_in_mux;
+                    end
+                    
+                endcase
+            end
+            
+            always @(*) begin
+                case (width_reg)
+                    3'b000 : begin  // LB
+                        load_masked_data = {{24{mem_data_in_reg[7]}}, mem_data_in_reg[7 : 0]};
+                    end
+                    
+                    3'b001 : begin // LH
+                        load_masked_data = {{16{mem_data_in_reg[15]}}, mem_data_in_reg[15 : 0]};
+                    end
+                    
+                    3'b100 : begin  // LBU
+                        load_masked_data = {24'd0, mem_data_in_reg[7 : 0]};
+                    end
+                    
+                    3'b101 : begin // LHU
+                        load_masked_data = {16'd0, mem_data_in_reg[15 : 0]};
+                    end
+                    
+                    default : begin
+                        load_masked_data = mem_data_in_reg;
+                    end
+                    
+                endcase
+            end
+            
+            assign load_done = ctl_load_done;
+            
             always @(posedge clk, negedge reset_n) begin
                 if (!reset_n) begin
-                    mem_re <= 0;
+                 //   mem_re <= 0;
                     mem_we <= 0;
                     mm_reg_re <= 0;
                     mm_reg_we <= 0;
                     mem_data_to_write <= 0;
-                    mem_addr_rw_out <= 0;
+                 //   mem_addr_rw_out <= 0;
                     
                     width_reg  <= 0;
-                    width_mask <= 0;
+                //    width_mask <= 0;
                     
-                    mem_data_in_reg <= 0;
+                 //   mem_data_in_reg <= 0;
                     
                     ctl_mem_we_d1 <= 0;
                     
                     store_done <= 0;
-                    load_done  <= 0;
+                  //  load_done  <= 0;
                     
-                    load_masked_data <= 0;
+                //    load_masked_data <= 0;
                     
                     mm_reg_data_to_write <= 0;
                     mm_reg_addr_rw_out <= 0;
                     
+                    mem_addr_rw_out_tail_reg <= 0;
+                    
+                    mem_write_addr_d1 <= 0;
+                    
+                    ctl_load_exception_d1 <= 0;
+                    
                 end else begin
+                    
+                    mem_write_addr_d1 <= mem_write_addr;
+                    ctl_load_exception_d1 <= ctl_load_exception;
                     
                     mm_reg_we <= ctl_mem_we & mem_write_addr [`REG_SPACE_BIT];
                     mm_reg_re <= ctl_mem_re & mem_read_addr [`REG_SPACE_BIT];
@@ -176,14 +283,19 @@ module RV2T_data_access (
                     mm_reg_data_to_write <= data_to_store;
                     mm_reg_addr_rw_out <= ctl_mem_we ? mem_write_addr [`MM_REG_ADDR_BITS + 1 : 2] : mem_read_addr [`MM_REG_ADDR_BITS + 1 : 2];
                     
-                    ctl_mem_we_d1 <= ctl_mem_we & mem_write_addr [`MEM_SPACE_BIT];
+                    //ctl_mem_we_d1 <= ctl_mem_we & mem_write_addr [`MEM_SPACE_BIT];
+                    ctl_mem_we_d1 <= ctl_mem_we;
                     
                     store_done <= ctl_store_done;
-                    load_done  <= ctl_load_done;
+                    //load_done  <= ctl_load_done;
                     
-                    mem_we <={ctl_mem_we_d1, ctl_mem_we_d1, ctl_mem_we_d1, ctl_mem_we_d1} & width_mask;
                     
-                    if (mem_enable_in) begin
+                    
+              //      mem_we <={ctl_mem_we_d1, ctl_mem_we_d1, ctl_mem_we_d1, ctl_mem_we_d1} & width_mask;
+                
+                    mem_we <= {4{ctl_mem_we & mem_write_addr [`MEM_SPACE_BIT]}} & width_mask;
+                    
+        /*            if (mem_enable_in) begin
                         mem_data_in_reg <= mem_data_in;
                     end else if (mm_reg_enable_in) begin
                         mem_data_in_reg <= mm_reg_data_in;
@@ -208,7 +320,8 @@ module RV2T_data_access (
                         endcase
                         
                     end
-                    
+          */         
+/*                   
                     if (ctl_mem_we) begin
                          case (mem_write_addr[1 : 0]) // synthesis parallel_case 
                             2'b01 : begin
@@ -233,12 +346,35 @@ module RV2T_data_access (
                     end else if (ctl_mem_re) begin
                         mem_addr_rw_out <= mem_read_addr;
                     end 
+*/
+                case (mem_write_addr[1 : 0]) // synthesis parallel_case 
+                    2'b01 : begin
+                        mem_data_to_write <= {data_to_store[23 : 0], 8'd0};
+                    end
+
+                    2'b10 : begin
+                        mem_data_to_write <= {data_to_store[15 : 0], 16'd0};
+                    end
                     
-                    mem_re <= ctl_mem_re & mem_read_addr [`MEM_SPACE_BIT];
+                    2'b11 : begin
+                        mem_data_to_write <= {data_to_store[7 : 0], 24'd0};
+                    end
+                    
+                    default : begin
+                        mem_data_to_write <= data_to_store;
+                    end
+                    
+                endcase
+                        
+
+
+                    
+                   // mem_re <= ctl_mem_re & mem_read_addr [`MEM_SPACE_BIT];
                     
                     if (data_access_enable) begin
                         width_reg <= width_load_store;
-                        
+                        mem_addr_rw_out_tail_reg <= mem_addr_rw_out [1 : 0];
+/*  
                         if (width_load_store [1 : 0] == 2'b00) begin
                             width_mask <= 4'b0001 << (mem_write_addr[1 : 0]);
                         end else if (width_load_store [1 : 0] == 2'b01) begin
@@ -246,10 +382,10 @@ module RV2T_data_access (
                         end else begin
                             width_mask <= 4'b1111;
                         end
-                        
+*/                        
                     end
                     
-                    if (ctl_load_mask) begin
+   /*                 if (ctl_load_mask) begin
                         case (width_reg)
                             3'b000 : begin  // LB
                                 load_masked_data <= {{24{mem_data_in_reg[7]}}, mem_data_in_reg[7 : 0]};
@@ -273,27 +409,30 @@ module RV2T_data_access (
                             
                         endcase
                     end
+     */               
+                    
                 end 
             end
             
         //---------------------------------------------------------------------
         //  exception
         //---------------------------------------------------------------------
-            always @(posedge clk, negedge reset_n) begin : exception_proc
+           /* always @(posedge clk, negedge reset_n) begin : exception_proc
                 if (!reset_n) begin
                     exception_alignment <= 0;
                 end else begin
                     exception_alignment <= ctl_load_store_exception;
                 end
             end
+            */
+            assign exception_alignment = ctl_store_exception | ctl_load_exception_d1;
             
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // FSM
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-            localparam S_IDLE = 0, S_EXCEPTION = 1, S_STORE = 2, S_LOAD = 3, 
-                       S_LOAD_SHIFT_IN = 4, S_LOAD_MASK = 5, S_LOAD_REG_WRITE = 6; 
+            localparam S_IDLE = 0, S_EXCEPTION = 1, S_LOAD = 2; 
             
-            reg [6 : 0] current_state, next_state;
+            reg [2 : 0] current_state, next_state;
                     
             // Declare states
             always @(posedge clk, negedge reset_n) begin : state_machine_reg
@@ -313,7 +452,8 @@ module RV2T_data_access (
                 
                 ctl_mem_we               = 0;
                 ctl_mem_re               = 0;
-                ctl_load_store_exception = 0;
+                ctl_load_exception       = 0;
+                ctl_store_exception      = 0;
                 ctl_store_done           = 0;
                 ctl_load_done            = 0;
                 ctl_load_shift           = 0;
@@ -326,15 +466,16 @@ module RV2T_data_access (
                         if (data_access_enable) begin
                             if (store_active) begin
                                 if (unaligned_write) begin
-                                    ctl_load_store_exception = 1'b1;
+                                    ctl_store_exception = 1'b1;
                                     next_state [S_EXCEPTION] = 1'b1;
                                 end else begin
                                     ctl_mem_we = 1'b1;
-                                    next_state [S_STORE] = 1'b1;
+                                    //next_state [S_STORE] = 1'b1;
+                                    next_state [S_IDLE] = 1'b1;
                                 end
                             end else if (load_active) begin
                                 if (unaligned_read) begin
-                                    ctl_load_store_exception = 1'b1;
+                                    ctl_load_exception = 1'b1;
                                     next_state [S_EXCEPTION] = 1'b1;
                                 end else begin
                                     ctl_mem_re = 1'b1;
@@ -352,33 +493,16 @@ module RV2T_data_access (
                         next_state [S_IDLE] = 1'b1;
                     end
                     
-                    current_state [S_STORE] : begin
-                        ctl_store_done = 1'b1;
-                        next_state [S_IDLE] = 1'b1;
-                    end
-                    
                     current_state [S_LOAD] : begin
                         if (mem_enable_in | mm_reg_enable_in) begin
-                            next_state [S_LOAD_SHIFT_IN] = 1'b1;
+                            //==next_state [S_LOAD_SHIFT_IN] = 1'b1;
+                            
+                            ctl_load_reg_write = 1'b1;
+                            ctl_load_done = 1'b1;
+                            next_state [S_IDLE] = 1'b1;
                         end else begin
                             next_state [S_LOAD] = 1'b1;
                         end
-                    end
-                    
-                    current_state [S_LOAD_SHIFT_IN] : begin
-                        ctl_load_shift = 1'b1;
-                        next_state [S_LOAD_MASK] = 1'b1;
-                    end
-                    
-                    current_state [S_LOAD_MASK] : begin
-                        ctl_load_mask = 1'b1;
-                        next_state [S_LOAD_REG_WRITE] = 1'b1;
-                    end
-                    
-                    current_state [S_LOAD_REG_WRITE] : begin
-                        ctl_load_reg_write = 1'b1;
-                        ctl_load_done = 1'b1;
-                        next_state [S_IDLE] = 1'b1;
                     end
                     
                     default: begin

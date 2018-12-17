@@ -125,11 +125,13 @@ module RV2T_CSR (
                 
                 exception_storage_page_fault <= 0;
                 
-                mcycle_i        <= 0;
-                mcycleh         <= 0;
-                
-                minstret_i      <= 0;
-                minstreth       <= 0;
+                if (`SMALL_CSR_SET == 0) begin
+                    mcycle_i        <= 0;
+                    mcycleh         <= 0;
+                    
+                    minstret_i      <= 0;
+                    minstreth       <= 0;
+                end
                 
                 mie_mtie        <= 0;
         
@@ -148,10 +150,12 @@ module RV2T_CSR (
                 
                 exception_storage_page_fault <= 0;
                 
-                mcycle_i <= mcycle_i + 1;
-                
-                if (exe_enable) begin
-                    minstret_i <= minstret_i + 1;
+                if (`SMALL_CSR_SET == 0) begin
+                    mcycle_i <= mcycle_i + 1;
+                    
+                    if (exe_enable) begin
+                        minstret_i <= minstret_i + 1;
+                    end
                 end
                 
                 if ((~timer_triggered_d1) & timer_triggered) begin
@@ -168,23 +172,33 @@ module RV2T_CSR (
                 end else if (read_enable) begin
                     case (read_addr) // synthesis parallel_case
                         `CSR_MVENDORID  : begin
-                            read_data_out_i <= `PULSERAIN_JEDEC_VENDOR_ID;
+                            if (`SMALL_CSR_SET == 0) begin
+                                read_data_out_i <= `PULSERAIN_JEDEC_VENDOR_ID;
+                            end
                         end
                         
                         `CSR_MARCHID   : begin
-                            read_data_out_i <= `PULSERAIN_RV2T_ARCH_ID;
+                            if (`SMALL_CSR_SET == 0) begin
+                                read_data_out_i <= `PULSERAIN_RV2T_ARCH_ID;
+                            end
                         end
                         
                         `CSR_MIMPID    : begin
-                            read_data_out_i <= `PULSERAIN_RV2T_IMPLEMENT_ID;
+                            if (`SMALL_CSR_SET == 0) begin
+                                read_data_out_i <= `PULSERAIN_RV2T_IMPLEMENT_ID;
+                            end
                         end
                         
                         `CSR_HARTID    : begin
-                            read_data_out_i <= `PULSERAIN_RV2T_HART_ID;
+                            if (`SMALL_CSR_SET == 0) begin
+                                read_data_out_i <= `PULSERAIN_RV2T_HART_ID;
+                            end
                         end
                         
                         `CSR_MISA      : begin
-                            read_data_out_i <= `PULSERAIN_RV2T_ISA;
+                            if (`SMALL_CSR_SET == 0) begin
+                                read_data_out_i <= `PULSERAIN_RV2T_ISA;
+                            end
                         end
                         
                         `CSR_MTVEC     : begin
@@ -212,21 +226,30 @@ module RV2T_CSR (
                         end
                         
                         `CSR_MCYCLE    : begin
-                            mcycleh             <= mcycle_i [`XLEN * 2 - 1 : `XLEN];
-                            read_data_out_i     <= mcycle_i [`XLEN - 1 : 0];
+                            if (`SMALL_CSR_SET == 0) begin
+                                mcycleh             <= mcycle_i [`XLEN * 2 - 1 : `XLEN];
+                                read_data_out_i     <= mcycle_i [`XLEN - 1 : 0];
+                            end
+                            
                         end
                         
                         `CSR_MCYCLEH    : begin
-                            read_data_out_i <= mcycleh;
+                            if (`SMALL_CSR_SET == 0) begin
+                                read_data_out_i <= mcycleh;
+                            end
                         end
                         
                         `CSR_MINSTRET   : begin
-                            minstreth           <= minstret_i [`XLEN * 2 - 1 : `XLEN];
-                            read_data_out_i     <= minstret_i [`XLEN - 1 : 0];
+                            if (`SMALL_CSR_SET == 0) begin
+                                minstreth           <= minstret_i [`XLEN * 2 - 1 : `XLEN];
+                                read_data_out_i     <= minstret_i [`XLEN - 1 : 0];
+                            end
                         end
                         
                         `CSR_MINSTRETH  : begin
-                            read_data_out_i <= minstreth;
+                            if (`SMALL_CSR_SET == 0) begin
+                                read_data_out_i <= minstreth;
+                            end
                         end
                         
                         `CSR_MIP : begin

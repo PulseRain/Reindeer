@@ -67,7 +67,7 @@ module RV2T_controller (
     //=====================================================================
         input wire                                          decode_ctl_LOAD,
         input wire                                          decode_ctl_STORE,
-        
+        input wire                                          decode_ctl_MISC_MEM,
         input wire                                          decode_ctl_MUL_DIV_FUNCT3,
         
         input wire                                          decode_ctl_WFI,
@@ -149,7 +149,6 @@ module RV2T_controller (
             
             reg                                             first_exe;
 
-            reg [`XLEN - 1 : 0]                             mem_write_addr_d1;
             reg [`XLEN - 1 : 0]                             mem_read_addr_d1;
             
             wire                                            exception_active;
@@ -196,7 +195,6 @@ module RV2T_controller (
                         exception_alignment_reg <= 0;
                         interrupt_active <= 0;
                         
-                        mem_write_addr_d1 <= 0;
                         mem_read_addr_d1  <= 0;
             
                         ctl_set_interrupt_active_reg <= 0;
@@ -211,7 +209,6 @@ module RV2T_controller (
                         
                         activate_exception <= ctl_activate_exception;
                         
-                        mem_write_addr_d1 <= mem_write_addr;
                         mem_read_addr_d1  <= mem_read_addr;
             
                         
@@ -222,30 +219,30 @@ module RV2T_controller (
                                 exception_PC <= PC_in;
                             end
                             
-                            case (1'b1) // synthesis parallel_case 
-                                jal_active : begin
-                                    exception_addr <= {jal_addr[`PC_BITWIDTH - 1 : 1], 1'b0};
-                                end
-                                
-                                jalr_active : begin
-                                    exception_addr <= {jalr_addr[`PC_BITWIDTH - 1 : 1], 1'b0};
-                                end
-                                
-                                branch_active : begin
-                                    exception_addr <= {branch_addr[`PC_BITWIDTH - 1 : 1], 1'b0};
-                                end
-                                
-                                default : begin
-                                    exception_addr <= PC_in;
-                                end
-                                
-                            endcase
-                        end else if (exception_alignment) begin
-                            if (load_active_reg) begin
-                                exception_addr <= mem_read_addr_d1;
+                            if (exception_alignment) begin // store exception
+                                exception_addr <= mem_write_addr;
                             end else begin
-                                exception_addr <= mem_write_addr_d1;    
+                                case (1'b1) // synthesis parallel_case 
+                                    jal_active : begin
+                                        exception_addr <= {jal_addr[`PC_BITWIDTH - 1 : 1], 1'b0};
+                                    end
+                                    
+                                    jalr_active : begin
+                                        exception_addr <= {jalr_addr[`PC_BITWIDTH - 1 : 1], 1'b0};
+                                    end
+                                    
+                                    branch_active : begin
+                                        exception_addr <= {branch_addr[`PC_BITWIDTH - 1 : 1], 1'b0};
+                                    end
+                                    
+                                    default : begin
+                                        exception_addr <= PC_in;
+                                    end
+                                    
+                                endcase
                             end
+                        end else if (exception_alignment) begin // load exception
+                            exception_addr <= mem_read_addr_d1;
                         end 
                         
                                 
@@ -513,13 +510,19 @@ module RV2T_controller (
                         
                         if (decode_ctl_WFI) begin
                             next_state [S_WFI] = 1'b1;
-                        end else if (decode_ctl_STORE) begin
-                            next_state [S_STORE] = 1'b1;
-                        end else if (decode_ctl_LOAD) begin
+                        end 
+                        
+                        //else if (decode_ctl_STORE) begin
+                        //    next_state [S_STORE] = 1'b1;
+                        //end 
+                        
+                        else if (decode_ctl_LOAD) begin
                             next_state [S_LOAD] = 1'b1; 
                         end else if (decode_ctl_MUL_DIV_FUNCT3) begin
                             next_state [S_MUL_DIV] = 1'b1;
-                        end else begin
+                        end 
+                        
+                        else begin
                             ctl_fetch_enable = 1'b1; 
                             next_state [S_FETCH_EXE] = 1'b1;
                         end
@@ -556,7 +559,7 @@ module RV2T_controller (
                             next_state [S_STORE_WAIT] = 1'b1;
                         end
                     end
-                    
+                                        
                     current_state [S_LOAD] : begin
                         ctl_data_access_enable = 1'b1;
                         ctl_load_active = 1'b1;
