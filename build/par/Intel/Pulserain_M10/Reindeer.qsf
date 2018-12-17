@@ -103,4 +103,5 @@ set_global_assignment -name VERILOG_FILE ../../../../submodules/OCD/source/CRC16
 set_global_assignment -name VERILOG_FILE ../../../../source/Intel/PulseRain_M10/Reindeer.v
 set_global_assignment -name SDC_FILE ../../constraints/Intel/PulseRain_M10/Reindeer.sdc
 
+set_global_assignment -name SEED 7
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
