@@ -77,7 +77,7 @@ module Reindeer (
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             
             HSOSC #(
-              .CLKHF_DIV ("0b01")
+              .CLKHF_DIV ("0b10")
             ) osc_i (
               .CLKHFPU (1'b1), 
               .CLKHFEN (1'b1), 
