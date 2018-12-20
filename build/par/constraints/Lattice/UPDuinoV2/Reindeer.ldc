@@ -9,4 +9,4 @@ ldc_set_location -site {16} [get_ports spi_ss]
 
 
 
-create_clock -name {osc_i/CLKHF} -period 41.6667 [get_pins {osc_i/CLKHF }]  
+create_clock -name {osc_i/CLKHF} -period 83.3333 [get_pins {osc_i/CLKHF }]  
