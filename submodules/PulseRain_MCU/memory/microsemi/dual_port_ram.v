@@ -25,8 +25,8 @@ module dual_port_ram #(parameter ADDR_WIDTH = 5, DATA_WIDTH = 32) (
           
           input wire [DATA_WIDTH - 1 : 0]       din,
           input wire                            write_en, 
-          input wire                            wclk, 
-          input wire                            rclk,
+          input wire                            clk, 
+       
           output wire [DATA_WIDTH - 1 : 0]      dout
 );
 
@@ -35,11 +35,11 @@ module dual_port_ram #(parameter ADDR_WIDTH = 5, DATA_WIDTH = 32) (
 
         assign dout = mem[raddr_reg] ;
         
-        always @(posedge rclk) begin
+        always @(posedge clk) begin
             raddr_reg <= raddr;
         end
         
-        always@ (posedge wclk) begin
+        always@ (posedge clk) begin
             if (write_en) begin
                 mem[waddr] <= din;
             end

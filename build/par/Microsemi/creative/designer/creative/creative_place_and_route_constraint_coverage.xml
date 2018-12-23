@@ -3,7 +3,7 @@
 <doc>
 <text>SmartTime Version 11.9.1.0</text>
 <text>Microsemi Corporation - Microsemi Libero Software Release v11.9 SP1 (Version 11.9.1.0)
-Date: Sun Nov 25 23:24:04 2018 </text>
+Date: Sat Dec 22 19:47:56 2018 </text>
 <table>
 <header>
 </header>
@@ -50,15 +50,15 @@ Date: Sun Nov 25 23:24:04 2018 </text>
 </header>
 <row>
  <cell>Setup</cell>
- <cell>         4182</cell>
+ <cell>         4658</cell>
  <cell>            1</cell>
- <cell>         4183</cell>
+ <cell>         4659</cell>
 </row>
 <row>
  <cell>Recovery</cell>
- <cell>         1902</cell>
- <cell>          507</cell>
- <cell>         2409</cell>
+ <cell>         1860</cell>
+ <cell>          480</cell>
+ <cell>         2340</cell>
 </row>
 <row>
  <cell>Output Setup</cell>
@@ -68,22 +68,22 @@ Date: Sun Nov 25 23:24:04 2018 </text>
 </row>
 <row>
  <cell>Total Setup</cell>
- <cell>         6084</cell>
- <cell>          511</cell>
- <cell>         6595</cell>
+ <cell>         6518</cell>
+ <cell>          484</cell>
+ <cell>         7002</cell>
 </row>
 <separator/>
 <row>
  <cell>Hold</cell>
- <cell>         4182</cell>
+ <cell>         4658</cell>
  <cell>            1</cell>
- <cell>         4183</cell>
+ <cell>         4659</cell>
 </row>
 <row>
  <cell>Removal</cell>
- <cell>         1902</cell>
- <cell>          507</cell>
- <cell>         2409</cell>
+ <cell>         1860</cell>
+ <cell>          480</cell>
+ <cell>         2340</cell>
 </row>
 <row>
  <cell>Output Hold</cell>
@@ -93,9 +93,9 @@ Date: Sun Nov 25 23:24:04 2018 </text>
 </row>
 <row>
  <cell>Total Hold</cell>
- <cell>         6084</cell>
- <cell>          511</cell>
- <cell>         6595</cell>
+ <cell>         6518</cell>
+ <cell>          484</cell>
+ <cell>         7002</cell>
 </row>
 </table>
 <section>
@@ -111,15 +111,15 @@ Date: Sun Nov 25 23:24:04 2018 </text>
 </header>
 <row>
  <cell>Setup</cell>
- <cell>         4182</cell>
+ <cell>         4658</cell>
  <cell>            1</cell>
- <cell>         4183</cell>
+ <cell>         4659</cell>
 </row>
 <row>
  <cell>Recovery</cell>
- <cell>         1902</cell>
- <cell>          507</cell>
- <cell>         2409</cell>
+ <cell>         1860</cell>
+ <cell>          480</cell>
+ <cell>         2340</cell>
 </row>
 <row>
  <cell>Output Setup</cell>
@@ -129,22 +129,22 @@ Date: Sun Nov 25 23:24:04 2018 </text>
 </row>
 <row>
  <cell>Total Setup</cell>
- <cell>         6084</cell>
- <cell>          511</cell>
- <cell>         6595</cell>
+ <cell>         6518</cell>
+ <cell>          484</cell>
+ <cell>         7002</cell>
 </row>
 <separator/>
 <row>
  <cell>Hold</cell>
- <cell>         4182</cell>
+ <cell>         4658</cell>
  <cell>            1</cell>
- <cell>         4183</cell>
+ <cell>         4659</cell>
 </row>
 <row>
  <cell>Removal</cell>
- <cell>         1902</cell>
- <cell>          507</cell>
- <cell>         2409</cell>
+ <cell>         1860</cell>
+ <cell>          480</cell>
+ <cell>         2340</cell>
 </row>
 <row>
  <cell>Output Hold</cell>
@@ -154,9 +154,9 @@ Date: Sun Nov 25 23:24:04 2018 </text>
 </row>
 <row>
  <cell>Total Hold</cell>
- <cell>         6084</cell>
- <cell>          511</cell>
- <cell>         6595</cell>
+ <cell>         6518</cell>
+ <cell>          484</cell>
+ <cell>         7002</cell>
 </row>
 </table>
 <section>
@@ -253,13 +253,8 @@ Date: Sun Nov 25 23:24:04 2018 </text>
  <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.current_state[7]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.data_counter[0]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.data_counter[1]:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.data_counter_ret:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.data_counter_ret_0:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.data_counter_ret_1:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.data_counter_ret_2:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.data_counter_ret_3:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.data_counter_ret_4:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.data_counter_ret_5:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.data_counter[2]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.data_counter[3]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.rxd_sr[0]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.rxd_sr[1]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.rxd_sr[2]:ALn</item>
@@ -271,27 +266,17 @@ Date: Sun Nov 25 23:24:04 2018 </text>
  <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.stable_counter[5]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.stable_counter[6]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.sync_reset:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data[0]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data[10]:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_10:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_11:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_12:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_13:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_14:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_15:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_16:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_17:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_18:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_19:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_1:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_2:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_3:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_4:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_5:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_6:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_7:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_8:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_9:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data[1]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data[2]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data[3]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data[4]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data[5]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data[6]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data[7]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data[8]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data[9]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_start_flag:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.baud_counter[0]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.baud_counter[10]:ALn</item>
@@ -301,6 +286,21 @@ Date: Sun Nov 25 23:24:04 2018 </text>
  <item>Reindeer_0/ocd_i.debug_UART_i.baud_counter[4]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.baud_counter[5]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.baud_counter[6]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.baud_counter[7]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.baud_counter[8]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.baud_counter[9]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.current_state[0]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.current_state[1]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_sr[0]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_sr[1]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_sr[2]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_sr[3]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_sr[4]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_sr[5]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_start:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_start_addr[10]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_start_addr[11]:ALn</item>
 </list>
 <text></text>
 <text> - Hold uncconstrained for the following pin:</text>
@@ -364,13 +364,8 @@ Date: Sun Nov 25 23:24:04 2018 </text>
  <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.current_state[7]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.data_counter[0]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.data_counter[1]:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.data_counter_ret:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.data_counter_ret_0:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.data_counter_ret_1:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.data_counter_ret_2:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.data_counter_ret_3:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.data_counter_ret_4:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.data_counter_ret_5:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.data_counter[2]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.data_counter[3]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.rxd_sr[0]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.rxd_sr[1]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.rxd_sr[2]:ALn</item>
@@ -382,27 +377,17 @@ Date: Sun Nov 25 23:24:04 2018 </text>
  <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.stable_counter[5]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.stable_counter[6]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.sync_reset:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data[0]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data[10]:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_10:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_11:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_12:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_13:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_14:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_15:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_16:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_17:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_18:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_19:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_1:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_2:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_3:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_4:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_5:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_6:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_7:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_8:ALn</item>
- <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data_ret_9:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data[1]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data[2]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data[3]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data[4]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data[5]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data[6]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data[7]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data[8]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_data[9]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.UART_i.tx_start_flag:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.baud_counter[0]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.baud_counter[10]:ALn</item>
@@ -412,6 +397,21 @@ Date: Sun Nov 25 23:24:04 2018 </text>
  <item>Reindeer_0/ocd_i.debug_UART_i.baud_counter[4]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.baud_counter[5]:ALn</item>
  <item>Reindeer_0/ocd_i.debug_UART_i.baud_counter[6]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.baud_counter[7]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.baud_counter[8]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.baud_counter[9]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.current_state[0]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_UART_i.current_state[1]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_sr[0]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_sr[1]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_sr[2]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_sr[3]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_sr[4]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_sr[5]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_start:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_start_addr[10]:ALn</item>
+ <item>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_start_addr[11]:ALn</item>
 </list>
 <text></text>
 </section>

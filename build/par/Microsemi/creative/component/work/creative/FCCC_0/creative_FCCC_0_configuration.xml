@@ -8,7 +8,7 @@
 </header>
 <row>
  <cell>Date:</cell>
- <cell>Sun Nov 25 22:27:59 2018</cell>
+ <cell>Sat Dec 22 16:32:36 2018</cell>
 </row>
 <separator/>
 <row>
@@ -49,9 +49,9 @@
  <cell>GL0</cell>
  <cell>primary clock</cell>
  <cell>PLL (0)</cell>
- <cell>160 MHz</cell>
- <cell>160 MHz</cell>
- <cell>160 MHz</cell>
+ <cell>145 MHz</cell>
+ <cell>145 MHz</cell>
+ <cell>145 MHz</cell>
  <cell>--</cell>
 </row>
 <separator/>
@@ -72,11 +72,11 @@
 </row>
 <row>
  <cell>Output frequency</cell>
- <cell>160 MHz</cell>
+ <cell>145 MHz</cell>
 </row>
 <row>
  <cell>VCO frequency</cell>
- <cell>640 MHz</cell>
+ <cell>580 MHz</cell>
 </row>
 <separator/>
 <row>
@@ -85,7 +85,7 @@
 </row>
 <row>
  <cell>CCC reference clock divider</cell>
- <cell>5</cell>
+ <cell>10</cell>
 </row>
 <separator/>
 <row>
@@ -98,7 +98,7 @@
 </row>
 <row>
  <cell>CCC feedback divider</cell>
- <cell>16</cell>
+ <cell>29</cell>
 </row>
 <row>
  <cell>External feedback divider</cell>
@@ -161,7 +161,7 @@
 <row>
  <cell>FCCC_RFDIV_CR</cell>
  <cell>0x02</cell>
- <cell>0x04</cell>
+ <cell>0x09</cell>
  <cell>RFDIV configuration register</cell>
 </row>
 <row>
@@ -173,7 +173,7 @@
 <row>
  <cell>FCCC_FBDIV_CR0</cell>
  <cell>0x04</cell>
- <cell>0x0f</cell>
+ <cell>0x1c</cell>
  <cell>FBDIV configuration register 0</cell>
 </row>
 <row>
@@ -347,7 +347,7 @@
 <row>
  <cell>FCCC_PLL_CR10</cell>
  <cell>0x21</cell>
- <cell>0x05</cell>
+ <cell>0x04</cell>
  <cell>PLL loop filter range configuration register</cell>
 </row>
 <row>

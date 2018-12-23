@@ -35,7 +35,7 @@
 //----------------------------------------------------------------------------
 //  clock 
 //----------------------------------------------------------------------------
-`define MCU_MAIN_CLK_RATE                  160000000
+`define MCU_MAIN_CLK_RATE                  145000000
 
 
 
@@ -59,7 +59,11 @@
 //  hardware mul/div
 //----------------------------------------------------------------------------
 
-`define ENABLE_HW_MUL_DIV                   0
+`define DISABLE_OCD                         0
 
+`define ENABLE_HW_MUL_DIV                   1
+
+`define SMALL_MACHINE_TIMER                 0
+`define SMALL_CSR_SET                       0
 
 `endif

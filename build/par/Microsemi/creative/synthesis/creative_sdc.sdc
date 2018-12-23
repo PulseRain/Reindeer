@@ -1,4 +1,4 @@
-# Written by Synplify Pro version mapact, Build 2172R. Synopsys Run ID: sid1543216503 
+# Written by Synplify Pro version mapact, Build 2172R. Synopsys Run ID: sid1545535222 
 # Top Level Design Parameters 
 
 # Clocks 
@@ -7,7 +7,7 @@ create_clock -period 20.000 -waveform {0.000 10.000} -name {osc_in} [get_ports {
 # Virtual Clocks 
 
 # Generated Clocks 
-create_generated_clock -name {FCCC_0/GL0} -multiply_by {16} -divide_by {5} -source [get_pins {FCCC_0/CLK0_PAD_INST:Y}]  [get_pins {FCCC_0/CCC_INST:GL0}] 
+create_generated_clock -name {FCCC_0/GL0} -multiply_by {145} -divide_by {50} -source [get_pins {FCCC_0/CLK0_PAD_INST:Y}]  [get_pins {FCCC_0/CCC_INST:GL0}] 
 
 # Paths Between Clocks 
 

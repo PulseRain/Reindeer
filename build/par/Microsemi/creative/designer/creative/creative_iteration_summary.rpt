@@ -72,3 +72,209 @@
            6  82287664    N/A                        0.157  creative_timing_violations_max_r7_s6.rpt       creative_r7_s6
   The best result creative_r7_s5 has been saved into the project.
 
+#------------------------------------------------------------------------------------------------------------------------------------------
+# RUN NUMBER: 8   DATE: 00:55:39 20-Dec-2018
+# INVOKED AS: C:/Microsemi/Libero_SoC_v11.9/Designer/bin/libero.exe extended_run_lib.tcl -skip_open_project -root {C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative} -n 3 -starting_seed_index 7 -compare_criteria violations -analysis max -slack_criteria worst
+#------------------------------------------------------------------------------------------------------------------------------------------
+# Seed Index  Seed      Maximum Delay        Worst Slack  Report Analyzed                                Saved Design
+# ==========  ========  ===============  ===============  =============================================  ===================================
+           7  23702026    N/A                       -0.589  creative_timing_violations_max_r8_s7.rpt       creative_r8_s7
+           8  51370950    N/A                       -0.161  creative_timing_violations_max_r8_s8.rpt       creative_r8_s8
+           9  93189207    N/A                       -0.336  creative_timing_violations_max_r8_s9.rpt       creative_r8_s9
+  The best result creative_r8_s8 has been saved into the project.
+
+#------------------------------------------------------------------------------------------------------------------------------------------
+# RUN NUMBER: 9   DATE: 01:41:20 20-Dec-2018
+# INVOKED AS: C:/Microsemi/Libero_SoC_v11.9/Designer/bin/libero.exe extended_run_lib.tcl -skip_open_project -root {C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative} -n 3 -starting_seed_index 10 -compare_criteria violations -analysis max -slack_criteria worst
+#------------------------------------------------------------------------------------------------------------------------------------------
+# Seed Index  Seed      Maximum Delay        Worst Slack  Report Analyzed                                Saved Design
+# ==========  ========  ===============  ===============  =============================================  ===================================
+          10  17538078    N/A                       -0.568  creative_timing_violations_max_r9_s10.rpt      creative_r9_s10
+          11  77122585    N/A                       -0.551  creative_timing_violations_max_r9_s11.rpt      creative_r9_s11
+          12  27521058    N/A                       -0.564  creative_timing_violations_max_r9_s12.rpt      creative_r9_s12
+  The best result creative_r9_s11 has been saved into the project.
+
+#------------------------------------------------------------------------------------------------------------------------------------------
+# RUN NUMBER: 10   DATE: 01:56:36 20-Dec-2018
+# INVOKED AS: C:/Microsemi/Libero_SoC_v11.9/Designer/bin/libero.exe extended_run_lib.tcl -skip_open_project -root {C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative} -n 3 -starting_seed_index 23 -compare_criteria violations -analysis max -slack_criteria worst
+#------------------------------------------------------------------------------------------------------------------------------------------
+# Seed Index  Seed      Maximum Delay        Worst Slack  Report Analyzed                                Saved Design
+# ==========  ========  ===============  ===============  =============================================  ===================================
+         N/A  77122585    N/A                       -0.551  creative_timing_violations_max_r10_initial.rpt  creative_r10_initial
+          23  97870047    N/A                       -0.931  creative_timing_violations_max_r10_s23.rpt     creative_r10_s23
+          24  62801420    N/A                       -0.620  creative_timing_violations_max_r10_s24.rpt     creative_r10_s24
+          25  53746736    N/A                       -0.545  creative_timing_violations_max_r10_s25.rpt     creative_r10_s25
+  The best result creative_r10_s25 has been saved into the project.
+
+#------------------------------------------------------------------------------------------------------------------------------------------
+# RUN NUMBER: 11   DATE: 21:28:58 20-Dec-2018
+# INVOKED AS: C:/Microsemi/Libero_SoC_v11.9/Designer/bin/libero.exe extended_run_lib.tcl -skip_open_project -root {C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative} -n 10 -starting_seed_index 27 -compare_criteria violations -analysis max -slack_criteria worst
+#------------------------------------------------------------------------------------------------------------------------------------------
+# Seed Index  Seed      Maximum Delay        Worst Slack  Report Analyzed                                Saved Design
+# ==========  ========  ===============  ===============  =============================================  ===================================
+         N/A  53746736    N/A                       -0.545  creative_timing_violations_max_r11_initial.rpt  creative_r11_initial
+          27  48585287    N/A                       -0.513  creative_timing_violations_max_r11_s27.rpt     creative_r11_s27
+          28  65109639    N/A                       -0.756  creative_timing_violations_max_r11_s28.rpt     creative_r11_s28
+          29   6200884    N/A                       -0.735  creative_timing_violations_max_r11_s29.rpt     creative_r11_s29
+          30  95485523    N/A                       -0.488  creative_timing_violations_max_r11_s30.rpt     creative_r11_s30
+          31  49281529    N/A                       -0.652  creative_timing_violations_max_r11_s31.rpt     creative_r11_s31
+          32   7691409    N/A                       -0.464  creative_timing_violations_max_r11_s32.rpt     creative_r11_s32
+          33  43672697    N/A                       -0.584  creative_timing_violations_max_r11_s33.rpt     creative_r11_s33
+          34   2966551    N/A                       -0.465  creative_timing_violations_max_r11_s34.rpt     creative_r11_s34
+          35  72212521    N/A                       -0.998  creative_timing_violations_max_r11_s35.rpt     creative_r11_s35
+          36  66421044    N/A                       -0.588  creative_timing_violations_max_r11_s36.rpt     creative_r11_s36
+  The best result creative_r11_s32 has been saved into the project.
+
+#------------------------------------------------------------------------------------------------------------------------------------------
+# RUN NUMBER: 12   DATE: 22:20:44 20-Dec-2018
+# INVOKED AS: C:/Microsemi/Libero_SoC_v11.9/Designer/bin/libero.exe extended_run_lib.tcl -skip_open_project -root {C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative} -n 25 -starting_seed_index 50 -compare_criteria violations -analysis max -slack_criteria worst -stop_on_success
+#------------------------------------------------------------------------------------------------------------------------------------------
+# Seed Index  Seed      Maximum Delay        Worst Slack  Report Analyzed                                Saved Design
+# ==========  ========  ===============  ===============  =============================================  ===================================
+         N/A   7691409    N/A                       -0.464  creative_timing_violations_max_r12_initial.rpt  creative_r12_initial
+          50   6723976    N/A                       -0.377  creative_timing_violations_max_r12_s50.rpt     creative_r12_s50
+          51  13482375    N/A                       -0.791  creative_timing_violations_max_r12_s51.rpt     creative_r12_s51
+          52  10081164    N/A                       -0.623  creative_timing_violations_max_r12_s52.rpt     creative_r12_s52
+          53  59064770    N/A                       -0.533  creative_timing_violations_max_r12_s53.rpt     creative_r12_s53
+          54  37462084    N/A                       -0.765  creative_timing_violations_max_r12_s54.rpt     creative_r12_s54
+          55  69402502    N/A                       -0.898  creative_timing_violations_max_r12_s55.rpt     creative_r12_s55
+          56  35229615    N/A                       -0.786  creative_timing_violations_max_r12_s56.rpt     creative_r12_s56
+          57  76413220    N/A                       -0.460  creative_timing_violations_max_r12_s57.rpt     creative_r12_s57
+          58  93611357    N/A                       -0.401  creative_timing_violations_max_r12_s58.rpt     creative_r12_s58
+          59  38820927    N/A                       -0.642  creative_timing_violations_max_r12_s59.rpt     creative_r12_s59
+          60   2424145    N/A                       -0.850  creative_timing_violations_max_r12_s60.rpt     creative_r12_s60
+          61  78161908    N/A                       -0.759  creative_timing_violations_max_r12_s61.rpt     creative_r12_s61
+          62  40082753    N/A                       -0.886  creative_timing_violations_max_r12_s62.rpt     creative_r12_s62
+          63  41534854    N/A                       -0.774  creative_timing_violations_max_r12_s63.rpt     creative_r12_s63
+          64  42455774    N/A                       -0.696  creative_timing_violations_max_r12_s64.rpt     creative_r12_s64
+          65  33109611    N/A                       -0.395  creative_timing_violations_max_r12_s65.rpt     creative_r12_s65
+          66  70712275    N/A                       -0.443  creative_timing_violations_max_r12_s66.rpt     creative_r12_s66
+          67  77205368    N/A                       -1.145  creative_timing_violations_max_r12_s67.rpt     creative_r12_s67
+          68   5895432    N/A                       -0.622  creative_timing_violations_max_r12_s68.rpt     creative_r12_s68
+          69  77171576    N/A                       -0.856  creative_timing_violations_max_r12_s69.rpt     creative_r12_s69
+          70  56846114    N/A                       -0.737  creative_timing_violations_max_r12_s70.rpt     creative_r12_s70
+          71  33520602    N/A                       -0.488  creative_timing_violations_max_r12_s71.rpt     creative_r12_s71
+          72   4119614    N/A                       -0.410  creative_timing_violations_max_r12_s72.rpt     creative_r12_s72
+          73  83366482    N/A                       -0.500  creative_timing_violations_max_r12_s73.rpt     creative_r12_s73
+          74  29502267    N/A                       -0.806  creative_timing_violations_max_r12_s74.rpt     creative_r12_s74
+  The best result creative_r12_s50 has been saved into the project.
+
+#------------------------------------------------------------------------------------------------------------------------------------------
+# RUN NUMBER: 13   DATE: 23:55:00 21-Dec-2018
+# INVOKED AS: C:/Microsemi/Libero_SoC_v11.9/Designer/bin/libero.exe extended_run_lib.tcl -skip_open_project -root {C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative} -n 25 -starting_seed_index 75 -compare_criteria violations -analysis max -slack_criteria worst -stop_on_success
+#------------------------------------------------------------------------------------------------------------------------------------------
+# Seed Index  Seed      Maximum Delay        Worst Slack  Report Analyzed                                Saved Design
+# ==========  ========  ===============  ===============  =============================================  ===================================
+          75  13204664    N/A                       -0.528  creative_timing_violations_max_r13_s75.rpt     creative_r13_s75
+          76  85952192    N/A                       -0.164  creative_timing_violations_max_r13_s76.rpt     creative_r13_s76
+          77  45013514    N/A                       -0.719  creative_timing_violations_max_r13_s77.rpt     creative_r13_s77
+          78  11822810    N/A                       -0.424  creative_timing_violations_max_r13_s78.rpt     creative_r13_s78
+          79  67058388    N/A                       -0.605  creative_timing_violations_max_r13_s79.rpt     creative_r13_s79
+          80  10979042    N/A                       -0.315  creative_timing_violations_max_r13_s80.rpt     creative_r13_s80
+          81  83928108    N/A                       -0.698  creative_timing_violations_max_r13_s81.rpt     creative_r13_s81
+          82  12959919    N/A                       -0.718  creative_timing_violations_max_r13_s82.rpt     creative_r13_s82
+          83  30760713    N/A                       -0.545  creative_timing_violations_max_r13_s83.rpt     creative_r13_s83
+          84  28891433    N/A                       -0.541  creative_timing_violations_max_r13_s84.rpt     creative_r13_s84
+          85   6483612    N/A                       -0.573  creative_timing_violations_max_r13_s85.rpt     creative_r13_s85
+          86  90180140    N/A                       -0.520  creative_timing_violations_max_r13_s86.rpt     creative_r13_s86
+          87  72264221    N/A                       -0.958  creative_timing_violations_max_r13_s87.rpt     creative_r13_s87
+          88  30708455    N/A                       -0.502  creative_timing_violations_max_r13_s88.rpt     creative_r13_s88
+          89  21457078    N/A                       -0.284  creative_timing_violations_max_r13_s89.rpt     creative_r13_s89
+          90  80806887    N/A                       -0.871  creative_timing_violations_max_r13_s90.rpt     creative_r13_s90
+          91   2307335    N/A                       -0.259  creative_timing_violations_max_r13_s91.rpt     creative_r13_s91
+          92  41843557    N/A                       -0.229  creative_timing_violations_max_r13_s92.rpt     creative_r13_s92
+          93   4604276    N/A                       -0.357  creative_timing_violations_max_r13_s93.rpt     creative_r13_s93
+          94  56763923    N/A                       -0.478  creative_timing_violations_max_r13_s94.rpt     creative_r13_s94
+          95  14559902    N/A                       -0.278  creative_timing_violations_max_r13_s95.rpt     creative_r13_s95
+          96  60373882    N/A                       -0.704  creative_timing_violations_max_r13_s96.rpt     creative_r13_s96
+          97  46009502    N/A                       -0.556  creative_timing_violations_max_r13_s97.rpt     creative_r13_s97
+          98   4455994    N/A                       -0.282  creative_timing_violations_max_r13_s98.rpt     creative_r13_s98
+          99  85131625    N/A                       -0.456  creative_timing_violations_max_r13_s99.rpt     creative_r13_s99
+  The best result creative_r13_s76 has been saved into the project.
+
+#------------------------------------------------------------------------------------------------------------------------------------------
+# RUN NUMBER: 14   DATE: 02:26:24 22-Dec-2018
+# INVOKED AS: C:/Microsemi/Libero_SoC_v11.9/Designer/bin/libero.exe extended_run_lib.tcl -skip_open_project -root {C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative} -n 25 -starting_seed_index 100 -compare_criteria violations -analysis max -slack_criteria worst -stop_on_success
+#------------------------------------------------------------------------------------------------------------------------------------------
+# Seed Index  Seed      Maximum Delay        Worst Slack  Report Analyzed                                Saved Design
+# ==========  ========  ===============  ===============  =============================================  ===================================
+         100  40011619    N/A                        0.485  creative_timing_violations_max_r14_s100.rpt    creative_r14_s100
+  The best result creative_r14_s100 has been saved into the project.
+
+#------------------------------------------------------------------------------------------------------------------------------------------
+# RUN NUMBER: 15   DATE: 14:27:53 22-Dec-2018
+# INVOKED AS: C:/Microsemi/Libero_SoC_v11.9/Designer/bin/libero.exe extended_run_lib.tcl -skip_open_project -root {C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative} -n 25 -starting_seed_index 101 -compare_criteria violations -analysis max -slack_criteria worst -stop_on_success
+#------------------------------------------------------------------------------------------------------------------------------------------
+# Seed Index  Seed      Maximum Delay        Worst Slack  Report Analyzed                                Saved Design
+# ==========  ========  ===============  ===============  =============================================  ===================================
+         101  23897493    N/A                       -0.279  creative_timing_violations_max_r15_s101.rpt    creative_r15_s101
+           1         0    N/A                       -0.279  creative_timing_violations_max_r15_s1.rpt      creative_r15_s1
+           2  86662958    N/A                       -0.197  creative_timing_violations_max_r15_s2.rpt      creative_r15_s2
+           3   8988747    N/A                       -0.125  creative_timing_violations_max_r15_s3.rpt      creative_r15_s3
+           4  51071856    N/A                       -0.383  creative_timing_violations_max_r15_s4.rpt      creative_r15_s4
+           5  78381505    N/A                       -0.170  creative_timing_violations_max_r15_s5.rpt      creative_r15_s5
+           6  82287664    N/A                       -0.087  creative_timing_violations_max_r15_s6.rpt      creative_r15_s6
+           7  23702026    N/A                       -0.161  creative_timing_violations_max_r15_s7.rpt      creative_r15_s7
+           8  51370950    N/A                       -0.340  creative_timing_violations_max_r15_s8.rpt      creative_r15_s8
+           9  93189207    N/A                       -0.414  creative_timing_violations_max_r15_s9.rpt      creative_r15_s9
+          10  17538078    N/A                       -1.258  creative_timing_violations_max_r15_s10.rpt     creative_r15_s10
+          11  77122585    N/A                       -0.104  creative_timing_violations_max_r15_s11.rpt     creative_r15_s11
+          12  27521058    N/A                       -0.156  creative_timing_violations_max_r15_s12.rpt     creative_r15_s12
+          13  77808595    N/A                       -0.308  creative_timing_violations_max_r15_s13.rpt     creative_r15_s13
+          14  85318856    N/A                       -0.528  creative_timing_violations_max_r15_s14.rpt     creative_r15_s14
+          15  74257101    N/A                       -0.566  creative_timing_violations_max_r15_s15.rpt     creative_r15_s15
+          16  32878858    N/A                       -0.595  creative_timing_violations_max_r15_s16.rpt     creative_r15_s16
+          17  46508465    N/A                       -0.332  creative_timing_violations_max_r15_s17.rpt     creative_r15_s17
+          18  94448754    N/A                       -0.475  creative_timing_violations_max_r15_s18.rpt     creative_r15_s18
+          19  15741291    N/A                       -0.177  creative_timing_violations_max_r15_s19.rpt     creative_r15_s19
+          20  54522669    N/A                       -0.435  creative_timing_violations_max_r15_s20.rpt     creative_r15_s20
+          21  48978728    N/A                       -0.659  creative_timing_violations_max_r15_s21.rpt     creative_r15_s21
+          22  69702706    N/A               Layout aborted  creative_timing_violations_max_r15_s22.rpt     creative_r15_s22
+  The best result creative_r15_s6 has been saved into the project.
+
+#------------------------------------------------------------------------------------------------------------------------------------------
+# RUN NUMBER: 16   DATE: 16:35:47 22-Dec-2018
+# INVOKED AS: C:/Microsemi/Libero_SoC_v11.9/Designer/bin/libero.exe extended_run_lib.tcl -skip_open_project -root {C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative} -n 25 -starting_seed_index 23 -compare_criteria violations -analysis max -slack_criteria worst -stop_on_success
+#------------------------------------------------------------------------------------------------------------------------------------------
+# Seed Index  Seed      Maximum Delay        Worst Slack  Report Analyzed                                Saved Design
+# ==========  ========  ===============  ===============  =============================================  ===================================
+          23  97870047    N/A                       -0.453  creative_timing_violations_max_r16_s23.rpt     creative_r16_s23
+          24  62801420    N/A                       -0.319  creative_timing_violations_max_r16_s24.rpt     creative_r16_s24
+          25  53746736    N/A                       -0.292  creative_timing_violations_max_r16_s25.rpt     creative_r16_s25
+          26  60669213    N/A                       -0.499  creative_timing_violations_max_r16_s26.rpt     creative_r16_s26
+          27  48585287    N/A                       -0.629  creative_timing_violations_max_r16_s27.rpt     creative_r16_s27
+          28  65109639    N/A                       -0.066  creative_timing_violations_max_r16_s28.rpt     creative_r16_s28
+          29   6200884    N/A                       -0.149  creative_timing_violations_max_r16_s29.rpt     creative_r16_s29
+          30  95485523    N/A                       -0.304  creative_timing_violations_max_r16_s30.rpt     creative_r16_s30
+          31  49281529    N/A                       -0.139  creative_timing_violations_max_r16_s31.rpt     creative_r16_s31
+          32   7691409    N/A                       -0.152  creative_timing_violations_max_r16_s32.rpt     creative_r16_s32
+          33  43672697    N/A                       -0.380  creative_timing_violations_max_r16_s33.rpt     creative_r16_s33
+          34   2966551    N/A                       -0.440  creative_timing_violations_max_r16_s34.rpt     creative_r16_s34
+          35  72212521    N/A                       -0.676  creative_timing_violations_max_r16_s35.rpt     creative_r16_s35
+          36  66421044    N/A                       -0.195  creative_timing_violations_max_r16_s36.rpt     creative_r16_s36
+          37  60426452    N/A                       -0.278  creative_timing_violations_max_r16_s37.rpt     creative_r16_s37
+          38  61936054    N/A                       -0.391  creative_timing_violations_max_r16_s38.rpt     creative_r16_s38
+          39   3381876    N/A                       -0.145  creative_timing_violations_max_r16_s39.rpt     creative_r16_s39
+          40  21928008    N/A                       -0.501  creative_timing_violations_max_r16_s40.rpt     creative_r16_s40
+          41  61837010    N/A                       -0.314  creative_timing_violations_max_r16_s41.rpt     creative_r16_s41
+          42  69297693    N/A                       -0.142  creative_timing_violations_max_r16_s42.rpt     creative_r16_s42
+          43  71882432    N/A                       -0.252  creative_timing_violations_max_r16_s43.rpt     creative_r16_s43
+          44  30090217    N/A                       -0.216  creative_timing_violations_max_r16_s44.rpt     creative_r16_s44
+          45  67270347    N/A                       -0.743  creative_timing_violations_max_r16_s45.rpt     creative_r16_s45
+          46  89744351    N/A                       -0.626  creative_timing_violations_max_r16_s46.rpt     creative_r16_s46
+          47  71867462    N/A                       -0.227  creative_timing_violations_max_r16_s47.rpt     creative_r16_s47
+  The best result creative_r16_s28 has been saved into the project.
+
+#------------------------------------------------------------------------------------------------------------------------------------------
+# RUN NUMBER: 17   DATE: 19:20:43 22-Dec-2018
+# INVOKED AS: C:/Microsemi/Libero_SoC_v11.9/Designer/bin/libero.exe extended_run_lib.tcl -skip_open_project -root {C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative} -n 25 -starting_seed_index 48 -compare_criteria violations -analysis max -slack_criteria worst -stop_on_success
+#------------------------------------------------------------------------------------------------------------------------------------------
+# Seed Index  Seed      Maximum Delay        Worst Slack  Report Analyzed                                Saved Design
+# ==========  ========  ===============  ===============  =============================================  ===================================
+          48  64756741    N/A                       -0.143  creative_timing_violations_max_r17_s48.rpt     creative_r17_s48
+          49   6107703    N/A                       -0.487  creative_timing_violations_max_r17_s49.rpt     creative_r17_s49
+          50   6723976    N/A                       -0.306  creative_timing_violations_max_r17_s50.rpt     creative_r17_s50
+          51  13482375    N/A                       -0.519  creative_timing_violations_max_r17_s51.rpt     creative_r17_s51
+          52  10081164    N/A                        0.093  creative_timing_violations_max_r17_s52.rpt     creative_r17_s52
+  The best result creative_r17_s52 has been saved into the project.
+

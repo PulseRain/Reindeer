@@ -1,5 +1,6 @@
 Detailed Resource Usage
-Module Name,Fabric 4LUT,Fabric DFF,Interface 4LUT,Interface DFF,Single-Ended I/O,uSRAM 1K,LSRAM 18K,PLLs and CCCs,Chip Globals
-FCCC_0/Primitives,0,0,0,0,1,0,0,1,1
-Primitives/Primitives,1,0,0,0,4,0,0,0,0
-Reindeer_0/Primitives,3732,2410,936,936,0,2,24,0,2
+Module Name,Fabric 4LUT,Fabric DFF,Interface 4LUT,Interface DFF,Single-Ended I/O,uSRAM 1K,LSRAM 18K,Math (18x18),PLLs and CCCs,Chip Globals
+FCCC_0/Primitives,0,0,0,0,1,0,0,0,1,1
+Primitives/Primitives,1,0,0,0,4,0,0,0,0,0
+Reindeer_0/Primitives,4069,2526,936,936,0,2,24,0,0,2
+Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.genblk1.mul_div_32_i.WideMult_0_0/Primitives,0,0,144,144,0,0,0,4,0,0

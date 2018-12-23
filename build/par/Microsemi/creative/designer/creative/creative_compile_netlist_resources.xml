@@ -3,7 +3,7 @@
 <doc>
 <title>Resource Report</title>
 <text>Microsemi Corporation - Microsemi Libero Software Release v11.9 SP1 (Version 11.9.1.0)</text>
-<text>Date: Sun Nov 25 23:15:15 2018
+<text>Date: Sat Dec 22 19:20:40 2018
 </text>
 <section><name>Device Selection</name></section>
 <table>
@@ -106,15 +106,15 @@
 </header>
 <row>
  <cell>4LUT</cell>
- <cell>4669</cell>
+ <cell>5150</cell>
  <cell>27696</cell>
- <cell>16.86</cell>
+ <cell>18.59</cell>
 </row>
 <row>
  <cell>DFF</cell>
- <cell>3346</cell>
+ <cell>3606</cell>
  <cell>27696</cell>
- <cell>12.08</cell>
+ <cell>13.02</cell>
 </row>
 <row>
  <cell>I/O Register</cell>
@@ -154,9 +154,9 @@
 </row>
 <row>
  <cell>MACC</cell>
- <cell>0</cell>
+ <cell>4</cell>
  <cell>34</cell>
- <cell>0.00</cell>
+ <cell>11.76</cell>
 </row>
 <row>
  <cell>Chip Globals</cell>
@@ -204,8 +204,8 @@
 </header>
 <row>
  <cell>Fabric Logic</cell>
- <cell>3733</cell>
- <cell>2410</cell>
+ <cell>4070</cell>
+ <cell>2526</cell>
 </row>
 <row>
  <cell>RAM64x18 Interface Logic</cell>
@@ -219,13 +219,13 @@
 </row>
 <row>
  <cell>MACC Interface Logic</cell>
- <cell>0</cell>
- <cell>0</cell>
+ <cell>144</cell>
+ <cell>144</cell>
 </row>
 <row>
  <cell>Total Used</cell>
- <cell>4669</cell>
- <cell>3346</cell>
+ <cell>5150</cell>
+ <cell>3606</cell>
 </row>
 </table>
 <section><name>Detailed Carry Chains Resource Usage</name></section>
@@ -238,11 +238,15 @@
 </row>
 <row>
  <cell>2</cell>
- <cell>75</cell>
+ <cell>72</cell>
+</row>
+<row>
+ <cell>6</cell>
+ <cell>1</cell>
 </row>
 <row>
  <cell>8</cell>
- <cell>2</cell>
+ <cell>3</cell>
 </row>
 <row>
  <cell>9</cell>
@@ -270,7 +274,7 @@
 </row>
 <row>
  <cell>30</cell>
- <cell>2</cell>
+ <cell>3</cell>
 </row>
 <row>
  <cell>31</cell>
@@ -278,11 +282,15 @@
 </row>
 <row>
  <cell>32</cell>
- <cell>4</cell>
+ <cell>5</cell>
 </row>
 <row>
  <cell>33</cell>
- <cell>2</cell>
+ <cell>4</cell>
+</row>
+<row>
+ <cell>34</cell>
+ <cell>1</cell>
 </row>
 <row>
  <cell>64</cell>
@@ -294,7 +302,24 @@
 </row>
 <row>
  <cell>Total</cell>
- <cell>100</cell>
+ <cell>104</cell>
+</row>
+</table>
+<section><name>Detailed MACC Resource Usage</name></section>
+<table>
+<header>
+</header>
+<row>
+ <cell>Length</cell>
+ <cell>Used</cell>
+</row>
+<row>
+ <cell>4</cell>
+ <cell>1</cell>
+</row>
+<row>
+ <cell>Total</cell>
+ <cell>1</cell>
 </row>
 </table>
 <section><name>I/O Function</name></section>
@@ -386,7 +411,7 @@
  <cell>Name</cell>
 </header>
 <row>
- <cell>2440</cell>
+ <cell>2572</cell>
  <cell>INT_NET</cell>
  <cell>Net   : FCCC_0_GL0</cell>
 </row>
@@ -401,14 +426,14 @@
  <cell>Source: NETLIST</cell>
 </row>
 <row>
- <cell>1902</cell>
+ <cell>1844</cell>
  <cell>INT_NET</cell>
- <cell>Net   : Reindeer_0/cpu_reset_RNIKJKK_0</cell>
+ <cell>Net   : Reindeer_0/reset_n_i_1_i_i_i</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: Reindeer_0/ocd_i_debug_coprocessor_i_cpu_reset_RNIKJKK_0/U0_RGB1</cell>
+ <cell>Driver: Reindeer_0/un1_reset_n_i_RNIB6E5/U0_RGB1</cell>
 </row>
 <row>
  <cell></cell>
@@ -416,7 +441,7 @@
  <cell>Source: NETLIST</cell>
 </row>
 <row>
- <cell>507</cell>
+ <cell>480</cell>
  <cell>INT_NET</cell>
  <cell>Net   : Reindeer_0/NN_2</cell>
 </row>
@@ -447,14 +472,14 @@
  <cell>Name</cell>
 </header>
 <row>
- <cell>216</cell>
+ <cell>214</cell>
  <cell>INT_NET</cell>
  <cell>Net   : Reindeer_0/exe_enable</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[6]</cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state_ret_11_RNIOO4S</cell>
 </row>
 <row>
  <cell>151</cell>
@@ -467,17 +492,27 @@
  <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_out[21]</cell>
 </row>
 <row>
- <cell>143</cell>
+ <cell>138</cell>
  <cell>INT_NET</cell>
- <cell>Net   : Reindeer_0/activate_exception</cell>
+ <cell>Net   : Reindeer_0/current_state_3[2]</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[12]</cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.genblk1.mul_div_32_i.long_slow_div_denom_reg_i.current_state[2]</cell>
 </row>
 <row>
- <cell>132</cell>
+ <cell>136</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/N_64_i</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.genblk1.mul_div_32_i.long_slow_div_denom_reg_i.ctl_division_enable_1_sqmuxa_i_o2_RNIQV8F</cell>
+</row>
+<row>
+ <cell>133</cell>
  <cell>INT_NET</cell>
  <cell>Net   : Reindeer_0/reply_enable</cell>
 </row>
@@ -487,17 +522,17 @@
  <cell>Driver: Reindeer_0/ocd_i.debug_coprocessor_i.reply_enable_out</cell>
 </row>
 <row>
- <cell>102</cell>
+ <cell>125</cell>
  <cell>INT_NET</cell>
- <cell>Net   : Reindeer_0/fetch_init_2_Z</cell>
+ <cell>Net   : Reindeer_0/read_rs1_data_out_1_Z</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.fetch_proc.fetch_init_2</cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.IR_out_ret_0</cell>
 </row>
 <row>
- <cell>99</cell>
+ <cell>121</cell>
  <cell>INT_NET</cell>
  <cell>Net   : Reindeer_0/decode_IR_out[31]</cell>
 </row>
@@ -507,6 +542,16 @@
  <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.IR_out[31]</cell>
 </row>
 <row>
+ <cell>117</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/activate_exception</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[10]</cell>
+</row>
+<row>
  <cell>97</cell>
  <cell>INT_NET</cell>
  <cell>Net   : Reindeer_0/decode_ctl_load_Y_from_imm_12</cell>
@@ -514,37 +559,17 @@
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.ctl_load_Y_from_imm_12_0_a4</cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.ctl_load_Y_from_imm_12</cell>
 </row>
 <row>
  <cell>97</cell>
  <cell>INT_NET</cell>
- <cell>Net   : Reindeer_0/N_610_i</cell>
+ <cell>Net   : Reindeer_0/read_rs2_data_out_1_Z</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.N_610_i</cell>
-</row>
-<row>
- <cell>92</cell>
- <cell>INT_NET</cell>
- <cell>Net   : LED_RED_c</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]</cell>
-</row>
-<row>
- <cell>86</cell>
- <cell>INT_NET</cell>
- <cell>Net   : Reindeer_0/exe_data_to_storeoi[0]</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_2[0]</cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.read_rs2_data_out_1</cell>
 </row>
 </table>
 <section><name>High fanout nets (through buffer trees)</name></section>
@@ -555,14 +580,14 @@
  <cell>Name</cell>
 </header>
 <row>
- <cell>216</cell>
+ <cell>214</cell>
  <cell>INT_NET</cell>
  <cell>Net   : Reindeer_0/exe_enable</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[6]</cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state_ret_11_RNIOO4S</cell>
 </row>
 <row>
  <cell>151</cell>
@@ -575,17 +600,27 @@
  <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_out[21]</cell>
 </row>
 <row>
- <cell>143</cell>
+ <cell>138</cell>
  <cell>INT_NET</cell>
- <cell>Net   : Reindeer_0/activate_exception</cell>
+ <cell>Net   : Reindeer_0/current_state_3[2]</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[12]</cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.genblk1.mul_div_32_i.long_slow_div_denom_reg_i.current_state[2]</cell>
 </row>
 <row>
- <cell>132</cell>
+ <cell>136</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/N_64_i</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.genblk1.mul_div_32_i.long_slow_div_denom_reg_i.ctl_division_enable_1_sqmuxa_i_o2_RNIQV8F</cell>
+</row>
+<row>
+ <cell>133</cell>
  <cell>INT_NET</cell>
  <cell>Net   : Reindeer_0/reply_enable</cell>
 </row>
@@ -595,17 +630,17 @@
  <cell>Driver: Reindeer_0/ocd_i.debug_coprocessor_i.reply_enable_out</cell>
 </row>
 <row>
- <cell>102</cell>
+ <cell>125</cell>
  <cell>INT_NET</cell>
- <cell>Net   : Reindeer_0/fetch_init_2_Z</cell>
+ <cell>Net   : Reindeer_0/read_rs1_data_out_1_Z</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.fetch_proc.fetch_init_2</cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.IR_out_ret_0</cell>
 </row>
 <row>
- <cell>99</cell>
+ <cell>121</cell>
  <cell>INT_NET</cell>
  <cell>Net   : Reindeer_0/decode_IR_out[31]</cell>
 </row>
@@ -615,6 +650,16 @@
  <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.IR_out[31]</cell>
 </row>
 <row>
+ <cell>117</cell>
+ <cell>INT_NET</cell>
+ <cell>Net   : Reindeer_0/activate_exception</cell>
+</row>
+<row>
+ <cell></cell>
+ <cell></cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[10]</cell>
+</row>
+<row>
  <cell>97</cell>
  <cell>INT_NET</cell>
  <cell>Net   : Reindeer_0/decode_ctl_load_Y_from_imm_12</cell>
@@ -622,37 +667,17 @@
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.ctl_load_Y_from_imm_12_0_a4</cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.ctl_load_Y_from_imm_12</cell>
 </row>
 <row>
  <cell>97</cell>
  <cell>INT_NET</cell>
- <cell>Net   : Reindeer_0/N_610_i</cell>
+ <cell>Net   : Reindeer_0/read_rs2_data_out_1_Z</cell>
 </row>
 <row>
  <cell></cell>
  <cell></cell>
- <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.N_610_i</cell>
-</row>
-<row>
- <cell>92</cell>
- <cell>INT_NET</cell>
- <cell>Net   : LED_RED_c</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]</cell>
-</row>
-<row>
- <cell>86</cell>
- <cell>INT_NET</cell>
- <cell>Net   : Reindeer_0/exe_data_to_storeoi[0]</cell>
-</row>
-<row>
- <cell></cell>
- <cell></cell>
- <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.Y_2[0]</cell>
+ <cell>Driver: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_reg_file_i.read_rs2_data_out_1</cell>
 </row>
 </table>
 </doc>

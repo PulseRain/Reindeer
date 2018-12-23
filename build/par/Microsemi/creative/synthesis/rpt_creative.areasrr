@@ -9,19 +9,27 @@ Part:			M2S025VF256-1 (Microsemi)
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      2410               100 %                
+SLE      2526               100 %                
 =================================================
-Total SEQUENTIAL ELEMENTS in the block creative:	2410 (39.01 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block creative:	2526 (38.07 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name          Total elements     Utilization     Notes
 ------------------------------------------------------
-CFG           2851               100 %                
-ARI1          876                100 %                
+CFG           3019               100 %                
+ARI1          1045               100 %                
 BLACK BOX     1                  100 %                
 ======================================================
-Total COMBINATIONAL LOGIC in the block creative:	3728 (60.34 % Utilization)
+Total COMBINATIONAL LOGIC in the block creative:	4065 (61.27 % Utilization)
+
+
+DSP
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+MACC     4                  100 %                
+=================================================
+Total DSP in the block creative:	4 (0.06 % Utilization)
 
 
 MEMORY ELEMENTS
@@ -30,7 +38,7 @@ Name         Total elements     Utilization     Notes
 RAM1K18      24                 100 %                
 RAM64X18     2                  100 %                
 =====================================================
-Total MEMORY ELEMENTS in the block creative:	26 (0.42 % Utilization)
+Total MEMORY ELEMENTS in the block creative:	26 (0.39 % Utilization)
 
 
 GLOBAL BUFFERS
@@ -56,18 +64,26 @@ Instance path:   creative.Reindeer
 SEQUENTIAL ELEMENTS
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-SLE      2410               100 %                
+SLE      2526               100 %                
 =================================================
-Total SEQUENTIAL ELEMENTS in the block creative.Reindeer:	2410 (39.01 % Utilization)
+Total SEQUENTIAL ELEMENTS in the block creative.Reindeer:	2526 (38.07 % Utilization)
 
 
 COMBINATIONAL LOGIC
 Name     Total elements     Utilization     Notes
 -------------------------------------------------
-CFG      2851               100 %                
-ARI1     876                100 %                
+CFG      3019               100 %                
+ARI1     1045               100 %                
 =================================================
-Total COMBINATIONAL LOGIC in the block creative.Reindeer:	3727 (60.33 % Utilization)
+Total COMBINATIONAL LOGIC in the block creative.Reindeer:	4064 (61.25 % Utilization)
+
+
+DSP
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+MACC     4                  100 %                
+=================================================
+Total DSP in the block creative.Reindeer:	4 (0.06 % Utilization)
 
 
 MEMORY ELEMENTS
@@ -76,7 +92,7 @@ Name         Total elements     Utilization     Notes
 RAM1K18      24                 100 %                
 RAM64X18     2                  100 %                
 =====================================================
-Total MEMORY ELEMENTS in the block creative.Reindeer:	26 (0.42 % Utilization)
+Total MEMORY ELEMENTS in the block creative.Reindeer:	26 (0.39 % Utilization)
 
 
 GLOBAL BUFFERS

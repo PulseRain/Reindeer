@@ -15,36 +15,36 @@ Running the I/O Bank and Globals Assigner.
 Info:  I/O Bank and Globals Assigner identified 5 fixed I/O macros, 0 unfixed I/O macros
 
 I/O Bank and Globals Assigner completed successfully.
-Total time spent in I/O Bank and Globals Assigner: 1 seconds
+Total time spent in I/O Bank and Globals Assigner: 0 seconds
 
 Placer V4.0 - 11.9.1 
-Design: creative                        Started: Sun Nov 25 23:15:32 2018
+Design: creative                        Started: Sat Dec 22 19:21:00 2018
 
 Initializing High-Effort Timing-Driven Placement ...
 Placing design...
 End of placement.
 Pre-Placement Runtime        : 8 seconds
-Placement Runtime            : 103 seconds
+Placement Runtime            : 156 seconds
 
 Placer completed successfully.
 
 Design: creative                        
-Finished: Sun Nov 25 23:17:44 2018
-Total CPU Time:     00:02:09            Total Elapsed Time: 00:02:12
-Total Memory Usage: 430.4 Mbytes
+Finished: Sat Dec 22 19:24:05 2018
+Total CPU Time:     00:03:03            Total Elapsed Time: 00:03:05
+Total Memory Usage: 455.0 Mbytes
                         o - o - o - o - o - o
 
 
 Timing-driven Router 
-Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creativeStarted: Sun Nov 25 23:17:50 2018
+Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creativeStarted: Sat Dec 22 19:24:12 2018
 
 
 Timing-driven Router completed successfully.
 
 Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creative
-Finished: Sun Nov 25 23:18:42 2018
-Total CPU Time:     00:00:50            Total Elapsed Time: 00:00:52
-Total Memory Usage: 1218.7 Mbytes
+Finished: Sat Dec 22 19:25:11 2018
+Total CPU Time:     00:00:57            Total Elapsed Time: 00:00:59
+Total Memory Usage: 1245.6 Mbytes
                         o - o - o - o - o - o
 
 Info: Iteration 1:
@@ -54,10 +54,10 @@ Resource Usage
 +---------------+------+-------+------------+
 | Type          | Used | Total | Percentage |
 +---------------+------+-------+------------+
-| 4LUT          | 4669 | 27696 | 16.86      |
-| DFF           | 3346 | 27696 | 12.08      |
+| 4LUT          | 5150 | 27696 | 18.59      |
+| DFF           | 3606 | 27696 | 13.02      |
 | I/O Register  | 0    | 408   | 0.00       |
-| Logic Element | 4934 | 27696 | 17.81      |
+| Logic Element | 5447 | 27696 | 19.67      |
 +---------------+------+-------+------------+
 
 INFO: Reading User SDC file C:\GitHub\Reindeer\build\par\Microsemi\creative\constraint\Reindeer.sdc.
@@ -80,33 +80,33 @@ I/O Bank and Globals Assigner completed successfully.
 Total time spent in I/O Bank and Globals Assigner: 0 seconds
 
 Placer V4.0 - 11.9.1 
-Design: creative                        Started: Sun Nov 25 23:20:05 2018
+Design: creative                        Started: Sat Dec 22 19:43:24 2018
 
 Initializing High-Effort Timing-Driven Placement ...
 Placing design...
 End of placement.
 Pre-Placement Runtime        : 7 seconds
-Placement Runtime            : 121 seconds
+Placement Runtime            : 143 seconds
 
 Placer completed successfully.
 
 Design: creative                        
-Finished: Sun Nov 25 23:22:34 2018
-Total CPU Time:     00:02:26            Total Elapsed Time: 00:02:29
-Total Memory Usage: 430.6 Mbytes
+Finished: Sat Dec 22 19:46:16 2018
+Total CPU Time:     00:02:50            Total Elapsed Time: 00:02:52
+Total Memory Usage: 455.4 Mbytes
                         o - o - o - o - o - o
 
 
 Timing-driven Router 
-Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creativeStarted: Sun Nov 25 23:22:40 2018
+Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creativeStarted: Sat Dec 22 19:46:23 2018
 
 
 Timing-driven Router completed successfully.
 
 Design: C:\GitHub\Reindeer\build\par\Microsemi\creative\designer\creative\creative
-Finished: Sun Nov 25 23:23:33 2018
-Total CPU Time:     00:00:52            Total Elapsed Time: 00:00:53
-Total Memory Usage: 1217.9 Mbytes
+Finished: Sat Dec 22 19:47:22 2018
+Total CPU Time:     00:00:57            Total Elapsed Time: 00:00:59
+Total Memory Usage: 1245.2 Mbytes
                         o - o - o - o - o - o
 
 Info: Iteration 1:
@@ -116,9 +116,9 @@ Resource Usage
 +---------------+------+-------+------------+
 | Type          | Used | Total | Percentage |
 +---------------+------+-------+------------+
-| 4LUT          | 4669 | 27696 | 16.86      |
-| DFF           | 3346 | 27696 | 12.08      |
+| 4LUT          | 5150 | 27696 | 18.59      |
+| DFF           | 3606 | 27696 | 13.02      |
 | I/O Register  | 0    | 408   | 0.00       |
-| Logic Element | 4937 | 27696 | 17.83      |
+| Logic Element | 5434 | 27696 | 19.62      |
 +---------------+------+-------+------------+
 

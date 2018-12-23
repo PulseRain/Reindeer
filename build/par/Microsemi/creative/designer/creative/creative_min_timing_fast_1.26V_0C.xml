@@ -5,7 +5,7 @@
 </title>
 <text>SmartTime Version 11.9.1.0</text>
 <text>Microsemi Corporation - Microsemi Libero Software Release v11.9 SP1 (Version 11.9.1.0)</text>
-<text>Date: Sun Nov 25 23:30:38 2018
+<text>Date: Sat Dec 22 20:11:47 2018
 </text>
 <table>
 <header>
@@ -76,10 +76,10 @@
 </header>
 <row>
  <cell>FCCC_0/GL0</cell>
- <cell>6.250</cell>
- <cell>160.000</cell>
- <cell>0.549</cell>
- <cell>5.554</cell>
+ <cell>6.897</cell>
+ <cell>144.991</cell>
+ <cell>0.507</cell>
+ <cell>5.410</cell>
 </row>
 <row>
  <cell>osc_in</cell>
@@ -120,52 +120,52 @@
 </header>
 <row>
  <cell>Path 1</cell>
- <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out_i[3]:CLK</cell>
- <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out[3]:D</cell>
- <cell>0.319</cell>
- <cell>0.299</cell>
- <cell>2.871</cell>
- <cell>2.572</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out_i[26]:CLK</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out[26]:D</cell>
+ <cell>0.316</cell>
+ <cell>0.296</cell>
+ <cell>2.958</cell>
+ <cell>2.662</cell>
  <cell>0.000</cell>
 </row>
 <row>
  <cell>Path 2</cell>
- <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out[11]:CLK</cell>
- <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.PC_out[11]:D</cell>
- <cell>0.316</cell>
- <cell>0.301</cell>
- <cell>2.845</cell>
- <cell>2.544</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out[14]:CLK</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.PC_out[14]:D</cell>
+ <cell>0.311</cell>
+ <cell>0.299</cell>
+ <cell>2.951</cell>
+ <cell>2.652</cell>
  <cell>0.000</cell>
 </row>
 <row>
  <cell>Path 3</cell>
- <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out[5]:CLK</cell>
- <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.PC_out[5]:D</cell>
- <cell>0.321</cell>
- <cell>0.301</cell>
- <cell>2.873</cell>
- <cell>2.572</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out[6]:CLK</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.PC_out[6]:D</cell>
+ <cell>0.311</cell>
+ <cell>0.300</cell>
+ <cell>2.954</cell>
+ <cell>2.654</cell>
  <cell>0.000</cell>
 </row>
 <row>
  <cell>Path 4</cell>
- <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_out[7]:CLK</cell>
- <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.IR_out[7]:D</cell>
- <cell>0.321</cell>
- <cell>0.302</cell>
- <cell>2.868</cell>
- <cell>2.566</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.fetch_start_addr[9]:CLK</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.read_mem_addr_ret_31[9]:D</cell>
+ <cell>0.312</cell>
+ <cell>0.301</cell>
+ <cell>2.956</cell>
+ <cell>2.655</cell>
  <cell>0.000</cell>
 </row>
 <row>
  <cell>Path 5</cell>
- <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_out[13]:CLK</cell>
- <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_instruction_decode_i.IR_out[13]:D</cell>
- <cell>0.313</cell>
- <cell>0.303</cell>
- <cell>2.879</cell>
- <cell>2.576</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out_i[30]:CLK</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out[30]:D</cell>
+ <cell>0.311</cell>
+ <cell>0.301</cell>
+ <cell>2.946</cell>
+ <cell>2.645</cell>
  <cell>0.000</cell>
 </row>
 </table>
@@ -184,7 +184,7 @@
  <cell>Edge</cell>
 </header>
 <row>
- <cell>From: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out_i[3]:CLK</cell>
+ <cell>From: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out_i[26]:CLK</cell>
  <cell></cell>
  <cell></cell>
  <cell></cell>
@@ -195,7 +195,7 @@
  <cell></cell>
 </row>
 <row>
- <cell>To: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out[3]:D</cell>
+ <cell>To: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out[26]:D</cell>
  <cell></cell>
  <cell></cell>
  <cell></cell>
@@ -212,7 +212,7 @@
  <cell></cell>
  <cell></cell>
  <cell></cell>
- <cell>2.871</cell>
+ <cell>2.958</cell>
  <cell></cell>
  <cell></cell>
 </row>
@@ -223,7 +223,7 @@
  <cell></cell>
  <cell>-</cell>
  <cell></cell>
- <cell>2.572</cell>
+ <cell>2.662</cell>
  <cell></cell>
  <cell></cell>
 </row>
@@ -234,7 +234,7 @@
  <cell></cell>
  <cell></cell>
  <cell></cell>
- <cell>0.299</cell>
+ <cell>0.296</cell>
  <cell></cell>
  <cell></cell>
 </row>
@@ -279,8 +279,8 @@
  <cell></cell>
  <cell></cell>
  <cell>+</cell>
- <cell>1.462</cell>
- <cell>1.462</cell>
+ <cell>1.542</cell>
+ <cell>1.542</cell>
  <cell></cell>
  <cell></cell>
 </row>
@@ -291,73 +291,73 @@
  <cell></cell>
  <cell>+</cell>
  <cell>0.174</cell>
- <cell>1.636</cell>
+ <cell>1.716</cell>
  <cell></cell>
  <cell>r</cell>
 </row>
 <row>
- <cell>FCCC_0/GL0_INST:YWn</cell>
+ <cell>FCCC_0/GL0_INST:YEn</cell>
  <cell>cell</cell>
  <cell></cell>
  <cell>ADLIB:GBM</cell>
  <cell>+</cell>
  <cell>0.118</cell>
- <cell>1.754</cell>
+ <cell>1.834</cell>
  <cell>24</cell>
  <cell>f</cell>
 </row>
 <row>
- <cell>FCCC_0/GL0_INST/U0_RGB1_RGB25:An</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB48:An</cell>
  <cell>net</cell>
- <cell>FCCC_0/GL0_INST/U0_YWn</cell>
+ <cell>FCCC_0/GL0_INST/U0_YWn_GEast</cell>
  <cell></cell>
  <cell>+</cell>
- <cell>0.249</cell>
- <cell>2.003</cell>
+ <cell>0.253</cell>
+ <cell>2.087</cell>
  <cell></cell>
  <cell>f</cell>
 </row>
 <row>
- <cell>FCCC_0/GL0_INST/U0_RGB1_RGB25:YR</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB48:YL</cell>
  <cell>cell</cell>
  <cell></cell>
  <cell>ADLIB:RGB</cell>
  <cell>+</cell>
- <cell>0.212</cell>
- <cell>2.215</cell>
- <cell>86</cell>
+ <cell>0.213</cell>
+ <cell>2.300</cell>
+ <cell>22</cell>
  <cell>r</cell>
 </row>
 <row>
- <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out_i[3]:CLK</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out_i[26]:CLK</cell>
  <cell>net</cell>
- <cell>FCCC_0/GL0_INST/U0_RGB1_RGB25_rgbr_net_1</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB48_rgbl_net_1</cell>
  <cell></cell>
  <cell>+</cell>
- <cell>0.337</cell>
- <cell>2.552</cell>
+ <cell>0.342</cell>
+ <cell>2.642</cell>
  <cell></cell>
  <cell>r</cell>
 </row>
 <row>
- <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out_i[3]:Q</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out_i[26]:Q</cell>
  <cell>cell</cell>
  <cell></cell>
  <cell>ADLIB:SLE</cell>
  <cell>+</cell>
  <cell>0.058</cell>
- <cell>2.610</cell>
+ <cell>2.700</cell>
  <cell>1</cell>
  <cell>r</cell>
 </row>
 <row>
- <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out[3]:D</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out[26]:D</cell>
  <cell>net</cell>
- <cell>Reindeer_0/PC_out_i[3]</cell>
+ <cell>Reindeer_0/PC_out_i[26]</cell>
  <cell></cell>
  <cell>+</cell>
- <cell>0.261</cell>
- <cell>2.871</cell>
+ <cell>0.258</cell>
+ <cell>2.958</cell>
  <cell></cell>
  <cell>r</cell>
 </row>
@@ -368,7 +368,7 @@
  <cell></cell>
  <cell></cell>
  <cell></cell>
- <cell>2.871</cell>
+ <cell>2.958</cell>
  <cell></cell>
  <cell></cell>
 </row>
@@ -413,8 +413,8 @@
  <cell></cell>
  <cell></cell>
  <cell>+</cell>
- <cell>1.462</cell>
- <cell>1.462</cell>
+ <cell>1.542</cell>
+ <cell>1.542</cell>
  <cell></cell>
  <cell></cell>
 </row>
@@ -425,62 +425,62 @@
  <cell></cell>
  <cell>+</cell>
  <cell>0.174</cell>
- <cell>1.636</cell>
+ <cell>1.716</cell>
  <cell></cell>
  <cell>r</cell>
 </row>
 <row>
- <cell>FCCC_0/GL0_INST:YWn</cell>
+ <cell>FCCC_0/GL0_INST:YEn</cell>
  <cell>cell</cell>
  <cell></cell>
  <cell>ADLIB:GBM</cell>
  <cell>+</cell>
  <cell>0.118</cell>
- <cell>1.754</cell>
+ <cell>1.834</cell>
  <cell>24</cell>
  <cell>f</cell>
 </row>
 <row>
- <cell>FCCC_0/GL0_INST/U0_RGB1_RGB25:An</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB48:An</cell>
  <cell>net</cell>
- <cell>FCCC_0/GL0_INST/U0_YWn</cell>
+ <cell>FCCC_0/GL0_INST/U0_YWn_GEast</cell>
  <cell></cell>
  <cell>+</cell>
- <cell>0.249</cell>
- <cell>2.003</cell>
+ <cell>0.253</cell>
+ <cell>2.087</cell>
  <cell></cell>
  <cell>f</cell>
 </row>
 <row>
- <cell>FCCC_0/GL0_INST/U0_RGB1_RGB25:YR</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB48:YL</cell>
  <cell>cell</cell>
  <cell></cell>
  <cell>ADLIB:RGB</cell>
  <cell>+</cell>
- <cell>0.212</cell>
- <cell>2.215</cell>
- <cell>86</cell>
+ <cell>0.213</cell>
+ <cell>2.300</cell>
+ <cell>22</cell>
  <cell>r</cell>
 </row>
 <row>
- <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out[3]:CLK</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out[26]:CLK</cell>
  <cell>net</cell>
- <cell>FCCC_0/GL0_INST/U0_RGB1_RGB25_rgbr_net_1</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB48_rgbl_net_1</cell>
  <cell></cell>
  <cell>+</cell>
- <cell>0.357</cell>
- <cell>2.572</cell>
+ <cell>0.362</cell>
+ <cell>2.662</cell>
  <cell></cell>
  <cell>r</cell>
 </row>
 <row>
- <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out[3]:D</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.PC_out[26]:D</cell>
  <cell>Library hold time</cell>
  <cell></cell>
  <cell>ADLIB:SLE</cell>
  <cell>+</cell>
  <cell>0.000</cell>
- <cell>2.572</cell>
+ <cell>2.662</cell>
  <cell></cell>
  <cell></cell>
 </row>
@@ -491,7 +491,7 @@
  <cell></cell>
  <cell></cell>
  <cell></cell>
- <cell>2.572</cell>
+ <cell>2.662</cell>
  <cell></cell>
  <cell></cell>
 </row>
@@ -517,12 +517,12 @@
  <cell>Path 1</cell>
  <cell>RXD</cell>
  <cell>Reindeer_0/ocd_i.debug_UART_i.UART_i.rxd_sr[0]:D</cell>
- <cell>2.068</cell>
+ <cell>2.214</cell>
  <cell></cell>
- <cell>2.068</cell>
+ <cell>2.214</cell>
  <cell></cell>
  <cell>0.000</cell>
- <cell>0.549</cell>
+ <cell>0.507</cell>
 </row>
 </table>
 <text></text>
@@ -568,7 +568,7 @@
  <cell></cell>
  <cell></cell>
  <cell></cell>
- <cell>2.068</cell>
+ <cell>2.214</cell>
  <cell></cell>
  <cell></cell>
 </row>
@@ -668,8 +668,8 @@
  <cell>RXD_c</cell>
  <cell></cell>
  <cell>+</cell>
- <cell>1.318</cell>
- <cell>2.068</cell>
+ <cell>1.464</cell>
+ <cell>2.214</cell>
  <cell></cell>
  <cell>r</cell>
 </row>
@@ -680,7 +680,7 @@
  <cell></cell>
  <cell></cell>
  <cell></cell>
- <cell>2.068</cell>
+ <cell>2.214</cell>
  <cell></cell>
  <cell></cell>
 </row>
@@ -725,7 +725,7 @@
  <cell></cell>
  <cell></cell>
  <cell>+</cell>
- <cell>1.507</cell>
+ <cell>1.590</cell>
  <cell>N/C</cell>
  <cell></cell>
  <cell></cell>
@@ -749,38 +749,38 @@
  <cell>+</cell>
  <cell>0.122</cell>
  <cell>N/C</cell>
- <cell>14</cell>
+ <cell>24</cell>
  <cell>f</cell>
 </row>
 <row>
- <cell>FCCC_0/GL0_INST/U0_RGB1_RGB10:An</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB36:An</cell>
  <cell>net</cell>
  <cell>FCCC_0/GL0_INST/U0_YWn_GEast</cell>
  <cell></cell>
  <cell>+</cell>
- <cell>0.247</cell>
+ <cell>0.261</cell>
  <cell>N/C</cell>
  <cell></cell>
  <cell>f</cell>
 </row>
 <row>
- <cell>FCCC_0/GL0_INST/U0_RGB1_RGB10:YL</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB36:YL</cell>
  <cell>cell</cell>
  <cell></cell>
  <cell>ADLIB:RGB</cell>
  <cell>+</cell>
  <cell>0.219</cell>
  <cell>N/C</cell>
- <cell>28</cell>
+ <cell>75</cell>
  <cell>r</cell>
 </row>
 <row>
  <cell>Reindeer_0/ocd_i.debug_UART_i.UART_i.rxd_sr[0]:CLK</cell>
  <cell>net</cell>
- <cell>FCCC_0/GL0_INST/U0_RGB1_RGB10_rgbl_net_1</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB36_rgbl_net_1</cell>
  <cell></cell>
  <cell>+</cell>
- <cell>0.343</cell>
+ <cell>0.350</cell>
  <cell>N/C</cell>
  <cell></cell>
  <cell>r</cell>
@@ -817,31 +817,31 @@
  <cell>Path 1</cell>
  <cell>Reindeer_0/TXD_Z:CLK</cell>
  <cell>TXD</cell>
- <cell>3.012</cell>
+ <cell>2.772</cell>
  <cell></cell>
- <cell>5.554</cell>
+ <cell>5.410</cell>
  <cell></cell>
- <cell>5.554</cell>
+ <cell>5.410</cell>
 </row>
 <row>
  <cell>Path 2</cell>
  <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK</cell>
  <cell>LED_RED</cell>
- <cell>4.309</cell>
+ <cell>3.881</cell>
  <cell></cell>
- <cell>6.850</cell>
+ <cell>6.505</cell>
  <cell></cell>
- <cell>6.850</cell>
+ <cell>6.505</cell>
 </row>
 <row>
  <cell>Path 3</cell>
  <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_controller_i.current_state[1]:CLK</cell>
  <cell>LED_GREEN</cell>
- <cell>4.819</cell>
+ <cell>4.026</cell>
  <cell></cell>
- <cell>7.360</cell>
+ <cell>6.650</cell>
  <cell></cell>
- <cell>7.360</cell>
+ <cell>6.650</cell>
 </row>
 </table>
 <text></text>
@@ -887,7 +887,7 @@
  <cell></cell>
  <cell></cell>
  <cell></cell>
- <cell>5.554</cell>
+ <cell>5.410</cell>
  <cell></cell>
  <cell></cell>
 </row>
@@ -954,8 +954,8 @@
  <cell></cell>
  <cell></cell>
  <cell>+</cell>
- <cell>1.462</cell>
- <cell>1.462</cell>
+ <cell>1.542</cell>
+ <cell>1.542</cell>
  <cell></cell>
  <cell></cell>
 </row>
@@ -966,7 +966,7 @@
  <cell></cell>
  <cell>+</cell>
  <cell>0.174</cell>
- <cell>1.636</cell>
+ <cell>1.716</cell>
  <cell></cell>
  <cell>r</cell>
 </row>
@@ -977,40 +977,40 @@
  <cell>ADLIB:GBM</cell>
  <cell>+</cell>
  <cell>0.118</cell>
- <cell>1.754</cell>
- <cell>24</cell>
+ <cell>1.834</cell>
+ <cell>33</cell>
  <cell>f</cell>
 </row>
 <row>
- <cell>FCCC_0/GL0_INST/U0_RGB1_RGB9:An</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB35:An</cell>
  <cell>net</cell>
  <cell>FCCC_0/GL0_INST/U0_YWn</cell>
  <cell></cell>
  <cell>+</cell>
- <cell>0.239</cell>
- <cell>1.993</cell>
+ <cell>0.250</cell>
+ <cell>2.084</cell>
  <cell></cell>
  <cell>f</cell>
 </row>
 <row>
- <cell>FCCC_0/GL0_INST/U0_RGB1_RGB9:YR</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB35:YR</cell>
  <cell>cell</cell>
  <cell></cell>
  <cell>ADLIB:RGB</cell>
  <cell>+</cell>
  <cell>0.212</cell>
- <cell>2.205</cell>
- <cell>74</cell>
+ <cell>2.296</cell>
+ <cell>58</cell>
  <cell>r</cell>
 </row>
 <row>
  <cell>Reindeer_0/TXD_Z:CLK</cell>
  <cell>net</cell>
- <cell>FCCC_0/GL0_INST/U0_RGB1_RGB9_rgbr_net_1</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB35_rgbr_net_1</cell>
  <cell></cell>
  <cell>+</cell>
- <cell>0.337</cell>
- <cell>2.542</cell>
+ <cell>0.342</cell>
+ <cell>2.638</cell>
  <cell></cell>
  <cell>r</cell>
 </row>
@@ -1021,7 +1021,7 @@
  <cell>ADLIB:SLE</cell>
  <cell>+</cell>
  <cell>0.058</cell>
- <cell>2.600</cell>
+ <cell>2.696</cell>
  <cell>1</cell>
  <cell>r</cell>
 </row>
@@ -1031,8 +1031,8 @@
  <cell>TXD_c</cell>
  <cell></cell>
  <cell>+</cell>
- <cell>1.429</cell>
- <cell>4.029</cell>
+ <cell>1.189</cell>
+ <cell>3.885</cell>
  <cell></cell>
  <cell>r</cell>
 </row>
@@ -1043,7 +1043,7 @@
  <cell>ADLIB:IOOUTFF_BYPASS</cell>
  <cell>+</cell>
  <cell>0.124</cell>
- <cell>4.153</cell>
+ <cell>4.009</cell>
  <cell>1</cell>
  <cell>r</cell>
 </row>
@@ -1054,7 +1054,7 @@
  <cell></cell>
  <cell>+</cell>
  <cell>0.062</cell>
- <cell>4.215</cell>
+ <cell>4.071</cell>
  <cell></cell>
  <cell>r</cell>
 </row>
@@ -1065,7 +1065,7 @@
  <cell>ADLIB:IOPAD_TRI</cell>
  <cell>+</cell>
  <cell>1.339</cell>
- <cell>5.554</cell>
+ <cell>5.410</cell>
  <cell>0</cell>
  <cell>r</cell>
 </row>
@@ -1076,7 +1076,7 @@
  <cell></cell>
  <cell>+</cell>
  <cell>0.000</cell>
- <cell>5.554</cell>
+ <cell>5.410</cell>
  <cell></cell>
  <cell>r</cell>
 </row>
@@ -1087,7 +1087,7 @@
  <cell></cell>
  <cell></cell>
  <cell></cell>
- <cell>5.554</cell>
+ <cell>5.410</cell>
  <cell></cell>
  <cell></cell>
 </row>
@@ -1132,7 +1132,7 @@
  <cell></cell>
  <cell></cell>
  <cell>+</cell>
- <cell>1.462</cell>
+ <cell>1.542</cell>
  <cell>N/C</cell>
  <cell></cell>
  <cell></cell>
@@ -1169,57 +1169,57 @@
 <row>
  <cell>Path 1</cell>
  <cell>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:CLK</cell>
- <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_out_ret[24]:ALn</cell>
- <cell>1.958</cell>
- <cell>1.938</cell>
- <cell>4.515</cell>
- <cell>2.577</cell>
- <cell>0.000</cell>
- <cell>-0.020</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.genblk1.mul_div_32_i.WideMult_1_1/U0/INST_MACC_IP:A_ARST_N[0]</cell>
+ <cell>1.710</cell>
+ <cell>1.650</cell>
+ <cell>4.347</cell>
+ <cell>2.697</cell>
+ <cell>-0.017</cell>
+ <cell>-0.077</cell>
 </row>
 <row>
  <cell>Path 2</cell>
  <cell>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:CLK</cell>
- <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_data_access_i.mem_data_in_reg[14]:ALn</cell>
- <cell>1.958</cell>
- <cell>1.939</cell>
- <cell>4.515</cell>
- <cell>2.576</cell>
- <cell>0.000</cell>
- <cell>-0.019</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.genblk1.mul_div_32_i.WideMult_1_1/U0/INST_MACC_IP:B_ARST_N[1]</cell>
+ <cell>1.712</cell>
+ <cell>1.657</cell>
+ <cell>4.349</cell>
+ <cell>2.692</cell>
+ <cell>-0.021</cell>
+ <cell>-0.076</cell>
 </row>
 <row>
  <cell>Path 3</cell>
  <cell>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:CLK</cell>
- <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_data_access_i.mem_data_to_write[28]:ALn</cell>
- <cell>1.958</cell>
- <cell>1.942</cell>
- <cell>4.515</cell>
- <cell>2.573</cell>
- <cell>0.000</cell>
- <cell>-0.016</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.genblk1.mul_div_32_i.WideMult_1_1/U0/INST_MACC_IP:A_ARST_N[1]</cell>
+ <cell>1.712</cell>
+ <cell>1.658</cell>
+ <cell>4.349</cell>
+ <cell>2.691</cell>
+ <cell>-0.017</cell>
+ <cell>-0.071</cell>
 </row>
 <row>
  <cell>Path 4</cell>
  <cell>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:CLK</cell>
- <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_out_ret[20]:ALn</cell>
- <cell>1.940</cell>
- <cell>1.944</cell>
- <cell>4.497</cell>
- <cell>2.553</cell>
- <cell>0.000</cell>
- <cell>0.004</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.genblk1.mul_div_32_i.WideMult_1_1/U0/INST_MACC_IP:B_ARST_N[0]</cell>
+ <cell>1.709</cell>
+ <cell>1.658</cell>
+ <cell>4.346</cell>
+ <cell>2.688</cell>
+ <cell>-0.019</cell>
+ <cell>-0.070</cell>
 </row>
 <row>
  <cell>Path 5</cell>
  <cell>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:CLK</cell>
- <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_data_access_i.mem_data_to_write[2]:ALn</cell>
- <cell>1.958</cell>
- <cell>1.950</cell>
- <cell>4.515</cell>
- <cell>2.565</cell>
- <cell>0.000</cell>
- <cell>-0.008</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.genblk1.mul_div_32_i.WideMult_1_0/U0/INST_MACC_IP:A_ARST_N[0]</cell>
+ <cell>1.786</cell>
+ <cell>1.727</cell>
+ <cell>4.423</cell>
+ <cell>2.696</cell>
+ <cell>-0.017</cell>
+ <cell>-0.076</cell>
 </row>
 </table>
 <text></text>
@@ -1248,7 +1248,7 @@
  <cell></cell>
 </row>
 <row>
- <cell>To: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_out_ret[24]:ALn</cell>
+ <cell>To: Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.genblk1.mul_div_32_i.WideMult_1_1/U0/INST_MACC_IP:A_ARST_N[0]</cell>
  <cell></cell>
  <cell></cell>
  <cell></cell>
@@ -1265,7 +1265,7 @@
  <cell></cell>
  <cell></cell>
  <cell></cell>
- <cell>4.515</cell>
+ <cell>4.347</cell>
  <cell></cell>
  <cell></cell>
 </row>
@@ -1276,7 +1276,7 @@
  <cell></cell>
  <cell>-</cell>
  <cell></cell>
- <cell>2.577</cell>
+ <cell>2.697</cell>
  <cell></cell>
  <cell></cell>
 </row>
@@ -1287,7 +1287,7 @@
  <cell></cell>
  <cell></cell>
  <cell></cell>
- <cell>1.938</cell>
+ <cell>1.650</cell>
  <cell></cell>
  <cell></cell>
 </row>
@@ -1332,8 +1332,8 @@
  <cell></cell>
  <cell></cell>
  <cell>+</cell>
- <cell>1.462</cell>
- <cell>1.462</cell>
+ <cell>1.542</cell>
+ <cell>1.542</cell>
  <cell></cell>
  <cell></cell>
 </row>
@@ -1344,7 +1344,7 @@
  <cell></cell>
  <cell>+</cell>
  <cell>0.174</cell>
- <cell>1.636</cell>
+ <cell>1.716</cell>
  <cell></cell>
  <cell>r</cell>
 </row>
@@ -1355,40 +1355,40 @@
  <cell>ADLIB:GBM</cell>
  <cell>+</cell>
  <cell>0.118</cell>
- <cell>1.754</cell>
- <cell>14</cell>
+ <cell>1.834</cell>
+ <cell>24</cell>
  <cell>f</cell>
 </row>
 <row>
- <cell>FCCC_0/GL0_INST/U0_RGB1_RGB21:An</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB42:An</cell>
  <cell>net</cell>
  <cell>FCCC_0/GL0_INST/U0_YWn_GEast</cell>
  <cell></cell>
  <cell>+</cell>
  <cell>0.253</cell>
- <cell>2.007</cell>
+ <cell>2.087</cell>
  <cell></cell>
  <cell>f</cell>
 </row>
 <row>
- <cell>FCCC_0/GL0_INST/U0_RGB1_RGB21:YL</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB42:YL</cell>
  <cell>cell</cell>
  <cell></cell>
  <cell>ADLIB:RGB</cell>
  <cell>+</cell>
  <cell>0.213</cell>
- <cell>2.220</cell>
- <cell>18</cell>
+ <cell>2.300</cell>
+ <cell>77</cell>
  <cell>r</cell>
 </row>
 <row>
  <cell>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset:CLK</cell>
  <cell>net</cell>
- <cell>FCCC_0/GL0_INST/U0_RGB1_RGB21_rgbl_net_1</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB42_rgbl_net_1</cell>
  <cell></cell>
  <cell>+</cell>
  <cell>0.337</cell>
- <cell>2.557</cell>
+ <cell>2.637</cell>
  <cell></cell>
  <cell>r</cell>
 </row>
@@ -1399,84 +1399,62 @@
  <cell>ADLIB:SLE</cell>
  <cell>+</cell>
  <cell>0.072</cell>
- <cell>2.629</cell>
- <cell>1</cell>
+ <cell>2.709</cell>
+ <cell>2</cell>
  <cell>f</cell>
 </row>
 <row>
- <cell>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_RNIKJKK:A</cell>
+ <cell>Reindeer_0/un1_reset_n:A</cell>
  <cell>net</cell>
  <cell>Reindeer_0/cpu_reset</cell>
  <cell></cell>
  <cell>+</cell>
- <cell>0.217</cell>
- <cell>2.846</cell>
+ <cell>0.410</cell>
+ <cell>3.119</cell>
  <cell></cell>
  <cell>f</cell>
 </row>
 <row>
- <cell>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_RNIKJKK:Y</cell>
+ <cell>Reindeer_0/un1_reset_n:Y</cell>
  <cell>cell</cell>
  <cell></cell>
  <cell>ADLIB:CFG2</cell>
  <cell>+</cell>
  <cell>0.067</cell>
- <cell>2.913</cell>
- <cell>1</cell>
+ <cell>3.186</cell>
+ <cell>17</cell>
  <cell>r</cell>
 </row>
 <row>
- <cell>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_RNIKJKK_0:An</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.genblk1.mul_div_32_i.WideMult_1_1/U0/FF_1:EN</cell>
  <cell>net</cell>
- <cell>Reindeer_0/N_17790</cell>
+ <cell>Reindeer_0/reset_n_i_1_i</cell>
  <cell></cell>
  <cell>+</cell>
- <cell>0.569</cell>
- <cell>3.482</cell>
+ <cell>1.080</cell>
+ <cell>4.266</cell>
  <cell></cell>
- <cell>f</cell>
-</row>
-<row>
- <cell>Reindeer_0/ocd_i.debug_coprocessor_i.cpu_reset_RNIKJKK_0:YWn</cell>
- <cell>cell</cell>
- <cell></cell>
- <cell>ADLIB:GBM</cell>
- <cell>+</cell>
- <cell>0.249</cell>
- <cell>3.731</cell>
- <cell>21</cell>
- <cell>f</cell>
-</row>
-<row>
- <cell>Reindeer_0/ocd_i_debug_coprocessor_i_cpu_reset_RNIKJKK_0/U0_RGB1_RGB7:An</cell>
- <cell>net</cell>
- <cell>Reindeer_0/ocd_i_debug_coprocessor_i_cpu_reset_RNIKJKK_0/U0_YWn</cell>
- <cell></cell>
- <cell>+</cell>
- <cell>0.247</cell>
- <cell>3.978</cell>
- <cell></cell>
- <cell>f</cell>
-</row>
-<row>
- <cell>Reindeer_0/ocd_i_debug_coprocessor_i_cpu_reset_RNIKJKK_0/U0_RGB1_RGB7:YR</cell>
- <cell>cell</cell>
- <cell></cell>
- <cell>ADLIB:RGB</cell>
- <cell>+</cell>
- <cell>0.212</cell>
- <cell>4.190</cell>
- <cell>44</cell>
  <cell>r</cell>
 </row>
 <row>
- <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_out_ret[24]:ALn</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.genblk1.mul_div_32_i.WideMult_1_1/U0/FF_1:IPENn</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:SLE_IP_CLKEN</cell>
+ <cell>+</cell>
+ <cell>0.037</cell>
+ <cell>4.303</cell>
+ <cell>0</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.genblk1.mul_div_32_i.WideMult_1_1/U0/INST_MACC_IP:A_ARST_N[0]</cell>
  <cell>net</cell>
- <cell>Reindeer_0/ocd_i_debug_coprocessor_i_cpu_reset_RNIKJKK_0/U0_RGB1_RGB7_rgbr_net_1</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i_PulseRain_RV2T_core_i_RV2T_execution_unit_i_genblk1_mul_div_32_i_WideMult_1_1/U0/A_ARST_N_net[0]</cell>
  <cell></cell>
  <cell>+</cell>
- <cell>0.325</cell>
- <cell>4.515</cell>
+ <cell>0.044</cell>
+ <cell>4.347</cell>
  <cell></cell>
  <cell>r</cell>
 </row>
@@ -1487,7 +1465,7 @@
  <cell></cell>
  <cell></cell>
  <cell></cell>
- <cell>4.515</cell>
+ <cell>4.347</cell>
  <cell></cell>
  <cell></cell>
 </row>
@@ -1532,8 +1510,8 @@
  <cell></cell>
  <cell></cell>
  <cell>+</cell>
- <cell>1.462</cell>
- <cell>1.462</cell>
+ <cell>1.542</cell>
+ <cell>1.542</cell>
  <cell></cell>
  <cell></cell>
 </row>
@@ -1544,7 +1522,7 @@
  <cell></cell>
  <cell>+</cell>
  <cell>0.174</cell>
- <cell>1.636</cell>
+ <cell>1.716</cell>
  <cell></cell>
  <cell>r</cell>
 </row>
@@ -1555,51 +1533,73 @@
  <cell>ADLIB:GBM</cell>
  <cell>+</cell>
  <cell>0.118</cell>
- <cell>1.754</cell>
- <cell>24</cell>
+ <cell>1.834</cell>
+ <cell>33</cell>
  <cell>f</cell>
 </row>
 <row>
- <cell>FCCC_0/GL0_INST/U0_RGB1_RGB16:An</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB53:An</cell>
  <cell>net</cell>
  <cell>FCCC_0/GL0_INST/U0_YWn</cell>
  <cell></cell>
  <cell>+</cell>
- <cell>0.250</cell>
- <cell>2.004</cell>
+ <cell>0.253</cell>
+ <cell>2.087</cell>
  <cell></cell>
  <cell>f</cell>
 </row>
 <row>
- <cell>FCCC_0/GL0_INST/U0_RGB1_RGB16:YR</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB53:YR</cell>
  <cell>cell</cell>
  <cell></cell>
  <cell>ADLIB:RGB</cell>
  <cell>+</cell>
  <cell>0.212</cell>
- <cell>2.216</cell>
- <cell>101</cell>
+ <cell>2.299</cell>
+ <cell>16</cell>
  <cell>r</cell>
 </row>
 <row>
- <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_out_ret[24]:CLK</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.genblk1.mul_div_32_i.WideMult_1_1/U0/FF_1:CLK</cell>
  <cell>net</cell>
- <cell>FCCC_0/GL0_INST/U0_RGB1_RGB16_rgbr_net_1</cell>
+ <cell>FCCC_0/GL0_INST/U0_RGB1_RGB53_rgbr_net_1</cell>
  <cell></cell>
  <cell>+</cell>
- <cell>0.361</cell>
- <cell>2.577</cell>
+ <cell>0.331</cell>
+ <cell>2.630</cell>
  <cell></cell>
  <cell>r</cell>
 </row>
 <row>
- <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_fetch_instruction_i.IR_out_ret[24]:ALn</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.genblk1.mul_div_32_i.WideMult_1_1/U0/FF_1:IPCLKn</cell>
+ <cell>cell</cell>
+ <cell></cell>
+ <cell>ADLIB:SLE_IP_CLKEN</cell>
+ <cell>+</cell>
+ <cell>0.040</cell>
+ <cell>2.670</cell>
+ <cell>0</cell>
+ <cell>f</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.genblk1.mul_div_32_i.WideMult_1_1/U0/INST_MACC_IP:A_CLK[0]</cell>
+ <cell>net</cell>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i_PulseRain_RV2T_core_i_RV2T_execution_unit_i_genblk1_mul_div_32_i_WideMult_1_1/U0/A_CLK_net[0]</cell>
+ <cell></cell>
+ <cell>+</cell>
+ <cell>0.044</cell>
+ <cell>2.714</cell>
+ <cell></cell>
+ <cell>r</cell>
+</row>
+<row>
+ <cell>Reindeer_0/PulseRain_RV2T_MCU_i.PulseRain_RV2T_core_i.RV2T_execution_unit_i.genblk1.mul_div_32_i.WideMult_1_1/U0/INST_MACC_IP:A_ARST_N[0]</cell>
  <cell>Library removal time</cell>
  <cell></cell>
- <cell>ADLIB:SLE</cell>
+ <cell>ADLIB:MACC_IP</cell>
  <cell>+</cell>
- <cell>0.000</cell>
- <cell>2.577</cell>
+ <cell>-0.017</cell>
+ <cell>2.697</cell>
  <cell></cell>
  <cell></cell>
 </row>
@@ -1610,7 +1610,7 @@
  <cell></cell>
  <cell></cell>
  <cell></cell>
- <cell>2.577</cell>
+ <cell>2.697</cell>
  <cell></cell>
  <cell></cell>
 </row>
