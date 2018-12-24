@@ -19,6 +19,7 @@
 
 `include "RV2T_common.vh"
 `include "debug_coprocessor.vh"
+`include "config.vh"
 
 `default_nettype none
 
@@ -115,7 +116,7 @@ module Reindeer (
             .ocd_reg_read_addr (5'd2),
             .ocd_reg_we (1'b0),
             .ocd_reg_write_addr (5'd2),
-            .ocd_reg_write_data (32'h80007F00),
+            .ocd_reg_write_data (`DEFAULT_STACK_ADDR),
         
             .TXD (uart_tx_cpu),
     
