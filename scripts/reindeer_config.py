@@ -302,16 +302,55 @@ class Reindeer_OCD:
             offset = offset + 4
         
     
-    
+    #========================================================================
+    #  load section
+    #========================================================================
+        
+    def _load_section (self, all_sections, section_name, data_list, data_length):
+        section_head = re.compile ("^Contents\sof\ssection\s([\.|\w]*)")
+        data_regexp = re.compile ("^(\w*)\s(\w*)\s(\w*)\s(\w*)\s(\w*)")
+
+        #print ("-------------- section_name = ", section_name, " data_length = ", data_length)
+        
+        data_capture = 0
+        data_cnt = 0
+        for line in all_sections:
+            line_strip = line.strip()
+            head_match = re.search (section_head, line_strip)
+            data_match = re.search (data_regexp, line_strip)
+        
+                                
+            if (head_match):
+                data_capture = 0
+                if (section_name == head_match.group(1)):
+                    data_capture = 1
+            
+            elif (data_capture):
+                if (data_match):
+                    addr = int(data_match.group(1), 16)
+                    #print ("-- %x " % addr)
+            
+                    for i in range(4):
+                        if (data_match.group(i + 2) != ""):
+                            data_val = int(data_match.group(i + 2), 16)
+                            #print ("i = ", i, "data_val = %x" % data_val)
+                            
+                            for j in range(4):
+                                
+                                byte = (data_val >> ((3 - j) * 8)) & 0xFF
+                                data_list += byte.to_bytes(1, byteorder="little")
+                                data_cnt = data_cnt + 1
+                                #print ("%x" % byte)
+                                if (data_cnt == data_length):
+                                    return
     #========================================================================
     #  load elf
     #========================================================================
     def load_elf (self, elf_file):
     
-        sections_lines = subprocess.run(['riscv-none-embed-objdump', '-h', elf_file], stdout=subprocess.PIPE).stdout.decode('utf-8').splitlines()
-      
-         
-        
+        sections_lines = subprocess.run([self.objdump, '-h', elf_file], stdout=subprocess.PIPE).stdout.decode('utf-8').splitlines()
+        all_sections = subprocess.run([self.objdump, '-s', elf_file], stdout=subprocess.PIPE).stdout.decode('utf-8').splitlines()
+
         section_regexp = re.compile ("^\s*\d*\s([\.|\-|\w]*)\s*(\w*)\s*(\w*)\s*(\w*)")
         section_list = []
         section_property_list = []
@@ -351,38 +390,41 @@ class Reindeer_OCD:
         
         for section_name, section_size, section_vma, section_lma in section_list:
             
-            bin_file = os.path.splitext(elf_file)[0] + section_name + '.bin'
+            ###bin_file = os.path.splitext(elf_file)[0] + section_name + '.bin'
             #print (bin_file)
             
-            if (Path(bin_file).exists()):
-                os.remove(bin_file)
+            ###if (Path(bin_file).exists()):
+            ###    os.remove(bin_file)
         
             
-            with open(os.devnull, 'w')  as FNULL:       
-                subprocess.run([self.objcopy, '--dump-section', section_name + '=' + bin_file, elf_file], stdout=FNULL, stderr=FNULL )
+            ###with open(os.devnull, 'w')  as FNULL:       
+            ###    subprocess.run([self.objcopy, '--dump-section', section_name + '=' + bin_file, elf_file], stdout=FNULL, stderr=FNULL )
                                 
             if ('LOAD' in section_property_list[total_sections]):
-                try:
-                    name_list.append(section_name)
+                ###try:
+                
+                name_list.append(section_name)
                     
-                    f = open(bin_file, 'rb')
-                    byte = f.read(1)
-                    addr = section_lma
-                    addr_list.append (section_lma)
-                    size_list.append(section_size)
+                    ###f = open(bin_file, 'rb')
+                    ####byte = f.read(1)
+                addr = section_lma
+                addr_list.append (section_lma)
+                size_list.append(section_size)
                     
-                    while byte:
-                        data_list += byte
-                        addr = addr + 1
-                        byte = f.read(1)
+                    ###while byte:
+                    ###    data_list += byte
+                    ###    addr = addr + 1
+                    ###    byte = f.read(1)
                         
-                    assert ((addr -  section_lma) ==  section_size)
+                    ###assert ((addr -  section_lma) ==  section_size)
+                    
+                self._load_section (all_sections, section_name, data_list, section_size) 
                                 
-                except IOError:
-                    print ("Fail to open: ", self.file_name)
-                    exit(1)
+                ####except IOError:
+                ####    print ("Fail to open: ", self.file_name)
+                ####    exit(1)
 
-                f.close()
+                ###f.close()
                 total_sections = total_sections + 1
 
         
@@ -416,7 +458,7 @@ class Reindeer_OCD:
             print ("\taddr = 0x%08x, length = %d (0x%x)" % (addr_list[i], byte_index - start_byte_index, byte_index - start_byte_index))
             
             data_list_to_write = []
-            for k in range (len(data_list[start_byte_index : byte_index]) // 4):
+            for k in range (math.ceil(len(data_list[start_byte_index : byte_index]) / 4)):
                 data_list_to_write = data_list_to_write + [data_list[start_byte_index + k * 4 + 3], data_list[start_byte_index + k * 4 + 2], data_list[start_byte_index + k * 4 + 1], data_list[start_byte_index + k * 4]] 
                 
             self._write_mem (addr_list[i], data_list_to_write)
