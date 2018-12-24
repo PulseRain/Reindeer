@@ -560,7 +560,7 @@ if __name__ == "__main__":
     #=========================================================================
     
     try:
-          opts, args = getopt.getopt(sys.argv[1:],"t:a:RrhP:b:e:d:l:c",["run", "reset", "toolchain=", "port=", "start_addr=", "baud=", "elf=", "dump_addr=", "dump_length=", "console_enable"])
+          opts, args = getopt.getopt(sys.argv[1:],"t:a:RrhP:b:e:d:l:c",["help", "run", "reset", "toolchain=", "port=", "start_addr=", "baud=", "elf=", "dump_addr=", "dump_length=", "console_enable"])
     except (getopt.GetoptError, err):
           print (str(err))
           sys.exit(1)
