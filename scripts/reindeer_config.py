@@ -16,13 +16,13 @@
 #
 ###############################################################################
 
-
-
 import os, sys, getopt
 import math, time
 
 from time import sleep
 from CRC16_CCITT import CRC16_CCITT
+from ROM_Hex_Format import *
+
 import serial
 
 from pathlib import Path
@@ -287,6 +287,7 @@ class Reindeer_OCD:
         total_128byte_frame = total_words //32
         
         for i in range (total_128byte_frame):
+            #print ("write128 %x" % (addr + offset), [hex(k) for k in data[offset : offset + 128]])
             self.mem_write_128byte (addr + offset, data[offset : offset + 128])
             offset = offset + 128
             
@@ -297,7 +298,7 @@ class Reindeer_OCD:
                        (data[offset + 2] << 8) + \
                        (data[offset + 3])
             
-            ##print ("write32bit addr = ", addr + offset, "data_int=", hex(data_int))            
+            #print ("write32bit addr = ", addr + offset, "data_int=", hex(data_int))            
             self.mem_write_32bit(addr + offset, data_int)
             offset = offset + 4
         
@@ -444,7 +445,6 @@ class Reindeer_OCD:
                 
                 if (count == 0):
                     data = 0
-                
             
                 data = data + (data_list[byte_index] << (count * 8))
                 count = (count + 1) % 4
@@ -463,6 +463,50 @@ class Reindeer_OCD:
                 
             self._write_mem (addr_list[i], data_list_to_write)
     
+    #========================================================================
+    #  load hex
+    #========================================================================
+    def load_hex (self, hex_file):
+    
+        intel_hex_file =  Intel_Hex(hex_file)
+        
+        data_list_to_write = []
+        addr = 0
+        
+        count = 0
+        for record in intel_hex_file.data_record_list:
+            #print ("=================================== ", [hex(k) for k in  record.data_list])
+            
+            if (len(data_list_to_write) == 0):
+                data_list_to_write = record.data_list
+                addr = record.address
+            elif ((addr + len(data_list_to_write)) == record.address):
+                data_list_to_write = data_list_to_write + record.data_list
+                #print ("----------------------------- ", [hex(k) for k in  data_list_to_write])
+                count = count + 1
+                if ((count % 8) == 0):
+                    print ("#", end="")
+            else:
+                if (len(data_list_to_write) % 4):
+                    data_list_to_write = data_list_to_write + [0] * (len(data_list_to_write) % 4)
+                
+                #print ("+++++++++++++++++++ ", [hex(k) for k in  data_list_to_write])
+                data_list_to_write_reorder = [0] * len(data_list_to_write)
+                for i in range (len(data_list_to_write) // 4):
+                    data_list_to_write_reorder [i * 4]     = data_list_to_write [i * 4 + 3]
+                    data_list_to_write_reorder [i * 4 + 1] = data_list_to_write [i * 4 + 2]
+                    data_list_to_write_reorder [i * 4 + 2] = data_list_to_write [i * 4 + 1]
+                    data_list_to_write_reorder [i * 4 + 3] = data_list_to_write [i * 4]
+                    
+                    
+                    
+                #print ("==> %x " % addr, [hex(k) for k in data_list_to_write_reorder])
+                self._write_mem (addr, data_list_to_write_reorder)
+                data_list_to_write = record.data_list
+                addr = record.address
+        
+        return intel_hex_file.entry_addr
+        
     #========================================================================
     #  start to run
     #========================================================================
@@ -560,7 +604,7 @@ if __name__ == "__main__":
     #=========================================================================
     
     try:
-          opts, args = getopt.getopt(sys.argv[1:],"t:a:RrhP:b:e:d:l:c",["help", "run", "reset", "toolchain=", "port=", "start_addr=", "baud=", "elf=", "dump_addr=", "dump_length=", "console_enable"])
+          opts, args = getopt.getopt(sys.argv[1:],"t:a:RrhP:b:i:d:l:c",["help", "run", "reset", "toolchain=", "port=", "start_addr=", "baud=", "image=", "dump_addr=", "dump_length=", "console_enable"])
     except (getopt.GetoptError, err):
           print (str(err))
           sys.exit(1)
@@ -583,7 +627,7 @@ if __name__ == "__main__":
             objdump = toolchain + 'objdump'
             objcopy = toolchain + 'objcopy'
             readelf = toolchain + 'readelf'
-        elif opt in ('-e', '--elf'):
+        elif opt in ('-i', '--image'):
             image_file = args
         elif opt in ('-r', '--reset'):
             cpu_reset = 1
@@ -652,39 +696,46 @@ if __name__ == "__main__":
     if (image_file) :
         print ("Loading ", image_file)
         
-        result_elf = subprocess.run([readelf, image_file, '-a'], stdout=subprocess.PIPE)
-        
-        elf_dump = result_elf.stdout.decode('utf-8')
-        elf_dump_lines = elf_dump.splitlines() 
-        
-        if (toolchain == "riscv-none-embed-"):
-            sym_regexp = re.compile ("^\S*\d*\:\s(\w{8})\s*\d*\s*(\w*\s*){4}(\w*)")
-        else:
-            sym_regexp = re.compile ("^\S*\d*\:\s(\w{8})\s*\d*\s*(\w*\s*){5}(\w*)")
+        if (image_file.endswith (".elf")):
+            result_elf = subprocess.run([readelf, image_file, '-a'], stdout=subprocess.PIPE)
             
-        capture_next = 0
-        for line in elf_dump_lines:
-            line_strip = line.strip()
-            match = re.search (sym_regexp, line_strip)
-            #print (line_strip)
-            if (match):
-                addr = int(match.group(1), 16)
-                symbol = match.group(3)
+            elf_dump = result_elf.stdout.decode('utf-8')
+            elf_dump_lines = elf_dump.splitlines() 
+            
+            if (toolchain == "riscv-none-embed-"):
+                sym_regexp = re.compile ("^\S*\d*\:\s(\w{8})\s*\d*\s*(\w*\s*){4}(\w*)")
+            else:
+                sym_regexp = re.compile ("^\S*\d*\:\s(\w{8})\s*\d*\s*(\w*\s*){5}(\w*)")
                 
-                if ((symbol == "_start") or (symbol == "__start")):
-                    print ("%s %x" % (symbol, addr))
-                    if (use_default_start_addr):
-                        start_addr = addr
-               
-                if (symbol == "begin_signature"):
-                    print ("begin_signature %x" % addr)
+            capture_next = 0
+            for line in elf_dump_lines:
+                line_strip = line.strip()
+                match = re.search (sym_regexp, line_strip)
+                #print (line_strip)
+                if (match):
+                    addr = int(match.group(1), 16)
+                    symbol = match.group(3)
                     
-                if (symbol == "end_signature"):
-                    print ("end_signature %x" % addr)
-        
-        ocd.load_elf (image_file)
+                    if ((symbol == "_start") or (symbol == "__start")):
+                        print ("%s %x" % (symbol, addr))
+                        if (use_default_start_addr):
+                            start_addr = addr
+                   
+                    if (symbol == "begin_signature"):
+                        print ("begin_signature %x" % addr)
+                        
+                    if (symbol == "end_signature"):
+                        print ("end_signature %x" % addr)
             
-    
+            ocd.load_elf (image_file)
+        
+        elif (image_file.endswith (".hex") or image_file.endswith (".ihx")):
+            start_addr = ocd.load_hex (image_file)
+            
+        else:
+            print ("unknown image type")
+            sys.exit(1)
+            
     if (dump_mem):
         print (" ")
         ocd.mem_read (dump_addr, dump_length)
@@ -694,6 +745,7 @@ if __name__ == "__main__":
     
     if (run):
         print ("\n===================> start the CPU, entry point = 0x%08x" % start_addr)
+        print (" ")
         ocd.start_to_run (start_addr)
     
         while(console_enable):
