@@ -58,7 +58,7 @@ module RV2T_instruction_decode (
      // interface for next stage
      //=====================================================================
 
-        output reg [`XLEN - 1 : 0]                              IR_out,
+        output reg [`XLEN - 1 : 2]                              IR_out,
         output reg [`PC_BITWIDTH - 1 : 0]                       PC_out,
         
         output reg                                              ctl_load_X_from_rs1,
@@ -140,7 +140,7 @@ module RV2T_instruction_decode (
                     IR_out <= 0;
                     PC_out <= 0;
                 end else begin
-                    IR_out <= IR_in;
+                    IR_out <= IR_in[`XLEN - 1 : 2];
                     PC_out <= PC_in;
                 end
             end
