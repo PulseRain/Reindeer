@@ -247,7 +247,9 @@ module RV2T_instruction_decode (
                     end
 
                     `CMD_MISC_MEM : begin
-                        ctl_MISC_MEM = 1'b1;
+                        // only handle FENCE.I as we don't have data cache
+                        if (IR_out[14:12] == 3'b001)
+                            ctl_MISC_MEM = 1'b1;
                     end
                         
                     default : begin
