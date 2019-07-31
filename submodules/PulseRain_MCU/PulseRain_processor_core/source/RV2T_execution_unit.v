@@ -86,11 +86,7 @@ module RV2T_execution_unit (
         output reg [`PC_BITWIDTH - 1 : 0]                       PC_out,
         
         output wire                                             branch_active,
-        output reg [`PC_BITWIDTH - 1 : 0]                       branch_addr,
-        output reg                                              jalr_active,
-        output wire [`PC_BITWIDTH - 1 : 0]                      jalr_addr,
-        output reg                                              jal_active,
-        output reg [`PC_BITWIDTH - 1 : 0]                       jal_addr,
+        output wire [`PC_BITWIDTH - 1 : 0]                      branch_addr,
         
         output reg  [`XLEN - 1 : 0]                             csr_new_value,
         output wire [`XLEN - 1 : 0]                             csr_old_value,
@@ -151,7 +147,7 @@ module RV2T_execution_unit (
             
         wire  [`XLEN - 1 : 0]                                   exe_offset_JALR;
         wire  [`XLEN - 1 : 0]                                   exe_offset_BRANCH;
-        
+
         reg                                                     reg_ctl_LUI;
         reg                                                     reg_ctl_AUIPC;
         reg                                                     reg_ctl_SYSTEM;
@@ -161,7 +157,12 @@ module RV2T_execution_unit (
         reg                                                     reg_ctl_MUL_DIV_FUNCT3;
         
         reg                                                     branch_active_i;
-        
+        reg [`PC_BITWIDTH - 1 : 0]                              branch_addr_i;
+        reg                                                     jalr_active;
+        wire [`PC_BITWIDTH - 1 : 0]                             jalr_addr;
+        reg                                                     jal_active;
+        reg [`PC_BITWIDTH - 1 : 0]                              jal_addr;
+
         reg                                                     ecall_active_i;
         reg                                                     ebreak_active_i;
         
@@ -380,15 +381,18 @@ module RV2T_execution_unit (
         
             always @(posedge clk, negedge reset_n) begin : branch_addr_proc
                 if (!reset_n) begin
-                    branch_addr <= 0;
+                    branch_addr_i <= 0;
                 end else if (exe_enable) begin
-                    branch_addr <= PC_in + exe_offset_BRANCH;
+                    branch_addr_i <= PC_in + exe_offset_BRANCH;
                 end
             end
             
             assign exe_offset_BRANCH = {{20{IR_in[31]}}, IR_in[7], IR_in[30 : 25], IR_in[11 : 8], 1'b0};
             
-            assign branch_active = reg_ctl_BRANCH & branch_active_i;
+            assign branch_active = (reg_ctl_BRANCH & branch_active_i) | (jal_active | jalr_active);
+
+            assign branch_addr =  jalr_active ? jalr_addr : (jal_active?jal_addr:branch_addr_i);
+
         //---------------------------------------------------------------------
         //  JALR
         //---------------------------------------------------------------------
