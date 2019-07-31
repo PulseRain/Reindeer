@@ -40,7 +40,7 @@ module RV2T_execution_unit (
      // interface for the instruction decode
      //=====================================================================
         input wire                                              enable_in,
-        input wire [`XLEN - 1 : 0]                              IR_in,
+        input wire [`XLEN - 1 : 2]                              IR_in,
         input wire [`PC_BITWIDTH - 1 : 0]                       PC_in,
         input wire [`CSR_BITS - 1 : 0]                          csr_addr_in,
         
@@ -82,7 +82,7 @@ module RV2T_execution_unit (
         output reg                                              enable_out,
         output reg [`REG_ADDR_BITS - 1 : 0]                     rd_addr_out,
 
-        output reg [`XLEN - 1 : 0]                              IR_out,
+        output reg [`XLEN - 1 : 2]                              IR_out,
         output reg [`PC_BITWIDTH - 1 : 0]                       PC_out,
         
         output wire                                             branch_active,

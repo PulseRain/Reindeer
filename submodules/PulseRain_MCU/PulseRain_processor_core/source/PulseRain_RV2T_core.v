@@ -112,7 +112,7 @@ module PulseRain_RV2T_core (
         wire  [`REG_ADDR_BITS - 1 : 0]                  rs1;
         wire  [`REG_ADDR_BITS - 1 : 0]                  rs2;
         
-        wire  [`XLEN - 1 : 0]                           decode_IR_out ;
+        wire  [`XLEN - 1 : 2]                           decode_IR_out ;
         wire  [`PC_BITWIDTH - 1 : 0]                    decode_PC_out ;
         
         wire  [`CSR_BITS - 1 : 0]                       decode_csr;
@@ -172,7 +172,7 @@ module PulseRain_RV2T_core (
         wire                                            exe_reg_ctl_CSR_write;
         wire [`CSR_BITS - 1 : 0]                        exe_csr_addr;
         
-        wire  [`XLEN - 1 : 0]                           exe_IR_out;
+        wire  [`XLEN - 1 : 2]                           exe_IR_out;
         wire  [`PC_BITWIDTH - 1 : 0]                    exe_PC_out;
         
         wire                                            data_access_mem_re;
@@ -619,7 +619,7 @@ module PulseRain_RV2T_core (
 // DEBUG
 //----------------------------------------------------------------------------
     assign peek_pc = exe_PC_out;
-    assign peek_ir = exe_IR_out;
+    assign peek_ir = { exe_IR_out, 2'b1 };
         
 endmodule
 
