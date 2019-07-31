@@ -105,6 +105,7 @@ module RV2T_controller (
         input wire                                          exception_ebreak,
         input wire                                          exception_alignment,
         input wire                                          timer_triggered, 
+        input wire                                          exception_illegal_instruction,
          
         output reg                                          is_interrupt,
         output reg [`EXCEPTION_CODE_BITS - 1 : 0]           exception_code,
@@ -152,6 +153,7 @@ module RV2T_controller (
             reg                                             exception_ebreak_reg;
             reg                                             exception_instruction_addr_misalign_reg;
             reg                                             exception_alignment_reg;
+            reg                                             exception_illegal_instruction_reg;
             reg                                             interrupt_active;
             
             reg                                             decode_ctl_WFI_d1;
@@ -160,9 +162,12 @@ module RV2T_controller (
         //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         // data path
         //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-                assign exception_active     = exception_storage_page_fault | exception_ecall | exception_ebreak | ctl_instruction_addr_misalign_exception | exception_alignment;
+                assign exception_active     = 
+                    exception_storage_page_fault | exception_ecall | exception_ebreak | 
+                    ctl_instruction_addr_misalign_exception | exception_alignment | exception_illegal_instruction;
                 assign exception_active_reg = 
-                            exception_storage_page_fault_reg | exception_ecall_reg | exception_ebreak_reg | exception_instruction_addr_misalign_reg | exception_alignment_reg;
+                            exception_storage_page_fault_reg | exception_ecall_reg | exception_ebreak_reg |
+                            exception_instruction_addr_misalign_reg | exception_alignment_reg | exception_illegal_instruction_reg;
                 
                 always @(posedge clk, negedge reset_n) begin : fetch_proc
                     if (!reset_n) begin
@@ -270,6 +275,12 @@ module RV2T_controller (
                             exception_alignment_reg <= 1'b1;
                         end
                         
+                        if (ctl_clear_exception) begin
+                            exception_illegal_instruction_reg <= 0;
+                        end else if (exception_illegal_instruction) begin
+                            exception_illegal_instruction_reg <= 1'b1;
+                        end
+
                         if (ctl_fetch_exe_active) begin
                             load_active_reg <= 0;
                         end else if (ctl_load_active) begin
@@ -311,6 +322,10 @@ module RV2T_controller (
                                     exception_code <= `EXCEPTION_INSTRUCTION_ADDR_MISALIGN;
                                 end
                                 
+                                exception_illegal_instruction_reg : begin
+                                    exception_code <= `EXCEPTION_ILLEGAL_INSTRUCTION;
+                                end
+
                                 exception_alignment_reg : begin
                                     if (load_active_reg) begin
                                         exception_code <= `EXCEPTION_LOAD_ADDR_MISALIGN;

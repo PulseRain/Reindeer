@@ -195,6 +195,7 @@ module PulseRain_RV2T_core (
         wire                                            exception_ecall;
         wire                                            exception_ebreak;
         wire                                            exception_alignment;
+        wire                                            exception_illegal_instruction;
         
         wire                                            activate_exception;
         wire  [`EXCEPTION_CODE_BITS - 1 : 0]            exception_code;
@@ -416,7 +417,9 @@ module PulseRain_RV2T_core (
                 .ctl_CSR_write                   (decode_ctl_CSR_write),
                 .ctl_MISC_MEM                    (decode_ctl_MISC_MEM),
                 .ctl_MRET                        (decode_ctl_MRET),
-                .ctl_WFI                         (decode_ctl_WFI));
+                .ctl_WFI                         (decode_ctl_WFI),
+
+                .exception_illegal_instruction   (exception_illegal_instruction));
                 
         //---------------------------------------------------------------------
         // execution unit
@@ -603,6 +606,7 @@ module PulseRain_RV2T_core (
                 .activate_exception           (activate_exception),
                 .exception_PC                 (exception_PC),
                 .exception_addr               (exception_addr),
+                .exception_illegal_instruction (exception_illegal_instruction),
                 .paused                       (paused)
                 
                 );
