@@ -45,16 +45,6 @@ typedef VPulseRain_RV2T_MCU UUT;
 
 
 //===========================================================================
-// TOOL-CHAIN
-//===========================================================================
-// toolchain prefix, which can be also set by command line parameters
-//===========================================================================
-
-std::string toolchain {"riscv32-zephyr-elf-"};
-
-
-
-//===========================================================================
 // elf file generated based on  
 // https://github.com/riscv/riscv-compliance
 //===========================================================================
@@ -185,18 +175,12 @@ typedef struct {
     unsigned long     size;
     unsigned long     vma;
     unsigned long     lma;
+    unsigned long     off;
 } section_t;
 
 std::list <section_t> section_list;
 std::list <std::vector<std::string>> section_property_list;
 std::list <std::string> section_name_list;
-
-
-
-std::string bin_file_name (std::string name)
-{
-    return "./obj_dir/" + name + ".bin";
-}
 
 //===========================================================================
 // prepare_elf_section_list()
@@ -207,8 +191,7 @@ std::string bin_file_name (std::string name)
 
 void prepare_elf_section_list(std::string elf_file)
 {
-    std::string objdump = toolchain + "objdump";
-    std::string objcopy = toolchain + "objcopy";
+    std::string objdump = "objdump";
     
     std::string cmd = objdump + " -h " + elf_file;
     
@@ -219,7 +202,7 @@ void prepare_elf_section_list(std::string elf_file)
     //std::cout << "output is ============> \n" << cmd_output << "\n";
    
    
-    std::regex section_regexp {"^\\s*\\d*\\s([\\.|\\-|\\w]*)\\s*(\\w*)\\s*(\\w*)\\s*(\\w*)"};
+    std::regex section_regexp {"^\\s*\\d*\\s([\\.|\\-|\\w]*)\\s*(\\w*)\\s*(\\w*)\\s*(\\w*)\\s*(\\w*)"};
     std::smatch m;
     
     std::istringstream iss {cmd_output};
@@ -249,47 +232,17 @@ void prepare_elf_section_list(std::string elf_file)
                                  
         capture_next = false;
         if (std::regex_search (line, m, section_regexp)) {
-           
             if (!std::string(m[2]).empty()) {
                 capture_next = true;
                 section.name = m[1];
                 section.size = std::stoul(m[2], nullptr, 16);
                 section.vma  = std::stoul(m[3], nullptr, 16);
                 section.lma  = std::stoul(m[4], nullptr, 16);
-            
+                section.off  = std::stoul(m[5], nullptr, 16);
                 section_list.push_back(section);
             }
         }
-        
-        
     }
-
-//    std::cout << "#########################################\n";
-    auto it_property = section_property_list.begin();
-    bool generate_bin_file;
-    
-    for (auto name = section_name_list.begin(); name != section_name_list.end(); ++name) {
-        
-        generate_bin_file = false;
-        
-        for (std::vector<std::string>::const_iterator i = it_property->begin(); i != it_property->end(); ++i) {
-            if (i->rfind ("LOAD", 0) == 0) {
-                generate_bin_file = true;
-            }
-        } // End of for i    
-        
-        if (generate_bin_file) {
-            cmd = objcopy + " --dump-section " + '\"' + *name + "=" + \
-                  bin_file_name (*name) + '\"' + " " + elf_file;
-            
-           // std::cout << cmd << "\n";
-        
-            exec (cmd.c_str());
-        }
-        
-        ++it_property;
-    }
-
 }
 
 
@@ -394,6 +347,7 @@ void load_elf_sections(testbench *tb, UUT *uut)
     auto it_property = section_property_list.begin();
     bool need_to_load = false;
     unsigned long length = 0;
+    std::ifstream file (elf_file, std::ios::in|std::ios::binary|std::ios::ate);
     
     for (auto it = section_list.begin(); it != section_list.end(); ++it) {
         
@@ -407,19 +361,16 @@ void load_elf_sections(testbench *tb, UUT *uut)
         if (need_to_load) {
              std::cout << "\nLoading section " << it->name << " ... \t";
              
-             std::streampos size;
              char * memblock;
-             std::ifstream file (bin_file_name (it->name), std::ios::in|std::ios::binary|std::ios::ate);
              
              if (file.is_open()) {
-                 size = file.tellg();
-                 std::cout << size << " bytes, \tLMA = 0x" << std::hex << it->lma << std::dec << "\n\n";
-                 memblock = new char [size];
-                 file.seekg (0, std::ios::beg);
-                 file.read (memblock, size);
-                 file.close();
-                 length = (unsigned long)size;
+                 file.seekg (it->off, std::ios::beg);
+                 std::cout << it->size << " bytes, \tLMA = 0x" << std::hex << it->lma << std::dec << "\n";
+                 memblock = new char [it->size];
+                 file.read (memblock, it->size);
+                 length = (unsigned long)it->size;
                  uut_memory_load (tb, uut, (unsigned char*)memblock, it->lma, length);
+                 delete[] memblock;
              }
         }
         
@@ -438,7 +389,7 @@ void load_elf_sections(testbench *tb, UUT *uut)
 
 void elf_label_process(std::string elf_file)
 {
-    std::string readelf = toolchain + "readelf";
+    std::string readelf = "readelf";
     
     std::string cmd = readelf + " " + elf_file + " -a";
     
@@ -535,10 +486,9 @@ int main(int argc, char** argv) {
         elf_file = std::string(argv[1]);
     }
         
-    const char* const short_opts = "r:t:s:";
+    const char* const short_opts = "r:s:";
     const option long_opts[] = {
             {"reference", required_argument, nullptr, 'r'},
-            {"toolchain", required_argument, nullptr, 't'},
             {"start", required_argument, nullptr, 's'}
     };
 
@@ -554,16 +504,10 @@ int main(int argc, char** argv) {
             case 'r':
                 ref_file = std::string(optarg);
                 break;
-            
-            case 't':
-                toolchain = std::string(optarg);
-                break;
-
             case 's':
                 start_address = std::stoul(optarg);
                 break;
             default:
-                
                 break;
         }
     } // End of while loop
@@ -589,8 +533,6 @@ int main(int argc, char** argv) {
     }
     
     elf_label_process(elf_file);
-    
-    std::cout << "     toolchain \t: " << toolchain << "\n";
     
     std::cout << "\n     start address \t\t= 0x" << std::setfill('0') << std::setw(8) << std::hex;
     std::cout << start_address << "\n";
