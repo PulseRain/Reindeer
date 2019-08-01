@@ -1,0 +1,35 @@
+dist: bionic
+
+language: cpp
+
+compiler: gcc
+
+git:
+  depth: 5
+  submodules: false
+
+before_install:
+  - sudo apt-get install -y make autoconf g++ flex bison libfl-dev
+  - |
+    if [[ ! -d "$HOME/verilator-4.014/bin" ]]; then
+         pushd $HOME
+         curl --retry 10 --retry-max-time 120 -L \
+             "https://www.veripool.org/ftp/verilator-4.014.tgz" | tar xfz -
+         cd verilator-4.014
+         ./configure && make -j2
+         popd
+    fi
+  - |
+    pushd $HOME/verilator-4.014
+    sudo make install
+    popd
+  - verilator --version
+
+script:
+  - cd sim/verilator
+  - make test_all
+
+cache:
+  apt: true
+  directories:
+  - $HOME/verilator-4.014
