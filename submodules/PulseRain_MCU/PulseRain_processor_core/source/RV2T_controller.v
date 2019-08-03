@@ -57,10 +57,6 @@ module RV2T_controller (
     //=====================================================================
         input wire                                          branch_active,
         input wire [`PC_BITWIDTH - 1 : 0]                   branch_addr,
-        input wire                                          jalr_active,
-        input wire [`PC_BITWIDTH - 1 : 0]                   jalr_addr,
-        input wire                                          jal_active,
-        input wire [`PC_BITWIDTH - 1 : 0]                   jal_addr,
         
     //=====================================================================
     // LOAD / STORE
@@ -126,9 +122,7 @@ module RV2T_controller (
             reg                                             ctl_fetch_enable;
             reg                                             ctl_exe_enable;
             reg                                             ctl_data_access_enable;
-            reg                                             ctl_fetch_init_jal;
             reg                                             ctl_fetch_init_branch;
-            reg                                             ctl_fetch_init_jalr;
             reg                                             ctl_fetch_init_exception;
             reg                                             ctl_fetch_init_mret_active;
             reg                                             ctl_disable_data_access;
@@ -223,14 +217,6 @@ module RV2T_controller (
                                 exception_addr <= mem_write_addr;
                             end else begin
                                 case (1'b1) // synthesis parallel_case 
-                                    jal_active : begin
-                                        exception_addr <= {jal_addr[`PC_BITWIDTH - 1 : 1], 1'b0};
-                                    end
-                                    
-                                    jalr_active : begin
-                                        exception_addr <= {jalr_addr[`PC_BITWIDTH - 1 : 1], 1'b0};
-                                    end
-                                    
                                     branch_active : begin
                                         exception_addr <= {branch_addr[`PC_BITWIDTH - 1 : 1], 1'b0};
                                     end
@@ -340,7 +326,7 @@ module RV2T_controller (
                             endcase
                         end
                         
-                        fetch_init <= ctl_pc_init | ctl_fetch_init_jal | ctl_fetch_init_branch | ctl_fetch_init_jalr | ctl_fetch_init_exception | ctl_fetch_init_mret_active;
+                        fetch_init <= ctl_pc_init | ctl_fetch_init_branch | ctl_fetch_init_exception | ctl_fetch_init_mret_active;
                         
                         ctl_disable_data_access_reg <= ctl_disable_data_access;
                         
@@ -348,17 +334,9 @@ module RV2T_controller (
                             ctl_pc_init : begin
                                 fetch_start_addr <= {start_addr [`PC_BITWIDTH - 1 : 1], 1'b0};
                             end
-                            
-                            ctl_fetch_init_jal : begin
-                                fetch_start_addr <= {jal_addr[`PC_BITWIDTH - 1 : 1], 1'b0};
-                            end
-                            
+
                             ctl_fetch_init_branch : begin
                                 fetch_start_addr <= {branch_addr [`PC_BITWIDTH - 1 : 1], 1'b0};
-                            end
-                            
-                            ctl_fetch_init_jalr : begin
-                                fetch_start_addr <= {jalr_addr [`PC_BITWIDTH - 1 : 1], 1'b0};
                             end
                             
                             ctl_fetch_init_mret_active : begin
@@ -433,9 +411,7 @@ module RV2T_controller (
                 ctl_data_access_enable = 0;
                 ctl_disable_data_access = 0;
                 
-                ctl_fetch_init_jal = 0;
                 ctl_fetch_init_branch = 0;
-                ctl_fetch_init_jalr = 0;
                 ctl_fetch_init_mret_active = 0;
                 
                 ctl_clear_exception = 0;
@@ -484,20 +460,18 @@ module RV2T_controller (
                         ctl_fetch_exe_active = 1'b1;
                         
                         ctl_data_access_enable = first_exe & (~ctl_disable_data_access_reg);
-                        ctl_fetch_init_jal = jal_active & (~(jal_addr[1]));
                         ctl_fetch_init_branch = branch_active & (~(branch_addr[1]));
-                        ctl_fetch_init_jalr = jalr_active & (~(jalr_addr[1]));
                         ctl_fetch_init_mret_active = mret_active;
                         
                         if (timer_triggered & (~interrupt_active) & (~ecall_active)) begin
                             ctl_set_interrupt_active = 1'b1;
                             next_state [S_EXCEPTION] = 1'b1;
-                        end else if ((jal_active & jal_addr[1]) | (jalr_active & jalr_addr[1]) | (branch_active & branch_addr[1])) begin
+                        end else if (branch_active & branch_addr[1]) begin
                             ctl_instruction_addr_misalign_exception = 1'b1;
                             next_state [S_EXCEPTION] = 1'b1;
                         end else if ((exception_active | exception_active_reg) & data_access_enable) begin
                             next_state [S_EXCEPTION] = 1'b1;
-                        end else if (jal_active | branch_active | jalr_active | mret_active) begin
+                        end else if (branch_active | mret_active) begin
                             next_state [S_INIT_WAIT1] = 1'b1;
                         end else begin
                             next_state [S_DECODE_DATA] = 1'b1;

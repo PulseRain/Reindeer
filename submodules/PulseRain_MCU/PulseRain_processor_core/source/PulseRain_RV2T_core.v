@@ -463,10 +463,6 @@ module PulseRain_RV2T_core (
         
                 .branch_active  (exe_branch_active),
                 .branch_addr    (exe_branch_addr),
-                .jalr_active    (exe_jalr_active),
-                .jalr_addr      (exe_jalr_addr),
-                .jal_active     (exe_jal_active),
-                .jal_addr       (exe_jal_addr),
               
                 .csr_new_value  (csr_new_value),
                 .csr_old_value  (csr_old_value),
@@ -578,10 +574,6 @@ module PulseRain_RV2T_core (
         
                 .branch_active   (exe_branch_active),
                 .branch_addr     (exe_branch_addr),
-                .jalr_active     (exe_jalr_active),
-                .jalr_addr       (exe_jalr_addr),
-                .jal_active      (exe_jal_active),
-                .jal_addr        (exe_jal_addr),
                               
                 .load_active     (exe_load_active),
                 .data_to_store   (exe_data_to_store),
