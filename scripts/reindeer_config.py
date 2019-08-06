@@ -55,10 +55,10 @@ class Reindeer_OCD:
     
     _OCD_DEBUG_TYPE_RUN_PULSE_WITH_ACK = 0x49
     
-    _OCD_DEBUG_TYPE_READ_DATA_MEM      = 0x6F; 
-    _OCD_DEBUG_TYPE_WRITE_DATA_MEM     = 0x2B; 
-    _OCD_DEBUG_TYPE_WRITE_DATA_MEM     = 0x2B; 
-    _OCD_DEBUG_TYPE_UART_SEL           = 0x2A;
+    _OCD_DEBUG_TYPE_READ_DATA_MEM      = 0x6F
+    _OCD_DEBUG_TYPE_WRITE_DATA_MEM     = 0x2B 
+    _OCD_DEBUG_TYPE_WRITE_DATA_MEM     = 0x2B 
+    _OCD_DEBUG_TYPE_UART_SEL           = 0x2A
     
     _OCD_DEBUG_FRAME_REPLY_LEN = 12
     _OCD_SERIAL_TIME_OUT = 6
@@ -100,15 +100,12 @@ class Reindeer_OCD:
         sleep(0.5)
         if (self._serial.in_waiting):
             r = self._serial.read (self._serial.in_waiting)  
-      
         
         if (self._verbose):
             print ("send: ", [hex(i) for i in frame])
             
         self._serial.write (frame)
-        
-        
-    
+
     #========================================================================
     #  cpu_reset
     #========================================================================
@@ -302,48 +299,16 @@ class Reindeer_OCD:
             self.mem_write_32bit(addr + offset, data_int)
             offset = offset + 4
         
+    def _load_section(self, elf_file, section_lma, section_size, section_off):
     
-    #========================================================================
-    #  load section
-    #========================================================================
-        
-    def _load_section (self, all_sections, section_name, data_list, data_length):
-        section_head = re.compile ("^Contents\sof\ssection\s([\.|\w]*)")
-        data_regexp = re.compile ("^(\w*)\s(\w*)\s(\w*)\s(\w*)\s(\w*)")
-
-        #print ("-------------- section_name = ", section_name, " data_length = ", data_length)
-        
-        data_capture = 0
-        data_cnt = 0
-        for line in all_sections:
-            line_strip = line.strip()
-            head_match = re.search (section_head, line_strip)
-            data_match = re.search (data_regexp, line_strip)
-        
-                                
-            if (head_match):
-                data_capture = 0
-                if (section_name == head_match.group(1)):
-                    data_capture = 1
-            
-            elif (data_capture):
-                if (data_match):
-                    addr = int(data_match.group(1), 16)
-                    #print ("-- %x " % addr)
-            
-                    for i in range(4):
-                        if (data_match.group(i + 2) != ""):
-                            data_val = int(data_match.group(i + 2), 16)
-                            #print ("i = ", i, "data_val = %x" % data_val)
+        f = open(elf_file, 'rb')
+        f.seek(section_off)
+        data = f.read(section_size)
+        self._write_mem(section_lma, list(data))
+        close(f)
+        return
                             
-                            for j in range(4):
                                 
-                                byte = (data_val >> ((3 - j) * 8)) & 0xFF
-                                data_list += byte.to_bytes(1, byteorder="little")
-                                data_cnt = data_cnt + 1
-                                #print ("%x" % byte)
-                                if (data_cnt == data_length):
-                                    return
     #========================================================================
     #  load elf
     #========================================================================
@@ -352,7 +317,7 @@ class Reindeer_OCD:
         sections_lines = subprocess.run([self.objdump, '-h', elf_file], stdout=subprocess.PIPE).stdout.decode('utf-8').splitlines()
         all_sections = subprocess.run([self.objdump, '-s', elf_file], stdout=subprocess.PIPE).stdout.decode('utf-8').splitlines()
 
-        section_regexp = re.compile ("^\s*\d*\s([\.|\-|\w]*)\s*(\w*)\s*(\w*)\s*(\w*)")
+        section_regexp = re.compile ("^\s*\d*\s([\.|\-|\w]*)\s*(\w*)\s*(\w*)\s*(\w*)\s*(\w*)")
         section_list = []
         section_property_list = []
 
@@ -374,9 +339,10 @@ class Reindeer_OCD:
                 section_size = int(match.group(2), 16)
                 section_vma =  int(match.group(3), 16)
                 section_lma = int(match.group(4), 16)
+                section_off = int(match.group(5), 16)
 
                 #print (section_name, section_size, section_vma, section_lma)
-                section_list.append ([section_name, section_size, section_vma, section_lma])
+                section_list.append ([section_name, section_size, section_vma, section_lma, section_off])
         
         #############################################################################
         # load sections that have CODE or DATA property
@@ -389,80 +355,21 @@ class Reindeer_OCD:
 
         total_sections = 0
         
-        for section_name, section_size, section_vma, section_lma in section_list:
+        for section_name, section_size, section_vma, section_lma, section_off in section_list:
             
-            ###bin_file = os.path.splitext(elf_file)[0] + section_name + '.bin'
-            #print (bin_file)
-            
-            ###if (Path(bin_file).exists()):
-            ###    os.remove(bin_file)
-        
-            
-            ###with open(os.devnull, 'w')  as FNULL:       
-            ###    subprocess.run([self.objcopy, '--dump-section', section_name + '=' + bin_file, elf_file], stdout=FNULL, stderr=FNULL )
-                                
             if ('LOAD' in section_property_list[total_sections]):
-                ###try:
                 
                 name_list.append(section_name)
                     
-                    ###f = open(bin_file, 'rb')
-                    ####byte = f.read(1)
                 addr = section_lma
                 addr_list.append (section_lma)
-                size_list.append(section_size)
+                size_list.append (section_size)
                     
-                    ###while byte:
-                    ###    data_list += byte
-                    ###    addr = addr + 1
-                    ###    byte = f.read(1)
-                        
-                    ###assert ((addr -  section_lma) ==  section_size)
-                    
-                self._load_section (all_sections, section_name, data_list, section_size) 
+                print (section_name, section_size, section_vma, section_lma, section_off)
+                self._load_section (elf_file, section_lma, section_size, section_off) 
                                 
-                ####except IOError:
-                ####    print ("Fail to open: ", self.file_name)
-                ####    exit(1)
-
-                ###f.close()
                 total_sections = total_sections + 1
 
-        
-        
-        byte_index = 0
-        for i in range(total_sections):
-            count = 0
-            addr = addr_list[i]
-            
-            print (" ")
-            print ("//================================================================")
-            print ("//== Section ", name_list[i])
-            print ("//================================================================")
-            
-            start_byte_index = byte_index
-            for j in range (size_list[i]):
-                
-                if (count == 0):
-                    data = 0
-            
-                data = data + (data_list[byte_index] << (count * 8))
-                count = (count + 1) % 4
-                byte_index = byte_index + 1
-            
-                if (count == 0):
-                    #data = ((data & 0xFF) << 24) + (((data >> 8 )& 0xFF) << 16) + (((data >> 16 )& 0xFF) << 8) + (((data >> 24 )& 0xFF) << 0)  
-                    # print ("    mem[%d] <= 32\'h%04x; // 0x%x" % (addr , data, addr))
-                    addr = addr + 4
-        
-            print ("\taddr = 0x%08x, length = %d (0x%x)" % (addr_list[i], byte_index - start_byte_index, byte_index - start_byte_index))
-            
-            data_list_to_write = []
-            for k in range (math.ceil(len(data_list[start_byte_index : byte_index]) / 4)):
-                data_list_to_write = data_list_to_write + [data_list[start_byte_index + k * 4 + 3], data_list[start_byte_index + k * 4 + 2], data_list[start_byte_index + k * 4 + 1], data_list[start_byte_index + k * 4]] 
-                
-            self._write_mem (addr_list[i], data_list_to_write)
-    
     #========================================================================
     #  load hex
     #========================================================================
@@ -498,8 +405,6 @@ class Reindeer_OCD:
                     data_list_to_write_reorder [i * 4 + 2] = data_list_to_write [i * 4 + 1]
                     data_list_to_write_reorder [i * 4 + 3] = data_list_to_write [i * 4]
                     
-                    
-                    
                 #print ("==> %x " % addr, [hex(k) for k in data_list_to_write_reorder])
                 self._write_mem (addr, data_list_to_write_reorder)
                 data_list_to_write = record.data_list
@@ -515,11 +420,9 @@ class Reindeer_OCD:
         condition = True
         while (condition):
                 
-            frame_type_byte = Reindeer_OCD._OCD_DEBUG_TYPE_COUNTER_CONFIG * 2 + Reindeer_OCD._toggle;
+            frame_type_byte = Reindeer_OCD._OCD_DEBUG_TYPE_COUNTER_CONFIG * 2 + Reindeer_OCD._toggle
             Reindeer_OCD._toggle = 1 - Reindeer_OCD._toggle
             
-            
-                  
             frame = Reindeer_OCD._OCD_DEBUG_SYNC + [frame_type_byte] + [0x12, 0x34, (start_address >> 24) & 0xFF, (start_address >> 16) & 0xFF, (start_address >> 8) & 0xFF, (start_address >> 0) & 0xFF]
             frame = frame + Reindeer_OCD._crc16_ccitt.get_crc (frame)
             
@@ -550,15 +453,10 @@ class Reindeer_OCD:
         self._serial = serial.Serial(com_port, baud_rate, timeout=Reindeer_OCD._OCD_SERIAL_TIME_OUT)
         self._verbose = verbose
         
-        
         self.uart_select(1)
         
         if (self._serial.in_waiting):
             r = self._serial.read (self._serial.in_waiting) # clear the uart receive buffer 
-        
-        self.toolchain = 'riscv-none-embed-'
-        self.objdump = self.toolchain + 'objdump'
-        self.objcopy = self.toolchain + 'objcopy'
         
         self.image_file = ""
         
@@ -572,10 +470,8 @@ if __name__ == "__main__":
     com_port = "COM5"
     image_file = ""
     
-    toolchain = 'riscv-none-embed-'
-    objdump = toolchain + 'objdump'
-    objcopy = toolchain + 'objcopy'
-    readelf = toolchain + 'readelf'
+    objdump = 'objdump'
+    readelf = 'readelf'
     
     cpu_reset = 0
     
@@ -604,8 +500,8 @@ if __name__ == "__main__":
     #=========================================================================
     
     try:
-          opts, args = getopt.getopt(sys.argv[1:],"t:a:RrhP:b:i:d:l:c",["help", "run", "reset", "toolchain=", "port=", "start_addr=", "baud=", "image=", "dump_addr=", "dump_length=", "console_enable"])
-    except (getopt.GetoptError, err):
+          opts, args = getopt.getopt(sys.argv[1:],"t:a:RrhP:b:i:d:l:c",["help", "run", "reset", "port=", "start_addr=", "baud=", "image=", "dump_addr=", "dump_length=", "console_enable"])
+    except getopt.GetoptError as err:
           print (str(err))
           sys.exit(1)
     
@@ -622,11 +518,6 @@ if __name__ == "__main__":
             run = 1
         elif opt in ('-P', '--port'):
             com_port = args
-        elif opt in ('-t', '--toolchain'):
-            toolchain = args
-            objdump = toolchain + 'objdump'
-            objcopy = toolchain + 'objcopy'
-            readelf = toolchain + 'readelf'
         elif opt in ('-i', '--image'):
             image_file = args
         elif opt in ('-r', '--reset'):
@@ -652,36 +543,28 @@ if __name__ == "__main__":
             print ("    -r, --reset          : reset the CPU")
             print ("    -P, --port=          : the name of the COM port, such as COM7")
             print ("    -d, --baud=          : the baud rate, default to be 115200")
-            print ("    -t, --toolchain=     : setup the toolchain. By default, ", toolchain, " is used")
-            print ("    -e, --elf=           : path and name to the elf image file")
+            print ("    -e, --image=         : path and name to the image file in elf or hex format")
             print ("    -d, --dump_addr      : start address for memory dumping")
             print ("    -l, --dump_length    : length of the memory dump")
             print ("    -c, --console_enable : switch to observe the CPU UART after image is loaded.")
             print (" ")
             print ("    Example: To run the zephyr hello_world application")
-            print ("     python reindeer_config.py --port=COM9 --reset --elf=C:\GitHub\Reindeer\bitstream_and_binary\zephyr\hello_world.elf --console_enable --run")
+            print ("     python reindeer_config.py --port=COM9 --reset --image=..\bitstream_and_binary\zephyr\hello_world.elf --console_enable --run")
             
             sys.exit(1)
             
     print ("===============================================================================")
     print ("baud_rate  = ", baud_rate)
     print ("com_port   = ", com_port)
-    print ("toolchain  = ", toolchain)
     print ("===============================================================================")
 
     try:
         ocd = Reindeer_OCD (com_port, baud_rate, verbose=0)
         
-        ocd.toolchain = toolchain
         ocd.objdump = objdump
-        ocd.objcopy = objcopy
-        ocd.readelf = readelf
-        
     except:
         print ("Failed to open COM port.")
         print ("Please check the COM port connection is ok.")
-        print ("And please make sure pyserial package is installed.")
-        print ("To install pySerial package, use the command: pip3 install pyserial");
         sys.exit(1)
     
     if (cpu_reset):
@@ -701,11 +584,7 @@ if __name__ == "__main__":
             
             elf_dump = result_elf.stdout.decode('utf-8')
             elf_dump_lines = elf_dump.splitlines() 
-            
-            if (toolchain == "riscv-none-embed-"):
-                sym_regexp = re.compile ("^\S*\d*\:\s(\w{8})\s*\d*\s*(\w*\s*){4}(\w*)")
-            else:
-                sym_regexp = re.compile ("^\S*\d*\:\s(\w{8})\s*\d*\s*(\w*\s*){5}(\w*)")
+            sym_regexp = re.compile ("^\\s*\\d*\\:\\s(\\w{8})\\s*(\\w*\\s*){5}(\\w*)")
                 
             capture_next = 0
             for line in elf_dump_lines:
