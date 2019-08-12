@@ -285,6 +285,9 @@ module RV2T_execution_unit (
             
            //assign X = rs1_in;
            //assign Y = ctl_load_Y_from_imm_12 ? {{20{I_immediate_12[11]}}, I_immediate_12} : rs2_in;
+			wire slt_result = (X < Y) ? 1'd1 : 1'b0;
+			wire sltu_result = (X_unsigned < Y_unsigned) ? 1'd1 : 1'd0;
+			wire[`XLEN - 1:0] xor_result = X ^ Y;
             
         //---------------------------------------------------------------------
         //  ALU
@@ -300,15 +303,15 @@ module RV2T_execution_unit (
                     end
                     
                     `ALU_SLT : begin
-                        ALU_out = (X < Y) ? 32'd1 : 32'd0;
+                        ALU_out = {{31{1'b0}}, slt_result};
                     end
                     
                     `ALU_SLTU : begin
-                        ALU_out = (X_unsigned < Y_unsigned) ? 32'd1 : 32'd0;
+                        ALU_out = {{31{1'b0}}, sltu_result};
                     end
                     
                     `ALU_XOR : begin
-                        ALU_out = X ^ Y;
+                        ALU_out = xor_result;
                     end
                     
                     `ALU_SRL_SRA : begin
@@ -350,27 +353,27 @@ module RV2T_execution_unit (
             always @(*) begin : branch_proc
                 case (funct3) // synopsys full_case parallel_case     
                     `BRANCH_BEQ : begin
-                        branch_active_i = (X == Y) ? 1'b1 : 1'b0;
+                        branch_active_i = ~|xor_result;
                     end
 
                     `BRANCH_BNE : begin
-                        branch_active_i = (X == Y) ? 1'b0 : 1'b1;             
+                        branch_active_i = |xor_result;
                     end
 
                     `BRANCH_BLT : begin
-                        branch_active_i = (X < Y) ? 1'b1 : 1'b0;
+                        branch_active_i = slt_result;
                     end
 
                     `BRANCH_BGE : begin
-                        branch_active_i = (X >= Y) ? 1'b1 : 1'b0;
+                        branch_active_i = ~slt_result;
                     end
 
                     `BRANCH_BLTU : begin
-                        branch_active_i = (X_unsigned < Y_unsigned) ? 1'b1 : 1'b0;
+                        branch_active_i = sltu_result;
                     end
 
                     `BRANCH_BGEU : begin
-                        branch_active_i = (X_unsigned >= Y_unsigned) ? 1'b1 : 1'b0;
+                        branch_active_i = ~sltu_result;
                     end
 
                     default : begin
