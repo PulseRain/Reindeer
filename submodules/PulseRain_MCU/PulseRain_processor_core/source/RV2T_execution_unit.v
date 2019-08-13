@@ -105,8 +105,8 @@ module RV2T_execution_unit (
         output reg                                              reg_ctl_CSR,
         output reg                                              reg_ctl_CSR_write,
         output reg  [`CSR_BITS - 1 : 0]                         csr_addr_out,
-        output wire                                             ecall_active,
-        output wire                                             ebreak_active,
+        output reg                                              ecall_active,
+        output reg                                              ebreak_active,
         output reg                                              mret_active,
         output wire                                             mul_div_active,
         output reg                                              mul_div_done
@@ -262,9 +262,11 @@ module RV2T_execution_unit (
                         reg_ctl_JALR   <= ctl_JALR;
                         reg_ctl_BRANCH <= ctl_BRANCH;
                         reg_ctl_SYSTEM <= ctl_SYSTEM;
-                        
+
                         reg_ctl_MUL_DIV_FUNCT3 <= ctl_MUL_DIV_FUNCT3;
                         
+                        ecall_active   <= ecall_active_i & reg_ctl_SYSTEM;
+                        ebreak_active  <= ebreak_active_i & reg_ctl_SYSTEM;
                         mret_active    <= ctl_MRET & ctl_SYSTEM;
                         
                     end else begin
@@ -277,6 +279,8 @@ module RV2T_execution_unit (
                         reg_ctl_SYSTEM <= 0;
                         reg_ctl_MUL_DIV_FUNCT3 <= 0;
                         
+                        ecall_active   <= 0;
+                        ebreak_active  <= 0;
                         mret_active    <= 0;
                         
                     end
@@ -468,17 +472,14 @@ module RV2T_execution_unit (
 
             always @(*) begin : ecall_ebreak_proc
                 if (funct3 == `SYSTEM_ECALL_EBREAK) begin
-                    ecall_active_i  = ~(|(IR_out [31 : 20]));
-                    ebreak_active_i = (~(|(IR_out [31 : 21]))) & IR_out[20];
+                    ecall_active_i  = ~(|(IR_in [31 : 20]));
+                    ebreak_active_i = (~(|(IR_in [31 : 21]))) & IR_in[20];
                 end else begin
                     ecall_active_i  = 0;
                     ebreak_active_i = 0;
                 end
             end
             
-            assign ecall_active  = ecall_active_i & reg_ctl_SYSTEM;
-            assign ebreak_active = ebreak_active_i & reg_ctl_SYSTEM;
-                    
             always @(posedge clk, negedge reset_n) begin : reg_ctl_CSR_proc
                 if (!reset_n) begin
                     reg_ctl_CSR         <= 0;
