@@ -110,23 +110,20 @@ module RV2T_instruction_decode (
             assign rs2 = rs2_32;
 
         //---------------------------------------------------------------------
-        // CSR read
+        // function fields
         //---------------------------------------------------------------------
-            
-            assign csr     = IR_in [31 : 20];
+
             assign funct3  = IR_in [14 : 12];
             assign funct12 = IR_in [31 : 20];
-            
-            // If rd=x0, then the instruction shall not read the CSR and shall
-            // not cause any of the side-effects that might occur on a CSR read.
+
+        //---------------------------------------------------------------------
+        // CSR read
+        //---------------------------------------------------------------------
+
+            assign csr     = IR_in [31 : 20];
 
             always @(*) begin : csr_read_enable_proc
-                csr_read_enable = ctl_SYSTEM & ctl_CSR;
-                
-             //==   if (csr_read_enable && (funct3 == `SYSTEM_CSRRW) && (rd == 0)) begin
-              //==      csr_read_enable = 1'b0;
-              //==  end
-            
+                csr_read_enable = ctl_CSR;
             end
             
             
@@ -237,6 +234,8 @@ module RV2T_instruction_decode (
                         end else if ((funct12 [4 : 0] == 5'b00101) && (funct3 == 3'b000)) begin
                             ctl_WFI = 1'b1;
                         end else begin
+                            // If rd=x0, then the instruction shall not read the CSR and shall
+                            // not cause any of the side-effects that might occur on a CSR read.
                             ctl_CSR = |funct3;
                         end 
                         
