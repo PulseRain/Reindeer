@@ -128,8 +128,11 @@ module RV2T_execution_unit (
         wire  [2 : 0]                                           width; // load/store width, only support up to 32 bits at this moment 
         wire  [4 : 0]                                           opcode;
         
-        wire  signed [11 : 0]                                   I_immediate_12;
-        wire  [19 : 0]                                          U_immediate_20;
+        wire  signed [`XLEN - 1 : 0]                            I_immediate;
+        wire  signed [`XLEN - 1 : 0]                            S_immediate;
+        wire  signed [`XLEN - 1 : 0]                            B_immediate;
+        wire  signed [`XLEN - 1 : 0]                            U_immediate;
+        wire  signed [`XLEN - 1 : 0]                            J_immediate;
         
         wire  [4 : 0]                                           shamt;
         
@@ -143,11 +146,6 @@ module RV2T_execution_unit (
         wire  [4 : 0]                                           csr_uimm;
         wire  [`XLEN - 1: 0]                                    csr_uimm_ext;
      
-        wire [`XLEN - 1 : 0]                                    decode_offset;
-            
-        wire  [`XLEN - 1 : 0]                                   exe_offset_JALR;
-        wire  [`XLEN - 1 : 0]                                   exe_offset_BRANCH;
-
         reg                                                     reg_ctl_LUI;
         reg                                                     reg_ctl_AUIPC;
         reg                                                     reg_ctl_SYSTEM;
@@ -193,10 +191,12 @@ module RV2T_execution_unit (
         //---------------------------------------------------------------------
         //  immediate number
         //---------------------------------------------------------------------
-            assign I_immediate_12  = IR_in [31 : 20];
-            assign U_immediate_20  = IR_in [31 : 12];
-            
-            
+            assign I_immediate = {{21{IR_in[31]}},IR_in[30:25], IR_in[24:21], IR_in[20]};
+            assign S_immediate = {{21{IR_in[31]}},IR_in[30:25], IR_in[11:8], IR_in[7]};
+            assign B_immediate = {{20{IR_in[31]}},IR_in[7], IR_in[30:25], IR_in[11:8], 1'b0};
+            assign U_immediate = {IR_in[31],IR_in[30:20], IR_in[19:12], {12{1'b0}}};
+            assign J_immediate = {{12{IR_in[31]}},IR_in[19:12], IR_in[20], IR_in[30:25], IR_in[24:21], 1'b0};
+
             assign shamt = Y [4 : 0];
         //---------------------------------------------------------------------
         //  funct3
@@ -245,7 +245,7 @@ module RV2T_execution_unit (
                 end else begin
                     
                     X <= rs1_in;
-                    Y <= ctl_load_Y_from_imm_12 ? {{20{I_immediate_12[11]}}, I_immediate_12} : rs2_in;
+                    Y <= ctl_load_Y_from_imm_12 ? I_immediate : rs2_in;
                     
                     PC_out <= PC_in;
                     IR_out <= IR_in;
@@ -341,8 +341,8 @@ module RV2T_execution_unit (
                     LUI_out   <= 0;
                     AUIPC_out <= 0;
                 end else if (exe_enable) begin
-                    LUI_out   <= {U_immediate_20, 12'd0};
-                    AUIPC_out <= {U_immediate_20, 12'd0} + PC_in;
+                    LUI_out   <= U_immediate;
+                    AUIPC_out <= U_immediate + PC_in;
                 end
             end
                 
@@ -386,11 +386,9 @@ module RV2T_execution_unit (
                 if (!reset_n) begin
                     branch_addr_i <= 0;
                 end else if (exe_enable) begin
-                    branch_addr_i <= PC_in + exe_offset_BRANCH;
+                    branch_addr_i <= PC_in + B_immediate;
                 end
             end
-            
-            assign exe_offset_BRANCH = {{20{IR_in[31]}}, IR_in[7], IR_in[30 : 25], IR_in[11 : 8], 1'b0};
             
             assign branch_active = (reg_ctl_BRANCH & branch_active_i) | (jal_active | jalr_active);
 
@@ -409,8 +407,7 @@ module RV2T_execution_unit (
                 end
             end
             
-            assign exe_offset_JALR   = {{21{IR_out[31]}}, IR_out[30 : 20]};
-            assign jalr_addr = (X + exe_offset_JALR) & {{(`XLEN - 1){1'b1}}, 1'b0};
+            assign jalr_addr = (X + I_immediate) & {{(`XLEN - 1){1'b1}}, 1'b0};
         
         //---------------------------------------------------------------------
         //  JAL
@@ -424,14 +421,13 @@ module RV2T_execution_unit (
                     if (ctl_MISC_MEM) begin
                         jal_addr   <= PC_in + 4;
                     end else begin
-                        jal_addr   <= PC_in + decode_offset;
+                        jal_addr   <= PC_in + J_immediate;
                     end
                 end else begin
                     jal_active <= 0;
                 end
             end
                 
-            assign decode_offset = {{12{IR_in[31]}}, IR_in [19 : 12], IR_in[20], IR_in[30 : 21], 1'b0}; 
         //---------------------------------------------------------------------
         //  CSR
         //---------------------------------------------------------------------
