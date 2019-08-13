@@ -44,7 +44,7 @@ module single_port_ram #(parameter ADDR_WIDTH = 14, DATA_WIDTH = 16) (
     
     generate
         if (`MEM_SIZE_IN_BYTES == (48 * 1024)) begin: gen_if_proc
-            for (i = 0; i < (DATA_WIDTH / 8); i = i + 1) begin : gen_for_proc
+            for (i = 0; i < (DATA_WIDTH / 8); i = i + 1) begin : gen_for_proc1
                 
                  single_port_ram_8bit #(.ADDR_WIDTH (ADDR_WIDTH - 1)) ram_8bit_1st (
                     .addr (addr[ADDR_WIDTH - 2 : 0]),
@@ -54,7 +54,7 @@ module single_port_ram #(parameter ADDR_WIDTH = 14, DATA_WIDTH = 16) (
                     .dout (dout_1st [(i + 1) * 8 - 1 : i * 8]));
             end
             
-            for (i = 0; i < (DATA_WIDTH / 8); i = i + 1) begin : gen_for_proc
+            for (i = 0; i < (DATA_WIDTH / 8); i = i + 1) begin : gen_for_proc2
                 
                  single_port_ram_8bit #(.ADDR_WIDTH (ADDR_WIDTH - 2)) ram_8bit_2nd (
                     .addr (addr[ADDR_WIDTH - 3 : 0]),
