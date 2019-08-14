@@ -67,7 +67,7 @@ module PulseRain_RV2T_core (
         output  wire  [31 : 0]                                  peek_ir,
         
         
-        output  wire  [`MEM_ADDR_BITS - 1 : 0]                  mem_addr,
+        output  wire [`MEM_ADDR_BITS - 1 : 0]                   mem_addr,
         output  wire [`XLEN_BYTES - 1 : 0]                      mem_write_en,
         output  wire [`XLEN - 1 : 0]                            mem_write_data,
         
@@ -163,9 +163,8 @@ module PulseRain_RV2T_core (
         wire                                            exe_load_active;
         wire                                            exe_store_active;
         wire [`XLEN - 1 : 0]                            exe_data_to_store;
-        wire [`XLEN - 1 : 0]                            exe_mem_write_addr;
-        wire [`XLEN - 1 : 0]                            exe_mem_read_addr;
-        wire                                            exe_unaligned_write;
+        wire [`XLEN - 1 : 0]                            exe_mem_access_addr;
+        wire                                            exe_mem_access_unaligned;
         wire                                            exe_unaligned_read;
         wire [2 : 0]                                    exe_width_load_store;
         wire                                            exe_reg_ctl_CSR;
@@ -476,10 +475,8 @@ module PulseRain_RV2T_core (
                 .store_active      (exe_store_active),
                 .width_load_store  (exe_width_load_store),
                 .data_to_store     (exe_data_to_store),
-                .mem_write_addr    (exe_mem_write_addr),
-                .mem_read_addr     (exe_mem_read_addr),
-                .unaligned_write   (exe_unaligned_write),
-                .unaligned_read    (exe_unaligned_read),
+                .mem_access_addr    (exe_mem_access_addr),
+                .mem_access_unaligned   (exe_mem_access_unaligned),
                 .reg_ctl_CSR       (exe_reg_ctl_CSR),
                 .reg_ctl_CSR_write (exe_reg_ctl_CSR_write),
                 .csr_addr_out      (exe_csr_addr),
@@ -516,10 +513,9 @@ module PulseRain_RV2T_core (
                 .store_active     (exe_store_active),
                 .width_load_store (exe_width_load_store),
                 .data_to_store    (exe_data_to_store),
-                .mem_write_addr   (exe_mem_write_addr),
-                .mem_read_addr    (exe_mem_read_addr),
-                .unaligned_write  (exe_unaligned_write),
-                .unaligned_read   (exe_unaligned_read),
+                .mem_access_addr  (exe_mem_access_addr),
+                .mem_access_unaligned  (exe_mem_access_unaligned),
+
                 .mul_div_done     (mul_div_done),
                 .ctl_reg_we (data_access_reg_we),
                 .ctl_reg_data_to_write (data_access_reg_data_to_write),
@@ -580,9 +576,8 @@ module PulseRain_RV2T_core (
                               
                 .load_active     (exe_load_active),
                 .data_to_store   (exe_data_to_store),
-                .mem_write_addr  (exe_mem_write_addr),
-                .mem_read_addr   (exe_mem_read_addr),
-                .unaligned_write (exe_unaligned_write),
+                .mem_access_addr  (exe_mem_access_addr),
+                .unaligned_write (exe_mem_access_unaligned),
 
                 .store_done (store_done),
                 .load_done  (load_done),

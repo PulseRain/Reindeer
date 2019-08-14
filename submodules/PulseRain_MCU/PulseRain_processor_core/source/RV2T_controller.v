@@ -73,8 +73,7 @@ module RV2T_controller (
         
         input wire                                          load_active,
         input wire [`XLEN - 1 : 0]                          data_to_store,
-        input wire [`XLEN - 1 : 0]                          mem_write_addr,
-        input wire [`XLEN - 1 : 0]                          mem_read_addr,
+        input wire [`XLEN - 1 : 0]                          mem_access_addr,
         input wire                                          unaligned_write,
         
         input wire                                          store_done,
@@ -144,7 +143,7 @@ module RV2T_controller (
             
             reg                                             first_exe;
 
-            reg [`XLEN - 1 : 0]                             mem_read_addr_d1;
+            reg [`XLEN - 1 : 0]                             mem_access_addr_d1;
             
             wire                                            exception_active;
             wire                                            exception_active_reg;    
@@ -194,7 +193,7 @@ module RV2T_controller (
                         exception_alignment_reg <= 0;
                         interrupt_active <= 0;
                         
-                        mem_read_addr_d1  <= 0;
+                        mem_access_addr_d1  <= 0;
             
                         ctl_set_interrupt_active_reg <= 0;
                         
@@ -208,7 +207,7 @@ module RV2T_controller (
                         
                         activate_exception <= ctl_activate_exception;
                         
-                        mem_read_addr_d1  <= mem_read_addr;
+                        mem_access_addr_d1  <= mem_access_addr;
             
                         
                         if (data_access_enable) begin
@@ -219,7 +218,7 @@ module RV2T_controller (
                             end
                             
                             if (exception_alignment) begin // store exception
-                                exception_addr <= mem_write_addr;
+                                exception_addr <= mem_access_addr;
                             end else begin
                                 case (1'b1) // synthesis parallel_case 
                                     branch_active : begin
@@ -233,7 +232,7 @@ module RV2T_controller (
                                 endcase
                             end
                         end else if (exception_alignment) begin // load exception
-                            exception_addr <= mem_read_addr_d1;
+                            exception_addr <= mem_access_addr_d1;
                         end 
                         
                                 

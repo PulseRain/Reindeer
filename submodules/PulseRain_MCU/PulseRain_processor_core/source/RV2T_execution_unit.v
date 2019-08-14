@@ -97,10 +97,8 @@ module RV2T_execution_unit (
         output reg                                              store_active,
         output wire [2 : 0]                                     width_load_store,
         output wire [`XLEN - 1 : 0]                             data_to_store,
-        output wire [`XLEN - 1 : 0]                             mem_write_addr,
-        output wire [`XLEN - 1 : 0]                             mem_read_addr,
-        output wire                                             unaligned_write,
-        output wire                                             unaligned_read,
+        output wire [`XLEN - 1 : 0]                             mem_access_addr,
+        output wire                                             mem_access_unaligned,
         
         output reg                                              reg_ctl_CSR,
         output reg                                              reg_ctl_CSR_write,
@@ -203,14 +201,14 @@ module RV2T_execution_unit (
         //---------------------------------------------------------------------
             assign funct3_in = IR_in [14 : 12];
             
-            assign opcode = IR_out [6 : 2];
-            assign funct3 = IR_out [14 : 12];
-            assign SRL0_SRA1 = IR_out [30];
-            assign ADD0_SUB1 = opcode[3] ? IR_out [30] : 1'b0;  // distinguish between addi/add/sub
+            assign opcode = IR_in [6 : 2];
+            assign funct3 = IR_in [14 : 12];
+            assign SRL0_SRA1 = IR_in [30];
+            assign ADD0_SUB1 = opcode[3] ? IR_in [30] : 1'b0;  // distinguish between addi/add/sub
             
             assign width  = funct3 [2 : 0];
             
-            assign csr_uimm = IR_out [19 : 15];
+            assign csr_uimm = IR_in [19 : 15];
             assign csr_uimm_ext = {27'd0, csr_uimm};
             
         //---------------------------------------------------------------------
@@ -659,15 +657,12 @@ module RV2T_execution_unit (
             end
             
             assign data_to_store = Y;
-            
-            assign mem_write_addr =  X + {{20{IR_out [31]}}, IR_out [31 : 25], IR_out [11 : 7]};
-            assign mem_read_addr  =  X + {{20{IR_out[31]}}, IR_out[31 : 20]};
-            
-            assign unaligned_read  = (width == `WIDTH_32) ? (mem_read_addr[0] | mem_read_addr[1]) : ( (width == `WIDTH_16) || (width == `WIDTH_16U) ?  mem_read_addr[0] : 0 );
-            
-            assign unaligned_write = (width == `WIDTH_32) ? (mem_write_addr[0] | mem_write_addr[1]) : ( (width == `WIDTH_16) || (width == `WIDTH_16U) ?  mem_write_addr[0] : 0 );
+
+            assign mem_access_addr = ({32{store_active}} & (X + {{20{IR_out [31]}}, IR_out [31 : 25], IR_out [11 : 7]})) |
+                                     ({32{load_active}} & (X + {{20{IR_out[31]}}, IR_out[31 : 20]}));
+
+            assign mem_access_unaligned = (width == `WIDTH_32) ? (mem_access_addr[0] | mem_access_addr[1]) : ( (width == `WIDTH_16) || (width == `WIDTH_16U) ?  mem_access_addr[0] : 0 );
             assign width_load_store = width;
-        
 endmodule
 
 `default_nettype wire
