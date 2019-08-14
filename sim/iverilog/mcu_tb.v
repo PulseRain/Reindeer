@@ -12,7 +12,6 @@ module mcu_test();
         reg                                            reset_n;                      
         reg                                            sync_reset;
 
-    
     //=====================================================================
     // Interface Onchip Debugger
     //=====================================================================
@@ -20,13 +19,13 @@ module mcu_test();
 
         reg                                            ocd_read_enable;
         reg                                            ocd_write_enable;
-        
+
         reg  [`MEM_ADDR_BITS - 1 : 0]                  ocd_rw_addr;
         reg  [`XLEN - 1 : 0]                           ocd_write_word;
-        
+
         wire                                            ocd_mem_enable_out;
         wire  [`XLEN - 1 : 0]                           ocd_mem_word_out;        
-        
+
         reg  [`REG_ADDR_BITS - 1 : 0]                  ocd_reg_read_addr;
         reg                                             ocd_reg_we;
         reg  [`REG_ADDR_BITS - 1 : 0]                  ocd_reg_write_addr;
@@ -42,52 +41,50 @@ module mcu_test();
     //=====================================================================
         reg                                             start;
         reg  [`PC_BITWIDTH - 1 : 0]                    start_address;
-        
+
         wire                                            processor_paused;
 
         wire  [`XLEN - 1 : 0]                           peek_pc;
         wire  [`XLEN - 1 : 0]                           peek_ir;
-        
+
         wire  [`XLEN_BYTES - 1 : 0]                     peek_mem_write_en;
         wire  [`XLEN - 1 : 0]                           peek_mem_write_data;
         wire [`MEM_ADDR_BITS - 1 : 0]                   peek_mem_addr;
 
 
-	PulseRain_RV2T_MCU PulseRain_RV2T_MCU_i(
-		.clk (clk),
-		.reset_n (reset_n),
-		.sync_reset (sync_reset),
-		
-		.ocd_read_enable (ocd_read_enable),
-		.ocd_write_enable (ocd_write_enable),
-		
-		.ocd_rw_addr (ocd_rw_addr),
-		.ocd_write_word (ocd_write_word),
-		
-		.ocd_mem_enable_out (ocd_mem_enable_out),
-		.ocd_mem_word_out (ocd_mem_word_out),
-		
-		.ocd_reg_read_addr (ocd_reg_read_addr),
-		.ocd_reg_we (ocd_reg_we),
-		.ocd_reg_write_addr (ocd_reg_write_addr),
+    PulseRain_RV2T_MCU PulseRain_RV2T_MCU_i(
+        .clk (clk),
+        .reset_n (reset_n),
+        .sync_reset (sync_reset),
+
+        .ocd_read_enable (ocd_read_enable),
+        .ocd_write_enable (ocd_write_enable),
+
+        .ocd_rw_addr (ocd_rw_addr),
+        .ocd_write_word (ocd_write_word),
+
+        .ocd_mem_enable_out (ocd_mem_enable_out),
+        .ocd_mem_word_out (ocd_mem_word_out),
+
+        .ocd_reg_read_addr (ocd_reg_read_addr),
+        .ocd_reg_we (ocd_reg_we),
+        .ocd_reg_write_addr (ocd_reg_write_addr),
         .ocd_reg_write_data (ocd_reg_write_data),
 
+        .TXD (TXD),
 
-		.TXD (TXD),
-		
-		
-		.start (start),
-		.start_address (start_address),
-		
-		.processor_paused (processor_paused),
-		
-		.peek_pc (peek_pc),
-		.peek_ir (peek_ir),
-		
-		.peek_mem_write_en (peek_mem_write_en),
-		.peek_mem_write_data (peek_mem_write_data),
-		.peek_mem_addr (peek_mem_addr)
-	);
+        .start (start),
+        .start_address (start_address),
+
+        .processor_paused (processor_paused),
+
+        .peek_pc (peek_pc),
+        .peek_ir (peek_ir),
+
+        .peek_mem_write_en (peek_mem_write_en),
+        .peek_mem_write_data (peek_mem_write_data),
+        .peek_mem_addr (peek_mem_addr)
+    );
 
   initial begin
     clk = 1'b0;
@@ -118,6 +115,8 @@ reg[31:0] p_vaddr;
 reg[31:0] p_paddr;
 reg[31:0] p_filesz;
 
+localparam PT_LOAD = 32'h1;
+
 function [15:0] swap_16(input [15:0] in);
     swap_16 =  {in[7:0], in[15:8]};
 endfunction
@@ -126,25 +125,23 @@ function [31:0] swap_32(input [31:0] in);
     swap_32 =  {in[7:0], in[15:8], in[23:16], in[31:24]};
 endfunction
 
-
-
 initial begin
-		$dumpvars(0, PulseRain_RV2T_MCU_i);
+        $dumpvars(0, PulseRain_RV2T_MCU_i);
 
-		// Reset the CPU
-		sync_reset = 0;
-		ocd_reg_we = 0;
-		ocd_reg_read_addr = 0;
-		ocd_reg_write_addr = 0;
-		ocd_reg_write_data = 0;
-		ocd_read_enable = 0;
-		ocd_write_enable = 0;
-		ocd_rw_addr = 0;
-		ocd_write_word = 0;
-		start = 0;
-		start_address = 32'h80000000;
-		
-		#10
+        // Reset the CPU
+        sync_reset = 0;
+        ocd_reg_we = 0;
+        ocd_reg_read_addr = 0;
+        ocd_reg_write_addr = 0;
+        ocd_reg_write_data = 0;
+        ocd_read_enable = 0;
+        ocd_write_enable = 0;
+        ocd_rw_addr = 0;
+        ocd_write_word = 0;
+        start = 0;
+        start_address = 32'h80000000;
+
+        #1
 
         // open the file
         File = $fopen("../compliance/I-ADD-01.elf", "rb");
@@ -185,34 +182,44 @@ initial begin
             r = $fread(p_filesz, File); p_filesz = swap_32(p_filesz);
 
             $display("program header: %d: %h %h %h %h", i, p_type, p_offset, p_vaddr, p_filesz);
-            ocd_write_enable = 1;
-            r = $fseek(File, p_offset, 0);
-            for (addr = p_vaddr; addr < p_vaddr + p_filesz; addr = addr + 4) begin
-                r = $fread(elf_buf, File);
-                elf_buf = swap_32(elf_buf);
 
-                ocd_rw_addr = addr >> 2;
-                ocd_write_word = elf_buf;
+            if (p_type & PT_LOAD) begin
+                // Load the section
+                ocd_write_enable = 1;
+                r = $fseek(File, p_offset, 0);
+                for (addr = p_vaddr; addr < p_vaddr + p_filesz; addr = addr + 4) begin
+                    r = $fread(elf_buf, File);
+                    elf_buf = swap_32(elf_buf);
+
+                    ocd_rw_addr = addr >> 2;
+                    ocd_write_word = elf_buf;
+                    @(posedge clk);
+                    // $display("%h = %h", ocd_rw_addr * 4, ocd_write_word);
+                end
+                ocd_write_enable = 0;
                 @(posedge clk);
-                // $display("%h = %h", ocd_rw_addr * 4, ocd_write_word);
             end
-            ocd_write_enable = 0;
-            @(posedge clk);
         end
         $fclose(File);
 
         // start the CPU
-		start = 1;
-		repeat(1000) begin
-			$display("PC = %h IR = %h", peek_pc, peek_ir);
-			@(posedge clk);
-		end
-
-        // check the result
-        $readmemh("../compliance/references/I-ADD-01.reference_output", reference_buf);
-        for(i=0; i < 255 && ~(^reference_buf[i] === 1'bX); i = i + 1) begin
-            $display("%d: %h", i, reference_buf[i]);
+        start = 1;
+        i = 0;
+        repeat(2000) begin
+            if (peek_mem_write_en)
+                $display("%d\t%08h\t%08h\t %08h\t%08h", i, peek_pc, peek_ir, peek_mem_addr, peek_mem_write_data);
+            else
+                $display("%d\t%08h\t%08h", i, peek_pc, peek_ir);
+            @(posedge clk);
+            i = i + 1;
         end
+
+        // TODO: check the result
+        /* $readmemh("../compliance/references/I-ADD-01.reference_output", reference_buf);
+        for(i=0; i < 255 && ~(^reference_buf[i] === 1'bX); i = i + 1) begin
+                $display("%d: %h", i, reference_buf[i]);
+        end
+        */
         
         // display error/success
         $finish;
@@ -220,27 +227,3 @@ end
 
 
 endmodule
-
-
-/*
-
-function write_mem(
-    input integer lma,
-    input integer length,
-    input memblock);
-
-    integer addr;
-    integer data;
-
-    for (addr = lma; addr < lma + length; addr = addr + 4) begin
-        data = {memblock[offset + 3], memblock[offset + 2], memblock[offset + 1], memblock[offset]};
-        ocd_rw_addr = addr >> 2;
-        ocd_write_word = data;
-        ocd_write_enable = 1;
-        @(posedge clk);
-        ocd_write_enable = 0;
-        @(posedge clk);
-    end
-
-endfunction
-*/
