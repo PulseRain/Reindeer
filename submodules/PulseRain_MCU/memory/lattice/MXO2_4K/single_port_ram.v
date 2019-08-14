@@ -30,18 +30,19 @@ module single_port_ram #(parameter ADDR_WIDTH = 12, DATA_WIDTH = 16) (
             output reg  [DATA_WIDTH - 1 : 0]         dout
 );
 
-    reg [DATA_WIDTH - 1 : 0] mem [(1<<ADDR_WIDTH)-1:0];
+    reg [7 : 0] mem_hi [(1<<ADDR_WIDTH)-1:0];
+	reg [7 : 0] mem_low [(1<<ADDR_WIDTH)-1:0];
 	always @(posedge clk) begin
 		if (write_en[0]) begin
-			mem[addr][7: 0] <= din[7 : 0];
+			mem_low[addr] <= din[7 : 0];
 		end
 		if (write_en[1]) begin
-			mem[addr][15: 8] <= din[15 : 8];
+			mem_hi[addr] <= din[15 : 8];
 		end
 	end
  
     always @(posedge clk) begin
-        dout <= mem[addr];
+        dout <= {mem_hi[addr], mem_low[addr]};
     end
                 
 endmodule 
