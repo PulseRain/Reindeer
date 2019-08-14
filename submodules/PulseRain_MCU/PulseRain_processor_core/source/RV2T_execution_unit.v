@@ -139,7 +139,6 @@ module RV2T_execution_unit (
         wire                                                    SRL0_SRA1;
         wire                                                    ADD0_SUB1;
 
-        reg [`XLEN - 1 : 0]                                     LUI_out;
         reg [`XLEN - 1 : 0]                                     AUIPC_out;
         reg signed [`XLEN - 1 : 0]                              ALU_out;
         
@@ -342,10 +341,8 @@ module RV2T_execution_unit (
                 
             always @(posedge clk, negedge reset_n) begin : lui_auipc_proc
                 if (!reset_n) begin
-                    LUI_out   <= 0;
                     AUIPC_out <= 0;
                 end else if (exe_enable) begin
-                    LUI_out   <= U_immediate;
                     AUIPC_out <= U_immediate + PC_in;
                 end
             end
@@ -618,7 +615,7 @@ module RV2T_execution_unit (
             always @(*) begin : data_out_proc
                 case (1'b1) // synopsys parallel_case  
                     reg_ctl_LUI : begin
-                        data_out = LUI_out;
+                        data_out = U_immediate;
                     end
                     
                     reg_ctl_AUIPC : begin
