@@ -265,8 +265,8 @@ module RV2T_execution_unit (
 
                         reg_ctl_MUL_DIV_FUNCT3 <= ctl_MUL_DIV_FUNCT3;
                         
-                        ecall_active   <= ecall_active_i & reg_ctl_SYSTEM;
-                        ebreak_active  <= ebreak_active_i & reg_ctl_SYSTEM;
+                        ecall_active   <= ecall_active_i & ctl_SYSTEM;
+                        ebreak_active  <= ebreak_active_i & ctl_SYSTEM;
                         mret_active    <= ctl_MRET & ctl_SYSTEM;
                         
                     end else begin
