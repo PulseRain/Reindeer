@@ -2,7 +2,7 @@
 <BaliProject version="3.2" title="StepMXO2" device="LCMXO2-4000HC-4MG132C" default_implementation="Reindeer">
     <Options/>
     <Implementation title="Reindeer" dir="Reindeer" description="Reindeer" synthesis="lse" default_strategy="Strategy1">
-        <Options>
+        <Options def_top="Reindeer">
             <Option name="include path" value="../../../../submodules/OCD/source;../../../../submodules/PulseRain_MCU/common;../../../../submodules/PulseRain_MCU/common/Lattice/MXO2_4K"/>
             <Option name="top" value="Reindeer"/>
         </Options>

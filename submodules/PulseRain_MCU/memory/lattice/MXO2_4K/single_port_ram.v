@@ -23,44 +23,26 @@
 `default_nettype none
 
 module single_port_ram #(parameter ADDR_WIDTH = 12, DATA_WIDTH = 16) (
+			input  wire                               clk,
             input  wire [ADDR_WIDTH - 1 : 0]         addr,
             input  wire [DATA_WIDTH - 1 : 0]         din,
             input  wire [DATA_WIDTH / 8 - 1 : 0]     write_en, 
-            input  wire                              clk,
-            output wire [DATA_WIDTH - 1 : 0]         dout
+            output reg  [DATA_WIDTH - 1 : 0]         dout
 );
 
-    wire [DATA_WIDTH - 1 : 0]         dout_1st;
-    wire [DATA_WIDTH - 1 : 0]         dout_2nd;
-    
-    reg  [ADDR_WIDTH - 1 : 0]         addr_reg;
-    
-    
-    always @(posedge clk) begin
-        addr_reg <= addr;
-    end
-    
-    genvar i; 
-    
-    generate
-		for (i = 0; i < (DATA_WIDTH / 8); i = i + 1) begin : gen_for_proc
-			
-			 SP8KC #(.DATA_WIDTH (9)) ram_8bit (
-				.AD12 (ADDR_WIDTH>=12?addr[12]:1'b0),
-				.AD11 (ADDR_WIDTH>=11?addr[11]:1'b0),
-				.AD10 (addr[10]), .AD9 (addr[9]), .AD8 (addr[8]),  .AD7 (addr[7]), .AD6 (addr[6]), .AD5 (addr[5]), .AD4 (addr[4]), .AD3 (addr[3]), .AD2 (addr[2]), .AD1 (addr[1]), .AD0 (addr[0]),
-				.DI8 (1'b0),
-				.DI7 (din[i * 8 + 7]), .DI6 (din[i * 8 + 6]), .DI5 (din[i * 8 + 5]), .DI4 (din[i * 8 + 4]), .DI3 (din[i * 8 + 3]), .DI2 (din[i * 8 + 2]), .DI1 (din[i * 8 + 1]), .DI0 (din[i * 8 + 0]),
-				.WE (write_en[i]),
-				.CLK (clk),
-				.DO7 (dout[i * 8 + 7]), .DO6 (dout[i * 8 + 6]), .DO5 (dout[i * 8 + 5]), .DO4 (dout[i * 8 + 4]), .DO3 (dout[i * 8 + 3]), .DO2 (dout[i * 8 + 2]), .DO1 (dout[i * 8 + 1]), .DO0 (dout[i * 8 + 0]),
-				.CE (1'b1),
-				.OCE (1'b1),
-				.CS2 (1'b0), .CS1(1'b0), .CS0 (1'b0), 
-				.RST (1'b1));
+    reg [DATA_WIDTH - 1 : 0] mem [(1<<ADDR_WIDTH)-1:0];
+	always @(posedge clk) begin
+		if (write_en[0]) begin
+			mem[addr][7: 0] <= din[7 : 0];
 		end
-    endgenerate
-    
+		if (write_en[1]) begin
+			mem[addr][15: 8] <= din[15 : 8];
+		end
+	end
+ 
+    always @(posedge clk) begin
+        dout <= mem[addr];
+    end
                 
 endmodule 
 

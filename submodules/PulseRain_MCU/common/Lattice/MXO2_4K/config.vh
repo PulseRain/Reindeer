@@ -25,7 +25,7 @@
 //  memory size 
 //----------------------------------------------------------------------------
 
-`define MEM_SIZE_IN_BYTES   (32 * 1024)
+`define MEM_SIZE_IN_BYTES   (8 * 1024)
 `define MEM_ADDR_BITS       ($clog2(`MEM_SIZE_IN_BYTES / 4))
 
 `define MM_REG_SIZE_IN_BYTES   (32)
