@@ -63,7 +63,7 @@ module RV2T_CSR (
         input   wire  [`PC_BITWIDTH - 1 : 0]                    exception_addr,
         
          
-        output  reg                                             exception_storage_page_fault,
+        output  reg                                             exception_illegal_instruction,
         output  wire  [`XLEN - 1 : 0]                           mtvec_out,
         output  wire  [`XLEN - 1 : 0]                           mepc_out,
         output  wire                                            mtie_out,
@@ -123,7 +123,7 @@ module RV2T_CSR (
                            
                 mcause          <= 0;
                 
-                exception_storage_page_fault <= 0;
+                exception_illegal_instruction <= 0;
                 
                 if (`SMALL_CSR_SET == 0) begin
                     mcycle_i        <= 0;
@@ -148,7 +148,7 @@ module RV2T_CSR (
                 
                 read_en_out_i   <= read_enable;
                 
-                exception_storage_page_fault <= 0;
+                exception_illegal_instruction <= 0;
                 
                 if (`SMALL_CSR_SET == 0) begin
                     mcycle_i <= mcycle_i + 1;
@@ -261,7 +261,7 @@ module RV2T_CSR (
                         end
                         
                         default :  begin
-                            exception_storage_page_fault <= 1'b1;
+                            exception_illegal_instruction <= 1'b1;
                         end
                         
                     endcase
@@ -307,7 +307,7 @@ module RV2T_CSR (
                         end
                         
                         default :  begin
-                            exception_storage_page_fault <= 1'b1;
+                            exception_illegal_instruction <= 1'b1;
                         end
 
                     endcase
