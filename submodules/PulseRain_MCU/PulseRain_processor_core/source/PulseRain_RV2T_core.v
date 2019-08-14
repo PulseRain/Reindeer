@@ -191,10 +191,11 @@ module PulseRain_RV2T_core (
         wire [`XLEN - 1 : 0]                            csr_new_value;
         wire [`XLEN - 1 : 0]                            csr_old_value;
         
-        wire                                            csr_exception_storage_page_fault;
+        wire                                            csr_exception_illegal_instruction;
         wire                                            exception_ecall;
         wire                                            exception_ebreak;
         wire                                            exception_alignment;
+        wire                                            exception_illegal_instruction;
         
         wire                                            activate_exception;
         wire  [`EXCEPTION_CODE_BITS - 1 : 0]            exception_code;
@@ -344,7 +345,7 @@ module PulseRain_RV2T_core (
                 .exception_PC       (exception_PC),
                 .exception_addr     (exception_addr),
                 
-                .exception_storage_page_fault (csr_exception_storage_page_fault),
+                .exception_illegal_instruction (csr_exception_illegal_instruction),
                 .mtvec_out (mtvec_value),
                 .mepc_out  (mepc_value),
                 .mtie_out  (mtie_out),
@@ -416,7 +417,9 @@ module PulseRain_RV2T_core (
                 .ctl_CSR_write                   (decode_ctl_CSR_write),
                 .ctl_MISC_MEM                    (decode_ctl_MISC_MEM),
                 .ctl_MRET                        (decode_ctl_MRET),
-                .ctl_WFI                         (decode_ctl_WFI));
+                .ctl_WFI                         (decode_ctl_WFI),
+
+                .exception_illegal_instruction   (exception_illegal_instruction));
                 
         //---------------------------------------------------------------------
         // execution unit
@@ -593,7 +596,7 @@ module PulseRain_RV2T_core (
                 .mtvec_in   (mtvec_value),
                 .mepc_in    (mepc_value),
                 
-                .exception_storage_page_fault (csr_exception_storage_page_fault),
+                .exception_storage_page_fault (1'b0),
                 .exception_ecall              (exception_ecall),
                 .exception_ebreak             (exception_ebreak),
                 .exception_alignment          (exception_alignment),
@@ -603,6 +606,7 @@ module PulseRain_RV2T_core (
                 .activate_exception           (activate_exception),
                 .exception_PC                 (exception_PC),
                 .exception_addr               (exception_addr),
+                .exception_illegal_instruction (exception_illegal_instruction | csr_exception_illegal_instruction),
                 .paused                       (paused)
                 
                 );

@@ -80,7 +80,9 @@ module RV2T_instruction_decode (
         output reg                                              ctl_CSR_write,
         output reg                                              ctl_MISC_MEM,
         output reg                                              ctl_MRET,
-        output reg                                              ctl_WFI
+        output reg                                              ctl_WFI,
+
+        output reg                                              exception_illegal_instruction
 );
     
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -252,7 +254,7 @@ module RV2T_instruction_decode (
                     end
                         
                     default : begin
-
+                        exception_illegal_instruction = 1'b1;
                     end
                         
                 endcase
