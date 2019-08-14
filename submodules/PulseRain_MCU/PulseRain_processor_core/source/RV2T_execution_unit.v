@@ -658,8 +658,8 @@ module RV2T_execution_unit (
             
             assign data_to_store = Y;
 
-            assign mem_access_addr = ({32{store_active}} & (X + {{20{IR_out [31]}}, IR_out [31 : 25], IR_out [11 : 7]})) |
-                                     ({32{load_active}} & (X + {{20{IR_out[31]}}, IR_out[31 : 20]}));
+            assign mem_access_addr = ({32{ctl_STORE}} & (X + {{20{IR_out [31]}}, IR_out [31 : 25], IR_out [11 : 7]})) |
+                                     ({32{ctl_LOAD}} & (X + {{20{IR_out[31]}}, IR_out[31 : 20]}));
 
             assign mem_access_unaligned = (width == `WIDTH_32) ? (mem_access_addr[0] | mem_access_addr[1]) : ( (width == `WIDTH_16) || (width == `WIDTH_16U) ?  mem_access_addr[0] : 0 );
             assign width_load_store = width;
