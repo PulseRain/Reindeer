@@ -498,8 +498,10 @@ module RV2T_execution_unit (
         
         generate
         
-            assign x_mul_div_signed0_unsigned1 = funct3[2] ? funct3[0] : funct3[1] & funct3[0];
-            assign y_mul_div_signed0_unsigned1 = funct3[2] ? funct3[0] : funct3[1];
+            assign x_mul_div_signed0_unsigned1 = funct3 == `RV32M_MUL || funct3 == `RV32M_MULHU ||
+                                                funct3 == `RV32M_DIVU || funct3 == `RV32M_REMU;
+            assign y_mul_div_signed0_unsigned1 = funct3 == `RV32M_MUL || funct3 == `RV32M_MULHSU || funct3 == `RV32M_MULHU ||
+                                                funct3 == `RV32M_DIVU || funct3 == `RV32M_REMU;
             assign mul_div_enable = exe_enable_d1 & reg_ctl_MUL_DIV_FUNCT3;
             assign mul_div_active = reg_ctl_MUL_DIV_FUNCT3;
             
@@ -544,24 +546,8 @@ module RV2T_execution_unit (
                 always @(posedge clk) begin : mul_div_reg_proc
                     case (funct3_mul_div) // synopsys full_case parallel_case     
                         `RV32M_MUL : begin
-                            //mul_div_out_reg <=  ?  Z_neg [31 : 0]: Z [31 : 0];
                             mul_div_out_reg <=  Z [31 : 0];
                         end
-                        
-                    /*    `RV32M_MULH : begin
-                            //mul_div_out_reg <= mul_div_sign_reg ? Z_neg [63 : 32] : Z [63 : 32];                    
-                            mul_div_out_reg <= Z [63 : 32];
-                        end
-                        
-                        `RV32M_MULHSU : begin
-                            //mul_div_out_reg <= x_sign_reg ? Z_neg [63 : 32] : Z [63 : 32];
-                            mul_div_out_reg <= Z [63 : 32];
-                        end
-                        
-                        `RV32M_MULHU : begin
-                            mul_div_out_reg <= Z [63 : 32];
-                        end
-                      */
 
                         `RV32M_MULH, `RV32M_MULHSU, `RV32M_MULHU : begin
                             mul_div_out_reg <= Z [63 : 32];

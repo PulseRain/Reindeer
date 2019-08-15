@@ -52,8 +52,8 @@ module mul_div_32(
         wire signed [31 : 0]        x_abs;
         wire signed [31 : 0]        y_abs;
         
-        reg [31 : 0]                x_mul;
-        reg [31 : 0]                y_mul;
+        reg unsigned [31 : 0]                x_mul;
+        reg unsigned [31 : 0]                y_mul;
         
         
         wire                        x_max_neg_flag;
@@ -62,8 +62,8 @@ module mul_div_32(
         reg                         enable_in_d2;
         reg                         enable_in_d3;
         
-        
         reg                         mul0_div1_reg;
+        reg                         z_pos0_neg1;
         
         wire                        div_enable_out;
         
@@ -119,11 +119,15 @@ module mul_div_32(
 
                     
                     mul0_div1_reg <= mul0_div1;
-                    
+                    z_pos0_neg1 <= (~x_signed0_unsigned1 & x[31]) ^ (~y_signed0_unsigned1 & y[31]);
                 end
                 
                 z_i <= x_mul * y_mul;
-                z <= z_i;
+
+                if (z_pos0_neg1)
+                    z <= -z_i;
+                else
+                    z <= z_i;
                 
             end    
         end
