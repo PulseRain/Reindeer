@@ -112,19 +112,17 @@ I-SRLI-01 \
 I-SUB-01 \
 I-SW-01 \
 I-XOR-01 \
-I-XORI-01
-
-rv32u_test_cases = illegal
-
-rv32m_test_cases = \
-DIV \
-DIVU \
+I-XORI-01 \
 MUL \
 MULH \
 MULHSU \
 MULHU \
+DIV \
+DIVU \
 REM \
 REMU
+
+rv32u_test_cases = illegal
 
 test_run_case = $(filter-out $@, $(MAKECMDGOALS))
 
@@ -160,18 +158,6 @@ test_all : build
 test_trap : build
 	@echo "====> Testing system instr"
 	@for t in $(rv32u_test_cases) ; do \
-		echo "TEST CASE: $$t" ; \
-		elf_file=$(elf_folder)/$$t.elf ;\
-		ref_file=$(ref_folder)/$$t.reference_output ;\
-		echo "testing $$elf_file  -r $$ref_file" ; \
-		./obj_dir/V$(src_top) $$elf_file  -r $$ref_file || exit ; \
-		sleep 1 ; \
-	done
-	@echo "====> Test PASSED, Total of $(count_test_all) cases \n"
-
-test_mul : build
-	@echo "====> Testing RV32M"
-	@for t in $(rv32m_test_cases) ; do \
 		echo "TEST CASE: $$t" ; \
 		elf_file=$(elf_folder)/$$t.elf ;\
 		ref_file=$(ref_folder)/$$t.reference_output ;\

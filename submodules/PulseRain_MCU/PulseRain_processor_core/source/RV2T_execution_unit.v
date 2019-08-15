@@ -175,13 +175,7 @@ module RV2T_execution_unit (
         wire                                                    mul_div_enable;
         
         reg  [31 : 0]                                           mul_div_out_reg;
-        reg                                                     mul_div_sign_reg;
-        reg                                                     x_sign_reg;
-        
-        wire [63 : 0]                                           Z_neg;
-        wire [31 : 0]                                           Q_neg;
-        wire [31 : 0]                                           R_neg;
-        
+
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // data path
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -498,15 +492,16 @@ module RV2T_execution_unit (
         
         generate
         
-            assign x_mul_div_signed0_unsigned1 = funct3[2] ? funct3[0] : funct3[1] & funct3[0];
-            assign y_mul_div_signed0_unsigned1 = funct3[2] ? funct3[0] : funct3[1];
+            assign x_mul_div_signed0_unsigned1 = funct3 == `RV32M_MUL || funct3 == `RV32M_MULHU ||
+                                                funct3 == `RV32M_DIVU || funct3 == `RV32M_REMU;
+            assign y_mul_div_signed0_unsigned1 = funct3 == `RV32M_MUL || funct3 == `RV32M_MULHSU || funct3 == `RV32M_MULHU ||
+                                                funct3 == `RV32M_DIVU || funct3 == `RV32M_REMU;
             assign mul_div_enable = exe_enable_d1 & reg_ctl_MUL_DIV_FUNCT3;
             assign mul_div_active = reg_ctl_MUL_DIV_FUNCT3;
-            
-            assign Z_neg  = (~Z) + 1;
-            assign Q_neg  = (~Q) + 1;
-            assign R_neg  = (~R) + 1;
-            
+
+            assign Q = Z[63 : 32];
+            assign R = Z[31 : 0];
+
             if (`ENABLE_HW_MUL_DIV) begin
                 mul_div_32 mul_div_32_i (
                     .clk (clk),
@@ -522,84 +517,40 @@ module RV2T_execution_unit (
                     .enable_out (mul_div_enable_out),
                     
                     .z (Z),
-                    .q (Q),
-                    .r (R),
                     .ov (overflow_flag) );
                 
                 always @(posedge clk, negedge reset_n) begin : mul_div_proc
                     if (!reset_n) begin
                         funct3_mul_div <= 0;
-                        mul_div_sign_reg <= 0;
-                        x_sign_reg <= 0;
-                        
                     end else if (mul_div_enable) begin
                         funct3_mul_div <= funct3;
-                        mul_div_sign_reg <= X[31] ^ Y[31];
-                        x_sign_reg <= X[31];
-                        
                     end
                 end
                 
                 
-                always @(posedge clk) begin : mul_div_reg_proc
+                always @(*) begin : mul_div_reg_proc
                     case (funct3_mul_div) // synopsys full_case parallel_case     
                         `RV32M_MUL : begin
-                            //mul_div_out_reg <=  ?  Z_neg [31 : 0]: Z [31 : 0];
-                            mul_div_out_reg <=  Z [31 : 0];
+                            mul_div_out_reg = Z [31 : 0];
                         end
-                        
-                    /*    `RV32M_MULH : begin
-                            //mul_div_out_reg <= mul_div_sign_reg ? Z_neg [63 : 32] : Z [63 : 32];                    
-                            mul_div_out_reg <= Z [63 : 32];
-                        end
-                        
-                        `RV32M_MULHSU : begin
-                            //mul_div_out_reg <= x_sign_reg ? Z_neg [63 : 32] : Z [63 : 32];
-                            mul_div_out_reg <= Z [63 : 32];
-                        end
-                        
-                        `RV32M_MULHU : begin
-                            mul_div_out_reg <= Z [63 : 32];
-                        end
-                      */
 
                         `RV32M_MULH, `RV32M_MULHSU, `RV32M_MULHU : begin
-                            mul_div_out_reg <= Z [63 : 32];
+                            mul_div_out_reg = Z [63 : 32];
                         end
                       
-                  //      `RV32M_DIV : begin
-                  //          if (overflow_flag) begin
-                  //              mul_div_out_reg <= 32'hFFFFFFFF;
-                  //          end else begin
-                  //              mul_div_out_reg <= mul_div_sign_reg ? Q_neg : Q;
-                  //          end
-                  //      end
-                        
                         `RV32M_DIVU : begin
-                            mul_div_out_reg <= Q;
+                            mul_div_out_reg = Q;
                         end
-                        
-                        /*
-                        `RV32M_REM : begin
-                           // mul_div_out_reg <= x_sign_reg ? R_neg : R;
-                           mul_div_out_reg <= R;
-                        end
-                        
-                        `RV32M_REMU : begin
-                            mul_div_out_reg <= R;
-                        end
-                        */
                         
                         `RV32M_REM, `RV32M_REMU : begin
-                            mul_div_out_reg <= R;
+                            mul_div_out_reg = R;
                         end
                         
                         default : begin
                             if (overflow_flag) begin
-                                mul_div_out_reg <= 32'hFFFFFFFF;
+                                mul_div_out_reg = 32'hFFFFFFFF;
                             end else begin
-                               // mul_div_out_reg <= mul_div_sign_reg ? Q_neg : Q;
-                                mul_div_out_reg <= Q;
+                                mul_div_out_reg = Q;
                             end
                         end
                     endcase

@@ -38,10 +38,7 @@ module mul_div_32(
         
 //========== OUTPUT ==========
         output wire                              enable_out,
-        output reg [63 : 0]                      z,
-        
-        output wire [31 : 0]                     q,
-        output wire [31 : 0]                     r,
+        output wire [63 : 0]                     z,
         
         output wire                              ov
 );
@@ -52,8 +49,8 @@ module mul_div_32(
         wire signed [31 : 0]        x_abs;
         wire signed [31 : 0]        y_abs;
         
-        reg [31 : 0]                x_mul;
-        reg [31 : 0]                y_mul;
+        reg unsigned [31 : 0]                x_mul;
+        reg unsigned [31 : 0]                y_mul;
         
         
         wire                        x_max_neg_flag;
@@ -62,12 +59,15 @@ module mul_div_32(
         reg                         enable_in_d2;
         reg                         enable_in_d3;
         
-        
         reg                         mul0_div1_reg;
+        reg                         z_pos0_neg1;
+        reg                         x_pos0_neg1;
         
         wire                        div_enable_out;
         
-        reg [63 : 0]                z_i;
+        reg  [63 : 0]                z_i;
+        wire [31 : 0]                q_i;
+        wire [31 : 0]                r_i;
         
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // mul
@@ -91,7 +91,6 @@ module mul_div_32(
                 x_mul <= 0;
                 y_mul <= 0;
             
-                z <= 0;
                 z_i <= 0;
                 mul0_div1_reg <= 0;
                 
@@ -119,32 +118,22 @@ module mul_div_32(
 
                     
                     mul0_div1_reg <= mul0_div1;
-                    
+                    z_pos0_neg1 <= (~x_signed0_unsigned1 & x[31]) ^ (~y_signed0_unsigned1 & y[31]);
+                    x_pos0_neg1 <= ~x_signed0_unsigned1 & x[31];
                 end
                 
                 z_i <= x_mul * y_mul;
-                z <= z_i;
-                
             end    
         end
     
         assign enable_out = mul0_div1_reg ? div_enable_out : enable_in_d3;
 
+        assign z = mul0_div1_reg ? 
+                    {z_pos0_neg1 ? -q_i : q_i, x_pos0_neg1 ? -r_i : r_i} :
+                    (z_pos0_neg1 ? -z_i : z_i);
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // div
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-   /*     SRT_Radix4_division32 SRT_Radix4_division32_i (
-            .clk     (clk),
-            .reset_n (reset_n),
-            
-            .enable_in (enable_in),
-            .dividend  (x),
-            .divisor   (y),
-            
-            .ov_flag  (ov),
-            .quotient (q),
-            .enable_out (div_enable_out));         
-*/
           long_slow_div_denom_reg #(.DATA_WIDTH (32)) long_slow_div_denom_reg_i (
               .clk (clk),
               .reset_n (reset_n),
@@ -154,8 +143,8 @@ module mul_div_32(
               .denominator (y_mul),
         
               .enable_out (div_enable_out),
-              .quotient   (q),
-              .remainder  (r),
+              .quotient   (q_i),
+              .remainder  (r_i),
               .div_by_zero (),
               .error (ov)
             );  
