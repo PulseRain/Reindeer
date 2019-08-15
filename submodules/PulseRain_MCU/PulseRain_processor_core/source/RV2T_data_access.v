@@ -54,10 +54,8 @@ module RV2T_data_access (
         input wire                                              store_active,
         input wire [2 : 0]                                      width_load_store,
         input wire [`XLEN - 1 : 0]                              data_to_store,
-        input wire [`XLEN - 1 : 0]                              mem_write_addr,
-        input wire [`XLEN - 1 : 0]                              mem_read_addr,
-        input wire                                              unaligned_write,
-        input wire                                              unaligned_read,
+        input wire [`XLEN - 1 : 0]                              mem_access_addr,
+        input wire                                              mem_access_unaligned,
         
         input wire                                              mul_div_done,
         
@@ -128,7 +126,7 @@ module RV2T_data_access (
         reg [1 : 0]                                             mem_addr_rw_out_tail_reg;
         
         wire [`XLEN - 1 : 0]                                    mem_data_in_mux;
-        reg [`XLEN - 1 : 0]                                     mem_write_addr_d1;
+        reg [`XLEN - 1 : 0]                                     mem_access_addr_d1;
         
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // data path
@@ -152,7 +150,7 @@ module RV2T_data_access (
         //---------------------------------------------------------------------
             
    /*         always @(*) begin
-                case (mem_write_addr[1 : 0]) // synthesis parallel_case 
+                case (mem_access_addr[1 : 0]) // synthesis parallel_case 
                     2'b01 : begin
                         mem_data_to_write = {data_to_store[23 : 0], 8'd0};
                     end
@@ -173,22 +171,22 @@ module RV2T_data_access (
      */       
             always @(*) begin
                 if (width_load_store [1 : 0] == 2'b00) begin
-                    width_mask = 4'b0001 << (mem_write_addr[1 : 0]);
+                    width_mask = 4'b0001 << (mem_access_addr[1 : 0]);
                 end else if (width_load_store [1 : 0] == 2'b01) begin
-                    width_mask = 4'b0011 << (mem_write_addr[1 : 0]);
+                    width_mask = 4'b0011 << (mem_access_addr[1 : 0]);
                 end else begin
                     width_mask = 4'b1111;
                 end
             end
              
            // assign mem_we ={ctl_mem_we, ctl_mem_we, ctl_mem_we, ctl_mem_we} & width_mask;
-            assign mem_re = ctl_mem_re & mem_read_addr [`MEM_SPACE_BIT];
+            assign mem_re = ctl_mem_re & mem_access_addr [`MEM_SPACE_BIT];
             
             always @(*) begin
                 if (ctl_mem_we_d1) begin
-                    mem_addr_rw_out = mem_write_addr_d1;
+                    mem_addr_rw_out = mem_access_addr_d1;
                 end else begin
-                    mem_addr_rw_out = mem_read_addr;
+                    mem_addr_rw_out = mem_access_addr;
                 end
             end
             
@@ -268,22 +266,22 @@ module RV2T_data_access (
                     
                     mem_addr_rw_out_tail_reg <= 0;
                     
-                    mem_write_addr_d1 <= 0;
+                    mem_access_addr_d1 <= 0;
                     
                     ctl_load_exception_d1 <= 0;
                     
                 end else begin
                     
-                    mem_write_addr_d1 <= mem_write_addr;
+                    mem_access_addr_d1 <= mem_access_addr;
                     ctl_load_exception_d1 <= ctl_load_exception;
                     
-                    mm_reg_we <= ctl_mem_we & mem_write_addr [`REG_SPACE_BIT];
-                    mm_reg_re <= ctl_mem_re & mem_read_addr [`REG_SPACE_BIT];
+                    mm_reg_we <= ctl_mem_we & mem_access_addr [`REG_SPACE_BIT];
+                    mm_reg_re <= ctl_mem_re & mem_access_addr [`REG_SPACE_BIT];
                     
                     mm_reg_data_to_write <= data_to_store;
-                    mm_reg_addr_rw_out <= ctl_mem_we ? mem_write_addr [`MM_REG_ADDR_BITS + 1 : 2] : mem_read_addr [`MM_REG_ADDR_BITS + 1 : 2];
+                    mm_reg_addr_rw_out <= ctl_mem_we ? mem_access_addr [`MM_REG_ADDR_BITS + 1 : 2] : mem_access_addr [`MM_REG_ADDR_BITS + 1 : 2];
                     
-                    //ctl_mem_we_d1 <= ctl_mem_we & mem_write_addr [`MEM_SPACE_BIT];
+                    //ctl_mem_we_d1 <= ctl_mem_we & mem_access_addr [`MEM_SPACE_BIT];
                     ctl_mem_we_d1 <= ctl_mem_we;
                     
                     store_done <= ctl_store_done;
@@ -293,7 +291,7 @@ module RV2T_data_access (
                     
               //      mem_we <={ctl_mem_we_d1, ctl_mem_we_d1, ctl_mem_we_d1, ctl_mem_we_d1} & width_mask;
                 
-                    mem_we <= {4{ctl_mem_we & mem_write_addr [`MEM_SPACE_BIT]}} & width_mask;
+                    mem_we <= {4{ctl_mem_we & mem_access_addr [`MEM_SPACE_BIT]}} & width_mask;
                     
         /*            if (mem_enable_in) begin
                         mem_data_in_reg <= mem_data_in;
@@ -323,7 +321,7 @@ module RV2T_data_access (
           */         
 /*                   
                     if (ctl_mem_we) begin
-                         case (mem_write_addr[1 : 0]) // synthesis parallel_case 
+                         case (mem_access_addr[1 : 0]) // synthesis parallel_case 
                             2'b01 : begin
                                 mem_data_to_write <= {data_to_store[23 : 0], 8'd0};
                             end
@@ -342,12 +340,12 @@ module RV2T_data_access (
                             
                         endcase
                         
-                        mem_addr_rw_out <= mem_write_addr;
+                        mem_addr_rw_out <= mem_access_addr;
                     end else if (ctl_mem_re) begin
-                        mem_addr_rw_out <= mem_read_addr;
+                        mem_addr_rw_out <= mem_access_addr;
                     end 
 */
-                case (mem_write_addr[1 : 0]) // synthesis parallel_case 
+                case (mem_access_addr[1 : 0]) // synthesis parallel_case 
                     2'b01 : begin
                         mem_data_to_write <= {data_to_store[23 : 0], 8'd0};
                     end
@@ -369,16 +367,16 @@ module RV2T_data_access (
 
 
                     
-                   // mem_re <= ctl_mem_re & mem_read_addr [`MEM_SPACE_BIT];
+                   // mem_re <= ctl_mem_re & mem_access_addr [`MEM_SPACE_BIT];
                     
                     if (data_access_enable) begin
                         width_reg <= width_load_store;
                         mem_addr_rw_out_tail_reg <= mem_addr_rw_out [1 : 0];
 /*  
                         if (width_load_store [1 : 0] == 2'b00) begin
-                            width_mask <= 4'b0001 << (mem_write_addr[1 : 0]);
+                            width_mask <= 4'b0001 << (mem_access_addr[1 : 0]);
                         end else if (width_load_store [1 : 0] == 2'b01) begin
-                            width_mask <= 4'b0011 << (mem_write_addr[1 : 0]);
+                            width_mask <= 4'b0011 << (mem_access_addr[1 : 0]);
                         end else begin
                             width_mask <= 4'b1111;
                         end
@@ -465,7 +463,7 @@ module RV2T_data_access (
                     current_state[S_IDLE]: begin
                         if (data_access_enable) begin
                             if (store_active) begin
-                                if (unaligned_write) begin
+                                if (mem_access_unaligned) begin
                                     ctl_store_exception = 1'b1;
                                     next_state [S_EXCEPTION] = 1'b1;
                                 end else begin
@@ -474,7 +472,7 @@ module RV2T_data_access (
                                     next_state [S_IDLE] = 1'b1;
                                 end
                             end else if (load_active) begin
-                                if (unaligned_read) begin
+                                if (mem_access_unaligned) begin
                                     ctl_load_exception = 1'b1;
                                     next_state [S_EXCEPTION] = 1'b1;
                                 end else begin
