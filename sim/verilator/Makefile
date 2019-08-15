@@ -112,17 +112,17 @@ I-SRLI-01 \
 I-SUB-01 \
 I-SW-01 \
 I-XOR-01 \
-I-XORI-01
+I-XORI-01 \
+MUL \
+MULH \
+MULHSU \
+MULHU \
 
 rv32u_test_cases = illegal
 
 rv32m_test_cases = \
 DIV \
 DIVU \
-MUL \
-MULH \
-MULHSU \
-MULHU \
 REM \
 REMU
 
