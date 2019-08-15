@@ -40,9 +40,6 @@ module mul_div_32(
         output wire                              enable_out,
         output wire [63 : 0]                     z,
         
-        output wire [31 : 0]                     q,
-        output wire [31 : 0]                     r,
-        
         output wire                              ov
 );
 
@@ -64,6 +61,7 @@ module mul_div_32(
         
         reg                         mul0_div1_reg;
         reg                         z_pos0_neg1;
+        reg                         x_pos0_neg1;
         
         wire                        div_enable_out;
         
@@ -121,6 +119,7 @@ module mul_div_32(
                     
                     mul0_div1_reg <= mul0_div1;
                     z_pos0_neg1 <= (~x_signed0_unsigned1 & x[31]) ^ (~y_signed0_unsigned1 & y[31]);
+                    x_pos0_neg1 <= ~x_signed0_unsigned1 & x[31];
                 end
                 
                 z_i <= x_mul * y_mul;
@@ -129,24 +128,12 @@ module mul_div_32(
     
         assign enable_out = mul0_div1_reg ? div_enable_out : enable_in_d3;
 
-        assign z = z_pos0_neg1 ? -z_i : z_i;
-        assign q = z_pos0_neg1 ? -q_i : q_i;
-        assign r = z_pos0_neg1 ? -r_i : r_i;
+        assign z = mul0_div1_reg ? 
+                    {z_pos0_neg1 ? -q_i : q_i, x_pos0_neg1 ? -r_i : r_i} :
+                    (z_pos0_neg1 ? -z_i : z_i);
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // div
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-   /*     SRT_Radix4_division32 SRT_Radix4_division32_i (
-            .clk     (clk),
-            .reset_n (reset_n),
-            
-            .enable_in (enable_in),
-            .dividend  (x),
-            .divisor   (y),
-            
-            .ov_flag  (ov),
-            .quotient (q),
-            .enable_out (div_enable_out));         
-*/
           long_slow_div_denom_reg #(.DATA_WIDTH (32)) long_slow_div_denom_reg_i (
               .clk (clk),
               .reset_n (reset_n),
