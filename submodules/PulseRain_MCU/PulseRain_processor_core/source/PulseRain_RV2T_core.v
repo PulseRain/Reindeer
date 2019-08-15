@@ -191,11 +191,12 @@ module PulseRain_RV2T_core (
         wire [`XLEN - 1 : 0]                            csr_new_value;
         wire [`XLEN - 1 : 0]                            csr_old_value;
         
-        wire                                            csr_exception_illegal_instruction;
         wire                                            exception_ecall;
         wire                                            exception_ebreak;
         wire                                            exception_alignment;
-        wire                                            exception_illegal_instruction;
+
+        wire                                            decode_exception_illegal_instruction;
+        wire                                            csr_exception_illegal_instruction;
         
         wire                                            activate_exception;
         wire  [`EXCEPTION_CODE_BITS - 1 : 0]            exception_code;
@@ -419,7 +420,7 @@ module PulseRain_RV2T_core (
                 .ctl_MRET                        (decode_ctl_MRET),
                 .ctl_WFI                         (decode_ctl_WFI),
 
-                .exception_illegal_instruction   (exception_illegal_instruction));
+                .exception_illegal_instruction   (decode_exception_illegal_instruction));
                 
         //---------------------------------------------------------------------
         // execution unit
@@ -455,7 +456,7 @@ module PulseRain_RV2T_core (
                 
                 .rs1_in (reg_file_read_rs1_data_out),
                 .rs2_in (reg_file_read_rs2_data_out),
-     
+
                 .csr_in (csr_read_data_out),
          
                 .enable_out (),
@@ -606,7 +607,7 @@ module PulseRain_RV2T_core (
                 .activate_exception           (activate_exception),
                 .exception_PC                 (exception_PC),
                 .exception_addr               (exception_addr),
-                .exception_illegal_instruction (exception_illegal_instruction | csr_exception_illegal_instruction),
+                .exception_illegal_instruction (decode_exception_illegal_instruction | csr_exception_illegal_instruction),
                 .paused                       (paused)
                 
                 );
@@ -615,7 +616,7 @@ module PulseRain_RV2T_core (
 // DEBUG
 //----------------------------------------------------------------------------
     assign peek_pc = exe_PC_out;
-    assign peek_ir = { exe_IR_out, 2'b1 };
+    assign peek_ir = { exe_IR_out, 2'b11 };
         
 endmodule
 

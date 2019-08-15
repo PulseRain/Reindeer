@@ -102,7 +102,7 @@ module RV2T_fetch_instruction (
                 always @(posedge clk, negedge reset_n) begin : PC_proc
                     if (!reset_n) begin
                         PC_out <= 0;
-                        IR_out <= 0;
+                        IR_out <= `RV32I_NOP;
                         fetch_enable_out <= 0;
                         PC_out_i <= 0;
                     end else begin
