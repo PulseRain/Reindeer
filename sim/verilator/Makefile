@@ -117,14 +117,14 @@ MUL \
 MULH \
 MULHSU \
 MULHU \
+DIV \
+DIVU \
+REMU
 
 rv32u_test_cases = illegal
 
 rv32m_test_cases = \
-DIV \
-DIVU \
-REM \
-REMU
+REM
 
 test_run_case = $(filter-out $@, $(MAKECMDGOALS))
 

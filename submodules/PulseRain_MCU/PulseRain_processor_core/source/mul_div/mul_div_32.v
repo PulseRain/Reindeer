@@ -38,7 +38,7 @@ module mul_div_32(
         
 //========== OUTPUT ==========
         output wire                              enable_out,
-        output reg [63 : 0]                      z,
+        output wire [63 : 0]                     z,
         
         output wire [31 : 0]                     q,
         output wire [31 : 0]                     r,
@@ -67,7 +67,9 @@ module mul_div_32(
         
         wire                        div_enable_out;
         
-        reg [63 : 0]                z_i;
+        reg  [63 : 0]                z_i;
+        wire [31 : 0]                q_i;
+        wire [31 : 0]                r_i;
         
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // mul
@@ -91,7 +93,6 @@ module mul_div_32(
                 x_mul <= 0;
                 y_mul <= 0;
             
-                z <= 0;
                 z_i <= 0;
                 mul0_div1_reg <= 0;
                 
@@ -123,17 +124,14 @@ module mul_div_32(
                 end
                 
                 z_i <= x_mul * y_mul;
-
-                if (z_pos0_neg1)
-                    z <= -z_i;
-                else
-                    z <= z_i;
-                
             end    
         end
     
         assign enable_out = mul0_div1_reg ? div_enable_out : enable_in_d3;
 
+        assign z = z_pos0_neg1 ? -z_i : z_i;
+        assign q = z_pos0_neg1 ? -q_i : q_i;
+        assign r = z_pos0_neg1 ? -r_i : r_i;
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // div
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -158,8 +156,8 @@ module mul_div_32(
               .denominator (y_mul),
         
               .enable_out (div_enable_out),
-              .quotient   (q),
-              .remainder  (r),
+              .quotient   (q_i),
+              .remainder  (r_i),
               .div_by_zero (),
               .error (ov)
             );  
