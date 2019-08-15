@@ -94,6 +94,7 @@ module RV2T_instruction_decode (
         wire    [`REG_ADDR_BITS - 1 : 0]                        rd;
         wire    [2 : 0]                                         funct3;
         wire    [11 : 0]                                        funct12;
+        reg                                                     illegal;
         
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // data path
@@ -138,9 +139,15 @@ module RV2T_instruction_decode (
                 if (!reset_n) begin
                     IR_out <= 0;
                     PC_out <= 0;
+                    illegal <= 0;
                 end else begin
                     IR_out <= IR_in[`XLEN - 1 : 2];
                     PC_out <= PC_in;
+
+                    if (|IR_in == 1'b0 || &IR_in == 1'b1)
+                        illegal <= 1'b1;
+                    else
+                        illegal <= 1'b0;
                 end
             end
             
@@ -172,7 +179,8 @@ module RV2T_instruction_decode (
                 ctl_MISC_MEM = 0;
                 ctl_MRET = 0;
                 ctl_WFI = 0;
-                
+                exception_illegal_instruction = illegal;
+
                 case (IR_out [6 : 2]) // synthesis parallel_case 
                     `CMD_OP_IMM : begin
                         ctl_load_X_from_rs1 = 1'b1;
