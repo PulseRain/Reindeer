@@ -1,0 +1,27 @@
+################################################
+# This section describes SDC language elements for timing-driven
+# synthesis that are supported by the Lattice Synthesis Engine (LSE).
+#
+# The constraints here will be translated to corresponding
+# timing Preference (Preferences are implementation constraints
+# for assigning design logic to physical resources) for back-end flow.
+################################################
+
+create_clock -period 27.777779 -name mainclock [ get_nets { clk } ]
+#ldc_set_location -site {35} [get_ports osc_in]
+#ldc_set_location -site {43} [get_ports reset_button]
+ldc_set_location -site {41} [get_ports REDn]
+ldc_set_location -site {40} [get_ports BLUn]
+ldc_set_location -site {39} [get_ports GRNn]
+ldc_set_location -site {14} [get_ports TXD]
+ldc_set_location -site {15} [get_ports RXD]
+ldc_set_location -site {16} [get_ports spi_ss]
+
+################################################
+# This section describes the HDL Attributes that are supported
+# by the Lattice Synthesis Engine (LSE).
+#
+# These attributes are directly interpreted by the engine and
+# influence the optimization or structure of the output netlist.
+################################################
+

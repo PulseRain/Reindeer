@@ -26,7 +26,7 @@ module crc16_CCITT #(parameter INIT_VALUE = 16'hFFFF) (
         output wire [15:0] crc_out
 );
 
-    reg [15:0] lfsr_q,lfsr_c = INIT_VALUE;
+    reg [15:0] lfsr_q,lfsr_c;
 
     assign crc_out = lfsr_q;
 

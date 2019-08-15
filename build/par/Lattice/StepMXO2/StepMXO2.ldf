@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<RadiantProject version="4.0" title="UPDuinoV2" device="iCE40UP5K-SG48I" performance_grade="High-Performance_1.2V" default_implementation="Reindeer">
+<BaliProject version="3.2" title="StepMXO2" device="LCMXO2-4000HC-4MG132C" default_implementation="Reindeer">
     <Options/>
     <Implementation title="Reindeer" dir="Reindeer" description="Reindeer" synthesis="lse" default_strategy="Strategy1">
         <Options def_top="Reindeer">
-            <Option name="include path" value="../../../../submodules/OCD/source;../../../../submodules/PulseRain_MCU/common;../../../../submodules/PulseRain_MCU/common/Lattice/UP5K"/>
+            <Option name="include path" value="../../../../submodules/OCD/source;../../../../submodules/PulseRain_MCU/common;../../../../submodules/PulseRain_MCU/common/Lattice/MXO2_4K"/>
             <Option name="top" value="Reindeer"/>
         </Options>
-        <Source name="../../../../source/Lattice/UPDuinoV2/Reindeer.v" type="Verilog" type_short="Verilog">
+        <Source name="../../../../source/Lattice/StepMXO2/Reindeer.v" type="Verilog" type_short="Verilog">
             <Options top_module="Reindeer"/>
+        </Source>
+        <Source name="../../../../cores/Lattice/PLL/PLL.v" type="Verilog" type_short="Verilog">
+            <Options/>
         </Source>
         <Source name="../../../../submodules/OCD/source/CRC16_CCITT.v" type="Verilog" type_short="Verilog">
             <Options/>
@@ -27,19 +30,13 @@
         <Source name="../../../../submodules/OCD/source/Serial_RS232.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
-        <Source name="../../../../submodules/PulseRain_MCU/memory/lattice/UP5K/dual_port_ram.v" type="Verilog" type_short="Verilog">
+        <Source name="../../../../submodules/PulseRain_MCU/memory/lattice/MXO2_4K/dual_port_ram.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
-        <Source name="../../../../submodules/PulseRain_MCU/memory/lattice/UP5K/dual_port_ram_lattice.v" type="Verilog" type_short="Verilog">
+        <Source name="../../../../submodules/PulseRain_MCU/memory/lattice/MXO2_4K/dual_port_ram_lattice.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
-        <Source name="../../../../submodules/PulseRain_MCU/memory/lattice/UP5K/single_port_ram.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
-        <Source name="../../../../submodules/PulseRain_MCU/memory/lattice/UP5K/single_port_ram_lattice.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
-        <Source name="../../../../submodules/PulseRain_MCU/memory/lattice/UP5K/single_port_ram_lattice_16Kx16.v" type="Verilog" type_short="Verilog">
+        <Source name="../../../../submodules/PulseRain_MCU/memory/lattice/MXO2_4K/single_port_ram.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
         <Source name="../../../../submodules/PulseRain_MCU/peripherals/UART/UART_TX.v" type="Verilog" type_short="Verilog">
@@ -78,24 +75,18 @@
         <Source name="../../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/RV2T_reg_file.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
-        <Source name="../../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/mul_div/absolute_value.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
-        <Source name="../../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/mul_div/long_slow_div_denom_reg.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
-        <Source name="../../../../submodules/PulseRain_MCU/PulseRain_processor_core/source/mul_div/mul_div_32.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
         <Source name="../../../../submodules/PulseRain_MCU/source/PulseRain_RV2T_MCU.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
-        <Source name="../../constraints/Lattice/UPDuinoV2/Reindeer.ldc" type="LSE Design Constraints File" type_short="LDC">
+        <Source name="../../constraints/Lattice/StepMXO2/Reindeer.ldc" type="LSE Design Constraints File" type_short="LDC">
+            <Options/>
+        </Source>
+        <Source name="source/Reindeer.lpf" type="Logic Preference" type_short="LPF">
             <Options/>
         </Source>
         <Source name="source/Reindeer.xcf" type="Programming Project File" type_short="Programming">
             <Options/>
         </Source>
     </Implementation>
-    <Strategy name="Strategy1" file="UPDuinoV21.sty"/>
-</RadiantProject>
+    <Strategy name="Strategy1" file="StepMXO2.sty"/>
+</BaliProject>
