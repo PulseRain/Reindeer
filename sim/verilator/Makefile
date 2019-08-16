@@ -51,7 +51,7 @@ src_sub_v = $(patsubst %, $(src_base)/%.v,$(src_sub))
 src_top_v = $(src_top).v
 testbench_cpp = $(testbench).cpp
 
- 
+
 target = ./obj_dir/VPulseRain_RV2T_MCU
 
 ###############################################################################
@@ -138,7 +138,7 @@ test : build
 		elf_file=$(elf_folder)/$$t.elf ;\
 		ref_file=$(ref_folder)/$$t.reference_output ;\
 		echo "testing $$elf_file  -r $$ref_file" ; \
-		./obj_dir/V$(src_top) $$elf_file  -r $$ref_file || exit ; \
+		./obj_dir/V$(src_top) $$elf_file  -r $$ref_file -t $$t.vcd || exit ; \
 		sleep 1 ; \
 	done
 	@echo "====> Test PASSED, Total of $(count_test_run_case) case(s)"     
@@ -174,11 +174,11 @@ run : build
 $(target) : $(src_sub_v) $(src_base)/$(src_top_v) $(testbench_cpp)
 	@echo "====> Building $(target)"
 	for s in $(src_sub_v) ; do \
-		verilator -I../../submodules/PulseRain_MCU/memory/microsemi -I../../submodules/PulseRain_MCU/common -I../../submodules/PulseRain_MCU/common/Microsemi/SmartFusion2 -I../../submodules/PulseRain_MCU/PulseRain_processor_core/source  -I../../submodules/PulseRain_MCU/PulseRain_processor_core/source/mul_div --cc $$s ; \
+		verilator --trace -I../../submodules/PulseRain_MCU/memory/microsemi -I../../submodules/PulseRain_MCU/common -I../../submodules/PulseRain_MCU/common/Microsemi/SmartFusion2 -I../../submodules/PulseRain_MCU/PulseRain_processor_core/source  -I../../submodules/PulseRain_MCU/PulseRain_processor_core/source/mul_div --cc $$s ; \
 	done
 
-	verilator -I../../submodules/PulseRain_MCU/peripherals/UART -I../../submodules/PulseRain_MCU/memory/microsemi -I../../submodules/PulseRain_MCU/common -I../../submodules/PulseRain_MCU/common/Microsemi/SmartFusion2 -I../../submodules/PulseRain_MCU/PulseRain_processor_core/source  -I../../submodules/PulseRain_MCU/PulseRain_processor_core/source/mul_div --cc $(src_base)/$(src_top_v) --exe $(testbench_cpp)
-	
+	verilator --trace -I../../submodules/PulseRain_MCU/peripherals/UART -I../../submodules/PulseRain_MCU/memory/microsemi -I../../submodules/PulseRain_MCU/common -I../../submodules/PulseRain_MCU/common/Microsemi/SmartFusion2 -I../../submodules/PulseRain_MCU/PulseRain_processor_core/source  -I../../submodules/PulseRain_MCU/PulseRain_processor_core/source/mul_div --cc $(src_base)/$(src_top_v) --exe $(testbench_cpp)
+
 	make -j -C ./obj_dir -f V$(src_top).mk V$(src_top)
 
 clean :
