@@ -1,0 +1,4 @@
+*.vcd
+*.gtkw
+*.pyc
+obj_dir

@@ -18,6 +18,8 @@
 */
 
 #include "verilated.h"
+#include "verilated_vcd_c.h"
+
 #include <chrono>
 #include <thread>
 #include <getopt.h>
@@ -40,6 +42,7 @@ constexpr vluint32_t DEFAULT_STACK_INIT_VALUE  = 0x8000F000;
 std::list <vluint32_t> sig_list;
 
 VPulseRain_RV2T_MCU *uut;
+VerilatedVcdC* tfp;
 
 typedef VPulseRain_RV2T_MCU UUT;
 
@@ -57,6 +60,11 @@ std::string elf_file {""};
 //===========================================================================
 
 std::string ref_file {""};
+
+//===========================================================================
+// tracing file in vcd format
+//===========================================================================
+std::string trace_file {""};
 
 //===========================================================================
 // start address  
@@ -81,10 +89,11 @@ class testbench
         vluint64_t main_time;
         vluint32_t cycles;
         
-        testbench (const vluint32_t p, UUT *u) : 
+        testbench (const vluint32_t p, UUT *u, VerilatedVcdC* tfp) : 
             clk_period(p), 
             clk_half_period (p / 2),
-            uut (u)
+            uut (u),
+            trace (tfp)
         {
             main_time = 0;
             uut->clk = 0;
@@ -126,6 +135,7 @@ class testbench
         const vluint32_t clk_period;
         const vluint32_t clk_half_period;
         UUT *uut;
+        VerilatedVcdC* trace;
         
         void half_cycle ()
         {
@@ -133,7 +143,8 @@ class testbench
             main_time += (vluint64_t)clk_half_period;
             uut->clk = 1 - uut->clk;
             uut->eval();
-            
+            if (trace)
+                trace->dump(main_time);
         }
         
 };
@@ -486,10 +497,11 @@ int main(int argc, char** argv) {
         elf_file = std::string(argv[1]);
     }
         
-    const char* const short_opts = "r:s:";
+    const char* const short_opts = "r:s:t:";
     const option long_opts[] = {
             {"reference", required_argument, nullptr, 'r'},
-            {"start", required_argument, nullptr, 's'}
+            {"start", required_argument, nullptr, 's'},
+            {"trace", optional_argument, nullptr, 't'}
     };
 
     while (true)
@@ -507,6 +519,8 @@ int main(int argc, char** argv) {
             case 's':
                 start_address = std::stoul(optarg);
                 break;
+            case 't':
+                trace_file = std::string(optarg);
             default:
                 break;
         }
@@ -550,12 +564,23 @@ int main(int argc, char** argv) {
     prepare_elf_section_list (elf_file);
     
     uut = new UUT; // Create instance
-    
-    testbench t {10, uut};
+    VerilatedVcdC* tfp = new VerilatedVcdC;
+
+    if (!trace_file.empty()) {
+        Verilated::traceEverOn(true);
+        uut->trace (tfp, 99);
+
+        tfp->open (trace_file.c_str());
+    }
+    else {
+        tfp = NULL;
+    }
+
+    testbench t {10, uut, tfp};
     
     uut->reset_n = 0; // Set some inputs
     uut->sync_reset = 0;
-    
+
     std::cout << "\n=============> reset..." << "\n";
     
     uut->sync_reset = 0;
@@ -586,7 +611,6 @@ int main(int argc, char** argv) {
     t.run(); 
     
     std::cout << "\n=============> start running ..." << "\n";
-    
     uut->start = 1;
     t.run();
     uut->start = 0;
@@ -627,10 +651,16 @@ int main(int argc, char** argv) {
     std::cout << "\n";
     std::cout << "=============================================================\n";
     std::cout << "Simulation exit " << elf_file << "\n";
+    if (!trace_file.empty())
+        std::cout << "Wave trace " << trace_file << "\n";
     std::cout << "=============================================================\n";
     std::cout << "\n";
     
     uut->final();
+    if (tfp) {
+        tfp->close();
+        delete tfp;
+    }
 
     delete uut;
     
