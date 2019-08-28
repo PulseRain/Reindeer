@@ -467,11 +467,11 @@ void ref_file_process(std::string ref_file)
         } else {
             // std::cout << std::hex << "==> " << signature << "\n";
             
-            for (i = 0; i < 4; ++i) {
+            for (i = 0; i < signature.length() / 8; ++i) {
                 
                 data = 0;
                 for (j = 0; j < 8; ++j) {
-                    data += (std::stoul (signature.substr(31 - i * 8 - j, 1), nullptr, 16)) << (j*4);
+                    data += (std::stoul (signature.substr((signature.length() - 1) - i * 8 - j, 1), nullptr, 16)) << (j*4);
                 } // End of for loop j
                 
                 sig_list.push_back (data);
