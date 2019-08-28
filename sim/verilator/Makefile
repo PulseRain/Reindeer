@@ -120,7 +120,46 @@ MULHU \
 DIV \
 DIVU \
 REM \
-REMU
+REMU \
+add \
+bne \
+or \
+sltu \
+addi \
+fence_i \
+ori \
+sra \
+and \
+jal \
+sb \
+srai \
+andi \
+jalr \
+sh \
+srl \
+auipc \
+lb \
+simple \
+srli \
+beq \
+lbu \
+sll \
+sub \
+bge \
+lh \
+slli \
+sw \
+bgeu \
+lhu \
+slt \
+xor \
+blt \
+lui \
+slti \
+xori \
+bltu \
+lw \
+sltiu \
 
 rv32u_test_cases = illegal
 
